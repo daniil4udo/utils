@@ -9,6 +9,7 @@
     ],
     "license": "MIT",
     "author": "Daniil Chumachenko <daniil4udo@gmail.com>",
+    "repository": "daniil4udo/logger",
     "type": "module",
     "exports": {
         ".": {
