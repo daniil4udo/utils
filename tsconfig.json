@@ -1,0 +1,28 @@
+{
+	"extends": "@vue/tsconfig/tsconfig.web.json",
+    "include": [
+        "env.d.ts",
+        "./lib/*.ts",
+        "tests/*.spec.ts",
+    ],
+    "exclude": [
+        "dist",
+        "node_modules",
+        "tests/*"
+    ],
+    "compilerOptions": {
+        "baseUrl": ".",
+        "outDir": "dist",
+        "target": "ESNext",
+        "module": "ESNext",
+        "strict": false,
+        "declaration": true,
+        "pretty": true,
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "importHelpers": true,
+        "importsNotUsedAsValues": "error",
+        "isolatedModules": true,
+        "skipLibCheck": true
+    },
+}
