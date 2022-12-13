@@ -1,16 +1,13 @@
-import { isPrimitive } from './isPrimitive'
-import { toType } from './toType'
-
-/**
- *
- * @param collection
- */
-export function length(collection: any) {
-    if (isPrimitive(collection))
+export function length(collection: any, { includeString = false } = {}) {
+    try {
+        // Object.keys converts string to Array
+        return (!includeString && typeof collection === 'string')
+            ? 0
+            : collection?.length
+                ?? collection?.size
+                ?? Object.keys(collection).length
+    }
+    catch {
         return 0
-    return Array.isArray(collection)
-        ? collection.length
-        : toType(collection) === 'set' || toType(collection) === 'map'
-            ? collection.size
-            : Object.keys(collection).length
+    }
 }
