@@ -1,1 +1,1 @@
-export { saveAs } from 'file-saver-es/src/FileSaver'
+export { saveAs } from 'file-saver-es'
