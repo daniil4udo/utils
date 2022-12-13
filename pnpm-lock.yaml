@@ -15,7 +15,7 @@ specifiers:
   '@vue/tsconfig': ^0.1.3
   defu: ^6.1.1
   eslint: ^8.29.0
-  fast-deep-equal: ^3.1.3
+  fast-equals: ^4.0.3
   file-saver-es: ^2.0.5
   lodash-es: ^4.17.21
   perfect-debounce: ^0.1.3
@@ -31,7 +31,7 @@ specifiers:
 
 dependencies:
   defu: 6.1.1
-  fast-deep-equal: 3.1.3
+  fast-equals: 4.0.3
   file-saver-es: 2.0.5
   lodash-es: 4.17.21
   perfect-debounce: 0.1.3
@@ -2295,6 +2295,11 @@ packages:
 
   /fast-deep-equal/3.1.3:
     resolution: {integrity: sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==}
+    dev: true
+
+  /fast-equals/4.0.3:
+    resolution: {integrity: sha512-G3BSX9cfKttjr+2o1O22tYMLq0DPluZnYtq1rXumE1SpL/F/SLIfHx08WYQoWSIpeMYf8sRbJ8++71+v6Pnxfg==}
+    dev: false
 
   /fast-glob/3.2.12:
     resolution: {integrity: sha512-DVj4CQIYYow0BlaelwK1pHl5n5cRSJfM60UA0zK891sVInoPri2Ekj7+e1CT3/3qxXenpI+nBBmQAcJPJgaj4w==}
