@@ -1,1 +1,4 @@
-export { saveAs } from 'file-saver-es'
+import * as fileSaver from 'file-saver-es'
+
+const { saveAs } = fileSaver
+export { saveAs }
