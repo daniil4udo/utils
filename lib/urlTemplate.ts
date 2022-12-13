@@ -1,1 +1,1 @@
-export { parseTemplate } from 'url-template'
+export { parseTemplate as parseURLTemplate } from 'url-template'
