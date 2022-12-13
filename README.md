@@ -13,6 +13,7 @@ Set of popular utils
   - [Table of Contents](#table-of-contents)
   - [Install](#install)
   - [Usage](#usage)
+- [Auto imports](#auto-imports)
   - [Contributing](#contributing)
   - [License](#license)
 
@@ -61,7 +62,9 @@ $ pnpm install -D @democrance/utils
 - urlTemplate
 - zipcelx
 
+# Auto imports
 
+To use utils with `unplugin-auto-import` plugin, simply include `dist/autoImportUtilsPreset.json` to the presets options
 ## Contributing
 
 Got an idea for a new feature? Found a bug? Contributions are welcome! Please [open up an issue](https://github.com/daniil4udo/utils/issues) or [make a pull request](https://makeapullrequest.com/).
