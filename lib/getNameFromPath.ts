@@ -1,5 +1,5 @@
-export function nameFromPath(str: string, { extension = true } = {}) {
-    const fileName = str
+export function getNameFromPath(path: string, { extension = true } = {}) {
+    const fileName = path
         .split('\\')
         .pop()
         .split('/')
