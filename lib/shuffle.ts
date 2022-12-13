@@ -3,10 +3,10 @@
  * @param array
  */
 
-export function shuffle<T extends any[]>(array: Readonly<T>): T {
-    const a = array.slice(0) as T
+export function shuffle<ElementType>(array: Readonly<ElementType[]>): ElementType[] {
+    const a = array.slice(0)
     let m = array.length
-    let t
+    let t: ElementType
     let i: number
 
     // While there remain elements to shuffle…

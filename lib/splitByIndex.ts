@@ -1,4 +1,6 @@
-export const splitByIndex = (arr = [], i = 0) => {
+type Length<T extends readonly any[]> = T['length']
+
+export function splitByIndex<T extends any[]>(arr: T, i: Length<T> = 0) {
     const x = arr.slice(0)
     const y = x.splice(i)
 

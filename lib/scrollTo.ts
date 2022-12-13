@@ -1,4 +1,4 @@
-export function scrollTo(element?: HTMLBodyElement, offset = 0) {
+export function scrollTo(element?: HTMLElement, offset = 0) {
     if (!window)
         return
 
