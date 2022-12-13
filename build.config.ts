@@ -1,4 +1,4 @@
-import { defineBuildConfig } from 'unbuild/dist/index'
+import { defineBuildConfig } from 'unbuild'
 
 export default defineBuildConfig({
     name: 'utils',
