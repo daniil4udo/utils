@@ -23,7 +23,7 @@
         "dist"
     ],
     "scripts": {
-        "build": "rm -rf dist && unbuild",
+        "build": "./scripts/unbuild.sh",
         "lint": "eslint --ext .vue,.ts,.js .",
         "test": "vitest",
         "test:coverage": "vitest run --coverage"
@@ -50,6 +50,7 @@
         "@types/sanitizer": "^0.0.28",
         "@vitest/coverage-c8": "^0.25.8",
         "@vue/tsconfig": "^0.1.3",
+        "concurrently": "^7.6.0",
         "eslint": "^8.29.0",
         "typescript": "^4.9.4",
         "unbuild": "^1.0.2",
