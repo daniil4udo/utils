@@ -18,9 +18,12 @@
             "types": "./dist/index.d.ts"
         },
         "./*": {
-            "require": "./dist/*.cjs",
             "import": "./dist/*.mjs",
             "types": "./dist/*.d.ts"
+        },
+        "./preset": {
+            "import": "./dist/preset/*.mjs",
+            "types": "./dist/preset/*.d.ts"
         }
     },
     "main": "./dist/index.mjs",

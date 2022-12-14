@@ -7,10 +7,13 @@ CONCURRENTLY_FLAGS=" \
     --max-processes 1 \
     --timings \
     --prefix-colors yellow,blue \
-    --names CLEAN,BUILD:INDEX,BUILD:LIB,BUILD:PRESETS" \
+    --names INDEX:creat,INDEX:lint,PRESET:generate,PRESET:lint,CLEAN,UNBUILD \
+    " \
 
 concurrently $CONCURRENTLY_FLAGS \
-    "node --experimental-specifier-resolution=node ./scripts/generateIndex.js" \
+    "node --experimental-specifier-resolution=node scripts/generateIndex.js" \
+    "eslint lib/index.ts --fix" \
+    "node --experimental-specifier-resolution=node scripts/autoImportUtilsPreset.js" \
+    "eslint lib/preset/autoImportUtilsPreset.ts --fix" \
     "rm -rf dist" \
-    "unbuild" \
-    "node --experimental-specifier-resolution=node ./scripts/autoImportUtilsPreset.js"
+    "unbuild"
