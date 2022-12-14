@@ -21,9 +21,9 @@
             "import": "./dist/*.mjs",
             "types": "./dist/*.d.ts"
         },
-        "./preset": {
-            "import": "./dist/preset/*.mjs",
-            "types": "./dist/preset/*.d.ts"
+        "./preset/autoImportUtilsPreset": {
+            "import": "./dist/preset/autoImportUtilsPreset.mjs",
+            "types": "./dist/preset/autoImportUtilsPreset.d.ts"
         }
     },
     "main": "./dist/index.mjs",
