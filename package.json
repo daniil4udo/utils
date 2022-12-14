@@ -21,7 +21,7 @@
             "import": "./dist/*.mjs",
             "types": "./dist/*.d.ts"
         },
-        "./preset/autoImportUtilsPreset": {
+        "./preset": {
             "import": "./dist/preset/autoImportUtilsPreset.mjs",
             "types": "./dist/preset/autoImportUtilsPreset.d.ts"
         }
