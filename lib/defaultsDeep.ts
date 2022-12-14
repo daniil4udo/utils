@@ -1,6 +1,6 @@
 export {
     defu as defaultsDeep,
-    createDefu,
-    defuFn,
-    defuArrayFn,
+    createDefu as createDefaultsDeep,
+    defuFn as defaultsDeepFn,
+    defuArrayFn as defaultsDeepArrayFn,
 } from 'defu'
