@@ -1,3 +1,7 @@
+export function trimFileExtension(fileName: string) {
+    return fileName.replace(/\.[^/.]+$/, '')
+}
+
 export function getNameFromPath(path: string, { extension = true } = {}) {
     const fileName = path
         .split('\\')
@@ -7,5 +11,5 @@ export function getNameFromPath(path: string, { extension = true } = {}) {
 
     return extension
         ? fileName
-        : fileName.replace(/\.[^/.]+$/, '')
+        : trimFileExtension(fileName)
 }
