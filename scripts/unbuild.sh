@@ -6,7 +6,7 @@ CONCURRENTLY_FLAGS=" \
     --group \
     --max-processes 1 \
     --timings \
-    --prefix-colors yellow,blue \
+    --prefix-colors #18A57E,#2757A3,#FFDD00,#0057B7 \
     --names INDEX:creat,INDEX:lint,PRESET:generate,PRESET:lint,CLEAN,UNBUILD \
     " \
 
