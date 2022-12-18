@@ -18,10 +18,12 @@
             "types": "./dist/index.d.ts"
         },
         "./*": {
+            "require": "./dist/*.cjs",
             "import": "./dist/*.mjs",
             "types": "./dist/*.d.ts"
         },
         "./preset": {
+            "require": "./dist/preset/autoImportUtilsPreset.cjs",
             "import": "./dist/preset/autoImportUtilsPreset.mjs",
             "types": "./dist/preset/autoImportUtilsPreset.d.ts"
         }
