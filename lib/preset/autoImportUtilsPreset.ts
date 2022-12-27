@@ -27,6 +27,7 @@ export default {
         'isColor',
         'isEmptyArray',
         'isEmptyCollection',
+        'isHTML',
         'isIterable',
         'isPrimitive',
         'isPrimitiveLike',
