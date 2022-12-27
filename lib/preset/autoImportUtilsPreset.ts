@@ -49,6 +49,7 @@ export default {
         'sortObjects',
         'splitByIndex',
         'stringToArrayBuffer',
+        'toArray',
         'toType',
         'toggleKeyboardFocus',
         'trimFileExtension',
