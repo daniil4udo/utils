@@ -34,10 +34,11 @@
         "dist"
     ],
     "scripts": {
+        "prepublishOnly": "pnpm build",
         "build": "./scripts/unbuild.sh",
         "lint": "eslint --ext .vue,.ts,.js .",
         "test": "vitest",
-        "test:coverage": "vitest run --coverage"
+        "test:coverage": "vitest run --coverage --environment jsdom"
     },
     "dependencies": {
         "defu": "^6.1.1",
