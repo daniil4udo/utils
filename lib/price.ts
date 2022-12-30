@@ -1,10 +1,10 @@
 export interface IFormat {
-    readonly currencySign?: string
-    readonly priceFormat?: string
+    readonly currencySign?: string;
+    readonly priceFormat?: string;
 }
 
 export interface ILocate extends IFormat {
-    readonly defaultLocale?: string
+    readonly defaultLocale?: string;
 }
 
 /**
