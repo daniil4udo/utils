@@ -1,5 +1,7 @@
 import { defineBuildConfig } from 'unbuild'
 
+import pkg from './package.json'
+
 export default defineBuildConfig({
     name: 'utils',
     entries: [
@@ -21,6 +23,9 @@ export default defineBuildConfig({
         },
     ],
     declaration: true,
+    externals: [
+        ...Object.keys(pkg.dependencies),
+    ],
     rollup: {
         emitCJS: true,
     },
