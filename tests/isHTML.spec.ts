@@ -7,20 +7,20 @@ import { isHTML } from '../lib/isHTML'
 
 describe('@/lib/isHTML.ts', () => {
     it('isHTML to be false with non-string input', () => {
-        expect(isHTML(undefined)).toEqual(false)
-        expect(isHTML('')).toEqual(false)
-        expect(isHTML(null)).toEqual(false)
-        expect(isHTML({})).toEqual(false)
-        expect(isHTML([])).toEqual(false)
+        expect(isHTML(undefined)).toBe(false)
+        expect(isHTML('')).toBe(false)
+        expect(isHTML(null)).toBe(false)
+        expect(isHTML({})).toBe(false)
+        expect(isHTML([])).toBe(false)
     })
 
     it('isHTML to be true with regular HTML string', () => {
         const html = isHTML('false')
-        expect(html).toEqual(false)
+        expect(html).toBe(false)
     })
 
     it('isHTML to be true with regular HTML string', () => {
         const html = isHTML('<strong>I am a HTML string</strong>')
-        expect(isHTML('<style>.foo {}</style>')).toEqual(true)
+        expect(isHTML('<h1>test</h1>')).toBe(true)
     })
 })
