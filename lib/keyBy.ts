@@ -9,9 +9,8 @@ type InferredKey<T> = Key extends ((...args) => string)
 
 export function keyBy<T>(a: T[], k?: Key) {
     const keyedCollection = {} as Record<InferredKey<T>, T>
-    const l = a.length
 
-    for (let i = 0; i < l; i++) {
+    for (let i = 0, l = a.length; i < l; i++) {
         const el = a[i]
 
         if (typeof k === 'function')
