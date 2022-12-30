@@ -54,7 +54,7 @@
         "zipcelx": "^1.6.2"
     },
     "devDependencies": {
-        "@democrance/eslint-config": "^0.4.1",
+        "@democrance/eslint-config": "^0.4.2",
         "@types/file-saver-es": "^2.0.1",
         "@types/node": "^18.11.18",
         "@types/proper-url-join": "^2.1.1",
