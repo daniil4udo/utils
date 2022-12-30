@@ -3,10 +3,7 @@ import { URL, fileURLToPath } from 'node:url'
 
 import * as allModules from '../dist'
 
-const modules = Object.keys(allModules)
-
-// remove '__esModule'
-modules.shift()
+const modules = Object.keys(allModules).filter(m => m !== '__esModule')
 
 const preset = ({
     '@democrance/utils': modules,
