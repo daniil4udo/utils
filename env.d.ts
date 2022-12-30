@@ -3,7 +3,6 @@
 
 /// <reference types="@types/file-saver-es" />
 /// <reference types="@types/proper-url-join" />
-/// <reference types="@types/lodash-es" />
 
 /// <reference types="defu" />
 /// <reference types="fast-deep-equal" />

@@ -45,7 +45,6 @@
         "defu": "^6.1.1",
         "fast-equals": "^4.0.3",
         "file-saver-es": "^2.0.5",
-        "lodash-es": "^4.17.21",
         "perfect-debounce": "^0.1.3",
         "proper-url-join": "^2.1.1",
         "rfdc": "^1.3.0",
@@ -57,7 +56,6 @@
     "devDependencies": {
         "@democrance/eslint-config": "^0.4.1",
         "@types/file-saver-es": "^2.0.1",
-        "@types/lodash-es": "^4.17.6",
         "@types/node": "^18.11.18",
         "@types/proper-url-join": "^2.1.1",
         "@types/sanitizer": "^0.0.28",

@@ -7,7 +7,6 @@ overrides:
 specifiers:
   '@democrance/eslint-config': ^0.4.1
   '@types/file-saver-es': ^2.0.1
-  '@types/lodash-es': ^4.17.6
   '@types/node': ^18.11.18
   '@types/proper-url-join': ^2.1.1
   '@types/sanitizer': ^0.0.28
@@ -20,7 +19,6 @@ specifiers:
   fast-equals: ^4.0.3
   file-saver-es: ^2.0.5
   jsdom: ^20.0.3
-  lodash-es: ^4.17.21
   perfect-debounce: ^0.1.3
   proper-url-join: ^2.1.1
   rfdc: ^1.3.0
@@ -36,7 +34,6 @@ dependencies:
   defu: 6.1.1
   fast-equals: 4.0.3
   file-saver-es: 2.0.5
-  lodash-es: 4.17.21
   perfect-debounce: 0.1.3
   proper-url-join: 2.1.1
   rfdc: 1.3.0
@@ -48,7 +45,6 @@ dependencies:
 devDependencies:
   '@democrance/eslint-config': 0.4.1_lzzuuodtsqwxnvqeq4g4likcqa
   '@types/file-saver-es': 2.0.1
-  '@types/lodash-es': 4.17.6
   '@types/node': 18.11.18
   '@types/proper-url-join': 2.1.1
   '@types/sanitizer': 0.0.28
@@ -848,16 +844,6 @@ packages:
 
   /@types/json5/0.0.29:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
-    dev: true
-
-  /@types/lodash-es/4.17.6:
-    resolution: {integrity: sha512-R+zTeVUKDdfoRxpAryaQNRKk3105Rrgx2CFRClIgRGaqDTdjsm8h6IYA8ir584W3ePzkZfst5xIgDwYrlh9HLg==}
-    dependencies:
-      '@types/lodash': 4.14.191
-    dev: true
-
-  /@types/lodash/4.14.191:
-    resolution: {integrity: sha512-BdZ5BCCvho3EIXw6wUCXHe7rS53AIDPLE+JzwgT+OsJk53oBfbSmZZ7CX4VaRoN78N+TJpFi9QPlfIVNmJYWxQ==}
     dev: true
 
   /@types/mdast/3.0.10:
@@ -3271,10 +3257,6 @@ packages:
     dependencies:
       p-locate: 5.0.0
     dev: true
-
-  /lodash-es/4.17.21:
-    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
-    dev: false
 
   /lodash.escape/4.0.1:
     resolution: {integrity: sha512-nXEOnb/jK9g0DYMr1/Xvq6l5xMD7GDG55+GSYIYmS0G4tBk/hURD4JR9WCavs04t33WmJx9kCyp9vJ+mr4BOUw==}

@@ -1,7 +1,7 @@
-import isPlainObject from 'lodash-es/isPlainObject'
 import toFastProperties from 'to-fast-properties'
 
 import { deepClone } from './deepClone'
+import { toType } from './toType'
 
 /**
  * Moves propertyName value to the same level of parentObject
@@ -38,7 +38,7 @@ import { deepClone } from './deepClone'
  * }
  */
 export function movePropLevelUp<T extends object>(parentObject: T, propertyName: keyof T) {
-    if (!isPlainObject(parentObject))
+    if (toType(parentObject) !== 'object')
         return parentObject
 
     if (propertyName in parentObject) {
