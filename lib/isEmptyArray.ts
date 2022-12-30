@@ -1,24 +1,43 @@
 import { hasValue } from './hasValue'
 
-// null -> true
-// [] -> true
-// [ [] ] -> true
-// [ [ '', null ], [ [undefined] ] ] -> true
-// [ 0 ] -> false
-export const isEmptyArray = (options = []) => {
-    if (options == null)
+/**
+ * Check if given Array or nested Arrays are empty
+ * @param {any[]} arr - Array to check for emptiness
+ * @param {Options} opts – Options object
+ * @param {boolean} opts.recursive – Option's property that determines weather we should check array recursively or just top-level values
+ * @param {(value: any) => boolean} opts.comparator – Option's comparator functions
+ * @returns
+ */
+interface Options {
+    recursive?: boolean;
+    comparator?: (value: any) => boolean;
+}
+export const isEmptyArray = (arr, opts: Options = {}) => {
+    if (arr == null)
         return true
 
-    if (Array.isArray(options)) {
-        // if options === []
-        if (options.length === 0)
+    if (Array.isArray(arr)) {
+        if (arr.length === 0)
             return true
 
-        // As long as we cannot trues our BE
-        // check all nested arrays for empty values
-        // if options are [ [ '', null ] ] | [ [ '', [ '' ] ] ]
-        if (options.length > 0)
-            return options.filter(hasValue).every(isEmptyArray)
+        const {
+            recursive = true,
+            comparator = hasValue,
+        } = opts
+
+        let isEmpty = true
+        if (arr.length > 0) {
+            let { length } = arr
+            while (length--) {
+                isEmpty = recursive && Array.isArray(arr[length])
+                    ? isEmptyArray(arr[length], opts)
+                    : !comparator(arr[length])
+
+                if (!isEmpty)
+                    break
+            }
+        }
+        return isEmpty
     }
 
     return false
