@@ -12,8 +12,7 @@ CONCURRENTLY_FLAGS=" \
 
 concurrently $CONCURRENTLY_FLAGS \
     "node --experimental-specifier-resolution=node scripts/generateIndex.js" \
-    "eslint lib/index.ts --fix" \
     "node --experimental-specifier-resolution=node scripts/autoImportUtilsPreset.js" \
-    "eslint lib/preset/autoImportUtilsPreset.ts --fix" \
+    "eslint lib/preset/autoImportUtilsPreset.ts lib/index.ts --fix" \
     "rm -rf dist" \
     "unbuild"
