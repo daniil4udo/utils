@@ -36,3 +36,7 @@ eslint-rules.json
 
 .pnp.*
 tests/__snapshots__
+
+#
+lib/preset/*.ts
+lib/index.ts
