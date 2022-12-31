@@ -1,4 +1,7 @@
-export function scrollTo(element?: HTMLElement, offset = 0): void {
+export function scrollTo(
+    element?: HTMLElement,
+    offset = 0,
+): void {
     if (!window)
         return
 
@@ -11,9 +14,11 @@ export function scrollTo(element?: HTMLElement, offset = 0): void {
     if ('scrollRestoration' in history)
         history.scrollRestoration = 'manual'
 
-    window.scrollTo({
-        top,
-        left: 0,
-        behavior: 'smooth',
+    requestAnimationFrame(() => {
+        window.scrollTo({
+            top,
+            left: 0,
+            behavior: 'smooth',
+        })
     })
 }
