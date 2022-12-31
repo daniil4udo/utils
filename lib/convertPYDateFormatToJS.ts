@@ -25,12 +25,18 @@ export const pyToJSDateMap = new Map([
     [ '%%', '%' ], // A literal '%' character: (%)
 ])
 
+/**
+ *
+ * Convert a python format string to javascript format string
+ *
+ * @param {string} unformatted - python format string
+ *
+ * @example – "%m/%d/%Y" to "MM/DD/YYYY"
+ *
+ * @returns {string} - the javascript format string
+ *
+ */
 export function convertPYDateFormatToJS(unformatted: string) {
-    // Description: Convert a python format string to javascript format string
-    // Example:     "%m/%d/%Y" to "MM/DD/YYYY"
-    // @param:  unformatted is the python format string
-    // @return: the javascript format string
-
     let formatted = unformatted
     pyToJSDateMap.forEach((value, key) => {
         if (key)

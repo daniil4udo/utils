@@ -1,7 +1,10 @@
 /**
  * Check if string is representation of CSS color
+ *
  * @param strColor
- * @returns
+ *
+ * @returns {boolean}
+ *
  */
 export function isColor(strColor: string) {
     if (!strColor)

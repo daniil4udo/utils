@@ -1,6 +1,15 @@
-export function getCtor(comp: any) {
-    if (comp && (comp.__esModule || comp[Symbol.toStringTag] === 'Module'))
-        return comp.default
+/**
+ *
+ * Gets Module from an import under "default" key
+ *
+ * @param module
+ *
+ * @returns
+ *
+ */
+export function getCtor(module: any) {
+    if (module && (module.__esModule || module[Symbol.toStringTag] === 'Module'))
+        return module.default
 
-    return comp
+    return module
 }

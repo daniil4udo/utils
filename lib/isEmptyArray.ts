@@ -1,11 +1,14 @@
 import { hasValue } from './hasValue'
 
 /**
+ *
  * Check if given Array or nested Arrays are empty
+ *
  * @param {any[]} arr - Array to check for emptiness
  * @param {Options} opts – Options object
  * @param {boolean} opts.recursive – Option's property that determines weather we should check array recursively or just top-level values
  * @param {(value: any) => boolean} opts.comparator – Option's comparator functions
+ *
  * @returns
  */
 interface Options {

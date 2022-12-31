@@ -1,10 +1,18 @@
 import _deepClone from 'rfdc'
 
-export function deepClone<T>(o: T): T {
+/**
+ * Clones input into new input
+ *
+ * @param {any} input
+ *
+ * @returns {any} new input
+ *
+ */
+export function deepClone<T>(input: T): T {
     try {
-        return structuredClone(o)
+        return structuredClone(input)
     }
     catch {
-        return _deepClone({ proto: false })(o)
+        return _deepClone({ proto: false })(input)
     }
 }

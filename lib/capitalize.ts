@@ -1,6 +1,11 @@
 /**
+ *
  * Capitalize first letter of provided text
- * @param {String} text
+ *
+ * @param {string} text
+ *
+ * @returns {string} - string with first capital letter
+ *
  */
 export function capitalize(text = '') {
     if (typeof text !== 'string')
