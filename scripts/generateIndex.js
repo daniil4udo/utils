@@ -13,7 +13,7 @@ try {
     const dirents = await fsp.readdir(pathToLib, { withFileTypes: true })
     // listing all dirents using forEach
     dirents
-        .filter(dirent => dirent.isFile())
+        .filter(dirent => dirent.isFile() && dirent.name !== 'index.ts')
         .map(dirent => dirent.name)
         .forEach((file) => {
             // Do whatever you want to do with the dirent
