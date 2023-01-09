@@ -4,6 +4,7 @@
  * @param {string} key
  * @returns {Record<any,any>[]} - sorted array
  */
-export function sortObjects<T extends Record<any, string>>(collection: T[] = [], key: keyof T) {
-    return collection.sort((a, b) => a[key].localeCompare(b[key]))
+export function sortObjects<T extends Record<any, string>>(collection: T[] = [], key: keyof T, locale = 'en') {
+    const collator = new Intl.Collator(locale)
+    return collection.sort((a, b) => collator.compare(a[key], b[key]))
 }
