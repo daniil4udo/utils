@@ -26,15 +26,14 @@ export const pyToJSDateMap = new Map([
 ])
 
 /**
+ * Converts a Python-style date format string to a JavaScript-style date format string.
+ * @param {string} unformatted - The unformatted Python-style date format string.
+ * @returns {string} The JavaScript-style date format string.
  *
- * Convert a python format string to javascript format string
- *
- * @param {string} unformatted - python format string
- *
- * @example – "%m/%d/%Y" to "MM/DD/YYYY"
- *
- * @returns {string} - the javascript format string
- *
+ * @example
+ * convertPYDateFormatToJS('%A, %B %d, %Y') // returns 'dddd, MMMM DD, YYYY'
+ * convertPYDateFormatToJS('%d-%b-%Y') // returns 'DD-MMM-YYYY'
+ * convertPYDateFormatToJS('%m/%d/%y %I:%M %p') // returns 'MM/DD/YY hh:mm A'
  */
 export function convertPYDateFormatToJS(unformatted: string) {
     let formatted = unformatted
