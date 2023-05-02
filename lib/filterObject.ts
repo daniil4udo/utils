@@ -1,31 +1,49 @@
 /**
  *
- * Returns the elements of an object that meet the condition specified in a callback function.
+ * Returns a new object containing only the key-value pairs from the input object that satisfy a given predicate function.
+ * @template T - The type of the values in the input object.
  *
- * @param {object} object - Object to filter
- * @param {Function} predicate - A function that accepts up to three arguments. The filter method calls the predicate function one time for each element in the array.
+ * @param {O<T>} object - The input object to filter.
+ * @param {(key: keyof O<T>, value: T, index: number, object: O<T>) => boolean} [predicate] - An optional function to test each key-value pair in the input object. The function is called with the key, value, index, and input object as arguments, and should return a boolean indicating whether the key-value pair should be included in the result.
  *
- * @returns {object} - Filtered object
+ * @returns {Object.<string, T>} - A new object containing only the key-value pairs from the input object that satisfy the predicate function.
+ *
+ * @example
+ * const myObj = { a: 1, b: 2, c: 3 }
+ * // Filter the object to include only key-value pairs where the value is greater than 1
+ * const filteredObj = filterObject(myObj, (key, value) => value > 1)
+ * // filteredObj is { b: 2, c: 3 }
+ * // Filter the object to include only key-value pairs where the key starts with 'a'
+ * const filteredObj2 = filterObject(myObj, (key) => key.startsWith('a'))
+ * // filteredObj2 is { a: 1 }
+ *
  */
-export function filterObject<T extends object>(
-    object: T,
+interface O<T> { [key: string]: T }
+
+export function filterObject<T>(
+    object: O<T>,
     predicate?: (
-        key: keyof T,
-        value: T extends ArrayLike<infer U> ? U : (T[keyof T]),
+        key: keyof O<T>,
+        value: T,
         index: number,
-        array: T extends ArrayLike<infer U> ? [string, U][] : { [K in keyof T]: [K, T[K]] }[keyof T][]
-    ) => unknown,
+        object: O<T>
+    ) => boolean,
 ) {
     if (typeof predicate != 'function')
         return object
 
-    const f = []
-    const entries = Object.entries(object)
-    let { length } = entries
-    while (length--) {
-        const el = entries[length]
-        if (predicate(el[0], el[1], length, entries))
-            f.push(el)
+    const result: { [key: string]: T } = {}
+    let key: string
+    let value: T
+    let index = 0
+
+    for (key in object) {
+        value = object[key]
+        if (predicate(key, value, index, object))
+            result[key] = value
+
+        index++
     }
-    return Object.fromEntries(f)
+
+    return result
 }
