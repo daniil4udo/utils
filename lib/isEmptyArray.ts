@@ -15,7 +15,7 @@ interface Options {
     recursive?: boolean;
     comparator?: (value: any) => boolean;
 }
-export const isEmptyArray = (arr, opts: Options = {}) => {
+export function isEmptyArray(arr, opts: Options = {}) {
     if (arr == null)
         return true
 

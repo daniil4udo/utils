@@ -1,4 +1,4 @@
-const getFractions = (num: number | string) => {
+function getFractions(num: number | string) {
     const [ , fractions = 0 ] = String(num).split('.')
     return fractions === 0
         ? 0
