@@ -1,1 +1,1 @@
-export * from 'fast-equals'
+export { deepEqual } from 'fast-equals'
