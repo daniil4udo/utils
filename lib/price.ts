@@ -69,7 +69,7 @@ export function price(value: string | number = 0, locale: ILocate, fractions: nu
     const formattedValue = formatValue(String(value), fractions, defaultLocale)
     const valueWithSign = applyCurrencySign(formattedValue, priceOpts)
 
-    if (value >= 0)
+    if (Number(value) >= 0)
         return valueWithSign
 
     return `-${valueWithSign}`
