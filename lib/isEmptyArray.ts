@@ -12,8 +12,8 @@ import { hasValue } from './hasValue'
  * @returns
  */
 interface Options {
-    recursive?: boolean;
-    comparator?: (value: any) => boolean;
+    recursive?: boolean
+    comparator?: (value: any) => boolean
 }
 export function isEmptyArray(arr, opts: Options = {}) {
     if (arr == null)

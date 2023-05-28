@@ -22,9 +22,10 @@ export function highlightMatch(
     let output = ''
     let lastIndex = 0
 
-    if (text === '' || matches.length === 0) return text
+    if (text === '' || matches.length === 0)
+        return text
 
-    const sortedMatches = matches.sort((a, b) => a[0] - b[0]);
+    const sortedMatches = matches.sort((a, b) => a[0] - b[0])
 
     for (let i = 0; i < sortedMatches.length; i++) {
         const [ startIndex, endIndex ] = sortedMatches[i]

@@ -1,10 +1,10 @@
 /**
  *
- * Trim extension from the path or file name
+ * Removes the file extension from a given file path
  *
- * @param {string} path - Path or file name with an extension
+ * @param {string} path - The file path to be trimmed
  *
- * @returns {string} - Path or file name without an extension
+ * @returns {string} - The file path without the extension
  *
  */
 export function trimFileExtension(path: string) {
