@@ -15,7 +15,7 @@ try {
     dirents
         .filter(dirent => dirent.isFile() && dirent.name !== 'index.ts')
         .map(dirent => dirent.name)
-        .forEach((file) => {
+        .forEach(file => {
             // Do whatever you want to do with the dirent
             const fileNoExt = getNameFromPath(file, { extension: false })
             exports += getExport(fileNoExt)

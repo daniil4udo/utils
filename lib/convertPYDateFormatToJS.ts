@@ -28,6 +28,7 @@ export const pyToJSDateMap = new Map([
 /**
  * Converts a Python-style date format string to a JavaScript-style date format string.
  * @param {string} unformatted - The unformatted Python-style date format string.
+ *
  * @returns {string} The JavaScript-style date format string.
  *
  * @example

@@ -1,10 +1,10 @@
 export interface IFormat {
-    readonly currencySign?: string;
-    readonly priceFormat?: string;
+    readonly currencySign?: string
+    readonly priceFormat?: string
 }
 
 export interface ILocate extends IFormat {
-    readonly defaultLocale?: string;
+    readonly defaultLocale?: string
 }
 
 /**
@@ -40,10 +40,12 @@ export function formatValue(value: string | number, fractions = 2, locale = 'en'
     })
 }
 
-const applyCurrencySign = (formattedPrice: string, { currencySign = '', priceFormat = '{currency} {amount}' }: IFormat) => priceFormat
-    .replace('{currency}', currencySign)
-    .replace('{amount}', formattedPrice)
-    .trim()
+function applyCurrencySign(formattedPrice: string, { currencySign = '', priceFormat = '{currency} {amount}' }: IFormat) {
+    return priceFormat
+        .replace('{currency}', currencySign)
+        .replace('{amount}', formattedPrice)
+        .trim()
+}
 
 /**
  * Converts number to price string
