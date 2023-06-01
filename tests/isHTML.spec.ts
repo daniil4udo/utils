@@ -21,6 +21,6 @@ describe('@/lib/isHTML.ts', () => {
 
     it('isHTML to be true with regular HTML string', () => {
         const html = isHTML('<strong>I am a HTML string</strong>')
-        expect(isHTML('<h1>test</h1>')).toBe(true)
+        expect(html).toBe(true)
     })
 })
