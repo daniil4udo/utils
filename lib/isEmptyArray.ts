@@ -32,7 +32,7 @@ export function isEmptyArray(arr, opts: Options = {}) {
         if (arr.length > 0) {
             let { length } = arr
             while (length--) {
-                isEmpty = recursive && Array.isArray(arr[length])
+                isEmpty = (recursive && Array.isArray(arr[length]))
                     ? isEmptyArray(arr[length], opts)
                     : !comparator(arr[length])
 
