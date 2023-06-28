@@ -16,13 +16,13 @@
     '[tabindex]:not([tabindex^="-"])',
     ':not([disabled])';
  */
-export const POSSIBLE_FOCUSABLE_ELS = 'a[href], area[href], button, details, input, textarea, select, [tabindex]:not([tabindex="-1"])' as const
+export const POSSIBLE_FOCUSABLE_TAGS = 'a[href], area[href], button, details, input, textarea, select, [tabindex]:not([tabindex="-1"])' as const
 
 export function toggleKeyboardFocus(scope = document.body, tabIndex = -1) {
     if (!window)
         return
 
-    const elArr: HTMLElement[] = Array.from(scope.querySelectorAll(POSSIBLE_FOCUSABLE_ELS))
+    const elArr: HTMLElement[] = Array.from(scope.querySelectorAll(POSSIBLE_FOCUSABLE_TAGS))
     let i = elArr.length
     const el = elArr[i]
 
