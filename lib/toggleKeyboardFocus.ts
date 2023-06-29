@@ -24,9 +24,9 @@ export function toggleKeyboardFocus(scope = document.body, tabIndex = -1) {
 
     const elArr: HTMLElement[] = Array.from(scope.querySelectorAll(POSSIBLE_FOCUSABLE_TAGS))
     let i = elArr.length
-    const el = elArr[i]
 
     while (i--) {
+        const el = elArr[i]
         requestAnimationFrame(() => {
             if (!el.hasAttribute('disabled'))
                 el.tabIndex = tabIndex
