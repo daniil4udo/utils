@@ -24,8 +24,16 @@ type FromEntries<T> = T extends [infer Key, any][]
 
 export type FromEntriesWithReadOnly<T> = FromEntries<DeepWriteable<T>>
 
+type ObjectKeys<T> =
+    T extends object ? (keyof T)[] :
+    T extends number ? [] :
+    T extends Array<any> | string ? string[] :
+    never;
+
 declare global {
     interface ObjectConstructor {
+        keys<T>(o: T): ObjectKeys<T>;
+
         fromEntries<T>(obj: T): FromEntriesWithReadOnly<T>
         /**
          * Returns an array of key/values of the enumerable properties of an object
