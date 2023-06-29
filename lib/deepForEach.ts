@@ -5,7 +5,7 @@ type Fn = (value, index, array, deepPath: string, depth: number) => void
 function forEachObject(object, fn: Fn, path: string, depth: number) {
     for (let index = 0, keys = Object.keys(object), len = keys.length; index < len; index++) {
         const key = keys[index]
-        const deepPath = path ? `${path}.${key}` : key
+        const deepPath = path ? `${path}.${key as string | number}` : String(key)
 
         // Note that we always use object[key] because it might be mutated by forEach
         fn.call(object, object[key], key, object, deepPath, depth)
