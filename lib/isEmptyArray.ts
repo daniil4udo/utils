@@ -1,4 +1,4 @@
-import { hasValue } from './hasValue'
+import { hasValue, isNil } from './hasValue'
 
 /**
  * Represents options for the isEmptyArray function.
@@ -33,10 +33,13 @@ interface Options<T> {
  * isEmptyArray([[], [[], []]]) // Returns true
  * isEmptyArray([[], [[], [1]]]) // Returns false
  */
+export function isEmptyArray<T>(arr: T | T[] = [], opts: Options<T> = {}) {
+    if (isNil(arr))
         return true
 
     if (Array.isArray(arr)) {
-        if (arr.length === 0)
+        let { length } = arr
+        if (length === 0)
             return true
 
         const {
@@ -45,8 +48,7 @@ interface Options<T> {
         } = opts
 
         let isEmpty = true
-        if (arr.length > 0) {
-            let { length } = arr
+        if (length > 0) {
             while (length--) {
                 isEmpty = (recursive && Array.isArray(arr[length]))
                     ? isEmptyArray(arr[length], opts)

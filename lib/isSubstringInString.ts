@@ -1,3 +1,5 @@
+import { toUpper } from './changeCase'
+
 /**
  * Checks if a substring is in a string.
  *
@@ -16,5 +18,5 @@
 export function isSubstringInString(string = '', subString = ''): boolean {
     return String.prototype
         .includes
-        .call(string.toString().toUpperCase(), subString.toString().toUpperCase())
+        .call(toUpper(string), toUpper(subString))
 }

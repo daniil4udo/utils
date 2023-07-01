@@ -10,10 +10,12 @@
  * isHTML('<p>Hello, World!'); // Returns true (for now)
  * isHTML('Hello, World!'); // Returns false
  */
-export function isHTML(str: string) {
+export function isHTML(str: string): boolean {
     try {
         const fragment = new DOMParser().parseFromString(str, 'text/html')
-        return fragment.body.children.length > 0
+        const hasChildren = fragment.body.children.length > 0
+        const hasErrors = fragment.querySelector('parsererror') !== null || !hasChildren
+        return hasChildren && !hasErrors
     }
     catch (error) {
         return false

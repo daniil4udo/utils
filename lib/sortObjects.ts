@@ -5,9 +5,6 @@
  * @property {string | number | null | undefined} [key] - The key of the sortable item.
  * @property {string | number | null | undefined} [value] - The value of the sortable item.
  */
-export function sortObjects<T extends Record<any, string>>(collection: T[] = [], key: keyof T, locale = 'en') {
-    const collator = new Intl.Collator(locale)
-    return collection.sort((a, b) => collator.compare(a[key], b[key]))
 interface SortableItems {
     [key: string]: string | number | null | undefined
 }
@@ -27,4 +24,19 @@ interface SortableItems {
  * const collection = [{ name: 'Zoe' }, { name: 'Amy' }, { name: 'Mark' }];
  * sortObjects(collection, 'name'); // Outputs: [{ name: 'Amy' }, { name: 'Mark' }, { name: 'Zoe' }]
  */
+export function sortObjects(arr: SortableItems[], key: string, locale = 'en-US'): SortableItems[] {
+    const collator = new Intl.Collator(locale, { numeric: true, sensitivity: 'base' })
+    return arr.sort((a, b) => {
+        // If a[key] and b[key] are both null or undefined, they are considered equal
+        if ((a[key] === undefined || a[key] === null) && (b[key] === undefined || b[key] === null))
+            return 0
+
+        if ((a[key] === undefined || a[key] === null))
+            return -1
+
+        if ((b[key] === undefined || b[key] === null))
+            return 1
+
+        return collator.compare(String(a[key]), String(b[key]))
+    })
 }

@@ -19,12 +19,12 @@
  * isColor('rgb(255, 0, 0)'); // returns true
  * isColor('invalid color'); // returns false
  */
-export function isColor(strColor: string) {
-    if (!strColor)
+export function isColor(str: string) {
+    if (!str)
         return false
 
     const s = new Option().style
-    s.color = strColor
+    s.color = str
 
     return s.color !== ''
 }

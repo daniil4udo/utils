@@ -8,7 +8,10 @@
  * @example
  * trimFileExtension('/path/to/file.txt'); // Outputs: '/path/to/file'
  */
-export function trimFileExtension(path: string) {
+export function trimFileExtension(path = '') {
+    if (typeof path !== 'string')
+        throw new TypeError('[trimFileExtension] - Path must be a string')
+
     return path.replace(/\.[^/.]+$/, '')
 }
 
@@ -25,7 +28,10 @@ export function trimFileExtension(path: string) {
  * getNameFromPath('/path/to/file.txt'); // Outputs: 'file.txt'
  * getNameFromPath('/path/to/file.txt', { extension: false }); // Outputs: 'file'
  */
-export function getNameFromPath(path: string, { extension = true } = {}) {
+export function getNameFromPath(path = '', { extension = true } = {}) {
+    if (typeof path !== 'string')
+        throw new TypeError('[getNameFromPath] - Path must be a string')
+
     const fileName = path
         .split('\\')
         .pop()

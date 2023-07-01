@@ -33,9 +33,9 @@ interface EsModule<Module> {
  * const myEsModule = { __esModule: true, default: { foo: "bar" } };
  * getCtor(myEsModule); // Outputs: { foo: "bar" }
  */
-export function getCtor(module: any) {
-    if (module && (module.__esModule || module[Symbol.toStringTag] === 'Module'))
-        return module.default
+export function getCtor<Module>(module: EsModule<Module> | Module): Module | undefined {
+    if (typeof module === 'object' && ('__esModule' in module || module[Symbol.toStringTag] === 'Module'))
+        return (module as EsModule<Module>).default
 
-    return module
+    return module as Module
 }

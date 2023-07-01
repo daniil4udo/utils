@@ -121,7 +121,7 @@ function generateUnicodeSupportMap(testMap: UnicodeSupportTestMap) {
 
     // Read from the canvas
     let readIndex = 0
-    const resultMap = testMapKeys.reduce((acc, testKey) => {
+    const resultMap: any = testMapKeys.reduce((acc, testKey) => {
         const testEntry = testMap[testKey]
         // This needs to be a `reduce` instead of `every` because we need to
         // keep the `readIndex` in sync from the writes by running all entries

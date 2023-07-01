@@ -60,6 +60,9 @@ export function filterObject<ObjectValue>(
     let index = 0
 
     for (key in object) {
+        if (!Object.prototype.hasOwnProperty.call(object, key))
+            continue
+
         value = object[key]
         if (predicate(key, value, index, object))
             result[key] = value

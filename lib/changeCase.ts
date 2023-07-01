@@ -10,11 +10,10 @@
  * capitalize('WORLD'); // Outputs: 'WORLD'
  * capitalize(''); // Outputs: ''
  */
-export function capitalize(text = '') {
-    if (typeof text !== 'string')
-        return text
-
-    return text.toString().charAt(0).toUpperCase() + text.slice(1)
+export function capitalize(str = '') {
+    return typeof str !== 'string'
+        ? str
+        : str.charAt(0).toUpperCase() + str.slice(1)
 }
 
 /**
@@ -29,6 +28,10 @@ export function capitalize(text = '') {
  * toUpper('WORLD'); // Outputs: 'WORLD'
  * toUpper(''); // Outputs: ''
  */
+export function toUpper(str = '') {
+    return typeof str === 'string'
+        ? str.toUpperCase()
+        : str
 }
 
 /**
@@ -43,4 +46,8 @@ export function capitalize(text = '') {
  * toLower('world'); // Outputs: 'world'
  * toLower(''); // Outputs: ''
  */
+export function toLower(str = '') {
+    return typeof str === 'string'
+        ? str.toLowerCase()
+        : str
 }

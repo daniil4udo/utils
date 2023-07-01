@@ -1,5 +1,3 @@
-import toFastProperties from 'to-fast-properties'
-
 import { deepClone } from './deepClone'
 import { toType } from './toType'
 
@@ -32,9 +30,11 @@ export function movePropLevelUp<T extends object>(parentObject: T, propertyName:
     if (toType(parentObject) !== 'object')
         return parentObject
 
-    if (propertyName in parentObject) {
-        Object.assign(parentObject, deepClone(parentObject[propertyName]))
-        delete parentObject[propertyName]
+    const parentObjectClone = { ...parentObject }
+
+    if (propertyName in parentObjectClone) {
+        Object.assign(parentObjectClone, deepClone(parentObjectClone[propertyName]))
+        delete parentObjectClone[propertyName]
     }
-    return toFastProperties(parentObject)
+    return parentObjectClone
 }

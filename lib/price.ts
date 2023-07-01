@@ -47,14 +47,16 @@ interface ILocate extends IFormat {
  * // returns 1000000.1
  * parseLocaleNumber('1.000.000,1', 'de-DE');
  */
-export function parseLocaleNumber(value: string | number, locale = 'en') {
-    const thousandSeparator = Intl.NumberFormat(locale).format(11111).replace(/\p{Number}/gu, '')
-    const decimalSeparator = Intl.NumberFormat(locale).format(1.1).replace(/\p{Number}/gu, '')
+export function parseLocaleNumber(value, locale: string) {
+    const format = new Intl.NumberFormat(locale).format(1000.1)
+    const [ thousandsSeparator, decimalSeparator ] = format.match(/[\D]/g) as RegExpMatchArray
 
-    return parseFloat(value
+    const normalized = value
         .toString()
-        .replace(new RegExp(`\\${thousandSeparator}`, 'g'), '')
-        .replace(new RegExp(`\\${decimalSeparator}`), '.'))
+        .replace(new RegExp(`\\${thousandsSeparator}`, 'g'), '') // Remove thousands separators
+        .replace(new RegExp(`\\${decimalSeparator}`), '.') // Replace decimal separator with '.'
+
+    return parseFloat(normalized)
 }
 
 /**
@@ -72,18 +74,14 @@ export function parseLocaleNumber(value: string | number, locale = 'en') {
  * formatValue(1234.5678, 2, 'de-DE'); // Outputs: "1.234,57"
  */
 export function formatValue(value: string | number, fractions = 2, locale = 'en') {
-    const _price = parseLocaleNumber(value, locale)
-
-    if (fractions > 20)
-        fractions = 20
+    const _price = isNaN(Number(value)) ? parseLocaleNumber(value, locale) : Number(value)
 
     return _price.toLocaleString(locale, {
-        minimumFractionDigits: fractions, // minimumFractionDigits <= 2
-        maximumFractionDigits: fractions, // maximumFractionDigits <= 20
+        minimumFractionDigits: Math.min(fractions, 20), // minimumFractionDigits <= 2
+        maximumFractionDigits: Math.min(fractions, 20), // maximumFractionDigits <= 20
     })
 }
 
-function applyCurrencySign(formattedPrice: string, { currencySign = '', priceFormat = '{currency} {amount}' }: IFormat) {
 /**
  * Applies currency sign and price format to a formatted price string.
  *
@@ -96,6 +94,7 @@ function applyCurrencySign(formattedPrice: string, { currencySign = '', priceFor
  * const formattedPrice = applyCurrencySign('1,234.56', { currencySign: '$', priceFormat: '{currency}{amount}' });
  * console.log(formattedPrice); // Outputs: "$1,234.56"
  */
+export function applyCurrencySign(formattedPrice: string, { currencySign = '', priceFormat = '{currency} {amount}' }: IFormat) {
     return priceFormat
         .replace('{currency}', currencySign)
         .replace('{amount}', formattedPrice)
@@ -115,17 +114,16 @@ function applyCurrencySign(formattedPrice: string, { currencySign = '', priceFor
  * price(1234.5678, { currencySign: '$', priceFormat: '{currency}{amount}' }, 2); // Outputs "$1,234.57"
  * price(1234.5678, { currencySign: '€', priceFormat: '{currency} {amount}' }, 3); // Outputs "€ 1,234.568"
  */
-
-export function price(value: string | number = 0, locale: ILocate, fractions: number) {
-    if (isNaN(Number(value)))
-        return String(value)
+export function price(value: number, locale: ILocate, fractions: number) {
+    if (isNaN(value))
+        return value
 
     const { defaultLocale, ...priceOpts } = locale || {}
 
-    const formattedValue = formatValue(String(value), fractions, defaultLocale)
+    const formattedValue = formatValue(Math.abs(value), fractions, defaultLocale)
     const valueWithSign = applyCurrencySign(formattedValue, priceOpts)
 
-    if (Number(value) >= 0)
+    if (value >= 0)
         return valueWithSign
 
     return `-${valueWithSign}`

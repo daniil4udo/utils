@@ -47,7 +47,7 @@ export const POSSIBLE_FOCUSABLE_TAGS = 'a[href], area[href], button, details, in
  * toggleKeyboardFocus(container, 0);
  */
 export function toggleKeyboardFocus(scope = document.body, tabIndex = -1) {
-    if (!window)
+    if (!window || !scope)
         return
 
     const elArr: HTMLElement[] = Array.from(scope.querySelectorAll(POSSIBLE_FOCUSABLE_TAGS))

@@ -6,9 +6,6 @@
  */
 type Length<T extends any[]> = T['length']
 
-export function splitByIndex<T extends unknown[]>(arr: T, i: Length<T> = 0) {
-    const x = arr.slice(0)
-    const y = x.splice(i)
 /**
  * Splits an array at a specific index into two separate arrays.
  *
@@ -22,6 +19,15 @@ export function splitByIndex<T extends unknown[]>(arr: T, i: Length<T> = 0) {
  * @example
  * splitByIndex([1, 2, 3, 4, 5], 2); // Outputs: [[1, 2], [3, 4, 5]]
  */
+export function splitByIndex<T extends any[]>(arr: T, splitIndex: Length<T> = arr.length) {
+    // given a default value of arr.length, so when no index is provided,
+    // the function will return the original array as the first element in the result array,
+    // and an empty array as the second element.
+    if (splitIndex > arr.length)
+        throw new Error(`[splitByIndex] - splitIndex is out of bound`)
+
+    const x = arr.slice(0, splitIndex)
+    const y = arr.slice(splitIndex)
 
     return [ x, y ]
 }

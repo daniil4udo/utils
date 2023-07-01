@@ -1,4 +1,5 @@
 import { isFlagEmoji } from './emojiSupport'
+import { toUpper } from '../changeCase'
 
 /**
  * Checks if a string is a valid country ISO code.
@@ -38,10 +39,7 @@ export function isoToEmoji(iso = '') {
     if (!isCountryIso(iso))
         return null
 
-    // eslint-disable-next-line no-param-reassign
-    iso = iso.toUpperCase()
-
-    return iso.replace(/./g, char => String.fromCodePoint(char.charCodeAt(0) + OFFSET))
+    return toUpper(iso).replace(/./g, char => String.fromCodePoint(char.charCodeAt(0) + OFFSET))
 }
 
 /**

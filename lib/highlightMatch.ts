@@ -43,32 +43,62 @@
  * console.log(result5); // Output: '<em>Hello</em>, world!'
  */
 export function highlightMatch(
-    text: string,
+    str: string,
     matches: [number, number][] = [],
     { tag = 'strong' } = {},
 ) {
-    let output = ''
-    let lastIndex = 0
+    if (!str || matches.length === 0)
+        return str
 
-    if (text === '' || matches.length === 0)
-        return text
+    // Sort matches by start index
+    matches.sort((a, b) => a[0] - b[0])
 
-    const sortedMatches = matches.sort((a, b) => a[0] - b[0])
+    // Merge overlapping or adjacent ranges
+    const mergedMatches: Array<[number, number]> = []
+    let currentMatch = matches[0]
 
-    for (let i = 0; i < sortedMatches.length; i++) {
-        const [ startIndex, endIndex ] = sortedMatches[i]
+    for (let i = 1; i < matches.length; i++) {
+        const [ nextStart, nextEnd ] = matches[i]
 
-        // append the non-matching part of the text
-        output += text.substring(lastIndex, startIndex)
+        // If the next match overlaps or is adjacent with the current match, merge them
+        if (nextStart <= currentMatch[1] + 1) {
+            currentMatch[1] = Math.max(nextEnd, currentMatch[1])
+        }
+        else {
+            // If the next match doesn't overlap or is adjacent, add the current match to the merged list and start a new current match
+            mergedMatches.push(currentMatch)
+            currentMatch = matches[i]
+        }
+    }
+    mergedMatches.push(currentMatch) // Add the last match
 
-        // append the matching part of the text wrapped in <strong> tags
-        output += `<${tag}>${text.substring(startIndex, endIndex + 1)}</${tag}>`
+    let result = ''
+    let lastMatchEndIndex = 0
 
-        lastIndex = endIndex + 1
+    for (const match of mergedMatches) {
+        let [ startIndex, endIndex ] = match
+
+        // Ignore negative indices or entirely out of range indices
+        if (startIndex < 0 || endIndex < 0 || startIndex >= str.length)
+            continue
+
+        // Treat indices beyond the length of the string as the end of the string
+        startIndex = Math.min(startIndex, str.length)
+        endIndex = Math.min(endIndex, str.length)
+
+        // Handle non-sequential matches
+        if (startIndex > lastMatchEndIndex)
+            result += str.slice(lastMatchEndIndex, startIndex)
+
+        const matchText = str.slice(startIndex, endIndex + 1) // Add 1 to endIndex in the slice call
+        result += `<${tag}>${matchText}</${tag}>`
+
+        lastMatchEndIndex = endIndex + 1
     }
 
-    // append the remaining non-matching part of the text
-    output += text.substring(lastIndex)
+    // Append remaining str
+    if (lastMatchEndIndex < str.length)
+        result += str.slice(lastMatchEndIndex)
 
-    return output
+    return result
 }

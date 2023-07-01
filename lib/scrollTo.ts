@@ -1,8 +1,3 @@
-export function scrollTo(
-    element?: HTMLElement,
-    offset = 0,
-): void {
-    if (!window)
 /**
  * Scrolls the window to a specified element.
  *
@@ -34,22 +29,20 @@ export function scrollTo(
  * // Scroll to the top of the window
  * scrollTo();
  */
+export function scrollTo(element: HTMLElement | null | undefined, offset = 0) {
+    if (typeof window === 'undefined')
         return
 
     const top = element
         ? element.getBoundingClientRect().top
-          + (window.pageYOffset || document.documentElement.scrollTop)
-          - offset
+            + (window.scrollY || document.documentElement.scrollTop)
+            - offset
         : 0
 
     if ('scrollRestoration' in history)
-        history.scrollRestoration = 'manual'
+        history.scrollRestoration = 'auto'
 
     requestAnimationFrame(() => {
-        window.scrollTo({
-            top,
-            left: 0,
-            behavior: 'smooth',
-        })
+        window.scrollTo(({ top, left: 0, behavior: 'smooth' }))
     })
 }
