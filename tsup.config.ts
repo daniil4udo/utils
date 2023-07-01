@@ -9,6 +9,11 @@ export default defineConfig({
     skipNodeModulesBundle: true,
     splitting: true,
     target: 'es2020',
+    noExternal: [
+        // 'url-template' throws require() of ES Module
+        // bundle it into the build
+        'url-template',
+    ],
     // esbuildOptions: options => {
     //     options.footer = {
     //         // This will ensure we can continue writing this plugin

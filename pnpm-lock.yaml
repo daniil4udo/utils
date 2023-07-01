@@ -33,9 +33,6 @@ dependencies:
   text-clipper:
     specifier: ^2.2.0
     version: 2.2.0
-  url-template:
-    specifier: ^3.1.0
-    version: 3.1.0
   zipcelx:
     specifier: ^1.6.2
     version: 1.6.2
@@ -89,6 +86,9 @@ devDependencies:
   typescript:
     specifier: ^5.1.6
     version: 5.1.6
+  url-template:
+    specifier: ^3.1.0
+    version: 3.1.0
   vite-node:
     specifier: ^0.32.2
     version: 0.32.2(@types/node@18.16.19)
@@ -4332,7 +4332,7 @@ packages:
   /url-template@3.1.0:
     resolution: {integrity: sha512-vB/eHWttzhN+NZzk9FcQB2h1cSEgb7zDYyvyxPhw02LYw7YqIzO+w1AqkcKvZ51gPH8o4+nyiWve/xuQqMdJZw==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
-    dev: false
+    dev: true
 
   /util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
