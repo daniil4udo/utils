@@ -1,7 +1,7 @@
 import fsp from 'node:fs/promises'
 import { URL, fileURLToPath } from 'node:url'
 
-import { getNameFromPath } from '../dist/getNameFromPath'
+import { getNameFromPath } from '../lib/getNameFromPath'
 
 const pathToLib = fileURLToPath(new URL('../lib', import.meta.url))
 const getExport = path => `export * from './${path}'\n`

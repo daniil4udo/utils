@@ -7,12 +7,12 @@ CONCURRENTLY_FLAGS=" \
     --max-processes 1 \
     --timings \
     --prefix-colors #18A57E,#2757A3,#FFDD00,#0057B7 \
-    --names INDEX:creat,PRESET:generate,LINT,CLEAN,BUILD \
+    --names GENERATE:INDEX,GENERATE:PRESET,LINT,CLEAN,BUILD \
     " \
 
 concurrently $CONCURRENTLY_FLAGS \
-    "node --experimental-specifier-resolution=node scripts/generateIndex.js" \
-    "node --experimental-specifier-resolution=node scripts/autoImportUtilsPreset.js" \
+    "vite-node scripts/generateIndex.ts" \
+    "vite-node scripts/autoImportUtilsPreset.ts" \
     "eslint lib/preset/autoImportUtilsPreset.ts lib/index.ts --fix" \
     "rimraf dist" \
     "tsup"
