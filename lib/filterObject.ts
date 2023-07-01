@@ -1,12 +1,28 @@
 /**
- * Represents an object with string keys and values of type ObjectValue.
+ * Type definition for an object with string keys and values of a certain type
  *
- * @template ObjectValue - The type of values in the object.
- *
- * @interface Object
- * @property {ObjectValue} [key] - The value associated with the string key.
+ * @typedef {Object} TargetObject
+ * @template T The type of the values in the object.
  */
-interface Object<ObjectValue> { [key: string]: ObjectValue }
+type TargetObject<T> = Record<string, T>
+
+/**
+ * Predicate function type definition.
+ *
+ * @callback PredicateFunction
+ * @template T The type of the values in the object.
+ * @param {string} key - The key of the current element being processed in the object.
+ * @param {T} value - The value of the current element being processed in the object.
+ * @param {number} index - The index of the current element being processed in the object.
+ * @param {TargetObject} object - The object filterObject was called upon.
+ * @return {boolean} True if the current element should be included in the filtered object; otherwise, false.
+ */
+type PredicateFunction<T> = (
+    key: string,
+    value: T,
+    index: number,
+    object: TargetObject<T>
+) => boolean
 
 /**
  * Filters the properties of an object based on a predicate function.
@@ -23,14 +39,20 @@ interface Object<ObjectValue> { [key: string]: ObjectValue }
  * to be a type that represents an object with values of type `ObjectValue`. Please replace `Object<ObjectValue>` with the correct
  * type if this assumption is incorrect.
  *
- * @template ObjectValue - The type of the values of the object's properties.
+ * @template T The type of the values in the object.
  *
  * @function filterObject
- * @param {Object<ObjectValue>} object - The object to filter.
- * @param {(key: keyof Object<ObjectValue>, value: ObjectValue, index: number, object: Object<ObjectValue>) => boolean} [predicate] - The function
- *   used to decide whether a property should be included in the returned object. It is called with the
- *   key of the property, the value of the property, the index of the property, and the original object.
- * @returns { { [key: string]: ObjectValue } } - The filtered object.
+ * @param {TargetObject<T>} object The object to filter.
+ * @param {PredicateFunction<T>} predicate The function used to test each item of the object.
+ *      This function should return `true` to keep the item, or `false` otherwise.
+ *      It accepts four arguments:
+ *      `key` The key of the current element being processed in the object.
+ *      `value` The value of the current element being processed in the object.
+ *      `index` The index of the current element being processed in the object.
+ *      `object` The object `filterObject` was called upon.
+ * @returns {TargetObject<T>} A new object with the properties that passed the test.
+ *          If no properties pass the test, an empty object will be returned.
+ * @throws {TypeError} If `predicate` is not a function.
  *
  * @example
  * const myObj = { a: 1, b: 2, c: 3 }
@@ -42,21 +64,16 @@ interface Object<ObjectValue> { [key: string]: ObjectValue }
  * // filteredObj2 is { a: 1 }
  *
  */
-export function filterObject<ObjectValue>(
-    object: Object<ObjectValue>,
-    predicate?: (
-        key: keyof Object<ObjectValue>,
-        value: ObjectValue,
-        index: number,
-        object: Object<ObjectValue>
-    ) => boolean,
-) {
-    if (typeof predicate != 'function')
-        return object
+export function filterObject<T>(
+    object: TargetObject<T>,
+    predicate: PredicateFunction<T>,
+): TargetObject<T> {
+    if (typeof predicate !== 'function')
+        throw new TypeError('[filterObject] - Expected a function as the second argument')
 
-    const result: { [key: string]: ObjectValue } = {}
+    const result: TargetObject<T> = {}
     let key: string
-    let value: ObjectValue
+    let value: T
     let index = 0
 
     for (key in object) {
