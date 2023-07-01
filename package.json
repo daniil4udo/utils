@@ -14,27 +14,27 @@
     "exports": {
         ".": {
             "require": "./dist/index.cjs",
-            "import": "./dist/index.mjs",
+            "import": "./dist/index.js",
             "types": "./dist/index.d.ts"
         },
         "./*": {
             "require": "./dist/*.cjs",
-            "import": "./dist/*.mjs",
+            "import": "./dist/*.js",
             "types": "./dist/*.d.ts"
         },
         "./preset": {
             "require": "./dist/preset/autoImportUtilsPreset.cjs",
-            "import": "./dist/preset/autoImportUtilsPreset.mjs",
+            "import": "./dist/preset/autoImportUtilsPreset.js",
             "types": "./dist/preset/autoImportUtilsPreset.d.ts"
         }
     },
-    "main": "./dist/index.mjs",
+    "main": "./dist/index.js",
     "types": "./dist/index.d.ts",
     "files": [
         "dist"
     ],
     "scripts": {
-        "build": "./scripts/unbuild.sh",
+        "build": "./scripts/build.sh",
         "lint": "eslint --fix --ext .vue,.ts,.js .",
         "prepublishOnly": "pnpm build",
         "release": "bumpp --commit --tag --no-push && pnpm publish --access public",
@@ -57,17 +57,18 @@
     "devDependencies": {
         "@democrance/eslint-config": "^0.7.0",
         "@types/file-saver-es": "^2.0.1",
-        "@types/node": "^18.16.18",
+        "@types/node": "^18.16.19",
         "@types/proper-url-join": "^2.1.1",
-        "@types/sanitizer": "^0.0.28",
+        "@types/url-template": "^2.0.28",
+        "@types/zipcelx": "^1.5.0",
         "@vitest/coverage-c8": "^0.32.2",
         "@vue/tsconfig": "^0.4.0",
         "bumpp": "^9.1.1",
         "concurrently": "^8.2.0",
-        "eslint": "^8.43.0",
+        "eslint": "^8.44.0",
         "jsdom": "^22.1.0",
+        "tsup": "^7.1.0",
         "typescript": "^5.1.6",
-        "unbuild": "^1.2.1",
         "vitest": "^0.32.2"
     },
     "packageManager": "pnpm@8.3.0",

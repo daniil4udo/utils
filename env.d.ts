@@ -3,17 +3,17 @@
 
 /// <reference types="@types/file-saver-es" />
 /// <reference types="@types/proper-url-join" />
+/// <reference types="@types/url-template" />
+/// <reference types="@types/zipcelx" />
 
 /// <reference types="defu" />
-/// <reference types="fast-deep-equal" />
-/// <reference types="file-saver-es" />
+/// <reference types="fast-equals" />
+/// <reference types="fast-memoize" />
 /// <reference types="perfect-debounce" />
 /// <reference types="rfdc" />
 /// <reference types="text-clipper" />
-/// <reference types="to-fast-properties" />
-/// <reference types="url-template" />
-/// <reference types="sanitizer" />
 /// <reference types="text-clipper" />
+/// <reference types="url-template" />
 
 export type ArrayElement<A> = A extends readonly (infer T)[] ? T : never;
 type DeepWriteable<T> = { readonly [P in keyof T]: DeepWriteable<T[P]> };
