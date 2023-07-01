@@ -1,5 +1,13 @@
-// On Windows, flags render as two-letter country codes, see http://emojipedia.org/flags/
-export function isFlagEmoji(emojiUnicode: string) {
+import { getUnicodeSupportMap } from './emojiSupportMap'
+
+/**
+ * Checks if a given string is a Unicode flag emoji.
+ * On Windows, flags render as two-letter country codes, see http://emojipedia.org/flags/
+ *
+ * @param {string} emojiUnicode - The emoji string to check.
+ * @returns {boolean} True if the string is a flag emoji, false otherwise.
+ */
+export function isFlagEmoji(emojiUnicode: string): boolean {
     const flagACodePoint = 127462 // parseInt('1F1E6', 16)
     const flagZCodePoint = 127487 // parseInt('1F1FF', 16)
     const cp = emojiUnicode.codePointAt(0) ?? 0
@@ -10,27 +18,46 @@ export function isFlagEmoji(emojiUnicode: string) {
         && cp <= flagZCodePoint
 }
 
-// Tested on mac OS 10.12.6 and Windows 10 FCU, it renders as two separate characters
-export function isRainbowFlagEmoji(emojiUnicode: string) {
+/**
+ * Checks if a given string is a Unicode rainbow flag emoji.
+ * Tested on mac OS 10.12.6 and Windows 10 FCU, it renders as two separate characters
+ *
+ * @param {string} emojiUnicode - The emoji string to check.
+ * @returns {boolean} True if the string is a rainbow flag emoji, false otherwise.
+ */
+export function isRainbowFlagEmoji(emojiUnicode: string): boolean {
     const baseFlagCodePoint = 127987 // parseInt('1F3F3', 16)
     const rainbowCodePoint = 127752 // parseInt('1F308', 16)
     const [ baseFlagChar, rainbowChar ] = Array.from(emojiUnicode)
 
     // Length 4 because flags are made of 2 characters which are surrogate pairs
-    return emojiUnicode.length === 4
+    return (
+        emojiUnicode.length === 4
         && baseFlagChar.codePointAt(0) === baseFlagCodePoint
         && rainbowChar.codePointAt(0) === rainbowCodePoint
+    )
 }
 
-// Chrome <57 renders keycaps oddly
-// See https://bugs.chromium.org/p/chromium/issues/detail?id=632294
-// Same issue on Windows also fixed in Chrome 57, http://i.imgur.com/rQF7woO.png
-export function isKeycapEmoji(emojiUnicode: string) {
+/**
+ * Checks if a given string is a Unicode keycap emoji.
+ * Chrome <57 renders keycaps oddly
+ * See https://bugs.chromium.org/p/chromium/issues/detail?id=632294
+ * Same issue on Windows also fixed in Chrome 57, http://i.imgur.com/rQF7woO.png
+ *
+ * @param {string} emojiUnicode - The emoji string to check.
+ * @returns {boolean} True if the string is a keycap emoji, false otherwise.
+ */
+export function isKeycapEmoji(emojiUnicode: string): boolean {
     return emojiUnicode.length === 3 && emojiUnicode[2] === '\u20E3'
 }
 
-// Check for a skin tone variation emoji which aren't always supported
-export function isSkinToneComboEmoji(emojiUnicode: string) {
+/**
+ * Checks if a given string is a Unicode skin tone combo emoji.
+ *
+ * @param {string} emojiUnicode - The emoji string to check.
+ * @returns {boolean} True if the string is a skin tone combo emoji, false otherwise.
+ */
+export function isSkinToneComboEmoji(emojiUnicode: string): boolean {
     const tone1 = 127995 // parseInt('1F3FB', 16)
     const tone5 = 127999 // parseInt('1F3FF', 16)
 
@@ -44,9 +71,13 @@ export function isSkinToneComboEmoji(emojiUnicode: string) {
     return false
 }
 
-// macOS supports most skin tone emoji's but
-// doesn't support the skin tone versions of horse racing
-export function isHorseRacingSkinToneComboEmoji(emojiUnicode: string) {
+/**
+ * Checks if a given string is a Unicode horse racing skin tone combo emoji.
+ *
+ * @param {string} emojiUnicode - The emoji string to check.
+ * @returns {boolean} True if the string is a horse racing skin tone combo emoji, false otherwise.
+ */
+export function isHorseRacingSkinToneComboEmoji(emojiUnicode: string): boolean {
     const horseRacingCodePoint = 127943 // parseInt('1F3C7', 16)
     const firstCharacter = Array.from(emojiUnicode)[0]
 
@@ -54,9 +85,13 @@ export function isHorseRacingSkinToneComboEmoji(emojiUnicode: string) {
         && isSkinToneComboEmoji(emojiUnicode)
 }
 
-// Check for `family_*`, `kiss_*`, `couple_*`
-// For ex. Windows 8.1 Firefox 51.0.1, doesn't support these
-export function isPersonZwjEmoji(emojiUnicode: string) {
+/**
+ * Checks if a given string is a Unicode person Zero Width Joiner (ZWJ) emoji.
+ *
+ * @param {string} emojiUnicode - The emoji string to check.
+ * @returns {boolean} True if the string is a person ZWJ emoji, false otherwise.
+ */
+export function isPersonZwjEmoji(emojiUnicode: string): boolean {
     const zwj = 8205 // parseInt('200D', 16)
     const personStartCodePoint = 128102 // parseInt('1F466', 16)
     const personEndCodePoint = 128105 // parseInt('1F469', 16)
@@ -75,9 +110,36 @@ export function isPersonZwjEmoji(emojiUnicode: string) {
     return hasPersonEmoji && hasZwj
 }
 
-// Helper so we don't have to run `isFlagEmoji` twice
-// in `isEmojiUnicodeSupported` logic
-export function checkFlagEmojiSupport(unicodeSupportMap, emojiUnicode: string) {
+/**
+ * Checks if a given emoji Unicode is supported according to a provided Unicode support map and version.
+ *
+ * @param {Object} unicodeSupportMap - The map showing the support for various Unicode features.
+ * @param {string} emojiUnicode - The emoji Unicode string to check.
+ * @param {string} [unicodeVersion='flag'] - The Unicode version to check for.
+ * @returns {boolean} True if the emoji Unicode is supported, false otherwise.
+ */
+export function isEmojiUnicodeSupported(unicodeSupportMap, emojiUnicode, unicodeVersion = 'flag') {
+    const isOlderThanChrome57
+        = unicodeSupportMap?.meta
+        && unicodeSupportMap.meta.isChrome
+        && unicodeSupportMap.meta.chromeVersion < 57
+
+    return unicodeSupportMap[unicodeVersion]
+        && !(isOlderThanChrome57 && isKeycapEmoji(emojiUnicode))
+        && checkFlagEmojiSupport(unicodeSupportMap, emojiUnicode)
+        && checkSkinToneModifierSupport(unicodeSupportMap, emojiUnicode)
+        && checkHorseRacingSkinToneComboEmojiSupport(unicodeSupportMap, emojiUnicode)
+        && checkPersonEmojiSupport(unicodeSupportMap, emojiUnicode)
+}
+
+/**
+ * Checks if a given emoji Unicode is supported as a flag emoji according to a provided Unicode support map.
+ *
+ * @param {Object} unicodeSupportMap - The map showing the support for various Unicode features.
+ * @param {string} emojiUnicode - The emoji Unicode string to check.
+ * @returns {boolean} True if the emoji Unicode is supported as a flag emoji, false otherwise.
+ */
+export function checkFlagEmojiSupport(unicodeSupportMap, emojiUnicode) {
     const isFlagResult = isFlagEmoji(emojiUnicode)
     const isRainbowFlagResult = isRainbowFlagEmoji(emojiUnicode)
 
@@ -86,45 +148,45 @@ export function checkFlagEmojiSupport(unicodeSupportMap, emojiUnicode: string) {
         || (!isFlagResult && !isRainbowFlagResult)
 }
 
-// Helper so we don't have to run `isSkinToneComboEmoji` twice
-// in `isEmojiUnicodeSupported` logic
-export function checkSkinToneModifierSupport(unicodeSupportMap, emojiUnicode: string) {
+/**
+ * Checks if a given emoji Unicode is supported with a skin tone modifier according to a provided Unicode support map.
+ *
+ * @param {Object} unicodeSupportMap - The map showing the support for various Unicode features.
+ * @param {string} emojiUnicode - The emoji Unicode string to check.
+ * @returns {boolean} True if the emoji Unicode is supported with a skin tone modifier, false otherwise.
+ */
+export function checkSkinToneModifierSupport(unicodeSupportMap, emojiUnicode) {
     const isSkinToneResult = isSkinToneComboEmoji(emojiUnicode)
-    return (unicodeSupportMap.skinToneModifier && isSkinToneResult) || !isSkinToneResult
+    return (unicodeSupportMap.skinToneModifier && isSkinToneResult)
+        || !isSkinToneResult
 }
 
-// Helper func so we don't have to run `isHorseRacingSkinToneComboEmoji` twice
-// in `isEmojiUnicodeSupported` logic
-export function checkHorseRacingSkinToneComboEmojiSupport(unicodeSupportMap, emojiUnicode: string) {
+/**
+ * Checks if a given emoji Unicode is supported as a horse racing skin tone combo emoji according to a provided Unicode support map.
+ *
+ * @param {Object} unicodeSupportMap - The map showing the support for various Unicode features.
+ * @param {string} emojiUnicode - The emoji Unicode string to check.
+ * @returns {boolean} True if the emoji Unicode is supported as a horse racing skin tone combo emoji, false otherwise.
+ */
+export function checkHorseRacingSkinToneComboEmojiSupport(
+    unicodeSupportMap,
+    emojiUnicode,
+) {
     const isHorseRacingSkinToneResult = isHorseRacingSkinToneComboEmoji(emojiUnicode)
     return (unicodeSupportMap.horseRacing && isHorseRacingSkinToneResult)
         || !isHorseRacingSkinToneResult
 }
 
-// Helper so we don't have to run `isPersonZwjEmoji` twice
-// in `isEmojiUnicodeSupported` logic
-export function checkPersonEmojiSupport(unicodeSupportMap, emojiUnicode: string) {
+/**
+ * Checks if a given emoji Unicode is supported as a person Zero Width Joiner (ZWJ) emoji according to a provided Unicode support map.
+ *
+ * @param {Object} unicodeSupportMap - The map showing the support for various Unicode features.
+ * @param {string} emojiUnicode - The emoji Unicode string to check.
+ * @returns {boolean} True if the emoji Unicode is supported as a person ZWJ emoji, false otherwise.
+ */
+export function checkPersonEmojiSupport(unicodeSupportMap, emojiUnicode) {
     const isPersonZwjResult = isPersonZwjEmoji(emojiUnicode)
-    return (unicodeSupportMap.personZwj && isPersonZwjResult)
-        || !isPersonZwjResult
-}
-
-// Takes in a support map and determines whether
-// the given unicode emoji is supported on the platform.
-//
-// Combines all the edge case tests into a one-stop shop method
-export function isEmojiUnicodeSupported(unicodeSupportMap, emojiUnicode: string, unicodeVersion = 'flag') {
-    const isOlderThanChrome57 = unicodeSupportMap?.meta
-        && unicodeSupportMap.meta.isChrome
-        && unicodeSupportMap.meta.chromeVersion < 57
-
-    // For comments about each scenario, see the comments above each individual respective function
-    return unicodeSupportMap[unicodeVersion]
-        && !(isOlderThanChrome57 && isKeycapEmoji(emojiUnicode))
-        && checkFlagEmojiSupport(unicodeSupportMap, emojiUnicode)
-        && checkSkinToneModifierSupport(unicodeSupportMap, emojiUnicode)
-        && checkHorseRacingSkinToneComboEmojiSupport(unicodeSupportMap, emojiUnicode)
-        && checkPersonEmojiSupport(unicodeSupportMap, emojiUnicode)
+    return (unicodeSupportMap.personZwj && isPersonZwjResult) || !isPersonZwjResult
 }
 
 let browserUnicodeSupportMap

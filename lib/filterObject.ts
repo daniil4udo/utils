@@ -1,12 +1,36 @@
 /**
+ * Represents an object with string keys and values of type ObjectValue.
  *
- * Returns a new object containing only the key-value pairs from the input object that satisfy a given predicate function.
- * @template T - The type of the values in the input object.
+ * @template ObjectValue - The type of values in the object.
  *
- * @param {O<T>} object - The input object to filter.
- * @param {(key: keyof O<T>, value: T, index: number, object: O<T>) => boolean} [predicate] - An optional function to test each key-value pair in the input object. The function is called with the key, value, index, and input object as arguments, and should return a boolean indicating whether the key-value pair should be included in the result.
+ * @interface Object
+ * @property {ObjectValue} [key] - The value associated with the string key.
+ */
+interface Object<ObjectValue> { [key: string]: ObjectValue }
+
+/**
+ * Filters the properties of an object based on a predicate function.
  *
- * @returns {Object.<string, T>} - A new object containing only the key-value pairs from the input object that satisfy the predicate function.
+ * This function iterates over the properties of the given object and includes them in the returned object
+ * if the predicate function returns `true` for the given property. The predicate function receives the
+ * key of the property, the value of the property, the index of the property, and the original object as
+ * arguments.
+ *
+ * If no predicate function is provided, or if the provided predicate is not a function, the original
+ * object is returned without any filtering.
+ *
+ * Note: The type parameter `ObjectValue` is used for the values of the object's properties, and `Object<ObjectValue>` is assumed
+ * to be a type that represents an object with values of type `ObjectValue`. Please replace `Object<ObjectValue>` with the correct
+ * type if this assumption is incorrect.
+ *
+ * @template ObjectValue - The type of the values of the object's properties.
+ *
+ * @function filterObject
+ * @param {Object<ObjectValue>} object - The object to filter.
+ * @param {(key: keyof Object<ObjectValue>, value: ObjectValue, index: number, object: Object<ObjectValue>) => boolean} [predicate] - The function
+ *   used to decide whether a property should be included in the returned object. It is called with the
+ *   key of the property, the value of the property, the index of the property, and the original object.
+ * @returns { { [key: string]: ObjectValue } } - The filtered object.
  *
  * @example
  * const myObj = { a: 1, b: 2, c: 3 }
@@ -18,23 +42,21 @@
  * // filteredObj2 is { a: 1 }
  *
  */
-interface O<T> { [key: string]: T }
-
-export function filterObject<T>(
-    object: O<T>,
+export function filterObject<ObjectValue>(
+    object: Object<ObjectValue>,
     predicate?: (
-        key: keyof O<T>,
-        value: T,
+        key: keyof Object<ObjectValue>,
+        value: ObjectValue,
         index: number,
-        object: O<T>
+        object: Object<ObjectValue>
     ) => boolean,
 ) {
     if (typeof predicate != 'function')
         return object
 
-    const result: { [key: string]: T } = {}
+    const result: { [key: string]: ObjectValue } = {}
     let key: string
-    let value: T
+    let value: ObjectValue
     let index = 0
 
     for (key in object) {

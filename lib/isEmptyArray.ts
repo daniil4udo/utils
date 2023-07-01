@@ -1,22 +1,38 @@
 import { hasValue } from './hasValue'
 
 /**
+ * Represents options for the isEmptyArray function.
  *
- * Check if given Array or nested Arrays are empty
+ * @template T - The type of value being processed.
  *
- * @param {any[]} arr - Array to check for emptiness
- * @param {Options} opts – Options object
- * @param {boolean} opts.recursive – Option's property that determines weather we should check array recursively or just top-level values
- * @param {(value: any) => boolean} opts.comparator – Option's comparator functions
- *
- * @returns
+ * @interface Options
+ * @property {boolean} [recursive] - A flag indicating whether to check nested arrays recursively.
+ * @property {(value: T) => boolean} [comparator] - A comparator function used to determine if an array element is considered "empty".
  */
-interface Options {
+
+interface Options<T> {
     recursive?: boolean
-    comparator?: (value: any) => boolean
+    comparator?: (value: T) => boolean
 }
-export function isEmptyArray(arr, opts: Options = {}) {
-    if (arr == null)
+
+/**
+ * Checks whether the given array is "empty". The criteria for an array being considered "empty" is that either the array itself is null/undefined,
+ * the array has no elements, or all elements of the array are themselves "empty" according to the provided `comparator` function.
+ * If the `recursive` option is true (the default), then nested arrays are checked recursively.
+ *
+ * @function isEmptyArray
+ * @param {any[]} arr - The array to check.
+ * @param {Options} [opts={}] - An options object.
+ * @param {boolean} [opts.recursive=true] - Whether to check nested arrays recursively.
+ * @param {(value: any) => boolean} [opts.comparator=hasValue] - A comparator function used to determine if an array element is considered "empty".
+ * @returns {boolean} Returns true if the array is considered "empty", false otherwise.
+ *
+ * @example
+ * isEmptyArray([1, 2, 3]) // Returns false
+ * isEmptyArray([]) // Returns true
+ * isEmptyArray([[], [[], []]]) // Returns true
+ * isEmptyArray([[], [[], [1]]]) // Returns false
+ */
         return true
 
     if (Array.isArray(arr)) {

@@ -4,7 +4,6 @@
  * Unlike Lodash throw an error on something other the Array or Object
  *
  * @param {Array|Object} collection
- *
  */
 import { length } from './length'
 

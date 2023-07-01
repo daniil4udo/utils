@@ -18,6 +18,34 @@
  */
 export const POSSIBLE_FOCUSABLE_TAGS = 'a[href], area[href], button, details, input, textarea, select, [tabindex]:not([tabindex="-1"])' as const
 
+/**
+ * Toggles the keyboard focus state for all focusable elements in the specified scope.
+ *
+ * This function iterates over all the elements in the given scope that have a tag specified in POSSIBLE_FOCUSABLE_TAGS.
+ * If an element is not disabled, it assigns the given tabIndex value to the element's tabIndex attribute. The tabIndex
+ * attribute defines the tab order of an element (when the "tab" button is used for navigating).
+ *
+ * Note: This function requires 'requestAnimationFrame' to apply the tabIndex, which might not be available in all environments.
+ *
+ * @function toggleKeyboardFocus
+ * @param {HTMLElement} [scope=document.body] - The scope within which to toggle the keyboard focus state.
+ *      Default is the document body. It is expected to be an HTML element.
+ * @param {number} [tabIndex=-1] - The tabIndex value to assign to each focusable element.
+ *      Default is -1 which makes the element focusable, but not reachable via sequential keyboard navigation.
+ *      But it can be focused by calling its focus method programmatically.
+ * @returns {void} This function does not return a value.
+ *
+ * @example
+ * // Toggle the keyboard focusability of all focusable elements within the document body.
+ * toggleKeyboardFocus();
+ *
+ * // Toggle the keyboard focusability of all focusable elements within a specific element.
+ * const container = document.getElementById('container');
+ * toggleKeyboardFocus(container);
+ *
+ * // Toggle the keyboard focusability of all focusable elements within a specific element and set tabIndex to 0.
+ * toggleKeyboardFocus(container, 0);
+ */
 export function toggleKeyboardFocus(scope = document.body, tabIndex = -1) {
     if (!window)
         return

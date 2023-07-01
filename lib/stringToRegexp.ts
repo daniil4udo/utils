@@ -1,12 +1,23 @@
+/**
+ * Escapes any special characters in a string so it can be used in a regular expression.
+ *
+ * @function escapeStringRegExp
+ * @param {string} str - The string to escape.
+ * @returns {string} The escaped string.
+ *
+ * @example
+ * escapeStringRegExp('[abc]'); // Outputs: '\\[abc\\]'
+ */
 const escapeStringRegExp = (str: string) => str.replace(/[|\\{}()[\]^$+*?.]/g, '\\$&')
 
 /**
+ * Converts a string into a RegExp instance, escaping any special characters.
  *
- * Convert regexp-alike string to the actual Regexp object
+ * @function strToRegexp
+ * @param {string} str - The string to convert into a RegExp.
+ * @returns {RegExp} The RegExp instance.
  *
- * @param {string} str - String to convert to Regexp
- *
- * @returns {RegExp} - Regexp object
- *
+ * @example
+ * strToRegexp('[abc]'); // Outputs: /\[abc\]/
  */
 export const strToRegexp = (str: string) => new RegExp(escapeStringRegExp(str))

@@ -1,10 +1,14 @@
 /**
+ * Capitalizes the first letter of a string.
  *
- * Capitalizes the first letter of a given string
- *
- * @param {string} [text=''] - The string to capitalize.
- *
+ * @function capitalize
+ * @param {string} [str=''] - The input string to capitalize.
  * @returns {string} The capitalized string.
+ *
+ * @example
+ * capitalize('hello'); // Outputs: 'Hello'
+ * capitalize('WORLD'); // Outputs: 'WORLD'
+ * capitalize(''); // Outputs: ''
  */
 export function capitalize(text = '') {
     if (typeof text !== 'string')
@@ -14,31 +18,29 @@ export function capitalize(text = '') {
 }
 
 /**
+ * Converts a string to uppercase.
  *
- * Converts text to upper case.
- * @param {string} [text=''] - The text to be converted to upper case.
+ * @function toUpper
+ * @param {string} [str=''] - The input string to convert.
+ * @returns {string} The uppercase string.
  *
- * @returns {string} - The upper case version of the input text.
- *
- * @example console.log(upper('hello')); // Output: HELLO
-*/
-export function toUpper(text = '') {
-    if (typeof text === 'string')
-        return text.toUpperCase()
-    return text
+ * @example
+ * toUpper('hello'); // Outputs: 'HELLO'
+ * toUpper('WORLD'); // Outputs: 'WORLD'
+ * toUpper(''); // Outputs: ''
+ */
 }
 
 /**
+ * Converts a string to lowercase.
  *
- * Converts text to lower case.
- * @param {string} [text=''] - The text to be converted to lower case.
+ * @function toLower
+ * @param {string} [str=''] - The input string to convert.
+ * @returns {string} The lowercase string.
  *
- * @returns {string} - The lower case version of the input text.
- *
- * @example console.log(upper('hello')); // Output: HELLO
-*/
-export function toLower(text = '') {
-    if (typeof text === 'string')
-        return text.toLowerCase()
-    return text
+ * @example
+ * toLower('HELLO'); // Outputs: 'hello'
+ * toLower('world'); // Outputs: 'world'
+ * toLower(''); // Outputs: ''
+ */
 }

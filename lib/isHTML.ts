@@ -1,10 +1,14 @@
 /**
+ * Checks if a string is a valid HTML.
  *
- * Test if given string is HTML
+ * @function isHTML
+ * @param {string} str - The string to check.
+ * @returns {boolean} True if the string is a valid HTML, false otherwise.
  *
- * @param {string} str - String to test
- * @returns {boolean}
- *
+ * @example
+ * isHTML('<p>Hello, World!</p>'); // Returns true
+ * isHTML('<p>Hello, World!'); // Returns true (for now)
+ * isHTML('Hello, World!'); // Returns false
  */
 export function isHTML(str: string) {
     try {

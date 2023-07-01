@@ -1,6 +1,21 @@
 import { toType } from './toType'
 
-export function isPrimitive(val: any): boolean {
+/**
+ * Checks if a given input is a primitive value.
+ *
+ * In JavaScript, a primitive (primitive value, primitive data type) is data that
+ * is not an object and has no methods. There are 7 primitive data types:
+ * `string`, `number`, `bigint`, `boolean`, `undefined`, `symbol`, and special case `null`.
+ *
+ * @function isPrimitive
+ * @param {any} input - The input to check for being a primitive value.
+ * @returns {boolean} Returns `true` if the input is a primitive value, otherwise `false`.
+ *
+ * @example
+ * isPrimitive('Hello') // Outputs: true
+ * isPrimitive({}) // Outputs: false
+ */
+export function isPrimitive(input: any): boolean {
     const allPrimitives = new Set([
         'boolean',
         'number',
@@ -11,14 +26,30 @@ export function isPrimitive(val: any): boolean {
         'undefined',
     ])
 
-    return allPrimitives.has(toType(val))
+    return allPrimitives.has(toType(input))
 }
 
-export function isPrimitiveLike(val: any): boolean {
+/**
+ * Checks if a given input is a primitive or primitive-like value.
+ *
+ * In addition to JavaScript primitive data types, Date and RegExp objects are considered
+ * as primitive-like as they hold primitive values and can be immutable if their state is not changed.
+ *
+ * @param {any} input - The input to check for being a primitive-like value.
+ * @returns {boolean} Returns `true` if the input is a primitive-like value, otherwise `false`.
+ *
+ * @example
+ * // returns true
+ * isPrimitiveLike(new Date())
+ *
+ * // returns false
+ * isPrimitiveLike({})
+ */
+export function isPrimitiveLike(input: any): boolean {
     const allPrimitivesLike = new Set([
         'date',
         'regexp',
     ])
 
-    return isPrimitive(val) || allPrimitivesLike.has(toType(val))
+    return isPrimitive(input) || allPrimitivesLike.has(toType(input))
 }
