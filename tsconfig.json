@@ -3,6 +3,7 @@
     "include": [
         "env.d.ts",
         "./lib/*.ts",
+        "tests/*.spec.js",
         "tests/*.spec.ts",
     ],
     "exclude": [
