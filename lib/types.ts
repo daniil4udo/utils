@@ -5,9 +5,9 @@ export interface DMCLogger {
     error(message?: any, ...args: any): void
 }
 
-export type LogMessage = string[] | Error | Record<string, any> | string | boolean
+export type LogMessage = string[] | Error | Record<string, any> | string | boolean;
 
-export type LoggerImplementation = DMCLogger | ((verbosity: string) => DMCLogger)
+export type LoggerImplementation = DMCLogger | ((verbosity: string) => DMCLogger);
 
 export enum LogName {
     Error = 'error',
@@ -22,4 +22,4 @@ export const LogLevelStyle = {
     Info: 'background:#0468DB; padding: 2px; border-radius: 0 2px 2px 0;  color: #fff;',
     Warn: 'background:#ecc713; padding: 2px; border-radius: 0 2px 2px 0;  color: #000;',
     Error: 'background:#d12727; padding: 2px; border-radius: 0 2px 2px 0;  color: #fff',
-}
+};

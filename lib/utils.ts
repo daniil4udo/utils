@@ -1,38 +1,38 @@
-import type { LogMessage } from './types'
+import type { LogMessage } from './types';
 
-export const noop = () => {}
+export function noop() {}
 
-export const detectBundler = () => {
+export function detectMode() {
     try {
-        return import.meta.env?.MODE
+        return import.meta.env?.MODE;
     }
     catch {
-        return process.env?.NODE_ENV
+        return process.env?.NODE_ENV;
     }
 }
 
-export const getMessage = (message: LogMessage): string | undefined => {
+export function getMessage(message: LogMessage): string | undefined {
     if (Array.isArray(message))
-        return message.join(' | ')
+        return message.join(' | ');
     if (message instanceof Error)
-        return message.message
+        return message.message;
     if (typeof message === 'object')
-        return JSON.stringify(message, null, 1)
+        return JSON.stringify(message, null, 1);
 
-    return message as string ?? ''
+    return message as string ?? '';
 }
 
 export const detectNode: boolean = Object.prototype
     .toString
-    .call(typeof process !== 'undefined' ? process : 0) === '[object process]' || detectBundler() === 'production'
+    .call(typeof process !== 'undefined' ? process : 0) === '[object process]' || detectMode() === 'production';
 
-export const mountLog = (name: string, style: string) => {
+export function mountLog(name: string, style: string) {
     if (detectNode)
-        return [ `${name}: ` ]
+        return [ `${name}: ` ];
 
     return [
         `%c${name}%c:`,
         style,
         'background: transparent;',
-    ]
+    ];
 }
