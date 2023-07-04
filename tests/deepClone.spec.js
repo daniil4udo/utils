@@ -10,7 +10,7 @@ describe('@/lib/deepClone.ts', () => {
     })
 
     it('creates a deep clone of arrays', () => {
-        const array = [1, 2, 3, { a: 1, b: 2 }]
+        const array = [ 1, 2, 3, { a: 1, b: 2 }]
         const clone = deepClone(array)
         expect(clone).toEqual(array)
         // Modify clone and check it doesn't affect the original
@@ -19,7 +19,7 @@ describe('@/lib/deepClone.ts', () => {
     })
 
     it('creates a deep clone of objects', () => {
-        const object = { a: 1, b: [1, 2, 3], c: { d: 4 } }
+        const object = { a: 1, b: [ 1, 2, 3 ], c: { d: 4 } }
         const clone = deepClone(object)
         expect(clone).toEqual(object)
         // Modify clone and check it doesn't affect the original
@@ -55,7 +55,7 @@ describe('@/lib/deepClone.ts', () => {
     })
 
     it('creates a deep clone of objects containing arrays', () => {
-        const object = { a: [1, 2, 3], b: [4, 5, 6] }
+        const object = { a: [ 1, 2, 3 ], b: [ 4, 5, 6 ] }
         const clone = deepClone(object)
         expect(clone).toEqual(object)
         // Modify clone and check it doesn't affect the original
@@ -79,12 +79,12 @@ describe('@/lib/deepClone.ts', () => {
         const complexObject = {
             a: 1,
             b: 'string',
-            c: [1, 2, 3],
-            d: { e: 4, f: [5, 6, 7], g: { h: 8 } },
+            c: [ 1, 2, 3 ],
+            d: { e: 4, f: [ 5, 6, 7 ], g: { h: 8 } },
             i: null,
             j: undefined,
             k: new Date(),
-            l: Symbol('symbol')
+            l: Symbol('symbol'),
         }
         const clone = deepClone(complexObject)
         expect(clone).toEqual(complexObject)

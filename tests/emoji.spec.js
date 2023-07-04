@@ -1,5 +1,12 @@
 import { describe, expect, it } from 'vitest'
 
+import { isFlagEmoji,
+    isHorseRacingSkinToneComboEmoji,
+    isKeycapEmoji,
+    isPersonZwjEmoji,
+    isRainbowFlagEmoji,
+    isSkinToneComboEmoji
+} from '../lib/emoji/emojiSupport'
 import { emojiToIso, isCountryIso, isoToEmoji } from '../lib/emoji/isoToEmojiToISO'
 
 describe('@/lib/isoToEmojiToISO.ts', () => {
@@ -55,5 +62,43 @@ describe('@/lib/isoToEmojiToISO.ts', () => {
             expect(emojiToIso('')).toBe(null)
             expect(emojiToIso()).toBe(null)
         })
+    })
+})
+
+describe('@/lib/emojiSupport.ts', () => {
+    it('isFlagEmoji', () => {
+        expect(isFlagEmoji('🇺🇸')).toBeTruthy()
+        expect(isFlagEmoji('🇦')).toBeFalsy()
+        expect(isFlagEmoji('🍔')).toBeFalsy()
+    })
+
+    it('isRainbowFlagEmoji', () => {
+        expect(isRainbowFlagEmoji('🏳️‍🌈')).toBeTruthy()
+        expect(isRainbowFlagEmoji('🏳️‍')).toBeFalsy()
+        expect(isRainbowFlagEmoji('🍔')).toBeFalsy()
+    })
+
+    it('isKeycapEmoji', () => {
+        expect(isKeycapEmoji('2️⃣')).toBeTruthy()
+        expect(isKeycapEmoji('2️')).toBeFalsy()
+        expect(isKeycapEmoji('🍔')).toBeFalsy()
+    })
+
+    it('isSkinToneComboEmoji', () => {
+        expect(isSkinToneComboEmoji('👋🏽')).toBeTruthy()
+        expect(isSkinToneComboEmoji('👋')).toBeFalsy()
+        expect(isSkinToneComboEmoji('🍔')).toBeFalsy()
+    })
+
+    it('isHorseRacingSkinToneComboEmoji', () => {
+        expect(isHorseRacingSkinToneComboEmoji('🏇🏿')).toBeTruthy()
+        expect(isHorseRacingSkinToneComboEmoji('🏇')).toBeFalsy()
+        expect(isHorseRacingSkinToneComboEmoji('🍔')).toBeFalsy()
+    })
+
+    it('isPersonZwjEmoji', () => {
+        expect(isPersonZwjEmoji('👨‍👩‍👧')).toBeTruthy()
+        expect(isPersonZwjEmoji('👨👩👧')).toBeFalsy()
+        expect(isPersonZwjEmoji('🍔')).toBeFalsy()
     })
 })

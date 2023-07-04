@@ -9,11 +9,14 @@
  * @name saveAs
  *
  * @example
+ * ```ts
  * import { saveAs } from '@democrance/utils';
  *
  * // Save a file
  * const fileBlob = new Blob(['Hello, World!'], { type: 'text/plain' });
  * saveAs(fileBlob, 'example.txt');
+ * ```
+ * @public
  */
 import * as fileSaver from 'file-saver-es'
 

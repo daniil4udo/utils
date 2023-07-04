@@ -1,22 +1,44 @@
 interface ImageExistsOptions {
+    /**
+     * A boolean value indicating whether an error should be thrown if the image does not exist.
+     *
+     * @defaultValue `false`
+     */
     throwError?: boolean
 }
 
 /**
- * Checks if an image exists at a given URL by loading the image. If the image successfully loads,
- * the URL is returned. Otherwise, either `false` or an error is returned based on the `throwError` option.
+ * Checks if an image exists at the given URL.
+ *
+ * @remarks
+ * This function is part of the {@link https://github.com/daniil4udo/utils | @democrance/utils} library.
  *
  * @param url - The URL of the image to check.
- * @param options - An object with the optional property `throwError`. If `throwError` is `true`,
- * an error is thrown when the image doesn't exist. Otherwise, `false` is returned. Default is `false`.
+ * @param options - An optional {@link ImageExistsOptions} object.
+ * @returns A promise that resolves with the URL of the image if it exists. If the image does not exist, it resolves with `false` or throws an error depending on the `throwError` option.
  *
- * @returns A Promise that resolves with the image URL if the image exists, `false` otherwise. If `throwError` is `true`,
- * the Promise will reject with an Error when the image doesn't exist.
+ * @throws {Error} If `throwError` is set to `true` and the image does not exist.
  *
- * @throws Will throw an Error if `throwError` option is `true` and the image does not exist.
+ * @example
+ * ```ts
+ * import { imageExists, ImageExistsOptions } from '@democrance/utils';
+ *
+ * const options: ImageExistsOptions = { throwError: true };
+ *
+ * try {
+ *     const url = await imageExists('https://example.com/image.png', options);
+ *     console.log(url); // Outputs: 'https://example.com/image.png' or false
+ * } catch (error) {
+ *     console.log(error.message); // Outputs: '[imageExists]: Image https://example.com/image.png does not exist'
+ * }
+ * ```
+ * @public
  */
-export async function imageExists(url: string | null | undefined, options: ImageExistsOptions = {}): Promise<string | boolean> {
-    const throwError = options.throwError || false
+export async function imageExists<T extends string>(
+    url: T | null | undefined,
+    options: ImageExistsOptions = {},
+): Promise<T | boolean> {
+    const { throwError = false } = options
 
     if (typeof url !== 'string' || url === '')
         return false
@@ -35,28 +57,10 @@ export async function imageExists(url: string | null | undefined, options: Image
     })
 }
 
-/**
- * Checks if all images exist at given URLs by loading each image.
- *
- * @param urls - An array of image URLs to check.
- * @param options - Options passed to the `imageExists` function.
- *
- * @returns A Promise that resolves when all images have been checked. The Promise will be fulfilled with an array of results,
- * each result corresponding to the return value of the `imageExists` function for each URL.
- */
-export async function allImagesExist(urls: Array<string | null | undefined>, options: ImageExistsOptions = {}): Promise<(string | boolean)[]> {
+export async function allImagesExist<T extends string>(urls: Array<T | null | undefined>, options: ImageExistsOptions = {}): Promise<(string | boolean)[]> {
     return Promise.all(urls.map(url => imageExists(url, options)))
 }
 
-/**
- * Checks if any image exists at given URLs by loading each image.
- *
- * @param urls - An array of image URLs to check.
- * @param options - Options passed to the `imageExists` function.
- *
- * @returns A Promise that resolves as soon as one of the images has been successfully loaded. The Promise will be fulfilled
- * with the URL of the first image that exists. If none of the images exist, the Promise will be rejected.
- */
-export async function anyImagesExist(urls: Array<string | null | undefined>, options: ImageExistsOptions = {}): Promise<string> {
-    return Promise.any(urls.map(url => imageExists(url, options)))
+export async function anyImagesExist<T extends string>(urls: Array<T | null | undefined>, options: ImageExistsOptions = {}): Promise<(string | boolean)[]> {
+    return (Promise as any).any(urls.map(url => imageExists(url, options)))
 }

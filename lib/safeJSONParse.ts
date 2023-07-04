@@ -28,6 +28,8 @@ type JSONParseResult<T> = T extends string ? Parseable : T
  *
  * @example
  * ```ts
+ * import { safeJSONParse } from '@democrance/utils';
+ *
  * const json = '{ "name": "John", "age": 30 }';
  * const parsed = safeJSONParse(json);
  * console.log(parsed); // Outputs: { name: "John", age: 30 }
@@ -36,6 +38,7 @@ type JSONParseResult<T> = T extends string ? Parseable : T
  * const result = safeJSONParse(invalidJson);
  * console.log(result); // Outputs: '{ "name": "John, "age": 30 }'
  * ```
+ * @public
  */
 export function safeJSONParse<T>(input: JSONParseResult<T>): JSONParseResult <T> {
     try {

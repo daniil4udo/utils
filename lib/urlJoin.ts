@@ -9,7 +9,7 @@
  * @name urlJoin
  *
  * @example
- * // Import urlJoin module
+ * ```ts
  * import { urlJoin } from '@democrance/utils';
  *
  * // Join URL segments
@@ -23,5 +23,7 @@
  * // Join URL segments with query parameters
  * const queryUrl = urlJoin('https://example.com', 'api', 'users', '123', { limit: 10, sortBy: 'name' });
  * console.log(queryUrl); // Output: "https://example.com/api/users/123?limit=10&sortBy=name"
+ * ```
+ * @public
  */
 export { default as urlJoin } from 'proper-url-join'

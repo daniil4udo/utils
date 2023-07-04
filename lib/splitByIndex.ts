@@ -9,6 +9,9 @@ type Length<T extends any[]> = T['length']
 /**
  * Splits an array at a specific index into two separate arrays.
  *
+ * @remarks
+ * This function is a part of the {@link https://github.com/daniil4udo/utils | @democrance/utils} library.
+ *
  * @template T - The type of the elements.
  *
  * @function splitByIndex
@@ -17,7 +20,12 @@ type Length<T extends any[]> = T['length']
  * @returns {[T[], T[]]} An array of two arrays - the first one is the part before the index and the second one is the part after (and including) the index.
  *
  * @example
+ * ```ts
+ * import { splitByIndex } from '@democrance/utils';
+ *
  * splitByIndex([1, 2, 3, 4, 5], 2); // Outputs: [[1, 2], [3, 4, 5]]
+ * ```
+ * @public
  */
 export function splitByIndex<T extends any[]>(arr: T, splitIndex: Length<T> = arr.length) {
     // given a default value of arr.length, so when no index is provided,

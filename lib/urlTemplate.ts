@@ -11,10 +11,13 @@
  *      to replace expressions in the template with actual values.
  *
  * @example
+ * ```ts
  * import { parseURLTemplate } from '@democrance/utils';
  *
  * const template = parseURLTemplate('/search/{term}');
  * const url = template.expand({ term: 'javascript' });
  * console.log(url); // '/search/javascript'
+ * ```
+ * @public
  */
 export { parseTemplate as parseURLTemplate } from 'url-template'

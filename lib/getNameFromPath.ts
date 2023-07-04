@@ -1,12 +1,24 @@
 /**
  * Removes the file extension from a given path.
  *
- * @function trimFileExtension
- * @param {string} path - The file path from which to remove the extension.
- * @returns {string} The file path without the extension.
+ * This function is useful when you want to retrieve the file name without the extension.
+ * It works by removing all characters after and including the last '.' in the path string.
+ *
+ * @remarks
+ * This function is part of the {@link https://github.com/daniil4udo/utils | @democrance/utils} library.
+ *
+ * @param path - The file path from which to remove the extension.
+ * @returns The file path without the extension. If the input path does not contain an
+ *      extension, the same path is returned.
+ * @throws {TypeError} If the input is not of type 'string'.
  *
  * @example
- * trimFileExtension('/path/to/file.txt'); // Outputs: '/path/to/file'
+ * ```ts
+ * import { trimFileExtension } from '@democrance/utils';
+ *
+ * console.log(trimFileExtension('/path/to/file.txt')); // Outputs: '/path/to/file'
+ * ```
+ * @public
  */
 export function trimFileExtension(path = '') {
     if (typeof path !== 'string')
@@ -18,15 +30,28 @@ export function trimFileExtension(path = '') {
 /**
  * Extracts the file name from a given path.
  *
- * @function getNameFromPath
- * @param {string} [path=''] - The file path from which to extract the name.
- * @param {Object} [options] - Optional parameters.
- * @param {boolean} [options.extension=true] - If true, the file name will include the extension.
- * @returns {string} The file name with or without extension based on the extension option.
+ * This function can return the file name with or without the extension, based on the
+ * `extension` option in the options object.
+ *
+ * @remarks
+ * This function is part of the {@link https://github.com/daniil4udo/utils | @democrance/utils} library.
+ *
+ * @param path - The file path from which to extract the name. Defaults to an empty string.
+ * @param options - An optional object containing additional parameters.
+ * @param options.extension - A boolean indicating whether the file name should include
+ *      the extension. Defaults to `true`.
+ * @returns The file name with or without the extension, based on the `extension` option.
+ *      If the path does not contain a file name, an empty string is returned.
+ * @throws {TypeError} If the input is not of type 'string'.
  *
  * @example
- * getNameFromPath('/path/to/file.txt'); // Outputs: 'file.txt'
- * getNameFromPath('/path/to/file.txt', { extension: false }); // Outputs: 'file'
+ * ```ts
+ * import { getNameFromPath } from '@democrance/utils';
+ *
+ * console.log(getNameFromPath('/path/to/file.txt')); // Outputs: 'file.txt'
+ * console.log(getNameFromPath('/path/to/file.txt', { extension: false })); // Outputs: 'file'
+ * @public
+ * ```
  */
 export function getNameFromPath(path = '', { extension = true } = {}) {
     if (typeof path !== 'string')

@@ -4,7 +4,7 @@
  * @typedef {Object} TargetObject
  * @template T The type of the values in the object.
  */
-type TargetObject<T> = Record<string, T>
+export type TargetObject<T> = Record<string, T>
 
 /**
  * Predicate function type definition.
@@ -14,10 +14,10 @@ type TargetObject<T> = Record<string, T>
  * @param {string} key - The key of the current element being processed in the object.
  * @param {T} value - The value of the current element being processed in the object.
  * @param {number} index - The index of the current element being processed in the object.
- * @param {TargetObject} object - The object filterObject was called upon.
+ * @param {TargetObject<T>} object - The object filterObject was called upon.
  * @return {boolean} True if the current element should be included in the filtered object; otherwise, false.
  */
-type PredicateFunction<T> = (
+export type PredicateFunction<T> = (
     key: string,
     value: T,
     index: number,
@@ -25,51 +25,51 @@ type PredicateFunction<T> = (
 ) => boolean
 
 /**
- * Filters the properties of an object based on a predicate function.
+ * This utility function iterates over the properties of the given object and includes them in the
+ * returned object if the predicate function returns `true` for the given property.
  *
- * This function iterates over the properties of the given object and includes them in the returned object
- * if the predicate function returns `true` for the given property. The predicate function receives the
- * key of the property, the value of the property, the index of the property, and the original object as
- * arguments.
+ * The function is especially useful when you need to filter properties of an object based on some
+ * custom condition.
  *
  * If no predicate function is provided, or if the provided predicate is not a function, the original
  * object is returned without any filtering.
  *
- * Note: The type parameter `ObjectValue` is used for the values of the object's properties, and `Object<ObjectValue>` is assumed
- * to be a type that represents an object with values of type `ObjectValue`. Please replace `Object<ObjectValue>` with the correct
- * type if this assumption is incorrect.
+ * @remarks
+ * This function is part of the {@link https://github.com/daniil4udo/utils | @democrance/utils} library.
  *
- * @template T The type of the values in the object.
+ * @typeParam T - The type of the values in the object.
  *
- * @function filterObject
- * @param {TargetObject<T>} object The object to filter.
- * @param {PredicateFunction<T>} predicate The function used to test each item of the object.
+ * @param object - The object to filter.
+ * @param predicate - The function used to test each item of the object.
  *      This function should return `true` to keep the item, or `false` otherwise.
  *      It accepts four arguments:
  *      `key` The key of the current element being processed in the object.
  *      `value` The value of the current element being processed in the object.
  *      `index` The index of the current element being processed in the object.
  *      `object` The object `filterObject` was called upon.
- * @returns {TargetObject<T>} A new object with the properties that passed the test.
- *          If no properties pass the test, an empty object will be returned.
- * @throws {TypeError} If `predicate` is not a function.
+ * @returns A new object with the properties that passed the test.
+ *      If no properties pass the test, an empty object will be returned.
  *
  * @example
+ * ```ts
+ * import { filterObject } from '@democrance/utils';
+ *
  * const myObj = { a: 1, b: 2, c: 3 }
  * // Filter the object to include only key-value pairs where the value is greater than 1
  * const filteredObj = filterObject(myObj, (key, value) => value > 1)
- * // filteredObj is { b: 2, c: 3 }
+ * console.log(filteredObj) // { b: 2, c: 3 }
  * // Filter the object to include only key-value pairs where the key starts with 'a'
  * const filteredObj2 = filterObject(myObj, (key) => key.startsWith('a'))
- * // filteredObj2 is { a: 1 }
- *
+ * console.log(filteredObj2) // { a: 1 }
+ * @public
+ * ```
  */
 export function filterObject<T>(
     object: TargetObject<T>,
     predicate: PredicateFunction<T>,
 ): TargetObject<T> {
     if (typeof predicate !== 'function')
-        throw new TypeError('[filterObject] - Expected a function as the second argument')
+        return object
 
     const result: TargetObject<T> = {}
     let key: string

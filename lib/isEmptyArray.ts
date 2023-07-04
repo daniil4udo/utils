@@ -9,9 +9,18 @@ import { hasValue, isNil } from './hasValue'
  * @property {boolean} [recursive] - A flag indicating whether to check nested arrays recursively.
  * @property {(value: T) => boolean} [comparator] - A comparator function used to determine if an array element is considered "empty".
  */
-
 interface Options<T> {
+    /**
+     * Whether to check nested arrays recursively.
+     *
+     * @defaultValue `true`
+     */
     recursive?: boolean
+    /**
+     * A comparator function used to determine if an array element is considered "empty".
+     *
+     * @defaultValue `hasValue`
+     */
     comparator?: (value: T) => boolean
 }
 
@@ -20,18 +29,23 @@ interface Options<T> {
  * the array has no elements, or all elements of the array are themselves "empty" according to the provided `comparator` function.
  * If the `recursive` option is true (the default), then nested arrays are checked recursively.
  *
- * @function isEmptyArray
- * @param {any[]} arr - The array to check.
- * @param {Options} [opts={}] - An options object.
- * @param {boolean} [opts.recursive=true] - Whether to check nested arrays recursively.
- * @param {(value: any) => boolean} [opts.comparator=hasValue] - A comparator function used to determine if an array element is considered "empty".
- * @returns {boolean} Returns true if the array is considered "empty", false otherwise.
+ * @remarks
+ * This function is part of the {@link https://github.com/daniil4udo/utils | @democrance/utils} library.
+ *
+ * @param arr - The array to check.
+ * @param opts - An options object.
+ * @returns `true` if the array is considered "empty", `false` otherwise.
  *
  * @example
- * isEmptyArray([1, 2, 3]) // Returns false
- * isEmptyArray([]) // Returns true
- * isEmptyArray([[], [[], []]]) // Returns true
- * isEmptyArray([[], [[], [1]]]) // Returns false
+ * ```ts
+ * import { isEmptyArray } from '@democrance/utils';
+ *
+ * console.log(isEmptyArray([1, 2, 3])); // Returns false
+ * console.log(isEmptyArray([])); // Returns true
+ * console.log(isEmptyArray([[], [[], []]])); // Returns true
+ * console.log(isEmptyArray([[], [[], [1]]])); // Returns false
+ * ```
+ * @public
  */
 export function isEmptyArray<T>(arr: T | T[] = [], opts: Options<T> = {}) {
     if (isNil(arr))

@@ -2,11 +2,21 @@ import { detectMode } from './detectMode'
 import { safeJSONParse } from './safeJSONParse'
 
 /**
- * The `StorageWrapper` class provides a static interface for working with the `'localStorage' | 'sessionStorage'` Web Storage API,
- * with enhanced functionalities such as automatic serialization, encoding, and error handling.
+ * `StorageWrapper` is a class that wraps local and session storage functionalities.
  *
- * Note: The values stored by `StorageWrapper` methods are JSON serialized and optionally base64 encoded
- * when not in development mode, to ensure data consistency and to reduce risk of storage corruption.
+ * @remarks
+ * This class allows you to work with localStorage or sessionStorage while automatically handling
+ * the serialization and deserialization of values to and from JSON. It also handles base64 encoding
+ * and decoding if the environment mode is not 'development'.
+ *
+ * @example
+ * ```ts
+ * const storage = new StorageWrapper('localStorage');
+ * storage.setItem('key', { field: 'value' });
+ * const item = storage.getItem('key'); // returns { field: 'value' }
+ * storage.removeItem('key');
+ * ```
+ * @private
  */
 class StorageWrapper {
     private storage: 'localStorage' | 'sessionStorage'
@@ -101,7 +111,40 @@ class StorageWrapper {
     }
 }
 
+/**
+ * Pre-instantiated `StorageWrapper` instance for localStorage.
+ *
+ * @remarks
+ * This is a singleton instance of `StorageWrapper` specifically set up to interact with `localStorage`.
+ * All operations performed using this instance will act on the `localStorage`.
+ *
+ * @example
+ * ```ts
+ * import { LocalStorageWrapper } from '@democrance/utils';
+ *
+ * LocalStorageWrapper.setItem('key', { field: 'value' });
+ * const item = LocalStorageWrapper.getItem('key'); // returns { field: 'value' }
+ * LocalStorageWrapper.removeItem('key');
+ * ```
+ */
 export const LocalStorageWrapper = new StorageWrapper('localStorage')
+
+/**
+ * Pre-instantiated `StorageWrapper` instance for sessionStorage.
+ *
+ * @remarks
+ * This is a singleton instance of `StorageWrapper` specifically set up to interact with `sessionStorage`.
+ * All operations performed using this instance will act on the `sessionStorage`.
+ *
+ * @example
+ * ```ts
+ * import { SessionStorageWrapper } from '@democrance/utils';
+ *
+ * SessionStorageWrapper.setItem('key', { field: 'value' });
+ * const item = SessionStorageWrapper.getItem('key'); // returns { field: 'value' }
+ * SessionStorageWrapper.removeItem('key');
+ * ```
+ */
 export const SessionStorageWrapper = new StorageWrapper('sessionStorage')
 
 // Exporting individual static methods

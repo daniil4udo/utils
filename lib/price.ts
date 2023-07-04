@@ -1,4 +1,4 @@
-import { toType } from "./toType"
+import { toType } from './toType'
 
 /**
  * Represents the format options for currency and price.
@@ -30,6 +30,9 @@ interface ILocate extends IFormat {
  * the specified locale. It then removes the thousands separators and replaces the decimal separator
  * with a dot to create a string that can be parsed by JavaScript's parseFloat function.
  *
+ * @remarks
+ * This function is a part of the {@link https://github.com/daniil4udo/utils | @democrance/utils} library.
+ *
  * @function parseLocaleNumber
  * @param {string} value - The string to be parsed. This should contain a number formatted according
  *      to the rules of the specified locale. For example, if the locale is 'de-DE',
@@ -43,11 +46,16 @@ interface ILocate extends IFormat {
  *      the function will return NaN.
  *
  * @example
+ * ```ts
+ * import { parseLocaleNumber } from '@democrance/utils';
+ *
  * // returns 1000000.1
  * parseLocaleNumber('1,000,000.1', 'en-US');
  *
  * // returns 1000000.1
  * parseLocaleNumber('1.000.000,1', 'de-DE');
+ * ```
+ * @public
  */
 export function parseLocaleNumber(value, locale: string) {
     const format = new Intl.NumberFormat(locale).format(1000.1)
@@ -71,6 +79,9 @@ export function parseLocaleNumber(value, locale: string) {
  *
  * The function throws an error if the fractions parameter is not a boolean or number.
  *
+ * @remarks
+ * This function is a part of the {@link https://github.com/daniil4udo/utils | @democrance/utils} library.
+ *
  * @param {string | number} value - The value to be formatted. If it is a string, it will be converted to a number.
  * @param {boolean | number} [fractions=true] - Determines the number of fraction digits in the formatted output.
  * @param {string} [locale='en'] - The locale in which the number should be formatted. Default is 'en' for English.
@@ -79,9 +90,14 @@ export function parseLocaleNumber(value, locale: string) {
  * @returns {string} - The formatted number as a string.
  *
  * @example
+ * ```ts
+ * import { formatValue } from '@democrance/utils';
+ *
  * formatValue(1234.5678); // Outputs: "1,234.57"
  * formatValue(1234.5678, 3); // Outputs: "1,234.568"
  * formatValue(1234.5678, 2, 'de-DE'); // Outputs: "1.234,57"
+ * ```
+ * @public
  */
 export function formatValue(value: string | number, fractions: boolean | number = true, locale = 'en'): string {
     const MAX_SAFE_FRACTIONS = 20
@@ -113,14 +129,22 @@ export function formatValue(value: string | number, fractions: boolean | number 
 /**
  * Applies currency sign and price format to a formatted price string.
  *
+ * @remarks
+ * This function is a part of the {@link https://github.com/daniil4udo/utils | @democrance/utils} library.
+ *
  * @function applyCurrencySign
  * @param {string} formattedPrice - The formatted price value.
  * @param {IFormat} options - The currency format options.
  * @returns {string} The formatted price with currency sign and format applied.
  *
  * @example
+ * ```ts
+ * import { formattedPrice } from '@democrance/utils';
+ *
  * const formattedPrice = applyCurrencySign('1,234.56', { currencySign: '$', priceFormat: '{currency}{amount}' });
  * console.log(formattedPrice); // Outputs: "$1,234.56"
+ * ```
+ * @public
  */
 export function applyCurrencySign(formattedPrice: string, { currencySign = '', priceFormat = '{currency} {amount}' }: IFormat) {
     return priceFormat
@@ -132,6 +156,9 @@ export function applyCurrencySign(formattedPrice: string, { currencySign = '', p
 /**
  * Formats a price value with currency sign and formatting options.
  *
+ * @remarks
+ * This function is a part of the {@link https://github.com/daniil4udo/utils | @democrance/utils} library.
+ *
  * @function price
  * @param {string | number} [value=0] - The price value to format. Can be a string or number. Defaults to 0.
  * @param {ILocate} locale - The localization options for number and currency formatting.
@@ -139,8 +166,13 @@ export function applyCurrencySign(formattedPrice: string, { currencySign = '', p
  * @returns {string} The formatted price string.
  *
  * @example
+ * ```ts
+ * import { price } from '@democrance/utils';
+ *
  * price(1234.5678, { currencySign: '$', priceFormat: '{currency}{amount}' }, 2); // Outputs "$1,234.57"
  * price(1234.5678, { currencySign: '€', priceFormat: '{currency} {amount}' }, 3); // Outputs "€ 1,234.568"
+ * ```
+ * @public
  */
 export function price(value: number, locale: ILocate, fractions: number) {
     if (isNaN(value))

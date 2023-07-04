@@ -9,6 +9,7 @@
  * @name zipcelx
  *
  * @example
+ * ```ts
  * import { zipcelx } from '@democrance/utils';
  *
  * // Create a workbook with multiple sheets
@@ -31,5 +32,7 @@
  *
  * // Generate the Excel file
  * workbook.generate('example.xlsx');
+ * ```
+ * @public
  */
 export { default as zipcelx } from 'zipcelx'

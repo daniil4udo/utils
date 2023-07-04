@@ -10,15 +10,18 @@ import _deepClone from 'rfdc'
  * If `structuredClone` doesn't throw an error, the input is assumed to be structured data and a deep copy of it is returned.
  * If `structuredClone` throws an error, it's assumed the input is not structured data and the fallback method is used.
  *
- * @see {@link https://github.com/davidmarkclements/rfdc}
+ * @see {@link https://github.com/davidmarkclements/rfdc | rfdc} for the fallback deep clone method.
+ * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/structuredClone | structuredClone} for more about the structured clone algorithm.
  *
- * @template T - The type of the input and the returned value.
+ * @typeParam T - The type of the input and the returned value.
  *
- * @function deepClone
- * @param {T} input - The input value to clone.
- * @returns {T} - A deep clone of the input value.
+ * @param input - The input value to clone.
+ * @returns A deep clone of the input value.
  *
  * @example
+ * ```ts
+ * import { deepClone } from '@democrance/utils';
+ *
  * const obj = { foo: { bar: { baz: 'qux' } } };
  * const clonedObj = deepClone(obj);
  * console.log(clonedObj); // Output: { foo: { bar: { baz: 'qux' } } }
@@ -28,6 +31,8 @@ import _deepClone from 'rfdc'
  * const clonedArr = deepClone(arr);
  * console.log(clonedArr); // Output: [1, [2, [3, [4]]]]
  * console.log(clonedArr === arr); // Output: false (clonedArr is a deep clone of arr)
+ * ```
+ * @public
  */
 export function deepClone<T>(input: T): T {
     try {

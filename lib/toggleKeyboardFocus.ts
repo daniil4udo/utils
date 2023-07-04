@@ -27,6 +27,9 @@ export const POSSIBLE_FOCUSABLE_TAGS = 'a[href], area[href], button, details, in
  *
  * Note: This function requires 'requestAnimationFrame' to apply the tabIndex, which might not be available in all environments.
  *
+ * @remarks
+ * This function is a part of the {@link https://github.com/daniil4udo/utils | @democrance/utils} library.
+ *
  * @function toggleKeyboardFocus
  * @param {HTMLElement} [scope=document.body] - The scope within which to toggle the keyboard focus state.
  *      Default is the document body. It is expected to be an HTML element.
@@ -36,6 +39,9 @@ export const POSSIBLE_FOCUSABLE_TAGS = 'a[href], area[href], button, details, in
  * @returns {void} This function does not return a value.
  *
  * @example
+ * ```ts
+ * import { toggleKeyboardFocus } from '@democrance/utils';
+ *
  * // Toggle the keyboard focusability of all focusable elements within the document body.
  * toggleKeyboardFocus();
  *
@@ -45,6 +51,8 @@ export const POSSIBLE_FOCUSABLE_TAGS = 'a[href], area[href], button, details, in
  *
  * // Toggle the keyboard focusability of all focusable elements within a specific element and set tabIndex to 0.
  * toggleKeyboardFocus(container, 0);
+ * ```
+ * @public
  */
 export function toggleKeyboardFocus(scope = document.body, tabIndex = -1) {
     if (!window || !scope)

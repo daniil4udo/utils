@@ -1,51 +1,68 @@
+type MatchRange = [number, number][]
+
+interface Options {
+    /**
+     * Specifies the HTML tag to use for wrapping matches
+     *
+     * @defaultValue `strong`
+     */
+    tag?: string
+}
 /**
- * Highlights matches in a str string by wrapping them in HTML tags.
+ * A function that highlights matches in a `str` string by wrapping them in HTML tags.
  *
- * This function takes a str string and an array of match ranges, and returns a new string where each match range is
+ * This function takes a `str` string and an array of match ranges, and returns a new string where each match range is
  * wrapped in the specified HTML tag. A match range is a two-element array where the first element is the start index
  * of the match and the second element is the end index of the match. The indices are inclusive.
  *
- * If no match ranges are provided or if the str string is empty, the function returns the original str string. If no
- * tag is specified, the function uses 'strong' as the default tag.
+ * If no match ranges are provided or if the `str` string is empty, the function returns the original `str` string.
+ * If no tag is specified, the function uses 'strong' as the default tag.
  *
- * @function highlightMatch
- * @param {string} str - The str string in which to highlight matches.
- * @param {[number, number][]} [matches=[]] - An array of match ranges. Each match range is a two-element array
- *   containing the start and end indices of the match. Defaults to an empty array.
- * @param {{ tag?: string }} [options={}] - An options object. Currently supports one option: 'tag', which specifies
- *   the HTML tag to use for wrapping matches. Defaults to an object with 'tag' set to 'strong'.
- * @returns {string} - The str string with matches highlighted.
+ * @remarks
+ * This function is part of the {@link https://github.com/daniil4udo/utils | @democrance/utils} library.
+ * @typeParam MatchRange - An array of match ranges. Each match range is a two-element array containing the start
+ *      and end indices of the match.
+ * @typeParam Options - An options object. Currently supports one option: 'tag', which specifies the HTML tag to
+ *      use for wrapping matches.
+ *
+ * @param str - The string in which to highlight matches.
+ * @param matches - An array of match ranges. Each match range is a two-element array containing the start and
+ *      end indices of the match. Defaults to an empty array.
+ * @param options - An options object. It currently supports one option: 'tag', which specifies the HTML tag to
+ *      use for wrapping matches. Defaults to an object with 'tag' set to 'strong'.
+ * @returns The string with matches highlighted.
  *
  * @example
+ * ```ts
+ * import { highlightMatch } from '@democrance/utils';
+ *
  * const str1 = 'Hello, world!';
  * const matches1 = [[7, 11]]; // Matches the word 'world'
- * const result1 = highlightMatch(str1, matches1); // Output: 'Hello, <strong>world</strong>!'
+ * console.log(highlightMatch(str1, matches1)); // Output: 'Hello, <strong>world</strong>!'
  *
  * const str2 = 'Hello, world!';
  * const matches2 = [[0, 4], [7, 11]]; // Matches the words 'Hello' and 'world'
- * const result2 = highlightMatch(str2, matches2, { tag: 'span' });
- * console.log(result2); // Output: '<span>Hello</span>, <span>world</span>!'
+ * console.log(highlightMatch(str2, matches2, { tag: 'span' })); // Output: '<span>Hello</span>, <span>world</span>!'
  *
  * const str3 = 'Hello, world!';
- * const matches3 = [[-5, 5]]; // Matches the substring 'Hello'
- * const result3 = highlightMatch(str3, matches3);
- * console.log(result3); // Output: 'Hello, world!'
+ * const matches3 = [[-5, 5]]; // Matches nothing'
+ * console.log(highlightMatch(str3, matches3)); // Output: 'Hello, world!'
  *
  * const str4 = 'Hello, world!';
  * const matches4 = [[0, 20]]; // Matches the entire string
- * const result4 = highlightMatch(str4, matches4);
- * console.log(result4);  // Output: '<strong>Hello, world!</strong>'
+ * console.log(highlightMatch(str4, matches4));  // Output: '<strong>Hello, world!</strong>'
  *
  * const str5 = 'Hello, world!';
  * const matches5 = [[0, 4]];
  * const options5 = { tag: 'em' };
- * const result5 = highlightMatch(str5, matches5, options5);
- * console.log(result5); // Output: '<em>Hello</em>, world!'
+ * console.log(highlightMatch(str5, matches5, options5)); // Output: '<em>Hello</em>, world!'
+ * @public
+ * ```
  */
 export function highlightMatch(
     str: string,
-    matches: [number, number][] = [],
-    { tag = 'strong' } = {},
+    matches: MatchRange = [],
+    { tag = 'strong' }: Options = {},
 ) {
     if (!str || matches.length === 0)
         return str

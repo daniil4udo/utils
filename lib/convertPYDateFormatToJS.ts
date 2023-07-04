@@ -1,4 +1,8 @@
-export const pyToJSDateMap = new Map([
+/**
+ * Map that defines the conversion from Python-style date format to JavaScript-style date format.
+ * @public
+ */
+export const PYTHON_TO_JAVASCRIPT_DATE_MAP = new Map([
     [ '%A', 'dddd' ], // Weekday as locale’s full name: (In English: Sunday, .., Saturday)(Auf Deutsch: Sonntag, .., Samstag)
     [ '%a', 'ddd' ], // Weekday abbreviated: (In English: Sun, .., Sat)(Auf Deutsch: So, .., Sa)
     [ '%B', 'MMMM' ], // Month name: (In English: January, .., December)(Auf Deutsch: Januar, .., Dezember)
@@ -28,18 +32,32 @@ export const pyToJSDateMap = new Map([
 /**
  * Converts a Python-style date format string to a JavaScript-style date format string.
  *
- * @function convertPYDateFormatToJS
- * @param {string} unformatted - The unformatted Python-style date format string.
- * @returns {string} The JavaScript-style date format string.
+ * This method takes a Python-style date format string as input and returns a new string,
+ * which is a JavaScript-style date format string.
+ *
+ * @remarks
+ * This function is part of the {@link https://github.com/daniil4udo/utils | @democrance/utils} library.
+ *
+ * @param unformatted - The unformatted Python-style date format string.
+ * @returns The JavaScript-style date format string.
+ * @throws {TypeError} If the input is not of type 'string'.
  *
  * @example
- * convertPYDateFormatToJS('%A, %B %d, %Y') // Outputs: 'dddd, MMMM DD, YYYY'
- * convertPYDateFormatToJS('%d-%b-%Y') // Outputs: 'DD-MMM-YYYY'
- * convertPYDateFormatToJS('%m/%d/%y %I:%M %p') // Outputs: 'MM/DD/YY hh:mm A'
+ * ```ts
+ * import { convertPYDateFormatToJS } from '@democrance/utils';
+ *
+ * console.log(convertPYDateFormatToJS('%A, %B %d, %Y')); // Outputs: 'dddd, MMMM DD, YYYY'
+ * console.log(convertPYDateFormatToJS('%d-%b-%Y')); // Outputs: 'DD-MMM-YYYY'
+ * console.log(convertPYDateFormatToJS('%m/%d/%y %I:%M %p')); // Outputs: 'MM/DD/YY hh:mm A'
+ * ```
+ * @public
  */
 export function convertPYDateFormatToJS(unformatted: string) {
+    if (typeof unformatted !== 'string')
+        throw new TypeError(`[convertPYDateFormatToJS] - input should be type 'string'. Got ${typeof unformatted}`)
+
     let formatted = unformatted
-    pyToJSDateMap.forEach((value, key) => {
+    PYTHON_TO_JAVASCRIPT_DATE_MAP.forEach((value, key) => {
         if (key)
             formatted = formatted.split(key).join(value)
     })

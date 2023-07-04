@@ -5,6 +5,9 @@ import { toType } from './toType'
  * Moves a property level up in an object, while maintaining the original property order.
  * The function uses deep cloning to avoid mutation of the nested property.
  *
+ * @remarks
+ * This function is a part of the {@link https://github.com/daniil4udo/utils | @democrance/utils} library.
+ *
  * @template T The type of the object
  *
  * @function movePropLevelUp
@@ -23,8 +26,13 @@ import { toType } from './toType'
  * The function uses 'to-fast-properties' to optimize the property lookup speed of the returned object.
  *
  * @example
+ * ```ts
+ * import { movePropLevelUp } from '@democrance/utils';
+ *
  * const obj = { a: 1, b: { c: 2, d: 3 }, e: 4 };
  * const result = movePropLevelUp(obj, 'b'); // Outputs: { a: 1, c: 2, d: 3, e: 4 }
+ * ```
+ * @public
  */
 export function movePropLevelUp<T extends object>(parentObject: T, propertyName: keyof T) {
     if (toType(parentObject) !== 'object')

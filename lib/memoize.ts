@@ -18,7 +18,8 @@
  * @returns {Function} The new memoized function.
  *
  * @example
- * const { default: memoize } = require('fast-memoize');
+ * ```ts
+ * import { memoize } from '@democrance/utils';
  *
  * function compute(a, b) {
  *   return a + b;
@@ -29,5 +30,7 @@
  * memoizedCompute(1, 2); // Outputs: 3
  * // This will return the cached result
  * memoizedCompute(1, 2); // Outputs: 3
+ * ```
+ * @public
  */
 export { default as memoize } from 'fast-memoize'

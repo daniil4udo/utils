@@ -12,6 +12,9 @@ interface SortableItems {
 /**
  * Sorts an array of objects based on a specific key using string comparison in a specified locale.
  *
+ * @remarks
+ * This function is a part of the {@link https://github.com/daniil4udo/utils | @democrance/utils} library.
+ *
  * @template T - A subtype of `Localizable` where every property value is a string.
  *
  * @function sortObjects
@@ -21,8 +24,13 @@ interface SortableItems {
  * @returns {T[]} The sorted collection.
  *
  * @example
+ * ```ts
+ * import { sortObjects } from '@democrance/utils';
+ *
  * const collection = [{ name: 'Zoe' }, { name: 'Amy' }, { name: 'Mark' }];
  * sortObjects(collection, 'name'); // Outputs: [{ name: 'Amy' }, { name: 'Mark' }, { name: 'Zoe' }]
+ * ```
+ * @public
  */
 export function sortObjects(arr: SortableItems[], key: string, locale = 'en-US'): SortableItems[] {
     const collator = new Intl.Collator(locale, { numeric: true, sensitivity: 'base' })

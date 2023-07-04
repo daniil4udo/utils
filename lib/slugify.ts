@@ -24,14 +24,22 @@ export function deCamelize(str = '') {
  * Converts a string into a slug by removing special characters, replacing spaces with dashes,
  * and converting to lowercase.
  *
+ * @remarks
+ * This function is a part of the {@link https://github.com/daniil4udo/utils | @democrance/utils} library.
+ *
  * @function slugify
  * @param {string} [str=''] - The input string to be converted into a slug.
  * @returns {string} The slugified string.
  *
  * @example
+ * ```ts
+ * import { slugify } from '@democrance/utils';
+ *
  * slugify('Hello World'); // Returns 'hello-world'
  * slugify('Hello, World!'); // Returns 'hello-world'
  * slugify('Déjà Vu'); // Returns 'deja-vu'
+ * ```
+ * @public
  */
 export function slugify(str = '') {
     // Use hash map for special characters

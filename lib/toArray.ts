@@ -17,6 +17,9 @@ interface Options {
  * Converts a value into an array. If the value is already an array, it returns
  * the array as-is, a shallow copy, or a deep clone depending on the options.
  *
+ * @remarks
+ * This function is a part of the {@link https://github.com/daniil4udo/utils | @democrance/utils} library.
+ *
  * @template T - The type of the elements.
  *
  * @function toArray
@@ -25,9 +28,14 @@ interface Options {
  * @returns {T[]} The value converted into an array.
  *
  * @example
+ * ```ts
+ * import { toArray } from '@democrance/utils';
+ *
  * toArray(5); //  Outputs: [5]
  * toArray([1, 2, 3], { shallow: true }); //  Outputs: [1, 2, 3]
  * toArray([1, [2, 3]], { deep: true }); //  Outputs: [1, [2, 3]]
+ * ```
+ * @public
  */
 export function toArray<T>(arr: T | T[], options: Options = { shallow: false, deep: false }): T[] {
     if (!arr)

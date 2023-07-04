@@ -1,14 +1,22 @@
 /**
- * Checks if a string is a valid HTML.
+ * Checks if a given string is a valid HTML.
+ *
+ * @remarks
+ * This function is a part of the {@link https://github.com/daniil4udo/utils | @democrance/utils} library.
  *
  * @function isHTML
- * @param {string} str - The string to check.
- * @returns {boolean} True if the string is a valid HTML, false otherwise.
+ * @param {string} str - The string to validate as HTML.
+ * @returns {boolean} Returns `true` if the string is valid HTML, otherwise `false`.
  *
  * @example
- * isHTML('<p>Hello, World!</p>'); // Returns true
- * isHTML('<p>Hello, World!'); // Returns true (for now)
- * isHTML('Hello, World!'); // Returns false
+ * ```ts
+ * import { isHTML } from '@democrance/utils';
+ *
+ * isHTML('<p>Hello, World!</p>'); // Outputs: true
+ * isHTML('<p>Hello, World!'); // Outputs: true (valid HTML despite missing closing tag)
+ * isHTML('Hello, World!'); // Outputs: false (plain text is not considered valid HTML)
+ * ```
+ * @public
  */
 export function isHTML(str: string): boolean {
     try {
