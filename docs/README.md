@@ -1,3 +1,5 @@
+@democrance/utils / [Exports](modules.md)
+
 <h1 align='center'><samp>@democrance/utils</samp></h1>
 
 [![package version](https://img.shields.io/npm/v/@democrance/utils.svg?style=flat-square)](https://npmjs.org/package/@democrance/utils)

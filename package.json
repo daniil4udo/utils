@@ -39,7 +39,6 @@
         "prepublishOnly": "pnpm build",
         "release": "bumpp --commit --tag --no-push && pnpm publish --access public",
         "test": "vitest",
-        "typedoc": "typedoc --plugin typedoc-plugin-markdown ./lib/index.ts",
         "test:coverage": "vitest run --coverage --environment jsdom"
     },
     "dependencies": {

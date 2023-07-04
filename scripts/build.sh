@@ -7,7 +7,7 @@ CONCURRENTLY_FLAGS=" \
     --max-processes 1 \
     --timings \
     --prefix-colors #18A57E,#2757A3,#FFDD00,#0057B7 \
-    --names GENERATE:INDEX,GENERATE:PRESET,LINT,CLEAN,BUILD \
+    --names GENERATE:INDEX,GENERATE:PRESET,LINT,CLEAN,TYPEDOC,BUILD \
     " \
 
 concurrently $CONCURRENTLY_FLAGS \
@@ -15,4 +15,5 @@ concurrently $CONCURRENTLY_FLAGS \
     "vite-node scripts/autoImportUtilsPreset.ts" \
     "eslint lib/preset/autoImportUtilsPreset.ts lib/index.ts --fix" \
     "rimraf dist" \
+    "typedoc --plugin typedoc-plugin-markdown ./lib/index.ts" \
     "tsup"
