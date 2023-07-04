@@ -15,8 +15,28 @@ describe('@/lib/price.ts', () => {
     })
 
     describe('formatValue', () => {
+        it('should format number with maximum fractions when fractions is true', () => {
+            expect(formatValue(1000.123456789123456789, true, 'en')).toBe('1,000.1234567891235')
+        })
+
+        it('should format number with no fractions when fractions is false', () => {
+            expect(formatValue(1000.123456789123456789, false, 'en')).toBe('1,000')
+        })
+
+        it('should format number with specific number of fractions', () => {
+            expect(formatValue(1000.123456789123456789, 5, 'en')).toBe('1,000.12346')
+        })
+
+        it('should throw error when fractions is neither a boolean or a number', () => {
+            expect(() => formatValue(1000.123456789123456789, 'invalid', 'en')).toThrow(TypeError)
+        })
+
+        it('should format number based on the locale', () => {
+            expect(formatValue(1000.123456789123456789, true, 'de')).toBe('1.000,1234567891235')
+        })
+
         it('should format a number value with default options', () => {
-            expect(formatValue(1234.5678)).to.equal('1,234.57')
+            expect(formatValue(1234.5678)).to.equal('1,234.5678')
         })
 
         it('should format a number value with custom fraction digits', () => {

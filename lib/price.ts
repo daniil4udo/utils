@@ -1,3 +1,5 @@
+import { toType } from "./toType"
+
 /**
  * Represents the format options for currency and price.
  *
@@ -60,26 +62,52 @@ export function parseLocaleNumber(value, locale: string) {
 }
 
 /**
- * Formats a number value with localized formatting options.
+ * Function to format a value to a locale string with the ability to control the fraction digits.
+ * It takes the value as a string or number, and an optional fractions parameter which can be a boolean or number.
+ * If fractions is a boolean and is true, the number will be formatted with the maximum safe fraction digits (20).
+ * If fractions is a boolean and is false, the number will be formatted without fraction digits.
+ * If fractions is a number, the number will be formatted with the fractions provided. However, if the fractions
+ * provided exceeds the maximum safe fraction digits, the maximum safe fraction digits will be used.
  *
- * @function formatValue
- * @param {string | number} value - The number value to format. Can be a string or number.
- * @param {number} [fractions=2] - The number of decimal places to display. Defaults to 2.
- * @param {string} [locale='en'] - The locale identifier for number formatting. Defaults to 'en'.
- * @returns {string} The formatted number as a string.
+ * The function throws an error if the fractions parameter is not a boolean or number.
+ *
+ * @param {string | number} value - The value to be formatted. If it is a string, it will be converted to a number.
+ * @param {boolean | number} [fractions=true] - Determines the number of fraction digits in the formatted output.
+ * @param {string} [locale='en'] - The locale in which the number should be formatted. Default is 'en' for English.
+ * @throws {TypeError} - Will throw an error if fractions is not a boolean or a number.
+ *
+ * @returns {string} - The formatted number as a string.
  *
  * @example
  * formatValue(1234.5678); // Outputs: "1,234.57"
  * formatValue(1234.5678, 3); // Outputs: "1,234.568"
  * formatValue(1234.5678, 2, 'de-DE'); // Outputs: "1.234,57"
  */
-export function formatValue(value: string | number, fractions = 2, locale = 'en') {
-    const _price = isNaN(Number(value)) ? parseLocaleNumber(value, locale) : Number(value)
+export function formatValue(value: string | number, fractions: boolean | number = true, locale = 'en'): string {
+    const MAX_SAFE_FRACTIONS = 20
 
-    return _price.toLocaleString(locale, {
-        minimumFractionDigits: Math.min(fractions, 20), // minimumFractionDigits <= 2
-        maximumFractionDigits: Math.min(fractions, 20), // maximumFractionDigits <= 20
-    })
+    const valueNumber = isNaN(Number(value)) ? parseLocaleNumber(value, locale) : Number(value)
+    const valueType = toType(fractions)
+
+    if (valueType !== 'boolean' && valueType !== 'number')
+        throw new TypeError(`[formatValue] - fractions should be either Boolean or Number. Got ${valueType}`)
+
+    let options: Intl.NumberFormatOptions = {}
+
+    if (valueType === 'boolean') {
+        options = {
+            maximumFractionDigits: fractions ? MAX_SAFE_FRACTIONS : 0,
+        }
+    }
+    else {
+        const safeFractions = Math.min(fractions as number, MAX_SAFE_FRACTIONS)
+        options = {
+            minimumFractionDigits: safeFractions,
+            maximumFractionDigits: safeFractions,
+        }
+    }
+
+    return valueNumber.toLocaleString(locale, options)
 }
 
 /**
