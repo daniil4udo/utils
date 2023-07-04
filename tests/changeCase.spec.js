@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { capitalize, toUpper, toLower } from '../lib/changeCase'
+import { capitalize, toLower, toUpper } from '../lib/changeCase'
 
 describe('@/lib/changeCase.ts', () => {
     describe('capitalize', () => {
@@ -17,7 +17,7 @@ describe('@/lib/changeCase.ts', () => {
         })
 
         it('returns the original value when given a non-string', () => {
-            expect(capitalize(123)).toBe(123)
+            expect(() => capitalize(123)).toThrow(TypeError)
         })
     })
 
@@ -35,7 +35,7 @@ describe('@/lib/changeCase.ts', () => {
         })
 
         it('returns the original value when given a non-string', () => {
-            expect(toUpper(123)).toBe(123)
+            expect(() => toUpper(123)).toThrow(TypeError)
         })
     })
 
@@ -53,7 +53,7 @@ describe('@/lib/changeCase.ts', () => {
         })
 
         it('returns the original value when given a non-string', () => {
-            expect(toLower(123)).toBe(123)
+            expect(() => toLower(123)).toThrow(TypeError)
         })
     })
 })
