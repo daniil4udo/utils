@@ -60,7 +60,7 @@ export function getNameFromPath(path = '', { extension = true } = {}) {
     const fileName = path
         .split('\\')
         .pop()
-        .split('/')
+        ?.split('/')
         .pop()
 
     return extension
