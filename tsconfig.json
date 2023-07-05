@@ -17,13 +17,15 @@
         "outDir": "dist",
         "target": "ESNext",
         "module": "ESNext",
-        "strict": false,
-        "declaration": true,
-        "pretty": true,
+        "strict": true,
         "allowSyntheticDefaultImports": true,
+        "declaration": true,
         "esModuleInterop": true,
         "importHelpers": true,
         "isolatedModules": true,
-        "skipLibCheck": true
+        "noImplicitAny": false,
+        "pretty": true,
+        "skipLibCheck": true,
+        "strictBindCallApply": true
     },
 }
