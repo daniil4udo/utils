@@ -18,7 +18,7 @@
  * ```
  * @public
  */
-import * as fileSaver from 'file-saver-es'
+import * as fileSaver from 'file-saver-es/src/FileSaver'
 
-const { saveAs } = fileSaver
-export { saveAs }
+export const { saveAs } = fileSaver
+
