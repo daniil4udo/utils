@@ -1,11 +1,12 @@
 import { describe, expect, it } from 'vitest'
 
-import { isFlagEmoji,
+import {
+    isFlagEmoji,
     isHorseRacingSkinToneComboEmoji,
     isKeycapEmoji,
     isPersonZwjEmoji,
     isRainbowFlagEmoji,
-    isSkinToneComboEmoji
+    isSkinToneComboEmoji,
 } from '../lib/emoji/emojiSupport'
 import { emojiToIso, isCountryIso, isoToEmoji } from '../lib/emoji/isoToEmojiToISO'
 

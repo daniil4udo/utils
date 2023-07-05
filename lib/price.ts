@@ -66,7 +66,7 @@ export function parseLocaleNumber(value, locale: string) {
         .replace(new RegExp(`\\${thousandsSeparator}`, 'g'), '') // Remove thousands separators
         .replace(new RegExp(`\\${decimalSeparator}`), '.') // Replace decimal separator with '.'
 
-    return parseFloat(normalized)
+    return Number.parseFloat(normalized)
 }
 
 /**

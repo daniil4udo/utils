@@ -157,7 +157,7 @@ function generateUnicodeSupportMap(testMap: UnicodeSupportTestMap) {
     const chromeMatches = navigator.userAgent.match(/Chrom(?:e|ium)\/([0-9]+)\./)
     resultMap.meta = {
         isChrome: chromeMatches && chromeMatches.length > 0,
-        chromeVersion: chromeMatches && chromeMatches[1] && parseInt(chromeMatches[1], 10),
+        chromeVersion: chromeMatches && chromeMatches[1] && Number.parseInt(chromeMatches[1], 10),
     }
 
     return resultMap

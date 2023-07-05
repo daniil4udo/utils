@@ -129,10 +129,10 @@ class StorageWrapper {
  */
 export const LocalStorageWrapper = new StorageWrapper('localStorage')
 
-export const setLocalStorageItem = LocalStorageWrapper.setItem.bind(LocalStorageWrapper);
-export const getLocalStorageItem = LocalStorageWrapper.getItem.bind(LocalStorageWrapper);
-export const removeLocalStorageItem = LocalStorageWrapper.removeItem.bind(LocalStorageWrapper);
-export const clearLocalStorage = LocalStorageWrapper.clear.bind(LocalStorageWrapper);
+export const setLocalStorageItem = LocalStorageWrapper.setItem.bind(LocalStorageWrapper)
+export const getLocalStorageItem = LocalStorageWrapper.getItem.bind(LocalStorageWrapper)
+export const removeLocalStorageItem = LocalStorageWrapper.removeItem.bind(LocalStorageWrapper)
+export const clearLocalStorage = LocalStorageWrapper.clear.bind(LocalStorageWrapper)
 
 /**
  * Pre-instantiated `StorageWrapper` instance for sessionStorage.
@@ -152,7 +152,7 @@ export const clearLocalStorage = LocalStorageWrapper.clear.bind(LocalStorageWrap
  */
 export const SessionStorageWrapper = new StorageWrapper('sessionStorage')
 
-export const setSessionStorageItem = SessionStorageWrapper.setItem.bind(SessionStorageWrapper);
-export const getSessionStorageItem = SessionStorageWrapper.getItem.bind(SessionStorageWrapper);
-export const removeSessionStorageItem = SessionStorageWrapper.removeItem.bind(SessionStorageWrapper);
-export const clearSessionStorage = SessionStorageWrapper.clear.bind(SessionStorageWrapper);
+export const setSessionStorageItem = SessionStorageWrapper.setItem.bind(SessionStorageWrapper)
+export const getSessionStorageItem = SessionStorageWrapper.getItem.bind(SessionStorageWrapper)
+export const removeSessionStorageItem = SessionStorageWrapper.removeItem.bind(SessionStorageWrapper)
+export const clearSessionStorage = SessionStorageWrapper.clear.bind(SessionStorageWrapper)

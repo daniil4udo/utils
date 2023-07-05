@@ -21,4 +21,3 @@
 import * as fileSaver from 'file-saver-es/src/FileSaver'
 
 export const { saveAs } = fileSaver
-
