@@ -76,7 +76,7 @@ export type AllTypes = Primitive & PrimitiveLike & NonPrimitive
  * @public
  */
 export function toType(input: any): AllTypes {
-    const protoName = {}.toString.call(input).match(/\s([a-zA-Z]+)/)[1].toLowerCase()
+    const protoName = {}.toString.call(input).match(/\s([a-zA-Z]+)/)![1].toLowerCase()
     if (protoName === 'object' || protoName === 'arguments')
         return protoName as AllTypes
     const ctorName = input?.constructor
