@@ -50,7 +50,7 @@ interface EsModule<Module> {
  * ```
  */
 export function getCtor<Module>(module: EsModule<Module> | Module): Module | undefined {
-    if (typeof module === 'object' && ('__esModule' in module || module[Symbol.toStringTag] === 'Module'))
+    if (module != null && typeof module === 'object' && ('__esModule' in module || module[Symbol.toStringTag] === 'Module'))
         return (module as EsModule<Module>).default
 
     return module as Module
