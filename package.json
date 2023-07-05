@@ -53,13 +53,13 @@
         "zipcelx": "^1.6.2"
     },
     "devDependencies": {
-        "@democrance/eslint-config": "^0.7.0",
+        "@democrance/eslint-config": "^0.8.0",
         "@types/file-saver-es": "^2.0.1",
         "@types/node": "^18.16.19",
         "@types/proper-url-join": "^2.1.1",
         "@types/url-template": "^2.0.28",
         "@types/zipcelx": "^1.5.0",
-        "@vitest/coverage-c8": "^0.32.2",
+        "@vitest/coverage-c8": "^0.32.4",
         "@vue/tsconfig": "^0.4.0",
         "bumpp": "^9.1.1",
         "concurrently": "^8.2.0",
@@ -70,8 +70,8 @@
         "typedoc-plugin-markdown": "^3.15.3",
         "typescript": "^5.1.6",
         "url-template": "^3.1.0",
-        "vite-node": "^0.32.2",
-        "vitest": "^0.32.2"
+        "vite-node": "^0.32.4",
+        "vitest": "^0.32.4"
     },
     "packageManager": "pnpm@8.3.0",
     "engines": {
