@@ -1,36 +1,93 @@
+import type { AnyFn, Memoized, Options } from 'micro-memoize'
+
+import memoize from 'micro-memoize'
+
+import { deepEqual } from './deepEqual'
+
 /**
- * Creates a memoized version of a function.
+ * Creates a memoized version of a function using deep equality comparison for arguments.
+ * This is beneficial when the function is often called with the same object arguments (or deep equal objects),
+ * and the computation of the function is expensive.
  *
- * The memoized function caches the compute result for given arguments,
- * and returns the cached result when called with the same arguments,
- * instead of recomputing the result again.
+ * @module micro-memoize
+ * @see {@link https://github.com/planttheidea/micro-memoize/}
  *
- * @module fast-memoize
- * @see {@link https://github.com/caiogondim/fast-memoize.js}
+ * @typeParam Fn - The function to be memoized. This function can take any number of arguments of any type.
+ * @param fn - The function to be memoized.
+ * @param options - Optional configuration object for `micro-memoize`.
  *
- * @function
- * @name memoize
- * @param {Function} fn - The function to memoize.
- * @param {Object} [options] - The options for memoization.
- * @param {Function} [options.strategy=fast-memoize.strategies.variadic] - The strategy to use for memoization.
- * @param {Function} [options.serializer=fast-memoize.serializer] - The serializer to use for the memoization cache.
- * @param {Function} [options.cache=fast-memoize.Cache] - The cache to use for storing memoization results.
- * @returns {Function} The new memoized function.
+ * @returns A memoized version of the input function, with the custom cache strategy.
  *
  * @example
  * ```ts
- * import { memoize } from '@democrance/utils';
+ * import { memoizeDeep } from '@democrance/utils';
  *
- * function compute(a, b) {
- *   return a + b;
+ * function expensiveFunction(arg1, arg2) {
+ *   // Expensive computation here...
+ *   return result;
  * }
  *
- * const memoizedCompute = memoize(compute);
- * // This will compute the result
- * memoizedCompute(1, 2); // Outputs: 3
- * // This will return the cached result
- * memoizedCompute(1, 2); // Outputs: 3
+ * const memoizedExpensiveFunction = memoizeDeep(expensiveFunction);
+ *
+ * // Call it with some arguments
+ * memoizedExpensiveFunction({ a: 'some' }, { b: 'arguments' });
+ *
+ * // Call it again with deep equal arguments (this will use the cached result)
+ * memoizedExpensiveFunction({ a: 'some' }, { b: 'arguments' });
  * ```
  * @public
  */
-export { default as memoize } from 'fast-memoize'
+export function memoizeDeep<Fn extends AnyFn>(fn: Fn | Memoized<Fn>, options?: Options<Fn>) {
+    return memoize(fn, {
+        ...options,
+        isEqual: deepEqual,
+    })
+}
+
+/**
+ * Creates a memoized version of a function, with a cache that only stores the result of the last invocation.
+ * This is useful when the function is often called with the same arguments, and the computation of the function is expensive.
+ *
+ * The function uses a simple key-value pair for caching where the key is based on the argument(s) passed to the function.
+ * The cache only remembers the latest invocation and doesn't remember the previous invocation when a new argument is passed.
+ *
+ * @module micro-memoize
+ * @see {@link https://github.com/planttheidea/micro-memoize/}
+ *
+ * @typeParam Fn - The function to be memoized. This function can take any number of arguments of any type.
+ * @param fn - The function to be memoized.
+ * @param options - Optional configuration object for `micro-memoize`.
+ *
+ * @returns A memoized version of the input function, with the custom cache strategy.
+ *
+ * @example
+ * ```ts
+ * import { memoizeLast } from 'democrance/utils';
+ *
+ * function expensiveFunction(arg1, arg2) {
+ *   // Expensive computation here...
+ *   return result;
+ * }
+ *
+ * const memoizedExpensiveFunction = memoizeLast(expensiveFunction);
+ *
+ * // Call it with some arguments
+ * memoizedExpensiveFunction('some', 'arguments');
+ *
+ * // Call it with different arguments (this will compute the result and update the cache)
+ * memoizedExpensiveFunction('different', 'arguments');
+*
+* // Call it again with the same arguments (this will compute it again)
+* memoizedExpensiveFunction('some', 'arguments');
+*
+ * ```
+ * @public
+ */
+export function memoizeLast<Fn extends AnyFn>(fn: Fn | Memoized<Fn>, options?: Options<Fn>) {
+    return memoize(fn, {
+        ...options,
+        maxSize: 1,
+    })
+}
+
+export { memoize }
