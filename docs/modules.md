@@ -19,10 +19,9 @@
 
 ### Variables
 
-- [LocalStorageWrapper](modules.md#localstoragewrapper)
 - [POSSIBLE\_FOCUSABLE\_TAGS](modules.md#possible_focusable_tags)
 - [PYTHON\_TO\_JAVASCRIPT\_DATE\_MAP](modules.md#python_to_javascript_date_map)
-- [SessionStorageWrapper](modules.md#sessionstoragewrapper)
+- [dmcUtilsAutoImportPreset](modules.md#dmcutilsautoimportpreset)
 
 ### Functions
 
@@ -31,9 +30,12 @@
 - [applyCurrencySign](modules.md#applycurrencysign)
 - [arrayBufferToString](modules.md#arraybuffertostring)
 - [capitalize](modules.md#capitalize)
+- [circularDeepEqual](modules.md#circulardeepequal)
+- [circularShallowEqual](modules.md#circularshallowequal)
 - [clearLocalStorage](modules.md#clearlocalstorage)
 - [clearSessionStorage](modules.md#clearsessionstorage)
 - [convertPYDateFormatToJS](modules.md#convertpydateformattojs)
+- [createCustomEqual](modules.md#createcustomequal)
 - [createDefaultsDeep](modules.md#createdefaultsdeep)
 - [deCamelize](modules.md#decamelize)
 - [debounce](modules.md#debounce)
@@ -64,13 +66,17 @@
 - [isHTML](modules.md#ishtml)
 - [isIterable](modules.md#isiterable)
 - [isNil](modules.md#isnil)
+- [isNumber](modules.md#isnumber)
 - [isPrimitive](modules.md#isprimitive)
 - [isPrimitiveLike](modules.md#isprimitivelike)
+- [isProperNaN](modules.md#ispropernan)
 - [isSubstringInString](modules.md#issubstringinstring)
 - [isoToEmoji](modules.md#isotoemoji)
 - [keyBy](modules.md#keyby)
 - [length](modules.md#length)
 - [memoize](modules.md#memoize)
+- [memoizeDeep](modules.md#memoizedeep)
+- [memoizeLast](modules.md#memoizelast)
 - [movePropLevelUp](modules.md#moveproplevelup)
 - [parseLocaleNumber](modules.md#parselocalenumber)
 - [parseURLTemplate](modules.md#parseurltemplate)
@@ -78,15 +84,21 @@
 - [removeLocalStorageItem](modules.md#removelocalstorageitem)
 - [removeSessionStorageItem](modules.md#removesessionstorageitem)
 - [safeJSONParse](modules.md#safejsonparse)
+- [sameValueZeroEqual](modules.md#samevaluezeroequal)
 - [saveAs](modules.md#saveas)
 - [scrollTo](modules.md#scrollto)
 - [setLocalStorageItem](modules.md#setlocalstorageitem)
 - [setSessionStorageItem](modules.md#setsessionstorageitem)
+- [shallowEqual](modules.md#shallowequal)
 - [shuffle](modules.md#shuffle)
 - [slugify](modules.md#slugify)
 - [sortObjects](modules.md#sortobjects)
 - [splitByIndex](modules.md#splitbyindex)
 - [strToRegexp](modules.md#strtoregexp)
+- [strictCircularDeepEqual](modules.md#strictcirculardeepequal)
+- [strictCircularShallowEqual](modules.md#strictcircularshallowequal)
+- [strictDeepEqual](modules.md#strictdeepequal)
+- [strictShallowEqual](modules.md#strictshallowequal)
 - [stringToArrayBuffer](modules.md#stringtoarraybuffer)
 - [toArray](modules.md#toarray)
 - [toLower](modules.md#tolower)
@@ -107,7 +119,7 @@ Type alias representing all types in JavaScript, including primitive, PrimitiveL
 
 #### Defined in
 
-[lib/toType.ts:56](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/toType.ts#L56)
+[lib/toType.ts:56](https://github.com/daniil4udo/utils/blob/4926ceb/lib/toType.ts#L56)
 
 ___
 
@@ -119,7 +131,7 @@ Type alias representing JavaScript's non-primitive types.
 
 #### Defined in
 
-[lib/toType.ts:29](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/toType.ts#L29)
+[lib/toType.ts:29](https://github.com/daniil4udo/utils/blob/4926ceb/lib/toType.ts#L29)
 
 ___
 
@@ -156,7 +168,7 @@ True if the current element should be included in the filtered object; otherwise
 
 #### Defined in
 
-[lib/filterObject.ts:20](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/filterObject.ts#L20)
+[lib/filterObject.ts:20](https://github.com/daniil4udo/utils/blob/4926ceb/lib/filterObject.ts#L20)
 
 ___
 
@@ -168,7 +180,7 @@ Type alias representing JavaScript's primitive types.
 
 #### Defined in
 
-[lib/toType.ts:6](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/toType.ts#L6)
+[lib/toType.ts:6](https://github.com/daniil4udo/utils/blob/4926ceb/lib/toType.ts#L6)
 
 ___
 
@@ -180,7 +192,7 @@ Type alias representing JavaScript's Date and RegExp types.
 
 #### Defined in
 
-[lib/toType.ts:20](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/toType.ts#L20)
+[lib/toType.ts:20](https://github.com/daniil4udo/utils/blob/4926ceb/lib/toType.ts#L20)
 
 ___
 
@@ -198,36 +210,9 @@ Type definition for an object with string keys and values of a certain type
 
 #### Defined in
 
-[lib/filterObject.ts:7](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/filterObject.ts#L7)
+[lib/filterObject.ts:7](https://github.com/daniil4udo/utils/blob/4926ceb/lib/filterObject.ts#L7)
 
 ## Variables
-
-### LocalStorageWrapper
-
-• `Const` **LocalStorageWrapper**: `StorageWrapper`
-
-Pre-instantiated `StorageWrapper` instance for localStorage.
-
-**`Remarks`**
-
-This is a singleton instance of `StorageWrapper` specifically set up to interact with `localStorage`.
-All operations performed using this instance will act on the `localStorage`.
-
-**`Example`**
-
-```ts
-import { LocalStorageWrapper } from '@democrance/utils';
-
-LocalStorageWrapper.setItem('key', { field: 'value' });
-const item = LocalStorageWrapper.getItem('key'); // returns { field: 'value' }
-LocalStorageWrapper.removeItem('key');
-```
-
-#### Defined in
-
-[lib/storageWrapper.ts:130](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/storageWrapper.ts#L130)
-
-___
 
 ### POSSIBLE\_FOCUSABLE\_TAGS
 
@@ -252,7 +237,7 @@ ___
 
 #### Defined in
 
-[lib/toggleKeyboardFocus.ts:19](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/toggleKeyboardFocus.ts#L19)
+[lib/toggleKeyboardFocus.ts:19](https://github.com/daniil4udo/utils/blob/4926ceb/lib/toggleKeyboardFocus.ts#L19)
 
 ___
 
@@ -264,34 +249,23 @@ Map that defines the conversion from Python-style date format to JavaScript-styl
 
 #### Defined in
 
-[lib/convertPYDateFormatToJS.ts:5](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/convertPYDateFormatToJS.ts#L5)
+[lib/convertPYDateFormatToJS.ts:7](https://github.com/daniil4udo/utils/blob/4926ceb/lib/convertPYDateFormatToJS.ts#L7)
 
 ___
 
-### SessionStorageWrapper
+### dmcUtilsAutoImportPreset
 
-• `Const` **SessionStorageWrapper**: `StorageWrapper`
+• **dmcUtilsAutoImportPreset**: `Object`
 
-Pre-instantiated `StorageWrapper` instance for sessionStorage.
+#### Type declaration
 
-**`Remarks`**
-
-This is a singleton instance of `StorageWrapper` specifically set up to interact with `sessionStorage`.
-All operations performed using this instance will act on the `sessionStorage`.
-
-**`Example`**
-
-```ts
-import { SessionStorageWrapper } from '@democrance/utils';
-
-SessionStorageWrapper.setItem('key', { field: 'value' });
-const item = SessionStorageWrapper.getItem('key'); // returns { field: 'value' }
-SessionStorageWrapper.removeItem('key');
-```
+| Name | Type |
+| :------ | :------ |
+| `@democrance/utils` | readonly [``"dmcUtilsAutoImportPreset"``, ``"arrayBufferToString"``, ``"stringToArrayBuffer"``, ``"capitalize"``, ``"toUpper"``, ``"toLower"``, ``"PYTHON_TO_JAVASCRIPT_DATE_MAP"``, ``"convertPYDateFormatToJS"``, ``"debounce"``, ``"deepClone"``, ``"deepEqual"``, ``"circularDeepEqual"``, ``"circularShallowEqual"``, ``"createCustomEqual"``, ``"sameValueZeroEqual"``, ``"shallowEqual"``, ``"strictCircularDeepEqual"``, ``"strictCircularShallowEqual"``, ``"strictDeepEqual"``, ``"strictShallowEqual"``, ``"deepForEach"``, ``"defaultsDeep"``, ``"createDefaultsDeep"``, ``"defaultsDeepFn"``, ``"defaultsDeepArrayFn"``, ``"detectMode"``, ``"isCountryIso"``, ``"isoToEmoji"``, ``"emojiToIso"``, ``"filterObject"``, ``"getCtor"``, ``"trimFileExtension"``, ``"getNameFromPath"``, ``"isNil"``, ``"isDefined"``, ``"hasValue"``, ``"highlightMatch"``, ``"htmlTruncate"``, ``"imageExists"``, ``"allImagesExist"``, ``"anyImagesExist"``, ``"isAbsoluteURL"``, ``"isColor"``, ``"isEmptyArray"``, ``"isEmptyCollection"``, ``"isHTML"``, ``"isIterable"``, ``"isPrimitive"``, ``"isPrimitiveLike"``, ``"isNumber"``, ``"isProperNaN"``, ``"isSubstringInString"``, ``"keyBy"``, ``"length"``, ``"memoizeDeep"``, ``"memoizeLast"``, ``"memoize"``, ``"movePropLevelUp"``, ``"parseLocaleNumber"``, ``"formatValue"``, ``"applyCurrencySign"``, ``"price"``, ``"safeJSONParse"``, ``"saveAs"``, ``"scrollTo"``, ``"shuffle"``, ``"deCamelize"``, ``"slugify"``, ``"sortObjects"``, ``"splitByIndex"``, ``"setLocalStorageItem"``, ``"getLocalStorageItem"``, ``"removeLocalStorageItem"``, ``"clearLocalStorage"``, ``"setSessionStorageItem"``, ``"getSessionStorageItem"``, ``"removeSessionStorageItem"``, ``"clearSessionStorage"``, ``"strToRegexp"``, ``"toArray"``, ``"toType"``, ``"POSSIBLE_FOCUSABLE_TAGS"``, ``"toggleKeyboardFocus"``, ``"urlJoin"``, ``"parseURLTemplate"``, ``"zipcelx"``] |
 
 #### Defined in
 
-[lib/storageWrapper.ts:148](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/storageWrapper.ts#L148)
+lib/preset/autoImportUtilsPreset.ts:2
 
 ## Functions
 
@@ -309,7 +283,7 @@ SessionStorageWrapper.removeItem('key');
 
 | Name | Type |
 | :------ | :------ |
-| `urls` | `T`[] |
+| `urls` | (`undefined` \| ``null`` \| `T`)[] |
 | `options` | `ImageExistsOptions` |
 
 #### Returns
@@ -318,7 +292,7 @@ SessionStorageWrapper.removeItem('key');
 
 #### Defined in
 
-[lib/imageExists.ts:60](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/imageExists.ts#L60)
+[lib/imageExists.ts:60](https://github.com/daniil4udo/utils/blob/4926ceb/lib/imageExists.ts#L60)
 
 ___
 
@@ -336,7 +310,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `urls` | `T`[] |
+| `urls` | (`undefined` \| ``null`` \| `T`)[] |
 | `options` | `ImageExistsOptions` |
 
 #### Returns
@@ -345,7 +319,7 @@ ___
 
 #### Defined in
 
-[lib/imageExists.ts:64](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/imageExists.ts#L64)
+[lib/imageExists.ts:64](https://github.com/daniil4udo/utils/blob/4926ceb/lib/imageExists.ts#L64)
 
 ___
 
@@ -387,7 +361,7 @@ The formatted price with currency sign and format applied.
 
 #### Defined in
 
-[lib/price.ts:149](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/price.ts#L149)
+[lib/price.ts:150](https://github.com/daniil4udo/utils/blob/4926ceb/lib/price.ts#L150)
 
 ___
 
@@ -431,7 +405,7 @@ The string representation of the ArrayBuffer.
 
 #### Defined in
 
-[lib/arrayBuffer.ts:26](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/arrayBuffer.ts#L26)
+[lib/arrayBuffer.ts:26](https://github.com/daniil4udo/utils/blob/4926ceb/lib/arrayBuffer.ts#L26)
 
 ___
 
@@ -476,7 +450,67 @@ The capitalized string.
 
 #### Defined in
 
-[lib/changeCase.ts:24](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/changeCase.ts#L24)
+[lib/changeCase.ts:24](https://github.com/daniil4udo/utils/blob/4926ceb/lib/changeCase.ts#L24)
+
+___
+
+### circularDeepEqual
+
+▸ **circularDeepEqual**<`A`, `B`\>(`a`, `b`): `boolean`
+
+Whether the items passed are deeply-equal in value, including circular references.
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `A` |
+| `B` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `a` | `A` |
+| `b` | `B` |
+
+#### Returns
+
+`boolean`
+
+#### Defined in
+
+node_modules/.pnpm/fast-equals@5.0.1/node_modules/fast-equals/index.d.ts:21
+
+___
+
+### circularShallowEqual
+
+▸ **circularShallowEqual**<`A`, `B`\>(`a`, `b`): `boolean`
+
+Whether the items passed are shallowly-equal in value, including circular references.
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `A` |
+| `B` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `a` | `A` |
+| `b` | `B` |
+
+#### Returns
+
+`boolean`
+
+#### Defined in
+
+node_modules/.pnpm/fast-equals@5.0.1/node_modules/fast-equals/index.d.ts:38
 
 ___
 
@@ -494,7 +528,7 @@ If an error occurs during the operation, an error message is logged to the conso
 
 #### Defined in
 
-[lib/storageWrapper.ts:104](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/storageWrapper.ts#L104)
+[lib/storageWrapper.ts:104](https://github.com/daniil4udo/utils/blob/4926ceb/lib/storageWrapper.ts#L104)
 
 ___
 
@@ -512,7 +546,7 @@ If an error occurs during the operation, an error message is logged to the conso
 
 #### Defined in
 
-[lib/storageWrapper.ts:104](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/storageWrapper.ts#L104)
+[lib/storageWrapper.ts:104](https://github.com/daniil4udo/utils/blob/4926ceb/lib/storageWrapper.ts#L104)
 
 ___
 
@@ -557,7 +591,60 @@ The JavaScript-style date format string.
 
 #### Defined in
 
-[lib/convertPYDateFormatToJS.ts:55](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/convertPYDateFormatToJS.ts#L55)
+[lib/convertPYDateFormatToJS.ts:57](https://github.com/daniil4udo/utils/blob/4926ceb/lib/convertPYDateFormatToJS.ts#L57)
+
+___
+
+### createCustomEqual
+
+▸ **createCustomEqual**<`Meta`\>(`options?`): <A, B\>(`a`: `A`, `b`: `B`) => `boolean`
+
+Create a custom equality comparison method.
+
+This can be done to create very targeted comparisons in extreme hot-path scenarios
+where the standard methods are not performant enough, but can also be used to provide
+support for legacy environments that cannot polyfill for modern features expected by
+`fast-equals`, such as `WeakMap` or `RegExp.prototype.flags`.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `Meta` | `undefined` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `options?` | `CustomEqualCreatorOptions`<`Meta`\> |
+
+#### Returns
+
+`fn`
+
+▸ <`A`, `B`\>(`a`, `b`): `boolean`
+
+##### Type parameters
+
+| Name |
+| :------ |
+| `A` |
+| `B` |
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `a` | `A` |
+| `b` | `B` |
+
+##### Returns
+
+`boolean`
+
+#### Defined in
+
+node_modules/.pnpm/fast-equals@5.0.1/node_modules/fast-equals/index.d.ts:52
 
 ___
 
@@ -612,7 +699,7 @@ The de-camelized string.
 
 #### Defined in
 
-[lib/slugify.ts:12](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/slugify.ts#L12)
+[lib/slugify.ts:12](https://github.com/daniil4udo/utils/blob/4926ceb/lib/slugify.ts#L12)
 
 ___
 
@@ -729,7 +816,7 @@ A deep clone of the input value.
 
 #### Defined in
 
-[lib/deepClone.ts:37](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/deepClone.ts#L37)
+[lib/deepClone.ts:37](https://github.com/daniil4udo/utils/blob/4926ceb/lib/deepClone.ts#L37)
 
 ___
 
@@ -788,7 +875,7 @@ ___
 
 #### Defined in
 
-[lib/deepForEach.ts:29](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/deepForEach.ts#L29)
+[lib/deepForEach.ts:29](https://github.com/daniil4udo/utils/blob/4926ceb/lib/deepForEach.ts#L29)
 
 ___
 
@@ -878,7 +965,7 @@ ___
 
 ### detectMode
 
-▸ **detectMode**(): `string`
+▸ **detectMode**(): ``null`` \| `string`
 
 Detects the current mode of the environment.
 
@@ -899,19 +986,19 @@ console.log(detectMode()); // Outputs: 'development', 'production', or undefined
 
 #### Returns
 
-`string`
+``null`` \| `string`
 
 The mode of the current environment or `undefined` if neither `import.meta.env.MODE` nor `process.env.NODE_ENV` exist.
 
 #### Defined in
 
-[lib/detectMode.ts:19](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/detectMode.ts#L19)
+[lib/detectMode.ts:19](https://github.com/daniil4udo/utils/blob/4926ceb/lib/detectMode.ts#L19)
 
 ___
 
 ### emojiToIso
 
-▸ **emojiToIso**(`emoji?`): `string`
+▸ **emojiToIso**(`emoji?`): ``null`` \| `string`
 
 Converts a flag emoji to a country ISO code.
 
@@ -931,13 +1018,13 @@ emojiToIso('👍'); // Outputs: null
 
 #### Returns
 
-`string`
+``null`` \| `string`
 
 The country ISO code corresponding to the flag emoji, or null if the emoji is not a valid flag.
 
 #### Defined in
 
-[lib/emoji/isoToEmojiToISO.ts:56](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/emoji/isoToEmojiToISO.ts#L56)
+[lib/emoji/isoToEmojiToISO.ts:56](https://github.com/daniil4udo/utils/blob/4926ceb/lib/emoji/isoToEmojiToISO.ts#L56)
 
 ___
 
@@ -995,7 +1082,7 @@ A new object with the properties that passed the test.
 
 #### Defined in
 
-[lib/filterObject.ts:67](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/filterObject.ts#L67)
+[lib/filterObject.ts:67](https://github.com/daniil4udo/utils/blob/4926ceb/lib/filterObject.ts#L67)
 
 ___
 
@@ -1046,7 +1133,7 @@ formatValue(1234.5678, 2, 'de-DE'); // Outputs: "1.234,57"
 
 #### Defined in
 
-[lib/price.ts:102](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/price.ts#L102)
+[lib/price.ts:103](https://github.com/daniil4udo/utils/blob/4926ceb/lib/price.ts#L103)
 
 ___
 
@@ -1104,7 +1191,7 @@ itself. Returns `undefined` if `default` is not defined on an ES module.
 
 #### Defined in
 
-[lib/getCtor.ts:52](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/getCtor.ts#L52)
+[lib/getCtor.ts:52](https://github.com/daniil4udo/utils/blob/4926ceb/lib/getCtor.ts#L52)
 
 ___
 
@@ -1133,13 +1220,13 @@ The retrieved value, if it exists and is successfully retrieved and deserialized
 
 #### Defined in
 
-[lib/storageWrapper.ts:64](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/storageWrapper.ts#L64)
+[lib/storageWrapper.ts:64](https://github.com/daniil4udo/utils/blob/4926ceb/lib/storageWrapper.ts#L64)
 
 ___
 
 ### getNameFromPath
 
-▸ **getNameFromPath**(`path?`, `options?`): `string`
+▸ **getNameFromPath**(`path?`, `options?`): `undefined` \| `string`
 
 Extracts the file name from a given path.
 
@@ -1170,18 +1257,18 @@ console.log(getNameFromPath('/path/to/file.txt', { extension: false })); // Outp
 | :------ | :------ | :------ | :------ |
 | `path` | `string` | `''` | The file path from which to extract the name. Defaults to an empty string. |
 | `options` | `Object` | `{}` | An optional object containing additional parameters. |
-| `options.extension` | `boolean` | `undefined` | A boolean indicating whether the file name should include the extension. Defaults to `true`. |
+| `options.extension` | `undefined` \| `boolean` | `undefined` | A boolean indicating whether the file name should include the extension. Defaults to `true`. |
 
 #### Returns
 
-`string`
+`undefined` \| `string`
 
 The file name with or without the extension, based on the `extension` option.
      If the path does not contain a file name, an empty string is returned.
 
 #### Defined in
 
-[lib/getNameFromPath.ts:56](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/getNameFromPath.ts#L56)
+[lib/getNameFromPath.ts:56](https://github.com/daniil4udo/utils/blob/4926ceb/lib/getNameFromPath.ts#L56)
 
 ___
 
@@ -1210,7 +1297,7 @@ The retrieved value, if it exists and is successfully retrieved and deserialized
 
 #### Defined in
 
-[lib/storageWrapper.ts:64](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/storageWrapper.ts#L64)
+[lib/storageWrapper.ts:64](https://github.com/daniil4udo/utils/blob/4926ceb/lib/storageWrapper.ts#L64)
 
 ___
 
@@ -1254,7 +1341,7 @@ console.log(hasValue('Hello'));    // Outputs: true
 
 #### Defined in
 
-[lib/hasValue.ts:79](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/hasValue.ts#L79)
+[lib/hasValue.ts:79](https://github.com/daniil4udo/utils/blob/4926ceb/lib/hasValue.ts#L79)
 
 ___
 
@@ -1319,7 +1406,7 @@ The string with matches highlighted.
 
 #### Defined in
 
-[lib/highlightMatch.ts:62](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/highlightMatch.ts#L62)
+[lib/highlightMatch.ts:62](https://github.com/daniil4udo/utils/blob/4926ceb/lib/highlightMatch.ts#L62)
 
 ___
 
@@ -1360,7 +1447,7 @@ console.log(htmlTruncate(html, 20)); // Output: '<p>This is an <strong>exa</stro
 | :------ | :------ | :------ |
 | `htmlString` | `string` | The HTML string to truncate. |
 | `maxLength` | `number` | The maximum length of the output string. |
-| `options` | `ClipOptions` | Additional options to pass to the 'text-clipper' function. |
+| `options` | `undefined` \| `ClipOptions` | Additional options to pass to the 'text-clipper' function. |
 
 #### Returns
 
@@ -1370,7 +1457,7 @@ The truncated HTML string.
 
 #### Defined in
 
-[lib/htmlTruncate.ts:41](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/htmlTruncate.ts#L41)
+[lib/htmlTruncate.ts:41](https://github.com/daniil4udo/utils/blob/4926ceb/lib/htmlTruncate.ts#L41)
 
 ___
 
@@ -1413,7 +1500,7 @@ try {
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `url` | `T` | The URL of the image to check. |
+| `url` | `undefined` \| ``null`` \| `T` | The URL of the image to check. |
 | `options` | `ImageExistsOptions` | An optional ImageExistsOptions object. |
 
 #### Returns
@@ -1424,7 +1511,7 @@ A promise that resolves with the URL of the image if it exists. If the image doe
 
 #### Defined in
 
-[lib/imageExists.ts:37](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/imageExists.ts#L37)
+[lib/imageExists.ts:37](https://github.com/daniil4udo/utils/blob/4926ceb/lib/imageExists.ts#L37)
 
 ___
 
@@ -1470,7 +1557,7 @@ console.log(isAbsoluteURL('mailto:test@example.com')); // Output: false
 
 #### Defined in
 
-[lib/isAbsoluteURL.ts:28](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/isAbsoluteURL.ts#L28)
+[lib/isAbsoluteURL.ts:28](https://github.com/daniil4udo/utils/blob/4926ceb/lib/isAbsoluteURL.ts#L28)
 
 ___
 
@@ -1514,7 +1601,7 @@ console.log(isColor('invalid color')); // returns false
 
 #### Defined in
 
-[lib/isColor.ts:30](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/isColor.ts#L30)
+[lib/isColor.ts:30](https://github.com/daniil4udo/utils/blob/4926ceb/lib/isColor.ts#L30)
 
 ___
 
@@ -1546,7 +1633,7 @@ True if the string is a valid country ISO code, false otherwise.
 
 #### Defined in
 
-[lib/emoji/isoToEmojiToISO.ts:15](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/emoji/isoToEmojiToISO.ts#L15)
+[lib/emoji/isoToEmojiToISO.ts:15](https://github.com/daniil4udo/utils/blob/4926ceb/lib/emoji/isoToEmojiToISO.ts#L15)
 
 ___
 
@@ -1589,7 +1676,7 @@ console.log(isDefined(''));         // Outputs: true
 
 #### Defined in
 
-[lib/hasValue.ts:51](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/hasValue.ts#L51)
+[lib/hasValue.ts:51](https://github.com/daniil4udo/utils/blob/4926ceb/lib/hasValue.ts#L51)
 
 ___
 
@@ -1637,7 +1724,7 @@ console.log(isEmptyArray([[], [[], [1]]])); // Returns false
 
 #### Defined in
 
-[lib/isEmptyArray.ts:50](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/isEmptyArray.ts#L50)
+[lib/isEmptyArray.ts:50](https://github.com/daniil4udo/utils/blob/4926ceb/lib/isEmptyArray.ts#L50)
 
 ___
 
@@ -1657,7 +1744,7 @@ ___
 
 #### Defined in
 
-[lib/isEmptyCollection.ts:10](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/isEmptyCollection.ts#L10)
+[lib/isEmptyCollection.ts:10](https://github.com/daniil4udo/utils/blob/4926ceb/lib/isEmptyCollection.ts#L10)
 
 ___
 
@@ -1699,7 +1786,7 @@ Returns `true` if the string is valid HTML, otherwise `false`.
 
 #### Defined in
 
-[lib/isHTML.ts:21](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/isHTML.ts#L21)
+[lib/isHTML.ts:21](https://github.com/daniil4udo/utils/blob/4926ceb/lib/isHTML.ts#L21)
 
 ___
 
@@ -1745,7 +1832,7 @@ Returns `true` if the input is iterable, otherwise `false`.
 
 #### Defined in
 
-[lib/isIterable.ts:25](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/isIterable.ts#L25)
+[lib/isIterable.ts:25](https://github.com/daniil4udo/utils/blob/4926ceb/lib/isIterable.ts#L25)
 
 ___
 
@@ -1788,7 +1875,37 @@ console.log(isNil(''));         // Outputs: false
 
 #### Defined in
 
-[lib/hasValue.ts:24](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/hasValue.ts#L24)
+[lib/hasValue.ts:24](https://github.com/daniil4udo/utils/blob/4926ceb/lib/hasValue.ts#L24)
+
+___
+
+### isNumber
+
+▸ **isNumber**(`input`): `boolean`
+
+Determines if a given input can be treated as a number.
+
+**`Remarks`**
+
+This function first checks if the input type is a number.
+If it is, it verifies if the input is not NaN by subtracting the input from itself and comparing it to 0.
+If the input type is a string, it trims the string and checks if it can be converted to a finite number.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `input` | `any` | The value to check. |
+
+#### Returns
+
+`boolean`
+
+True if the input can be treated as a number, false otherwise.
+
+#### Defined in
+
+[lib/isPrimitive.ts:81](https://github.com/daniil4udo/utils/blob/4926ceb/lib/isPrimitive.ts#L81)
 
 ___
 
@@ -1833,7 +1950,7 @@ Returns `true` if the input is a primitive value, otherwise `false`.
 
 #### Defined in
 
-[lib/isPrimitive.ts:26](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/isPrimitive.ts#L26)
+[lib/isPrimitive.ts:26](https://github.com/daniil4udo/utils/blob/4926ceb/lib/isPrimitive.ts#L26)
 
 ___
 
@@ -1872,7 +1989,35 @@ Returns `true` if the input is a primitive-like value, otherwise `false`.
 
 #### Defined in
 
-[lib/isPrimitive.ts:61](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/isPrimitive.ts#L61)
+[lib/isPrimitive.ts:61](https://github.com/daniil4udo/utils/blob/4926ceb/lib/isPrimitive.ts#L61)
+
+___
+
+### isProperNaN
+
+▸ **isProperNaN**(`input`): `boolean`
+
+Determines if a given input can not be treated as a number.
+
+**`Remarks`**
+
+This function utilizes the isNumber function to verify if the input can not be treated as a number.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `input` | `any` | The value to check. |
+
+#### Returns
+
+`boolean`
+
+True if the input can not be treated as a number, false otherwise.
+
+#### Defined in
+
+[lib/isPrimitive.ts:100](https://github.com/daniil4udo/utils/blob/4926ceb/lib/isPrimitive.ts#L100)
 
 ___
 
@@ -1909,7 +2054,7 @@ console.log(isSubstringInString('Hello world', 'goodbye')); // Outputs: false
 | `str` | `string` | `''` | The string in which to check for the substring. Defaults to an empty string. |
 | `subString` | `string` | `''` | The substring to check for. Defaults to an empty string. |
 | `«destructured»` | `Object` | `{}` | - |
-| › `caseSensitive` | `boolean` | `undefined` | - |
+| › `caseSensitive` | `undefined` \| `boolean` | `undefined` | - |
 
 #### Returns
 
@@ -1919,13 +2064,13 @@ console.log(isSubstringInString('Hello world', 'goodbye')); // Outputs: false
 
 #### Defined in
 
-[lib/isSubstringInString.ts:27](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/isSubstringInString.ts#L27)
+[lib/isSubstringInString.ts:27](https://github.com/daniil4udo/utils/blob/4926ceb/lib/isSubstringInString.ts#L27)
 
 ___
 
 ### isoToEmoji
 
-▸ **isoToEmoji**(`iso?`): `string`
+▸ **isoToEmoji**(`iso?`): ``null`` \| `string`
 
 Converts a country ISO code to a flag emoji.
 
@@ -1945,13 +2090,13 @@ isoToEmoji('123'); // Outputs:  null
 
 #### Returns
 
-`string`
+``null`` \| `string`
 
 The flag emoji corresponding to the country ISO code, or null if the ISO code is invalid.
 
 #### Defined in
 
-[lib/emoji/isoToEmojiToISO.ts:37](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/emoji/isoToEmojiToISO.ts#L37)
+[lib/emoji/isoToEmojiToISO.ts:37](https://github.com/daniil4udo/utils/blob/4926ceb/lib/emoji/isoToEmojiToISO.ts#L37)
 
 ___
 
@@ -2003,7 +2148,7 @@ Returns the composed aggregate object.
 
 #### Defined in
 
-[lib/keyBy.ts:36](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/keyBy.ts#L36)
+[lib/keyBy.ts:36](https://github.com/daniil4udo/utils/blob/4926ceb/lib/keyBy.ts#L36)
 
 ___
 
@@ -2017,7 +2162,7 @@ ___
 | :------ | :------ |
 | `collection` | `any` |
 | `«destructured»` | `Object` |
-| › `includeString` | `boolean` |
+| › `includeString` | `undefined` \| `boolean` |
 
 #### Returns
 
@@ -2025,34 +2170,88 @@ ___
 
 #### Defined in
 
-[lib/length.ts:1](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/length.ts#L1)
+[lib/length.ts:1](https://github.com/daniil4udo/utils/blob/4926ceb/lib/length.ts#L1)
 
 ___
 
 ### memoize
 
-▸ **memoize**<`F`\>(`fn`, `options?`): `F`
+▸ **memoize**<`Fn`\>(`fn`, `options?`): `Memoized`<`Fn`\>
 
 #### Type parameters
 
 | Name | Type |
 | :------ | :------ |
-| `F` | extends `Func` |
+| `Fn` | extends `AnyFn` |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `fn` | `F` |
-| `options?` | `Options`<`F`\> |
+| `fn` | `Fn` \| `Memoized`<`Fn`\> |
+| `options?` | `Options`<`Fn`\> |
 
 #### Returns
 
-`F`
+`Memoized`<`Fn`\>
 
 #### Defined in
 
-node_modules/.pnpm/fast-memoize@2.5.2/node_modules/fast-memoize/typings/fast-memoize.d.ts:24
+node_modules/.pnpm/micro-memoize@4.1.2/node_modules/micro-memoize/index.d.ts:129
+
+___
+
+### memoizeDeep
+
+▸ **memoizeDeep**<`Fn`\>(`fn`, `options?`): `Memoized`<`Fn`\>
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `Fn` | extends `AnyFn` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `fn` | `Fn` \| `Memoized`<`Fn`\> |
+| `options?` | `Options`<`Fn`\> |
+
+#### Returns
+
+`Memoized`<`Fn`\>
+
+#### Defined in
+
+[lib/memoize.ts:40](https://github.com/daniil4udo/utils/blob/4926ceb/lib/memoize.ts#L40)
+
+___
+
+### memoizeLast
+
+▸ **memoizeLast**<`Fn`\>(`fn`, `options?`): `Memoized`<`Fn`\>
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `Fn` | extends `AnyFn` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `fn` | `Fn` \| `Memoized`<`Fn`\> |
+| `options?` | `Options`<`Fn`\> |
+
+#### Returns
+
+`Memoized`<`Fn`\>
+
+#### Defined in
+
+[lib/memoize.ts:86](https://github.com/daniil4udo/utils/blob/4926ceb/lib/memoize.ts#L86)
 
 ___
 
@@ -2111,7 +2310,7 @@ The function uses 'to-fast-properties' to optimize the property lookup speed of 
 
 #### Defined in
 
-[lib/movePropLevelUp.ts:37](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/movePropLevelUp.ts#L37)
+[lib/movePropLevelUp.ts:37](https://github.com/daniil4udo/utils/blob/4926ceb/lib/movePropLevelUp.ts#L37)
 
 ___
 
@@ -2161,7 +2360,7 @@ The parsed number. If the number string is not a valid number in the specified l
 
 #### Defined in
 
-[lib/price.ts:60](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/price.ts#L60)
+[lib/price.ts:61](https://github.com/daniil4udo/utils/blob/4926ceb/lib/price.ts#L61)
 
 ___
 
@@ -2224,7 +2423,7 @@ The formatted price string.
 
 #### Defined in
 
-[lib/price.ts:177](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/price.ts#L177)
+[lib/price.ts:178](https://github.com/daniil4udo/utils/blob/4926ceb/lib/price.ts#L178)
 
 ___
 
@@ -2248,7 +2447,7 @@ If an error occurs during the operation, an error message is logged to the conso
 
 #### Defined in
 
-[lib/storageWrapper.ts:90](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/storageWrapper.ts#L90)
+[lib/storageWrapper.ts:90](https://github.com/daniil4udo/utils/blob/4926ceb/lib/storageWrapper.ts#L90)
 
 ___
 
@@ -2272,7 +2471,7 @@ If an error occurs during the operation, an error message is logged to the conso
 
 #### Defined in
 
-[lib/storageWrapper.ts:90](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/storageWrapper.ts#L90)
+[lib/storageWrapper.ts:90](https://github.com/daniil4udo/utils/blob/4926ceb/lib/storageWrapper.ts#L90)
 
 ___
 
@@ -2324,7 +2523,37 @@ console.log(result); // Outputs: '{ "name": "John, "age": 30 }'
 
 #### Defined in
 
-[lib/safeJSONParse.ts:43](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/safeJSONParse.ts#L43)
+[lib/safeJSONParse.ts:43](https://github.com/daniil4udo/utils/blob/4926ceb/lib/safeJSONParse.ts#L43)
+
+___
+
+### sameValueZeroEqual
+
+▸ **sameValueZeroEqual**<`A`, `B`\>(`a`, `b`): `boolean`
+
+Whether the values passed are strictly equal or both NaN.
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `A` |
+| `B` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `a` | `A` |
+| `b` | `B` |
+
+#### Returns
+
+`boolean`
+
+#### Defined in
+
+node_modules/.pnpm/fast-equals@5.0.1/node_modules/fast-equals/index.d.ts:8
 
 ___
 
@@ -2422,7 +2651,7 @@ scrollTo();
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `element` | `HTMLElement` | `undefined` | The element to scroll to. Can be an HTMLElement, null, or undefined. |
+| `element` | `undefined` \| ``null`` \| `HTMLElement` | `undefined` | The element to scroll to. Can be an HTMLElement, null, or undefined. |
 | `offset?` | `number` | `0` | The offset value to adjust the scroll position. Defaults to 0. |
 
 #### Returns
@@ -2431,7 +2660,7 @@ scrollTo();
 
 #### Defined in
 
-[lib/scrollTo.ts:40](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/scrollTo.ts#L40)
+[lib/scrollTo.ts:40](https://github.com/daniil4udo/utils/blob/4926ceb/lib/scrollTo.ts#L40)
 
 ___
 
@@ -2459,7 +2688,7 @@ If an error occurs during the operation, an error message is logged to the conso
 
 #### Defined in
 
-[lib/storageWrapper.ts:38](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/storageWrapper.ts#L38)
+[lib/storageWrapper.ts:38](https://github.com/daniil4udo/utils/blob/4926ceb/lib/storageWrapper.ts#L38)
 
 ___
 
@@ -2487,7 +2716,37 @@ If an error occurs during the operation, an error message is logged to the conso
 
 #### Defined in
 
-[lib/storageWrapper.ts:38](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/storageWrapper.ts#L38)
+[lib/storageWrapper.ts:38](https://github.com/daniil4udo/utils/blob/4926ceb/lib/storageWrapper.ts#L38)
+
+___
+
+### shallowEqual
+
+▸ **shallowEqual**<`A`, `B`\>(`a`, `b`): `boolean`
+
+Whether the items passed are shallowly-equal in value.
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `A` |
+| `B` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `a` | `A` |
+| `b` | `B` |
+
+#### Returns
+
+`boolean`
+
+#### Defined in
+
+node_modules/.pnpm/fast-equals@5.0.1/node_modules/fast-equals/index.d.ts:30
 
 ___
 
@@ -2535,7 +2794,7 @@ The shuffled array.
 
 #### Defined in
 
-[lib/shuffle.ts:23](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/shuffle.ts#L23)
+[lib/shuffle.ts:23](https://github.com/daniil4udo/utils/blob/4926ceb/lib/shuffle.ts#L23)
 
 ___
 
@@ -2578,7 +2837,7 @@ The slugified string.
 
 #### Defined in
 
-[lib/slugify.ts:44](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/slugify.ts#L44)
+[lib/slugify.ts:44](https://github.com/daniil4udo/utils/blob/4926ceb/lib/slugify.ts#L44)
 
 ___
 
@@ -2621,7 +2880,7 @@ The sorted collection.
 
 #### Defined in
 
-[lib/sortObjects.ts:35](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/sortObjects.ts#L35)
+[lib/sortObjects.ts:35](https://github.com/daniil4udo/utils/blob/4926ceb/lib/sortObjects.ts#L35)
 
 ___
 
@@ -2668,7 +2927,7 @@ An array of two arrays - the first one is the part before the index and the seco
 
 #### Defined in
 
-[lib/splitByIndex.ts:30](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/splitByIndex.ts#L30)
+[lib/splitByIndex.ts:30](https://github.com/daniil4udo/utils/blob/4926ceb/lib/splitByIndex.ts#L30)
 
 ___
 
@@ -2704,7 +2963,129 @@ The RegExp instance.
 
 #### Defined in
 
-[lib/stringToRegexp.ts:36](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/stringToRegexp.ts#L36)
+[lib/stringToRegexp.ts:36](https://github.com/daniil4udo/utils/blob/4926ceb/lib/stringToRegexp.ts#L36)
+
+___
+
+### strictCircularDeepEqual
+
+▸ **strictCircularDeepEqual**<`A`, `B`\>(`a`, `b`): `boolean`
+
+Whether the items passed are deeply-equal in value, including circular references,
+based on strict comparison.
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `A` |
+| `B` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `a` | `A` |
+| `b` | `B` |
+
+#### Returns
+
+`boolean`
+
+#### Defined in
+
+node_modules/.pnpm/fast-equals@5.0.1/node_modules/fast-equals/index.d.ts:26
+
+___
+
+### strictCircularShallowEqual
+
+▸ **strictCircularShallowEqual**<`A`, `B`\>(`a`, `b`): `boolean`
+
+Whether the items passed are shallowly-equal in value, including circular references,
+based on strict comparison.
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `A` |
+| `B` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `a` | `A` |
+| `b` | `B` |
+
+#### Returns
+
+`boolean`
+
+#### Defined in
+
+node_modules/.pnpm/fast-equals@5.0.1/node_modules/fast-equals/index.d.ts:43
+
+___
+
+### strictDeepEqual
+
+▸ **strictDeepEqual**<`A`, `B`\>(`a`, `b`): `boolean`
+
+Whether the items passed are deeply-equal in value based on strict comparison.
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `A` |
+| `B` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `a` | `A` |
+| `b` | `B` |
+
+#### Returns
+
+`boolean`
+
+#### Defined in
+
+node_modules/.pnpm/fast-equals@5.0.1/node_modules/fast-equals/index.d.ts:17
+
+___
+
+### strictShallowEqual
+
+▸ **strictShallowEqual**<`A`, `B`\>(`a`, `b`): `boolean`
+
+Whether the items passed are shallowly-equal in value based on strict comparison
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `A` |
+| `B` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `a` | `A` |
+| `b` | `B` |
+
+#### Returns
+
+`boolean`
+
+#### Defined in
+
+node_modules/.pnpm/fast-equals@5.0.1/node_modules/fast-equals/index.d.ts:34
 
 ___
 
@@ -2748,7 +3129,7 @@ The ArrayBuffer representation of the string.
 
 #### Defined in
 
-[lib/arrayBuffer.ts:55](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/arrayBuffer.ts#L55)
+[lib/arrayBuffer.ts:55](https://github.com/daniil4udo/utils/blob/4926ceb/lib/arrayBuffer.ts#L55)
 
 ___
 
@@ -2798,7 +3179,7 @@ The value converted into an array.
 
 #### Defined in
 
-[lib/toArray.ts:40](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/toArray.ts#L40)
+[lib/toArray.ts:40](https://github.com/daniil4udo/utils/blob/4926ceb/lib/toArray.ts#L40)
 
 ___
 
@@ -2841,7 +3222,7 @@ The lowercase string.
 
 #### Defined in
 
-[lib/changeCase.ts:78](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/changeCase.ts#L78)
+[lib/changeCase.ts:78](https://github.com/daniil4udo/utils/blob/4926ceb/lib/changeCase.ts#L78)
 
 ___
 
@@ -2883,7 +3264,7 @@ toType([]); // Outputs: 'array'
 
 #### Defined in
 
-[lib/toType.ts:78](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/toType.ts#L78)
+[lib/toType.ts:78](https://github.com/daniil4udo/utils/blob/4926ceb/lib/toType.ts#L78)
 
 ___
 
@@ -2926,7 +3307,7 @@ The uppercase string.
 
 #### Defined in
 
-[lib/changeCase.ts:51](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/changeCase.ts#L51)
+[lib/changeCase.ts:51](https://github.com/daniil4udo/utils/blob/4926ceb/lib/changeCase.ts#L51)
 
 ___
 
@@ -2981,7 +3362,7 @@ This function does not return a value.
 
 #### Defined in
 
-[lib/toggleKeyboardFocus.ts:57](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/toggleKeyboardFocus.ts#L57)
+[lib/toggleKeyboardFocus.ts:57](https://github.com/daniil4udo/utils/blob/4926ceb/lib/toggleKeyboardFocus.ts#L57)
 
 ___
 
@@ -3025,7 +3406,7 @@ The file path without the extension. If the input path does not contain an
 
 #### Defined in
 
-[lib/getNameFromPath.ts:23](https://github.com/daniil4udo/utils/blob/5ef0cd4/lib/getNameFromPath.ts#L23)
+[lib/getNameFromPath.ts:23](https://github.com/daniil4udo/utils/blob/4926ceb/lib/getNameFromPath.ts#L23)
 
 ___
 
