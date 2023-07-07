@@ -12,7 +12,7 @@ function mockImageInstance() {
 }
 
 // Override Image constructor
-global.Image = vi.fn(() => mockImageInstance())
+globalThis.Image = vi.fn(() => mockImageInstance())
 
 describe('@/lib/imageExists.ts', () => {
     afterEach(() => {
@@ -31,7 +31,7 @@ describe('@/lib/imageExists.ts', () => {
         const url = 'http://example.com/image.jpg'
 
         const imageInstance = mockImageInstance()
-        global.Image.mockImplementationOnce(() => imageInstance)
+        globalThis.Image.mockImplementationOnce(() => imageInstance)
 
         const promise = imageExists(url)
 
@@ -44,7 +44,7 @@ describe('@/lib/imageExists.ts', () => {
         const url = 'http://example.com/image.jpg'
 
         const imageInstance = mockImageInstance()
-        global.Image.mockImplementationOnce(() => imageInstance)
+        globalThis.Image.mockImplementationOnce(() => imageInstance)
 
         const promise = imageExists(url, { throwError: false })
 
@@ -57,7 +57,7 @@ describe('@/lib/imageExists.ts', () => {
         const url = 'http://example.com/image.jpg'
 
         const imageInstance = mockImageInstance()
-        global.Image.mockImplementationOnce(() => imageInstance)
+        globalThis.Image.mockImplementationOnce(() => imageInstance)
 
         const promise = imageExists(url, { throwError: true })
 
@@ -77,7 +77,7 @@ describe('@/lib/imageExists.ts', () => {
     it('should properly set Image src', async () => {
         const url = 'http://example.com/image.jpg'
         const imageInstance = mockImageInstance()
-        global.Image.mockImplementationOnce(() => imageInstance)
+        globalThis.Image.mockImplementationOnce(() => imageInstance)
 
         imageExists(url)
 
@@ -87,7 +87,7 @@ describe('@/lib/imageExists.ts', () => {
     it('should not set Image src when url is not string or empty', async () => {
         const url = 12345
         const imageInstance = mockImageInstance()
-        global.Image.mockImplementationOnce(() => imageInstance)
+        globalThis.Image.mockImplementationOnce(() => imageInstance)
 
         await imageExists(url)
 
@@ -97,7 +97,7 @@ describe('@/lib/imageExists.ts', () => {
     it('should have onError handler if throwError is false', async () => {
         const url = 'http://example.com/image.jpg'
         const imageInstance = mockImageInstance()
-        global.Image.mockImplementationOnce(() => imageInstance)
+        globalThis.Image.mockImplementationOnce(() => imageInstance)
 
         imageExists(url, { throwError: false })
 
@@ -107,7 +107,7 @@ describe('@/lib/imageExists.ts', () => {
     it('should not have onError handler if throwError is true', async () => {
         const url = 'http://example.com/image.jpg'
         const imageInstance = mockImageInstance()
-        global.Image.mockImplementationOnce(() => imageInstance)
+        globalThis.Image.mockImplementationOnce(() => imageInstance)
 
         imageExists(url, { throwError: true })
 

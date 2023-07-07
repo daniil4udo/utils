@@ -8,18 +8,18 @@ describe('@/lib/toggleKeyboardFocus.ts', () => {
 
     beforeAll(() => {
         dom = new JSDOM('<!DOCTYPE html><html><body></body></html>')
-        global.document = dom.window.document
-        global.window = dom.window
+        globalThis.document = dom.window.document
+        globalThis.window = dom.window
 
         // Mock the requestAnimationFrame function
-        global.window.requestAnimationFrame = vi.fn(callback => {
+        globalThis.window.requestAnimationFrame = vi.fn(callback => {
             callback() // Immediately invoke the callback
         })
     })
 
     afterAll(() => {
-        global.document = undefined
-        global.window = undefined
+        globalThis.document = undefined
+        globalThis.window = undefined
         dom = undefined
     })
 
@@ -44,19 +44,19 @@ describe('@/lib/toggleKeyboardFocus.ts', () => {
     })
 
     it('should not throw an error when scope does not contain any focusable elements', () => {
-        global.document.body.innerHTML = `
+        globalThis.document.body.innerHTML = `
             <div id="scope">
                 <span>Non-focusable element</span>
             </div>
         `
-        const scope = global.document.getElementById('scope')
+        const scope = globalThis.document.getElementById('scope')
         expect(() => {
             toggleKeyboardFocus(scope)
         }).not.toThrow()
     })
 
     it('should toggle keyboard focus on elements with tabindex attribute and tags specified in POSSIBLE_FOCUSABLE_TAGS', () => {
-        global.document.body.innerHTML = `
+        globalThis.document.body.innerHTML = `
             <div id="scope">
                 <a href="#">Link</a>
                 <button>Button</button>
@@ -68,8 +68,8 @@ describe('@/lib/toggleKeyboardFocus.ts', () => {
                 <span tabindex="0" role="button">Custom Focusable Element</span>
             </div>
         `
-        const scope = global.document.getElementById('scope')
-        const elements = global.document.querySelectorAll('#scope a, #scope button, #scope details, #scope input[type="text"], #scope textarea, #scope select, #scope div[tabindex="0"], #scope span[tabindex="0"]')
+        const scope = globalThis.document.getElementById('scope')
+        const elements = globalThis.document.querySelectorAll('#scope a, #scope button, #scope details, #scope input[type="text"], #scope textarea, #scope select, #scope div[tabindex="0"], #scope span[tabindex="0"]')
 
         toggleKeyboardFocus(scope)
 
@@ -81,15 +81,15 @@ describe('@/lib/toggleKeyboardFocus.ts', () => {
     })
 
     it('should not toggle keyboard focus on elements with the disabled attribute', () => {
-        global.document.body.innerHTML = `
+        globalThis.document.body.innerHTML = `
             <div id="scope">
                 <button disabled>Disabled Button</button>
                 <input type="text" disabled />
                 <select disabled></select>
             </div>
         `
-        const scope = global.document.getElementById('scope')
-        const elements = global.document.querySelectorAll('#scope button, #scope input[type = "text"], #scope select')
+        const scope = globalThis.document.getElementById('scope')
+        const elements = globalThis.document.querySelectorAll('#scope button, #scope input[type = "text"], #scope select')
         const elementsTabIndex = [ ...elements ].map(element => element.tabIndex)
 
         toggleKeyboardFocus(scope)
@@ -110,7 +110,7 @@ describe('@/lib/toggleKeyboardFocus.ts', () => {
             </div>
         `
         const scope = document.getElementById('scope')
-        const elements = global.document.querySelectorAll('#scope button, #scope input[type="text"], #scope select')
+        const elements = globalThis.document.querySelectorAll('#scope button, #scope input[type="text"], #scope select')
 
         toggleKeyboardFocus(scope, 0)
 
