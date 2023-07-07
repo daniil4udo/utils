@@ -18,9 +18,9 @@
  */
 export function detectMode() {
     try {
-        return import.meta.env?.MODE
+        return import.meta.env.MODE ?? process.env.NODE_ENV ?? null
     }
     catch {
-        return process.env?.NODE_ENV
+        return process.env?.NODE_ENV ?? null
     }
 }
