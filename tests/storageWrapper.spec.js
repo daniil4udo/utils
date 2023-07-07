@@ -1,6 +1,11 @@
 import { beforeEach, describe, expect, it } from 'vitest'
 
-import { SessionStorageWrapper } from '../lib/storageWrapper'
+import {
+    clearSessionStorage,
+    getSessionStorageItem,
+    removeSessionStorageItem,
+    setSessionStorageItem,
+} from '../lib/storageWrapper'
 
 describe('@/lib/storageWrapper.ts', () => {
     const mockKey = 'mockKey'
@@ -29,7 +34,7 @@ describe('@/lib/storageWrapper.ts', () => {
 
     it('sets item to sessionStorage', () => {
         // Set encoded value
-        SessionStorageWrapper.setItem(mockKey, mockValue)
+        setSessionStorageItem(mockKey, mockValue)
 
         expect(sessionStorage.getItem(mockKey)).toEqual(mockEncodedValue)
     })
@@ -38,31 +43,31 @@ describe('@/lib/storageWrapper.ts', () => {
         // set unencoded value
         sessionStorage.setItem(mockKey, mockEncodedValue)
 
-        const returnedValue = SessionStorageWrapper.getItem(mockKey)
+        const returnedValue = getSessionStorageItem(mockKey)
         expect(returnedValue).toEqual(mockValue)
     })
 
     it('returns null when item does not exist in sessionStorage', () => {
-        const returnedValue = SessionStorageWrapper.getItem('nonexistentKey')
+        const returnedValue = getSessionStorageItem('nonexistentKey')
         expect(returnedValue).toBeNull()
     })
 
     it('removes item from sessionStorage', () => {
         sessionStorage.setItem(mockKey, mockEncodedValue)
-        SessionStorageWrapper.removeItem(mockKey)
+        removeSessionStorageItem(mockKey)
         expect(sessionStorage[mockKey]).toBeUndefined()
     })
 
     it('removes nothing when key does not exist in sessionStorage', () => {
         sessionStorage.setItem(mockKey, mockEncodedValue)
         const initialSessionStorageLength = sessionStorage.length
-        SessionStorageWrapper.removeItem('nonexistentKey')
+        removeSessionStorageItem('nonexistentKey')
         expect(sessionStorage.length).toEqual(initialSessionStorageLength)
     })
 
     it('clears sessionStorage', () => {
         sessionStorage.setItem(mockKey, mockEncodedValue)
-        SessionStorageWrapper.clear()
+        clearSessionStorage()
         expect(sessionStorage.length).toEqual(0)
     })
 })

@@ -127,7 +127,7 @@ class StorageWrapper {
  * LocalStorageWrapper.removeItem('key');
  * ```
  */
-export const LocalStorageWrapper = new StorageWrapper('localStorage')
+const LocalStorageWrapper = new StorageWrapper('localStorage')
 
 export const setLocalStorageItem = LocalStorageWrapper.setItem.bind(LocalStorageWrapper)
 export const getLocalStorageItem = LocalStorageWrapper.getItem.bind(LocalStorageWrapper)
@@ -150,7 +150,7 @@ export const clearLocalStorage = LocalStorageWrapper.clear.bind(LocalStorageWrap
  * SessionStorageWrapper.removeItem('key');
  * ```
  */
-export const SessionStorageWrapper = new StorageWrapper('sessionStorage')
+const SessionStorageWrapper = new StorageWrapper('sessionStorage')
 
 export const setSessionStorageItem = SessionStorageWrapper.setItem.bind(SessionStorageWrapper)
 export const getSessionStorageItem = SessionStorageWrapper.getItem.bind(SessionStorageWrapper)
