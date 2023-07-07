@@ -18,6 +18,6 @@
  * ```
  * @public
  */
-import * as fileSaver from 'file-saver-es/src/FileSaver'
+import * as fileSaver from 'file-saver-es'
 
-export const { saveAs } = fileSaver
+export const saveAs = fileSaver.saveAs.bind(fileSaver.saveAs)
