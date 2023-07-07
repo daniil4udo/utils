@@ -2,6 +2,7 @@
     "name": "@democrance/utils",
     "version": "0.13.1",
     "description": "Set of popular utils",
+    "sideEffects": false,
     "keywords": [
         "console",
         "utils",
@@ -35,11 +36,10 @@
     ],
     "scripts": {
         "build": "./scripts/build.sh",
-        "lint": "eslint --fix --ext .vue,.ts,.js .",
         "prepublishOnly": "pnpm build",
         "release": "bumpp --commit --tag --no-push && pnpm publish --access public",
-        "test": "vitest",
-        "test:coverage": "vitest run --coverage --environment jsdom"
+        "lint": "eslint --fix --ext .vue,.ts,.js .",
+        "test": "vitest --ui --coverage"
     },
     "dependencies": {
         "defu": "^6.1.2",

@@ -9,10 +9,9 @@
 
 /// <reference types="defu" />
 /// <reference types="fast-equals" />
-/// <reference types="fast-memoize" />
+/// <reference types="micro-memoize" />
 /// <reference types="perfect-debounce" />
 /// <reference types="rfdc" />
-/// <reference types="text-clipper" />
 /// <reference types="text-clipper" />
 /// <reference types="url-template" />
 

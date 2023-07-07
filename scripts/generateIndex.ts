@@ -1,7 +1,6 @@
 import fsp from 'node:fs/promises'
+import { parse } from 'node:path/posix'
 import { URL, fileURLToPath } from 'node:url'
-
-import { getNameFromPath } from '../lib/getNameFromPath'
 
 const pathToLib = fileURLToPath(new URL('../lib', import.meta.url))
 const getExport = path => `export * from './${path}'\n`
@@ -19,7 +18,7 @@ try {
         .map(dirent => dirent.name)
         .forEach(file => {
             // Do whatever you want to do with the dirent
-            const fileNoExt = getNameFromPath(file, { extension: false })
+            const fileNoExt = parse(file).name
             exports += getExport(fileNoExt)
         })
 }

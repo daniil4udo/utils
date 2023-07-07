@@ -6,14 +6,20 @@ CONCURRENTLY_FLAGS=" \
     --group \
     --max-processes 1 \
     --timings \
-    --prefix-colors #18A57E,#2757A3,#FFDD00,#0057B7 \
-    --names GENERATE:INDEX,GENERATE:PRESET,LINT,CLEAN,TYPEDOC,BUILD \
+    --kill-others-on-fail \
+    --prefix-colors blue,yellow,blue,yellow,blue,yellow,blue \
+    --names GENERATE,LINT,TEST,DOCS,CLEAN,BUILD,POSTBUILD \
     " \
 
-concurrently $CONCURRENTLY_FLAGS \
-    "vite-node scripts/generateIndex.ts" \
-    "vite-node scripts/autoImportUtilsPreset.ts" \
-    "eslint lib/preset/autoImportUtilsPreset.ts lib/index.ts --fix" \
-    "rimraf dist" \
-    "typedoc --plugin typedoc-plugin-markdown ./lib/index.ts" \
-    "tsup"
+if [[ $(git diff --stat) != '' ]]; then
+    echo '🛑 You have uncommited changes'
+else
+    concurrently $CONCURRENTLY_FLAGS \
+        "vite-node scripts/generateIndex.ts scripts/autoImportUtilsPreset.ts" \
+        "eslint lib/preset/autoImportUtilsPreset.ts lib/index.ts --fix" \
+        "vitest run" \
+        "typedoc --plugin typedoc-plugin-markdown ./lib/index.ts" \
+        "rimraf dist" \
+        "tsup" \
+        "vite-node scripts/postbuild.ts"
+fi
