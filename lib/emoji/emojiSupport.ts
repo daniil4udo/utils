@@ -53,7 +53,7 @@ export function isRainbowFlagEmoji(emojiUnicode: string): boolean {
  * @param {string} emojiUnicode - The emoji string to check.
  * @returns {boolean} True if the string is a keycap emoji, false otherwise.
  */
-export function isKeycapEmoji(emojiUnicode: string): boolean {
+export function isKeyCapEmoji(emojiUnicode: string): boolean {
     return emojiUnicode.length === 3 && emojiUnicode[2] === '\u20E3'
 }
 
@@ -131,7 +131,7 @@ export function isEmojiUnicodeSupported(unicodeSupportMap, emojiUnicode, unicode
         && unicodeSupportMap.meta.chromeVersion < 57
 
     return unicodeSupportMap[unicodeVersion]
-        && !(isOlderThanChrome57 && isKeycapEmoji(emojiUnicode))
+        && !(isOlderThanChrome57 && isKeyCapEmoji(emojiUnicode))
         && checkFlagEmojiSupport(unicodeSupportMap, emojiUnicode)
         && checkSkinToneModifierSupport(unicodeSupportMap, emojiUnicode)
         && checkHorseRacingSkinToneComboEmojiSupport(unicodeSupportMap, emojiUnicode)

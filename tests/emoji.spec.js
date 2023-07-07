@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest'
 import {
     isFlagEmoji,
     isHorseRacingSkinToneComboEmoji,
-    isKeycapEmoji,
+    isKeyCapEmoji,
     isPersonZwjEmoji,
     isRainbowFlagEmoji,
     isSkinToneComboEmoji,
@@ -79,10 +79,10 @@ describe('@/lib/emojiSupport.ts', () => {
         expect(isRainbowFlagEmoji('🍔')).toBeFalsy()
     })
 
-    it('isKeycapEmoji', () => {
-        expect(isKeycapEmoji('2️⃣')).toBeTruthy()
-        expect(isKeycapEmoji('2️')).toBeFalsy()
-        expect(isKeycapEmoji('🍔')).toBeFalsy()
+    it('isKeyCapEmoji', () => {
+        expect(isKeyCapEmoji('2️⃣')).toBeTruthy()
+        expect(isKeyCapEmoji('2️')).toBeFalsy()
+        expect(isKeyCapEmoji('🍔')).toBeFalsy()
     })
 
     it('isSkinToneComboEmoji', () => {
