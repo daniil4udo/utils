@@ -3,6 +3,10 @@ import { describe, expect, it } from 'vitest'
 import { convertPYDateFormatToJS } from '../lib/convertPYDateFormatToJS'
 
 describe('@/lib/convertPYDateFormatToJS.ts', () => {
+    it('to throw if not a string', () => {
+        expect(() => convertPYDateFormatToJS()).toThrow()
+    })
+
     it('converts weekday, month, day, year', () => {
         expect(convertPYDateFormatToJS('%A, %B %d, %Y')).toEqual('dddd, MMMM DD, YYYY')
     })
