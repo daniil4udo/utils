@@ -26,15 +26,21 @@ export function isFlagEmoji(emojiUnicode: string): boolean {
  * @returns {boolean} True if the string is a rainbow flag emoji, false otherwise.
  */
 export function isRainbowFlagEmoji(emojiUnicode: string): boolean {
-    const baseFlagCodePoint = 127987 // parseInt('1F3F3', 16)
+    const whiteFlagCodePoint = 127987 // parseInt('1F3F3', 16)
     const rainbowCodePoint = 127752 // parseInt('1F308', 16)
-    const [ baseFlagChar, rainbowChar ] = Array.from(emojiUnicode)
+    const variationSelector16 = 65039 // parseInt('FE0F', 16)
+    const zeroWidthJoiner = 8205 // parseInt('200D', 16)
 
-    // Length 4 because flags are made of 2 characters which are surrogate pairs
+    // Convert the emojiUnicode string to an array of code points
+    const codePoints = Array.from(emojiUnicode, c => c.codePointAt(0))
+
+    // The Rainbow Flag emoji consists of 4 Unicode scalar values (code points)
     return (
-        emojiUnicode.length === 4
-        && baseFlagChar.codePointAt(0) === baseFlagCodePoint
-        && rainbowChar.codePointAt(0) === rainbowCodePoint
+        codePoints.length === 4
+        && codePoints[0] === whiteFlagCodePoint
+        && codePoints[1] === variationSelector16
+        && codePoints[2] === zeroWidthJoiner
+        && codePoints[3] === rainbowCodePoint
     )
 }
 
