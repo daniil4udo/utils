@@ -20,4 +20,4 @@
  */
 import * as fileSaver from 'file-saver-es'
 
-export const saveAs = fileSaver.saveAs.bind(fileSaver.saveAs)
+export const { saveAs } = fileSaver
