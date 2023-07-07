@@ -1,3 +1,4 @@
+import { isProperNaN } from './isPrimitive'
 import { toType } from './toType'
 
 /**
@@ -102,7 +103,7 @@ export function parseLocaleNumber(value, locale: string) {
 export function formatValue(value: string | number, fractions: boolean | number = true, locale = 'en'): string {
     const MAX_SAFE_FRACTIONS = 20
 
-    const valueNumber = isNaN(Number(value)) ? parseLocaleNumber(value, locale) : Number(value)
+    const valueNumber = isProperNaN(value) ? parseLocaleNumber(value, locale) : Number(value)
     const valueType = toType(fractions)
 
     if (valueType !== 'boolean' && valueType !== 'number')
@@ -175,7 +176,7 @@ export function applyCurrencySign(formattedPrice: string, { currencySign = '', p
  * @public
  */
 export function price(value: number, locale: ILocate, fractions: number) {
-    if (isNaN(value))
+    if (isProperNaN(value))
         return value
 
     const { defaultLocale, ...priceOpts } = locale || {}
