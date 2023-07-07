@@ -19,4 +19,15 @@
  * ```
  * @public
  */
-export { deepEqual } from 'fast-equals'
+export {
+    deepEqual,
+    circularDeepEqual,
+    circularShallowEqual,
+    createCustomEqual,
+    sameValueZeroEqual,
+    shallowEqual,
+    strictCircularDeepEqual,
+    strictCircularShallowEqual,
+    strictDeepEqual,
+    strictShallowEqual,
+} from 'fast-equals'
