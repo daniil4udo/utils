@@ -1,13 +1,30 @@
-type MatchRange = [number, number][]
+/**
+ * The `MatchRange` type is an array of tuples.
+ *
+ * Each tuple represents a match range with two elements:
+ * - The first element is the start index of a match within a string
+ * - The second element is the end index of a match within a string
+ *
+ * The array can be of any length, including zero (i.e., no matches).
+ *
+ * The indices are inclusive and based on zero-indexed positions in the string.
+ * Negative indices or indices outside the string's length are ignored.
+ */
+type MatchRange = ReadonlyArray<[number, number]>
 
+/**
+ * The `Options` interface is used to customize the behavior of the `highlightMatch` function.
+ *
+ */
 interface Options {
     /**
-     * Specifies the HTML tag to use for wrapping matches
+     * The HTML tag to use for wrapping matches within the input string. If not specified, the default is 'strong'.
      *
      * @defaultValue `strong`
      */
     tag?: string
 }
+
 /**
  * A function that highlights matches in a `str` string by wrapping them in HTML tags.
  *
@@ -20,10 +37,6 @@ interface Options {
  *
  * @remarks
  * This function is part of the {@link https://github.com/daniil4udo/utils | @democrance/utils} library.
- * @typeParam MatchRange - An array of match ranges. Each match range is a two-element array containing the start
- *      and end indices of the match.
- * @typeParam Options - An options object. Currently supports one option: 'tag', which specifies the HTML tag to
- *      use for wrapping matches.
  *
  * @param str - The string in which to highlight matches.
  * @param matches - An array of match ranges. Each match range is a two-element array containing the start and
@@ -61,14 +74,14 @@ interface Options {
  */
 export function highlightMatch(
     str: string,
-    matches: MatchRange = [],
+    indices: MatchRange = [],
     { tag = 'strong' }: Options = {},
 ) {
-    if (!str || matches.length === 0)
+    if (!str || indices.length === 0)
         return str
 
     // Sort matches by start index
-    matches.sort((a, b) => a[0] - b[0])
+    const matches = indices.slice().sort((a, b) => a[0] - b[0])
 
     // Merge overlapping or adjacent ranges
     const mergedMatches: Array<[number, number]> = []
