@@ -53,7 +53,7 @@ export type NonPrimitive =
  *
  * @typedef {(Primitive | PrimitiveLike | NonPrimitive)} AllTypes
  */
-export type AllTypes = Primitive & PrimitiveLike & NonPrimitive
+export type AllTypes = Primitive | PrimitiveLike | NonPrimitive
 
 /**
  * Takes any JavaScript value as input and returns its type as a string.
