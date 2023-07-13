@@ -1,4 +1,4 @@
-import isNumber from 'is-number'
+import _isNumber from 'is-number'
 
 import { toType } from './toType'
 
@@ -69,6 +69,8 @@ export function isPrimitiveLike(input: any): boolean {
     return isPrimitive(input) || allPrimitivesLike.has(toType(input))
 }
 
+export const isNumber: (input: unknown) => boolean = _isNumber.bind(null)
+
 /**
  * Determines if a given input can not be treated as a number.
  *
@@ -80,8 +82,4 @@ export function isPrimitiveLike(input: any): boolean {
  */
 export function isProperNaN(input: any) {
     return !isNumber(input)
-}
-
-export {
-    isNumber,
 }
