@@ -1,3 +1,5 @@
+import isNumber from 'is-number'
+
 import { toType } from './toType'
 
 /**
@@ -68,27 +70,6 @@ export function isPrimitiveLike(input: any): boolean {
 }
 
 /**
- * Determines if a given input can be treated as a number.
- *
- * @remarks
- * This function first checks if the input type is a number.
- * If it is, it verifies if the input is not NaN by subtracting the input from itself and comparing it to 0.
- * If the input type is a string, it trims the string and checks if it can be converted to a finite number.
- *
- * @param input - The value to check.
- * @returns True if the input can be treated as a number, false otherwise.
- */
-export function isNumber(input: any) {
-    if (typeof input === 'number')
-        return input - input === 0
-
-    if (typeof input === 'string' && input.trim() !== '')
-        return Number.isFinite(+input)
-
-    return false
-}
-
-/**
  * Determines if a given input can not be treated as a number.
  *
  * @remarks
@@ -99,4 +80,8 @@ export function isNumber(input: any) {
  */
 export function isProperNaN(input: any) {
     return !isNumber(input)
+}
+
+export {
+    isNumber,
 }

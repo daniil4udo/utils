@@ -45,6 +45,7 @@
         "defu": "^6.1.2",
         "fast-equals": "^5.0.1",
         "file-saver-es": "^2.0.5",
+        "is-number": "^7.0.0",
         "micro-memoize": "^4.1.2",
         "perfect-debounce": "^1.0.0",
         "proper-url-join": "^2.1.1",

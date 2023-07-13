@@ -9,6 +9,7 @@
 
 /// <reference types="defu" />
 /// <reference types="fast-equals" />
+/// <reference types="is-number" />
 /// <reference types="micro-memoize" />
 /// <reference types="perfect-debounce" />
 /// <reference types="rfdc" />
