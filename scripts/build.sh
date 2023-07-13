@@ -18,7 +18,7 @@ else
         "vite-node scripts/generateIndex.ts scripts/autoImportUtilsPreset.ts" \
         "eslint lib/preset/autoImportUtilsPreset.ts lib/index.ts --fix" \
         "vitest run" \
-        "typedoc --plugin typedoc-plugin-markdown ./lib/index.ts" \
+        "pnpm:typedoc" \
         "rimraf dist" \
         "tsup" \
         "vite-node scripts/postbuild.ts"
