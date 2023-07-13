@@ -1,7 +1,7 @@
 /**
  * Takes a URL template as input and returns an object with an `expand` method.
  *
- * @module zipcelx
+ * @module parseURLTemplate
  * @see {@link https://github.com/bramstein/url-template}
  *
  * @function
@@ -20,4 +20,12 @@
  * ```
  * @public
  */
-export { parseTemplate as parseURLTemplate } from 'url-template'
+import { parseTemplate } from 'url-template'
+
+type UrlTemplateContext = Parameters<ReturnType<typeof parseTemplate>['expand']>[0]
+
+export function urlTemplate(url: string, context: UrlTemplateContext) {
+    return parseTemplate(url).expand(context)
+}
+
+export { parseTemplate as parseURLTemplate }
