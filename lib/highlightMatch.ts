@@ -1,3 +1,6 @@
+import { hasValue } from './hasValue'
+import { toType } from './toType'
+
 /**
  * The `MatchRange` type is an array of tuples.
  *
@@ -23,6 +26,62 @@ interface Options {
      * @defaultValue `strong`
      */
     tag?: string
+    attrs?: null | string | Record<string, string>[] | Record<string, string>
+}
+
+/**
+ * This function formats attributes that can be in different formats (string, array, or object)
+ * into a string format suitable for HTML attributes.
+ *
+ * If the input is a string, it's returned as is.
+ * If it's an array, each item is processed recursively and joined into a space-separated string.
+ * If it's an object, each entry is converted into a key-value string with a format of 'key="value"',
+ * then all entries are joined into a space-separated string.
+ *
+ * If the input isn't one of these types, a TypeError is thrown.
+ *
+ * @param {null | string | Record<string, string>[] | Record<string, string>} input - The input to format.
+ *
+ * @returns {string} The formatted attributes.
+ *
+ * @throws {TypeError} Will throw an error if the input is not a string, an array, or an object.
+ *
+ * @example
+ * // If the input is a string:
+ * createTagAttributes("class='example'")
+ * // Returns: "class='example'"
+ *
+ * @example
+ * // If the input is an array:
+ * createTagAttributes(['class="example"', 'id="test"'])
+ * // Returns: 'class="example" id="test"'
+ *
+ * @example
+ * // If the input is an object:
+ * createTagAttributes({ class: "example", id: "test" })
+ * // Returns: 'class="example" id="test"'
+ *
+ * @example
+ * // If the input is not a string, an array or an object:
+ * createTagAttributes(42)
+ * // Throws: TypeError: Unsupported attributes type: number
+ */
+function createTagAttributes(input: null | string | Record<string, string>[] | Record<string, string>) {
+    if (typeof input === 'string') {
+        return input
+    }
+    else if (Array.isArray(input)) {
+        return input.map(createTagAttributes).join(' ')
+    }
+    else if (toType(input) === 'object') {
+        return Object.entries(input)
+            .map(([ key, value ]) => hasValue(value) ? `${key}="${value}"` : null)
+            .filter(Boolean)
+            .join(' ')
+    }
+    else {
+        throw new TypeError(`Unsupported attributes type: ${toType(input) }`)
+    }
 }
 
 /**
@@ -75,10 +134,14 @@ interface Options {
 export function highlightMatch(
     str: string,
     indices: MatchRange = [],
-    { tag = 'strong' }: Options = {},
+    { tag = 'strong', attrs = null }: Options = {},
 ) {
     if (!str || indices.length === 0)
         return str
+
+    const openTag = attrs
+        ? `${tag} ${createTagAttributes(attrs)}`
+        : tag
 
     // Sort matches by start index
     const matches = indices.slice().sort((a, b) => a[0] - b[0])
@@ -95,7 +158,8 @@ export function highlightMatch(
             currentMatch[1] = Math.max(nextEnd, currentMatch[1])
         }
         else {
-            // If the next match doesn't overlap or is adjacent, add the current match to the merged list and start a new current match
+            // If the next match doesn't overlap or is adjacent,
+            // add the current match to the merged list and start a new current match
             mergedMatches.push(currentMatch)
             currentMatch = matches[i]
         }
@@ -121,7 +185,7 @@ export function highlightMatch(
             result += str.slice(lastMatchEndIndex, startIndex)
 
         const matchText = str.slice(startIndex, endIndex + 1) // Add 1 to endIndex in the slice call
-        result += `<${tag}>${matchText}</${tag}>`
+        result += `<${openTag}>${matchText}</${tag}>`
 
         lastMatchEndIndex = endIndex + 1
     }
