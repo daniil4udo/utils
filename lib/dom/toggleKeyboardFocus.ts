@@ -16,7 +16,7 @@
     '[tabindex]:not([tabindex^="-"])',
     ':not([disabled])';
  */
-export const POSSIBLE_FOCUSABLE_TAGS = 'a[href], area[href], button, details, input, textarea, select, [tabindex]:not([tabindex="-1"])' as const
+export const POSSIBLE_FOCUSABLE_TAGS = `a[href], area[href], button, details, input, textarea, select, [tabindex]:not([tabindex^="-"])` as const
 
 /**
  * Toggles the keyboard focus state for all focusable elements in the specified scope.
