@@ -1,45 +1,45 @@
 import { describe, expect, it } from 'vitest'
 
-import { isColor } from '../lib/isColor'
+import { isColor } from '../lib/'
 
 describe('@/lib/isColor.ts', () => {
     it('returns false for null', () => {
-        expect(isColor(null)).toBe(false)
+        expect(isColor(null)).toBeFalsy()
     })
 
     it('returns false for undefined', () => {
-        expect(isColor(undefined)).toBe(false)
+        expect(isColor(undefined)).toBeFalsy()
     })
 
     it('returns false for an empty string', () => {
-        expect(isColor('')).toBe(false)
+        expect(isColor('')).toBeFalsy()
     })
 
     it('returns false for a string that is not a color', () => {
-        expect(isColor('not a color')).toBe(false)
+        expect(isColor('not a color')).toBeFalsy()
     })
 
     it('returns true for a named color', () => {
-        expect(isColor('blue')).toBe(true)
+        expect(isColor('blue')).toBeTruthy()
     })
 
     it('returns true for a hex color', () => {
-        expect(isColor('#0000FF')).toBe(true)
+        expect(isColor('#0000FF')).toBeTruthy()
     })
 
     it('returns true for a rgb color', () => {
-        expect(isColor('rgb(0, 0, 255)')).toBe(true)
+        expect(isColor('rgb(0, 0, 255)')).toBeTruthy()
     })
 
     it('returns false for a malformatted rgb color', () => {
-        expect(isColor('rgb(0, 0, 255, 0)')).toBe(false)
+        expect(isColor('rgb(0, 0, 255, 0)')).toBeFalsy()
     })
 
     it('returns true for rgba color', () => {
-        expect(isColor('rgba(0, 0, 255, 0)')).toBe(true)
+        expect(isColor('rgba(0, 0, 255, 0)')).toBeTruthy()
     })
 
     it('returns false for a string that is a number', () => {
-        expect(isColor('123')).toBe(false)
+        expect(isColor('123')).toBeFalsy()
     })
 })

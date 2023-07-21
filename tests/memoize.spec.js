@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest'
 
-import { memoizeLast } from '../lib/memoize'
+import { memoizeLast } from '../lib/'
 
 describe('@/lib/toType.ts', () => {
     describe('memoizeLast', () => {

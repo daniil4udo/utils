@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { convertPYDateFormatToJS } from '../lib/convertPYDateFormatToJS'
+import { convertPYDateFormatToJS } from '../lib/'
 
 describe('@/lib/convertPYDateFormatToJS.ts', () => {
     it('to throw if not a string', () => {
@@ -8,27 +8,27 @@ describe('@/lib/convertPYDateFormatToJS.ts', () => {
     })
 
     it('converts weekday, month, day, year', () => {
-        expect(convertPYDateFormatToJS('%A, %B %d, %Y')).toEqual('dddd, MMMM DD, YYYY')
+        expect(convertPYDateFormatToJS('%A, %B %d, %Y')).toBe('dddd, MMMM DD, YYYY')
     })
 
     it('converts day, abbreviated month, year', () => {
-        expect(convertPYDateFormatToJS('%d-%b-%Y')).toEqual('DD-MMM-YYYY')
+        expect(convertPYDateFormatToJS('%d-%b-%Y')).toBe('DD-MMM-YYYY')
     })
 
     it('converts month, day, two digit year, 12 hour, minute, am/pm', () => {
-        expect(convertPYDateFormatToJS('%m/%d/%y %I:%M %p')).toEqual('MM/DD/YY hh:mm A')
+        expect(convertPYDateFormatToJS('%m/%d/%y %I:%M %p')).toBe('MM/DD/YY hh:mm A')
     })
 
     it('converts empty string', () => {
-        expect(convertPYDateFormatToJS('')).toEqual('')
+        expect(convertPYDateFormatToJS('')).toBe('')
     })
 
     it('converts string without any format identifiers', () => {
-        expect(convertPYDateFormatToJS('This is a test')).toEqual('This is a test')
+        expect(convertPYDateFormatToJS('This is a test')).toBe('This is a test')
     })
 
     it('converts string with literal % character', () => {
-        expect(convertPYDateFormatToJS('%%')).toEqual('%')
+        expect(convertPYDateFormatToJS('%%')).toBe('%')
     })
 
     it('converts string with all format identifiers', () => {

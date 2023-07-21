@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { capitalize, toLower, toUpper } from '../lib/changeCase'
+import { capitalize, toLower, toUpper } from '../lib/'
 
 describe('@/lib/changeCase.ts', () => {
     describe('capitalize', () => {

@@ -1,32 +1,32 @@
 import { describe, expect, it } from 'vitest'
 
 import {
+    emojiToIso,
+    isCountryIso,
     isFlagEmoji,
     isHorseRacingSkinToneComboEmoji,
     isKeyCapEmoji,
     isPersonZwjEmoji,
-    isRainbowFlagEmoji,
-    isSkinToneComboEmoji,
-} from '../lib/emoji/emojiSupport'
-import { emojiToIso, isCountryIso, isoToEmoji } from '../lib/emoji/isoToEmojiToISO'
+    isRainbowFlagEmoji, isSkinToneComboEmoji, isoToEmoji,
+} from '../lib/'
 
 describe('@/lib/isoToEmojiToISO.ts', () => {
     describe('isCountryIso', () => {
         it('returns true for valid country ISO codes', () => {
-            expect(isCountryIso('us')).toBe(true)
-            expect(isCountryIso('UK')).toBe(true)
+            expect(isCountryIso('us')).toBeTruthy()
+            expect(isCountryIso('UK')).toBeTruthy()
         })
 
         it('returns false for invalid country ISO codes', () => {
-            expect(isCountryIso('123')).toBe(false)
-            expect(isCountryIso('USA')).toBe(false) // Too long
-            expect(isCountryIso('U')).toBe(false) // Too short
-            expect(isCountryIso('Uk1')).toBe(false) // Contains a number
+            expect(isCountryIso('123')).toBeFalsy()
+            expect(isCountryIso('USA')).toBeFalsy() // Too long
+            expect(isCountryIso('U')).toBeFalsy() // Too short
+            expect(isCountryIso('Uk1')).toBeFalsy() // Contains a number
         })
 
         it('returns false for empty strings and undefined', () => {
-            expect(isCountryIso('')).toBe(false)
-            expect(isCountryIso()).toBe(false)
+            expect(isCountryIso('')).toBeFalsy()
+            expect(isCountryIso()).toBeFalsy()
         })
     })
 
@@ -38,13 +38,13 @@ describe('@/lib/isoToEmojiToISO.ts', () => {
         })
 
         it('returns null for invalid country ISO codes', () => {
-            expect(isoToEmoji('123')).toBe(null)
-            expect(isoToEmoji('USA')).toBe(null)
+            expect(isoToEmoji('123')).toBeNull()
+            expect(isoToEmoji('USA')).toBeNull()
         })
 
         it('returns null for empty strings and undefined', () => {
-            expect(isoToEmoji('')).toBe(null)
-            expect(isoToEmoji()).toBe(null)
+            expect(isoToEmoji('')).toBeNull()
+            expect(isoToEmoji()).toBeNull()
         })
     })
 
@@ -55,13 +55,13 @@ describe('@/lib/isoToEmojiToISO.ts', () => {
         })
 
         it('returns null for invalid flag emojis', () => {
-            expect(emojiToIso('👍')).toBe(null)
-            expect(emojiToIso('🇦🇧🇨')).toBe(null) // Not a valid flag
+            expect(emojiToIso('👍')).toBeNull()
+            expect(emojiToIso('🇦🇧🇨')).toBeNull() // Not a valid flag
         })
 
         it('returns null for empty strings and undefined', () => {
-            expect(emojiToIso('')).toBe(null)
-            expect(emojiToIso()).toBe(null)
+            expect(emojiToIso('')).toBeNull()
+            expect(emojiToIso()).toBeNull()
         })
     })
 })

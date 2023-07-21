@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { splitByIndex } from '../lib/splitByIndex'
+import { splitByIndex } from '../lib/'
 
 describe('@/lib/splitByIndex.ts', () => {
     it('splits an array at the specified index', () => {

@@ -5,7 +5,7 @@ import {
     getSessionStorageItem,
     removeSessionStorageItem,
     setSessionStorageItem,
-} from '../lib/storageWrapper'
+} from '../lib/'
 
 describe('@/lib/storageWrapper.ts', () => {
     const mockKey = 'mockKey'
@@ -62,12 +62,12 @@ describe('@/lib/storageWrapper.ts', () => {
         sessionStorage.setItem(mockKey, mockEncodedValue)
         const initialSessionStorageLength = sessionStorage.length
         removeSessionStorageItem('nonexistentKey')
-        expect(sessionStorage.length).toEqual(initialSessionStorageLength)
+        expect(sessionStorage).toHaveLength(initialSessionStorageLength)
     })
 
     it('clears sessionStorage', () => {
         sessionStorage.setItem(mockKey, mockEncodedValue)
         clearSessionStorage()
-        expect(sessionStorage.length).toEqual(0)
+        expect(sessionStorage).toHaveLength(0)
     })
 })

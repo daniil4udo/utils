@@ -1,4 +1,4 @@
-import { hasValue } from "./hasValue"
+import { hasValue } from './hasValue'
 
 /**
  * Map that defines the conversion from Python-style date format to JavaScript-style date format.

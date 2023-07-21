@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { toType } from '../lib/toType'
+import { toType } from '../lib/'
 
 describe('@/lib/toType.ts', () => {
     it('toType of the undefined to equal "undefined"', () => {
@@ -27,7 +27,7 @@ describe('@/lib/toType.ts', () => {
         expect(toType(42)).toBe('number')
     })
 
-    it('toType of the "str to equal "string"" ', () => {
+    it('toType of the "str to equal "string""', () => {
         expect(toType('str')).toBe('string')
     })
 

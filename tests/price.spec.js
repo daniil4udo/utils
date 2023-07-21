@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { applyCurrencySign, formatValue, parseLocaleNumber, price } from '../lib/price'
+import { applyCurrencySign, formatValue, parseLocaleNumber, price } from '../lib/'
 
 describe('@/lib/price.ts', () => {
     describe('parseLocaleNumber', () => {
@@ -36,15 +36,15 @@ describe('@/lib/price.ts', () => {
         })
 
         it('should format a number value with default options', () => {
-            expect(formatValue(1234.5678)).toEqual('1,234.5678')
+            expect(formatValue(1234.5678)).toBe('1,234.5678')
         })
 
         it('should format a number value with custom fraction digits', () => {
-            expect(formatValue(1234.5678, 3)).toEqual('1,234.568')
+            expect(formatValue(1234.5678, 3)).toBe('1,234.568')
         })
 
         it('should format a number value with a different locale', () => {
-            expect(formatValue(1234.5678, 2, 'de-DE')).toEqual('1.234,57')
+            expect(formatValue(1234.5678, 2, 'de-DE')).toBe('1.234,57')
         })
     })
 
@@ -54,34 +54,34 @@ describe('@/lib/price.ts', () => {
                 currencySign: '$',
                 priceFormat: '{currency}{amount}',
             })
-            expect(formattedPrice).toEqual('$1,234.56')
+            expect(formattedPrice).toBe('$1,234.56')
         })
 
         it('should apply currency sign and format with default options', () => {
             const formattedPrice = applyCurrencySign('1,234.56', {})
-            expect(formattedPrice).toEqual('1,234.56')
+            expect(formattedPrice).toBe('1,234.56')
         })
     })
 
     describe('price', () => {
         it('should format a price value with default options', () => {
             const result = price(1234.5678, { currencySign: '$', priceFormat: '{currency} {amount}' }, 2)
-            expect(result).toEqual('$ 1,234.57')
+            expect(result).toBe('$ 1,234.57')
         })
 
         it('should format a negative price value with default options', () => {
             const result = price(-1234.5678, { currencySign: '$', priceFormat: '{currency} {amount}' }, 2)
-            expect(result).toEqual('-$ 1,234.57')
+            expect(result).toBe('-$ 1,234.57')
         })
 
         it('should format a price value with custom options', () => {
             const result = price(1234.5678, { currencySign: '€', priceFormat: '{currency}{amount}' }, 3)
-            expect(result).toEqual('€1,234.568')
+            expect(result).toBe('€1,234.568')
         })
 
         it('should return the input value as string if it is not a number', () => {
             const result = price('Invalid Value', { currencySign: '$', priceFormat: '{currency} {amount}' }, 2)
-            expect(result).toEqual('Invalid Value')
+            expect(result).toBe('Invalid Value')
         })
     })
 })

@@ -1,15 +1,15 @@
 import { describe, expect, it } from 'vitest'
 
-import { getNameFromPath, trimFileExtension } from '../lib/getNameFromPath'
+import { getNameFromPath, trimFileExtension } from '../lib/'
 
 describe('@/lib/getNameFromPath.ts', () => {
     describe('trimFileExtension', () => {
         it('should correctly trim the extension', () => {
-            expect(trimFileExtension('/path/to/file.txt')).toEqual('/path/to/file')
+            expect(trimFileExtension('/path/to/file.txt')).toBe('/path/to/file')
         })
 
         it('should return the same string if there is no extension', () => {
-            expect(trimFileExtension('/path/to/file')).toEqual('/path/to/file')
+            expect(trimFileExtension('/path/to/file')).toBe('/path/to/file')
         })
 
         it('should throw a TypeError if the input is not a string', () => {
@@ -17,25 +17,25 @@ describe('@/lib/getNameFromPath.ts', () => {
         })
 
         it('should handle empty strings', () => {
-            expect(trimFileExtension('')).toEqual('')
+            expect(trimFileExtension('')).toBe('')
         })
     })
 
     describe('getNameFromPath', () => {
         it('should correctly get the file name with extension', () => {
-            expect(getNameFromPath('/path/to/file.txt')).toEqual('file.txt')
+            expect(getNameFromPath('/path/to/file.txt')).toBe('file.txt')
         })
 
         it('should correctly get the file name without extension', () => {
-            expect(getNameFromPath('/path/to/file.txt', { extension: false })).toEqual('file')
+            expect(getNameFromPath('/path/to/file.txt', { extension: false })).toBe('file')
         })
 
         it('should return the same string if there are no slashes', () => {
-            expect(getNameFromPath('file.txt')).toEqual('file.txt')
+            expect(getNameFromPath('file.txt')).toBe('file.txt')
         })
 
         it('should handle empty strings', () => {
-            expect(getNameFromPath('')).toEqual('')
+            expect(getNameFromPath('')).toBe('')
         })
 
         it('should throw a TypeError if the input is not a string', () => {

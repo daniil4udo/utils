@@ -1,7 +1,7 @@
 import { JSDOM } from 'jsdom'
 import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest'
 
-import { toggleKeyboardFocus } from '../lib/toggleKeyboardFocus'
+import { toggleKeyboardFocus } from '../lib/'
 
 describe('@/lib/toggleKeyboardFocus.ts', () => {
     let dom

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { filterObject } from '../lib/filterObject'
+import { filterObject } from '../lib/'
 
 describe('@/lib/filterObject.ts', () => {
     it('returns the same object if predicate is not a function', () => {
@@ -70,7 +70,7 @@ describe('@/lib/filterObject.ts', () => {
 
     it('filters object based on key values', () => {
         const object = { first: 1, second: 2, third: 3, fourth: 4 }
-        const predicate = (key, value) => key.startsWith('f')
+        const predicate = key => key.startsWith('f')
         const filteredObject = filterObject(object, predicate)
         expect(filteredObject).toEqual({ first: 1, fourth: 4 })
     })

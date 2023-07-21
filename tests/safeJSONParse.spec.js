@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { safeJSONParse } from '../lib/safeJSONParse'
+import { safeJSONParse } from '../lib/'
 
 describe('@/lib/safeJSONParse.ts', () => {
     it('parses valid JSON', () => {
@@ -9,8 +9,8 @@ describe('@/lib/safeJSONParse.ts', () => {
     })
 
     it('parses valid JSON array', () => {
-        const arr = [ 'foo', 'bar' ]
-        expect(safeJSONParse(JSON.stringify(arr))).toEqual(arr)
+        const array = [ 'foo', 'bar' ]
+        expect(safeJSONParse(JSON.stringify(array))).toEqual(array)
     })
 
     it('returns input for invalid JSON', () => {

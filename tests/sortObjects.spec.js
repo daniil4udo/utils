@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { sortObjects } from '../lib/sortObjects'
+import { sortObjects } from '../lib/'
 
 describe('@/lib/sortObjects.ts', () => {
     it('should correctly sort an array of objects in ascending order', () => {

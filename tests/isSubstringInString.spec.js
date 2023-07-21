@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { isSubstringInString } from '../lib/isSubstringInString'
+import { isSubstringInString } from '../lib/'
 
 describe('@/lib/isSubstringInString.ts', () => {
     // Positive test cases

@@ -1,6 +1,6 @@
-import { afterAll, beforeEach, describe, expect, it, vi } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
-import { detectMode } from '../lib/detectMode'
+import { detectMode } from '../lib/'
 
 describe('@/lib/detectMode.ts', () => {
     const OLD_NODE_ENV = process.env
@@ -14,7 +14,7 @@ describe('@/lib/detectMode.ts', () => {
             import.meta.env = { ...OLD_VITE_ENV } // Make a copy
     })
 
-    afterAll(() => {
+    afterEach(() => {
         process.env = OLD_NODE_ENV // Restore old environment
         if (import.meta?.env)
             import.meta.env = { ...OLD_VITE_ENV } // Make a copy
@@ -23,10 +23,12 @@ describe('@/lib/detectMode.ts', () => {
     it('returns import.meta.env.MODE if defined', () => {
         // Mocking import.meta can be tricky, depending on your environment
         // vi.mock('import.meta', () => ({ env: { MODE: 'test_mode' } }), { virtual: true })
-        Object.defineProperty(import.meta.env, 'MODE', { value: 'test_mode' })
+        if (import.meta.env)
+            import.meta.env.MODE = 'test_mode'
+        // Object.defineProperty(import.meta.env, 'MODE', { value: 'test_mode' })
 
         const result = detectMode()
-        expect(result).toEqual('test_mode')
+        expect(result).toBe('test_mode')
     })
 
     it('returns process.env.NODE_ENV if import.meta.env.MODE is not defined', () => {
@@ -36,7 +38,7 @@ describe('@/lib/detectMode.ts', () => {
         Object.defineProperty(process.env, 'NODE_ENV', { value: 'test_env' })
 
         const result = detectMode()
-        expect(result).toEqual('test_env')
+        expect(result).toBe('test_env')
     })
 
     it('returns undefined if neither import.meta.env.MODE nor process.env.NODE_ENV are defined', () => {

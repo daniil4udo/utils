@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { highlightMatch } from '../lib/highlightMatch'
+import { highlightMatch } from '../lib/'
 
 describe('@/lib/highlightMatch.ts', () => {
     it('wraps the entire string when the match includes the whole string', () => {

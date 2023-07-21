@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
 
-import { imageExists } from '../lib/imageExists'
+import { imageExists } from '../lib/'
 
 // Helper function to create an Image instance
 function mockImageInstance() {
@@ -12,7 +12,7 @@ function mockImageInstance() {
 }
 
 // Override Image constructor
-globalThis.Image = vi.fn(() => mockImageInstance())
+vi.spyOn(globalThis, 'Image').mockImplementation(() => mockImageInstance())
 
 describe('@/lib/imageExists.ts', () => {
     afterEach(() => {
@@ -23,8 +23,8 @@ describe('@/lib/imageExists.ts', () => {
         const notStringResult = await imageExists(12345)
         const emptyStringResult = await imageExists('')
 
-        expect(notStringResult).toBe(false)
-        expect(emptyStringResult).toBe(false)
+        expect(notStringResult).toBeFalsy()
+        expect(emptyStringResult).toBeFalsy()
     })
 
     it('should resolve url when image load successfully', async () => {
@@ -50,7 +50,7 @@ describe('@/lib/imageExists.ts', () => {
 
         imageInstance.onerror()
 
-        await expect(promise).resolves.toEqual(false)
+        await expect(promise).resolves.toBeFalsy()
     })
 
     it('should reject error when image loading fails and throwError is true', async () => {
@@ -70,8 +70,8 @@ describe('@/lib/imageExists.ts', () => {
         const nullResult = await imageExists(null)
         const undefinedResult = await imageExists(undefined)
 
-        expect(nullResult).toBe(false)
-        expect(undefinedResult).toBe(false)
+        expect(nullResult).toBeFalsy()
+        expect(undefinedResult).toBeFalsy()
     })
 
     it('should properly set Image src', async () => {

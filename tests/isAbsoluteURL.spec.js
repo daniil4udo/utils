@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { isAbsoluteURL } from '../lib/isAbsoluteURL'
+import { isAbsoluteURL } from '../lib/'
 
 describe('@/lib/isAbsoluteURL.ts', () => {
     it('returns true for absolute URLs', () => {
@@ -12,7 +12,7 @@ describe('@/lib/isAbsoluteURL.ts', () => {
         ]
 
         urls.forEach(url => {
-            expect(isAbsoluteURL(url)).toBe(true)
+            expect(isAbsoluteURL(url)).toBeTruthy()
         })
     })
 
@@ -25,7 +25,7 @@ describe('@/lib/isAbsoluteURL.ts', () => {
         ]
 
         urls.forEach(url => {
-            expect(isAbsoluteURL(url)).toBe(false)
+            expect(isAbsoluteURL(url)).toBeFalsy()
         })
     })
 
@@ -38,7 +38,7 @@ describe('@/lib/isAbsoluteURL.ts', () => {
         ]
 
         inputs.forEach(input => {
-            expect(isAbsoluteURL(input)).toBe(false)
+            expect(isAbsoluteURL(input)).toBeFalsy()
         })
     })
 
@@ -50,7 +50,7 @@ describe('@/lib/isAbsoluteURL.ts', () => {
         ]
 
         urls.forEach(url => {
-            expect(isAbsoluteURL(url)).toBe(false)
+            expect(isAbsoluteURL(url)).toBeFalsy()
         })
     })
 
@@ -63,7 +63,7 @@ describe('@/lib/isAbsoluteURL.ts', () => {
         ]
 
         urls.forEach(url => {
-            expect(isAbsoluteURL(url)).toBe(true)
+            expect(isAbsoluteURL(url)).toBeTruthy()
         })
     })
 
@@ -75,7 +75,7 @@ describe('@/lib/isAbsoluteURL.ts', () => {
         ]
 
         urls.forEach(url => {
-            expect(isAbsoluteURL(url)).toBe(true)
+            expect(isAbsoluteURL(url)).toBeTruthy()
         })
     })
 
@@ -87,7 +87,7 @@ describe('@/lib/isAbsoluteURL.ts', () => {
         ]
 
         urls.forEach(url => {
-            expect(isAbsoluteURL(url)).toBe(true)
+            expect(isAbsoluteURL(url)).toBeTruthy()
         })
     })
 
@@ -99,7 +99,7 @@ describe('@/lib/isAbsoluteURL.ts', () => {
         ]
 
         urls.forEach(url => {
-            expect(isAbsoluteURL(url)).toBe(false)
+            expect(isAbsoluteURL(url)).toBeFalsy()
         })
     })
 
@@ -111,7 +111,7 @@ describe('@/lib/isAbsoluteURL.ts', () => {
         ]
 
         urls.forEach(url => {
-            expect(isAbsoluteURL(url)).toBe(true) // these are actually absolute URLs, not relative ones.
+            expect(isAbsoluteURL(url)).toBeTruthy() // these are actually absolute URLs, not relative ones.
         })
     })
 })

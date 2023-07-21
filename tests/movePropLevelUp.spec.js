@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { movePropLevelUp } from '../lib/movePropLevelUp'
+import { movePropLevelUp } from '../lib/'
 
 describe('@/lib/movePropLevelUp.ts', () => {
     it('should return the same value when input is not an object', () => {

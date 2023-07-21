@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { deepClone } from '../lib/deepClone'
+import { deepClone } from '../lib/'
 
 describe('@/lib/deepClone.ts', () => {
     it('creates a deep clone of primitives', () => {
