@@ -23,7 +23,7 @@ interface Options {
  * @template T - The type of the elements.
  *
  * @function toArray
- * @param {T | T[]} arr - The value to be converted into an array.
+ * @param {T | T[]} array - The value to be converted into an array.
  * @param {Options} [options={ shallow: false, deep: false }] - Options for handling arrays.
  * @returns {T[]} The value converted into an array.
  *
@@ -37,15 +37,15 @@ interface Options {
  * ```
  * @public
  */
-export function toArray<T>(arr: T | T[], options: Options = { shallow: false, deep: false }): T[] {
-    if (!arr)
+export function toArray<T>(array: T | T[], options: Options = { shallow: false, deep: false }): T[] {
+    if (!array)
         return []
-    if (Array.isArray(arr)) {
+    if (Array.isArray(array)) {
         if (options.shallow === true)
-            return [ ...arr ]
+            return [ ...array ]
         if (options.deep === true)
-            return deepClone(arr)
-        return arr
+            return deepClone(array)
+        return array
     }
-    return [ arr ]
+    return [ array ]
 }

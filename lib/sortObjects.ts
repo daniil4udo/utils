@@ -32,9 +32,9 @@ interface SortableItems {
  * ```
  * @public
  */
-export function sortObjects(arr: SortableItems[], key: string, locale = 'en-US'): SortableItems[] {
+export function sortObjects(array: SortableItems[], key: string, locale = 'en-US'): SortableItems[] {
     const collator = new Intl.Collator(locale, { numeric: true, sensitivity: 'base' })
-    return arr.sort((a, b) => {
+    return array.sort((a, b) => {
         // If a[key] and b[key] are both null or undefined, they are considered equal
         if ((a[key] === undefined || a[key] === null) && (b[key] === undefined || b[key] === null))
             return 0

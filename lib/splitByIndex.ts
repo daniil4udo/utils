@@ -15,7 +15,7 @@ type Length<T extends any[]> = T['length']
  * @template T - The type of the elements.
  *
  * @function splitByIndex
- * @param {T[]} arr - The array to split.
+ * @param {T[]} array - The array to split.
  * @param {Length<T>} [splitIndex=0] - The index at which to split the array.
  * @returns {[T[], T[]]} An array of two arrays - the first one is the part before the index and the second one is the part after (and including) the index.
  *
@@ -27,15 +27,15 @@ type Length<T extends any[]> = T['length']
  * ```
  * @public
  */
-export function splitByIndex<T extends any[]>(arr: T, splitIndex: Length<T> = arr.length) {
-    // given a default value of arr.length, so when no index is provided,
+export function splitByIndex<T extends any[]>(array: T, splitIndex: Length<T> = array.length) {
+    // given a default value of array.length, so when no index is provided,
     // the function will return the original array as the first element in the result array,
     // and an empty array as the second element.
-    if (splitIndex > arr.length)
+    if (splitIndex > array.length)
         throw new Error(`[splitByIndex] - splitIndex is out of bound`)
 
-    const x = arr.slice(0, splitIndex)
-    const y = arr.slice(splitIndex)
+    const x = array.slice(0, splitIndex)
+    const y = array.slice(splitIndex)
 
     return [ x, y ]
 }

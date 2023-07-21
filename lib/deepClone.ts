@@ -27,10 +27,10 @@ import _deepClone from 'rfdc'
  * console.log(clonedObj); // Output: { foo: { bar: { baz: 'qux' } } }
  * console.log(clonedObj === obj); // Output: false (clonedObj is a deep clone of obj)
  *
- * const arr = [1, [2, [3, [4]]]];
- * const clonedArr = deepClone(arr);
+ * const array = [1, [2, [3, [4]]]];
+ * const clonedArr = deepClone(array);
  * console.log(clonedArr); // Output: [1, [2, [3, [4]]]]
- * console.log(clonedArr === arr); // Output: false (clonedArr is a deep clone of arr)
+ * console.log(clonedArr === array); // Output: false (clonedArr is a deep clone of array)
  * ```
  * @public
  */

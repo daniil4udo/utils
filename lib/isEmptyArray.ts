@@ -32,8 +32,8 @@ interface Options<T> {
  * @remarks
  * This function is part of the {@link https://github.com/daniil4udo/utils | @democrance/utils} library.
  *
- * @param arr - The array to check.
- * @param opts - An options object.
+ * @param array - The array to check.
+ * @param options - An options object.
  * @returns `true` if the array is considered "empty", `false` otherwise.
  *
  * @example
@@ -47,26 +47,26 @@ interface Options<T> {
  * ```
  * @public
  */
-export function isEmptyArray<T>(arr: T | T[] = [], opts: Options<T> = {}) {
-    if (isNil(arr))
+export function isEmptyArray<T>(array: T | T[] = [], options: Options<T> = {}): boolean {
+    if (isNil(array))
         return true
 
-    if (Array.isArray(arr)) {
-        let { length } = arr
+    if (Array.isArray(array)) {
+        let { length } = array
         if (length === 0)
             return true
 
         const {
             recursive = true,
             comparator = hasValue,
-        } = opts
+        } = options
 
         let isEmpty = true
         if (length > 0) {
             while (length--) {
-                isEmpty = (recursive && Array.isArray(arr[length]))
-                    ? isEmptyArray(arr[length], opts)
-                    : !comparator(arr[length])
+                isEmpty = (recursive && Array.isArray(array[length]))
+                    ? isEmptyArray(array[length], options)
+                    : !comparator(array[length])
 
                 if (!isEmpty)
                     break
