@@ -80,7 +80,7 @@ function createTagAttributes(input: null | string | Record<string, string>[] | R
             .join(' ')
     }
     else {
-        throw new TypeError(`Unsupported attributes type: ${toType(input) }`)
+        throw new TypeError(`[createTagAttributes] - Unsupported attributes type: ${toType(input)}`)
     }
 }
 
