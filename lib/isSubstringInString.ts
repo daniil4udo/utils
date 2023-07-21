@@ -1,5 +1,3 @@
-import { toUpper } from './changeCase'
-
 /**
  * Checks if a substring exists within a string in a case-insensitive manner.
  *
@@ -28,5 +26,5 @@ export function isSubstringInString(str = '', subString = '', { caseSensitive = 
     if (typeof str !== 'string' || typeof subString !== 'string')
         throw new TypeError(`[isSubstringInString] - input should be type 'string'. Got ${typeof str}`)
 
-    return (caseSensitive ? str : toUpper(str)).includes(caseSensitive ? subString : toUpper(subString))
+    return new RegExp(subString, caseSensitive ? '' : 'i').test(str)
 }
