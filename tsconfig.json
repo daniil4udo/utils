@@ -26,6 +26,10 @@
         "noImplicitAny": false,
         "pretty": true,
         "skipLibCheck": true,
-        "strictBindCallApply": true
+        "strictBindCallApply": true,
+        "types": [
+            "node",
+            "vite/client"
+        ]
     },
 }

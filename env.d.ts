@@ -1,7 +1,3 @@
-/// <reference types="@types/node" />
-/// <reference types="vite/client" />
-/// <reference types="buffer" />
-
 /// <reference types="@types/file-saver-es" />
 /// <reference types="@types/proper-url-join" />
 /// <reference types="@types/url-template" />

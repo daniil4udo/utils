@@ -18,7 +18,7 @@ import { safeJSONParse } from './safeJSONParse'
  * ```
  * @private
  */
-class StorageWrapper {
+class StorageWrapper<T, K extends string> {
     private storage: 'localStorage' | 'sessionStorage'
     constructor(storage: 'localStorage' | 'sessionStorage' = 'localStorage') {
         this.storage = storage
@@ -35,7 +35,7 @@ class StorageWrapper {
      * @param key - The key under which to store the value.
      * @param value - The value to store. This can be any value that is serializable to JSON.
      */
-    setItem(key: string, value: any): void {
+    setItem(key: K, value: T): void {
         try {
             const serializedValue = JSON.stringify(value)
             const encodedValue = detectMode() !== 'development'
@@ -61,7 +61,7 @@ class StorageWrapper {
      * @param key - The key for which to retrieve the value.
      * @returns The retrieved value, if it exists and is successfully retrieved and deserialized. Otherwise, null.
      */
-    getItem(key: string): any {
+    getItem(key: K): T | null {
         try {
             const encodedValue = window[this.storage].getItem(key)
             if (!encodedValue)
@@ -72,7 +72,7 @@ class StorageWrapper {
                 ? Buffer.from(encodedValue, 'base64').toString()
                 : encodedValue
 
-            return safeJSONParse(serializedValue)
+            return safeJSONParse(serializedValue) as T
         }
         catch (error) {
             console.error(`Error getting item from ${this.storage}: ${error}`)
@@ -87,7 +87,7 @@ class StorageWrapper {
      *
      * @param key - The key for which to remove the value.
      */
-    removeItem(key: string): void {
+    removeItem(key: K): void {
         try {
             window[this.storage].removeItem(key)
         }

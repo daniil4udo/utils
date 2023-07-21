@@ -22,7 +22,7 @@
  */
 import { parseTemplate } from 'url-template'
 
-type UrlTemplateContext = Parameters<ReturnType<typeof parseTemplate>['expand']>[0]
+export type UrlTemplateContext = Parameters<ReturnType<typeof parseTemplate>['expand']>[0]
 
 export function urlTemplate(url: string, context: UrlTemplateContext) {
     return parseTemplate(url).expand(context)
