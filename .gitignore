@@ -40,3 +40,4 @@ tests/__snapshots__
 #
 lib/preset/*.ts
 lib/index.ts
+lib/**/index.ts
