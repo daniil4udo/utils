@@ -1,7 +1,9 @@
 import type { DMCLogger, LoggerImplementation } from './types';
 
+import { detectMode } from '@democrance/utils';
+
 import defaultLogger from './defaultLogger';
-import { detectMode, noop } from './utils';
+import { noop } from './utils';
 
 const defaultModes = {
     // Test

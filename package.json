@@ -49,5 +49,8 @@
         "overrides": {
             "rollup": "^3.0.0"
         }
+    },
+    "dependencies": {
+        "@democrance/utils": "^0.16.1"
     }
 }

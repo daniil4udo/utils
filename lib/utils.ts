@@ -1,15 +1,8 @@
 import type { LogMessage } from './types';
 
-export function noop() {}
+import { detectMode } from '@democrance/utils';
 
-export function detectMode() {
-    try {
-        return import.meta.env?.MODE;
-    }
-    catch {
-        return process.env?.NODE_ENV;
-    }
-}
+export function noop() {}
 
 export function getMessage(message: LogMessage): string | undefined {
     if (Array.isArray(message))
