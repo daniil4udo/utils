@@ -21,6 +21,10 @@
         "esModuleInterop": true,
         "importHelpers": true,
         "isolatedModules": true,
-        "skipLibCheck": true
+        "skipLibCheck": true,
+        "types": [
+            "node",
+            "vite/client"
+        ]
     },
 }

@@ -24,19 +24,19 @@
     ],
     "scripts": {
         "build": "rimraf dist && tsup",
-        "lint": "eslint --fix --ext .vue,.ts,.js .",
+        "lint": "eslint --fix --ext .ts,.js .",
         "test": "vitest",
         "test:coverage": "vitest run --coverage"
     },
     "devDependencies": {
-        "@democrance/eslint-config": "^0.7.0",
-        "@types/node": "^18.16.19",
-        "@vitest/coverage-c8": "^0.32.2",
+        "@democrance/eslint-config": "^0.9.0",
+        "@types/node": "^18.17.1",
+        "@vitest/coverage-c8": "^0.33.0",
         "@vue/tsconfig": "^0.4.0",
-        "eslint": "^8.44.0",
+        "eslint": "^8.45.0",
         "tsup": "^7.1.0",
         "typescript": "^5.1.6",
-        "vitest": "^0.32.2"
+        "vitest": "^0.33.0"
     },
     "packageManager": "pnpm@8.6.5",
     "engines": {
