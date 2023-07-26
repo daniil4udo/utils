@@ -16,10 +16,10 @@ const defaultModes = {
     production: 'error',
 
     // Fallback
-    default: 'warn',
+    default: 'info',
 } as const;
 
-function registerLogger(loggerImplementation: LoggerImplementation, verbosity: string) {
+export function registerLogger(loggerImplementation: LoggerImplementation, verbosity: string) {
     let Logger: DMCLogger;
 
     if (typeof loggerImplementation === 'function')
@@ -68,12 +68,7 @@ function registerLogger(loggerImplementation: LoggerImplementation, verbosity: s
     return Logger;
 }
 
-const Logger = registerLogger(
+export const Logger = registerLogger(
     defaultLogger,
     defaultModes[detectMode()] || defaultModes.default,
 );
-
-export {
-    Logger,
-    registerLogger,
-};
