@@ -25,6 +25,8 @@
     "scripts": {
         "build": "rimraf dist && tsup",
         "lint": "eslint --fix --ext .ts,.js .",
+        "prepublishOnly": "pnpm build",
+        "release": "bumpp --commit --tag --no-push && pnpm publish --access public",
         "test": "vitest",
         "test:coverage": "vitest run --coverage"
     },
@@ -33,6 +35,7 @@
         "@types/node": "^18.17.1",
         "@vitest/coverage-c8": "^0.33.0",
         "@vue/tsconfig": "^0.4.0",
+        "bumpp": "^9.1.1",
         "eslint": "^8.45.0",
         "tsup": "^7.1.0",
         "typescript": "^5.1.6",
