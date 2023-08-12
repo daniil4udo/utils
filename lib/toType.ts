@@ -1,59 +1,4 @@
-/**
- * Type alias representing JavaScript's primitive types.
- *
- * @typedef {('boolean'|'number'|'bigint'|'string'|'symbol'|'undefined'|'null')} Primitive
- */
-export type Primitive =
-    | 'boolean'
-    | 'number'
-    | 'bigint'
-    | 'string'
-    | 'symbol'
-    | 'undefined'
-    | 'null'
-
-/**
-* Type alias representing JavaScript's Date and RegExp types.
-*
-* @typedef {('date'|'regexp')} PrimitiveLike
-*/
-export type PrimitiveLike =
-    | 'date'
-    | 'regexp'
-
-/**
-* Type alias representing JavaScript's non-primitive types.
-*
-* @typedef {('arguments'|'buffer'|'object'|'array'|'error'|'function'|'generatorfunction'|'map'|'weakmap'|'set'|'weakset'|'int8array'|'uint8array'|'uint8clampedarray'|'int16array'|'uint16array'|'int32array'|'uint32array'|'float32array'|'float64array')} NonPrimitive
-*/
-export type NonPrimitive =
-    | 'arguments'
-    | 'buffer'
-    | 'object'
-    | 'array'
-    | 'error'
-    | 'function'
-    | 'generatorfunction'
-    | 'map'
-    | 'weakmap'
-    | 'set'
-    | 'weakset'
-    | 'int8array'
-    | 'uint8array'
-    | 'uint8clampedarray'
-    | 'int16array'
-    | 'uint16array'
-    | 'int32array'
-    | 'uint32array'
-    | 'float32array'
-    | 'float64array'
-
-/**
- * Type alias representing all types in JavaScript, including primitive, PrimitiveLike, and non-primitive types.
- *
- * @typedef {(Primitive | PrimitiveLike | NonPrimitive)} AllTypes
- */
-export type AllTypes = Primitive | PrimitiveLike | NonPrimitive
+import type { AnyTypesName } from '../types'
 
 /**
  * Takes any JavaScript value as input and returns its type as a string.
@@ -63,7 +8,7 @@ export type AllTypes = Primitive | PrimitiveLike | NonPrimitive
  *
  * @function toType
  * @param {any} input - The input value for which to get the type.
- * @returns {AllTypes} - The type of the input value, represented as a string.
+ * @returns {AnyTypesName} - The type of the input value, represented as a string.
  *
  * @example
  * ```ts
@@ -75,12 +20,12 @@ export type AllTypes = Primitive | PrimitiveLike | NonPrimitive
  * ```
  * @public
  */
-export function toType(input: any): AllTypes {
-    const protoName = {}.toString.call(input).match(/\s([a-zA-Z]+)/)![1].toLowerCase()
+export function toType(input: any): AnyTypesName {
+    const protoName = ({}).toString.call(input).match(/\s([a-zA-Z]+)/)![1].toLowerCase()
     if (protoName === 'object' || protoName === 'arguments')
-        return protoName as AllTypes
+        return protoName
     const ctorName = input?.constructor
         ? input.constructor.name.toLowerCase()
         : ''
-    return ((ctorName || protoName)) as AllTypes
+    return ((ctorName || protoName))
 }
