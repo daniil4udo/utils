@@ -49,7 +49,7 @@ export function keyBy<T>(array: T[], keyOrFunction?: Keyable) {
         const el = array[i]
 
         if (typeof keyOrFunction === 'function')
-            keyedCollection[keyOrFunction(el)] = el
+            keyedCollection[keyOrFunction(el, i)] = el
 
         else if (typeof keyOrFunction === 'string')
             keyedCollection[el[keyOrFunction]] = el
