@@ -26,17 +26,7 @@ import { toType } from './toType'
  * @public
  */
 export function isPrimitive(input: any): boolean {
-    const allPrimitives = new Set([
-        'boolean',
-        'number',
-        'bigint',
-        'string',
-        'symbol',
-        'null',
-        'undefined',
-    ])
-
-    return allPrimitives.has(toType(input))
+    return input !== Object(input)
 }
 
 /**
