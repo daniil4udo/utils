@@ -29,6 +29,11 @@ export function isPrimitive(input: any): boolean {
     return input !== Object(input)
 }
 
+const PRIMITIVE_LIKE = new Set([
+    'date',
+    'regexp',
+])
+
 /**
  * Checks if a given input is a primitive or primitive-like value.
  *
@@ -51,12 +56,7 @@ export function isPrimitive(input: any): boolean {
  * @public
  */
 export function isPrimitiveLike(input: any): boolean {
-    const allPrimitivesLike = new Set([
-        'date',
-        'regexp',
-    ])
-
-    return isPrimitive(input) || allPrimitivesLike.has(toType(input))
+    return isPrimitive(input) || PRIMITIVE_LIKE.has(toType(input))
 }
 
 export const isNumber: (input: unknown) => boolean = _isNumber.bind(null)

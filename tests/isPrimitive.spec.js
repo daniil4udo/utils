@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest'
 import { isPrimitive, isProperNaN } from '../lib/'
 
 describe('@/lib/isPrimitive.ts', () => {
-    describe('isPrimitive with 1 argument', () => {
+    describe('isPrimitive to be true for primitives', () => {
         it('truthy isPrimitive for Boolean type', () => {
             expect(isPrimitive(true)).toBeTruthy()
         })
@@ -43,6 +43,38 @@ describe('@/lib/isPrimitive.ts', () => {
 
         it('truthy isPrimitive for undefined type', () => {
             expect(isPrimitive(undefined)).toBeTruthy()
+        })
+    })
+
+    describe('isPrimitive to be false for non-primitives', () => {
+        it('falsy isPrimitive for Object type', () => {
+            expect(isPrimitive({})).toBeFalsy()
+        })
+
+        it('falsy isPrimitive for Class type', () => {
+            const TestClass = class Test { }
+            expect(isPrimitive(TestClass)).toBeFalsy()
+            expect(isPrimitive(new TestClass())).toBeFalsy()
+        })
+
+        it('falsy isPrimitive for Array type', () => {
+            expect(isPrimitive([])).toBeFalsy()
+        })
+
+        it('falsy isPrimitive for Map type', () => {
+            expect(isPrimitive(new Map([]))).toBeFalsy()
+        })
+
+        it('falsy isPrimitive for Set type', () => {
+            expect(isPrimitive(new Set([]))).toBeFalsy()
+        })
+
+        it('falsy isPrimitive for Function type', () => {
+            function fnDeclaration() {}
+            const fnExpression = () => {}
+
+            expect(isPrimitive(fnDeclaration)).toBeFalsy()
+            expect(isPrimitive(fnExpression)).toBeFalsy()
         })
     })
 
