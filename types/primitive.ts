@@ -31,8 +31,8 @@ type PrimitiveLikeCtr =
     | 'Date'
     | 'RegExp'
 
-type Native<T extends string> = `[object ${T}]`
-type Normalized<T extends string> = Lowercase<T>
+type Native<T extends PrimitiveCtr | PrimitiveLikeCtr | NonPrimitiveCtr> = `[object ${T}]`
+type Normalized<T extends PrimitiveCtr | PrimitiveLikeCtr | NonPrimitiveCtr> = Lowercase<T>
 
 //
 // ✅ NATIVE REPRESENTATION OF PRIMITIVES
@@ -79,6 +79,8 @@ export type PrimitiveType = MapToPrimitiveType<PrimitiveName>
  * Represents the actual JavaScript primitive types that can be represented in JSON.
  */
 export type ParsablePrimitiveType = Exclude<PrimitiveType, bigint | symbol | undefined>
+
+export type ParsablePropertyKey = Exclude<PropertyKey, symbol>
 
 //
 // ✅ NATIVE REPRESENTATION OF PRIMITIVE-LIKE

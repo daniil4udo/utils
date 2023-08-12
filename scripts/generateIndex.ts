@@ -39,6 +39,9 @@ async function generateIndexFile(isRoot = false) {
             console.error(`Unable to scan directory: ${err}`)
     }
 
+    // add Types to maintain flat structure
+    exports += '\nexport * from \'../types/\'\n'
+
     await fsp.writeFile(`${pathToLib}/index.ts`, exports, 'utf-8')
 }
 
