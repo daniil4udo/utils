@@ -1,19 +1,4 @@
 /**
- * Represents a type that can be parsed from JSON.
- *
- * @typedef {string | number | boolean | null | { [key: string]: Parseable } | Parseable[]} Parseable
- */
-type Parseable = string | number | boolean | null | { [key: string]: Parseable } | Parseable[]
-
-/**
- * Represents the result of parsing a JSON value.
- *
- * @template T - The original type before parsing.
- * @typedef {T extends string ? Parseable : T} JSONParseResult
- */
-type JSONParseResult<T> = T extends string ? Parseable : T
-
-/**
  * Safely parses a JSON string or returns the input value if parsing fails.
  *
  * This function attempts to parse the input as JSON using `JSON.parse()`. If the parsing succeeds,
@@ -40,11 +25,11 @@ type JSONParseResult<T> = T extends string ? Parseable : T
  * ```
  * @public
  */
-export function safeJSONParse<T>(input: JSONParseResult<T>): JSONParseResult <T> {
+export function safeJSONParse<T>(input: string): T | string {
     try {
-        return JSON.parse(input as string)
+        return JSON.parse(input) as T
     }
     catch {
-        return input
+        return input as string
     }
 }
