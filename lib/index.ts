@@ -1,7 +1,5 @@
 import type { DMCLogger, LoggerImplementation } from './types';
 
-import { detectMode } from '@democrance/utils';
-
 import defaultLogger from './defaultLogger';
 import { noop } from './utils';
 
@@ -72,5 +70,5 @@ export function registerLogger(loggerImplementation: LoggerImplementation, verbo
 
 export const Logger = registerLogger(
     defaultLogger,
-    defaultModes[detectMode()] || defaultModes.default,
+    defaultModes[process.env.NODE_ENV] || defaultModes.default,
 );

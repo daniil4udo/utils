@@ -1,7 +1,5 @@
 import type { LogMessage } from './types';
 
-import { detectMode } from '@democrance/utils';
-
 export function noop() {}
 
 export function getMessage(message: LogMessage): string | undefined {
@@ -17,7 +15,7 @@ export function getMessage(message: LogMessage): string | undefined {
 
 export const detectNode: boolean = Object.prototype
     .toString
-    .call(typeof process !== 'undefined' ? process : 0) === '[object process]' || detectMode() === 'production';
+    .call(typeof process !== 'undefined' ? process : 0) === '[object process]' || process.env.NODE_ENV === 'production';
 
 export function mountLog(name: string, style: string) {
     if (detectNode)
