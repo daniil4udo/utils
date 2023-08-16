@@ -1,7 +1,7 @@
 import { isNumber } from './isPrimitive'
 import { toType } from './toType'
 
-export function length(collection: any, { includeString = false } = {}) {
+export function length(collection: any, { includeString = false } = {}): number {
     try {
         // Object.keys converts string to Array
         if ((!includeString && typeof collection === 'string'))
