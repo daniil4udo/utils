@@ -1,6 +1,6 @@
 {
     "name": "@democrance/utils",
-    "version": "0.16.3",
+    "version": "0.16.4",
     "description": "Set of popular utils",
     "sideEffects": false,
     "keywords": [
