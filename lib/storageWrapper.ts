@@ -1,4 +1,3 @@
-import { detectMode } from './detectMode'
 import { safeJSONParse } from './safeJSONParse'
 
 /**
@@ -38,7 +37,7 @@ class StorageWrapper<T, K extends string> {
     setItem(key: K, value: T): void {
         try {
             const serializedValue = JSON.stringify(value)
-            const encodedValue = detectMode() !== 'development'
+            const encodedValue = process.env.NODE_ENV !== 'development'
                 // eslint-disable-next-line n/prefer-global/buffer
                 ? Buffer.from(serializedValue).toString('base64')
                 : serializedValue
@@ -67,7 +66,7 @@ class StorageWrapper<T, K extends string> {
             if (!encodedValue)
                 return null
 
-            const serializedValue = detectMode() !== 'development'
+            const serializedValue = process.env.NODE_ENV !== 'development'
                 // eslint-disable-next-line n/prefer-global/buffer
                 ? Buffer.from(encodedValue, 'base64').toString()
                 : encodedValue
