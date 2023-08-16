@@ -18,7 +18,7 @@ type NODE_ENV = 'development' | 'production' | 'test'
  * ```
  * @public
  */
-export function detectMode() {
+function detectMode() {
     try {
         return (import.meta.env.MODE ?? process.env.NODE_ENV ?? null) as NODE_ENV | null
     }
