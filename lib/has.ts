@@ -1,0 +1,26 @@
+import type { Nullable } from 'types'
+
+/**
+ * Checks whether the given object is not null and has the specified property.
+ *
+ * @param {Nullable<T>} object - The object to be checked. It can be `null` or `undefined`.
+ * @param {PropertyKey} key - The key (property) to check for on the object. Can be a `string`, `number`, or `symbol`.
+ * @returns {object is T & Record<PropertyKey, T>} - Returns `true` if the object is not null and has the specified property, otherwise returns `false`.
+ *
+ * @remarks
+ * This function narrows down the type of the input object to `T & Record<PropertyKey, T>` when it returns `true`, which helps in TypeScript type inference.
+ *
+ * @example
+ * ```typescript
+ * import { has } from '@democrance/utils';
+ *
+ * const obj = { a: 1 };
+ * if (has(obj, 'a')) {
+ *   console.log(obj.a);  // TypeScript knows that `obj.a` exists and is a number
+ * }
+ * ```
+ * @public
+ */
+export function has<T>(object: Nullable<T>, key: PropertyKey): object is T & Record<PropertyKey, T> {
+    return object != null && Object.prototype.hasOwnProperty.call(object, key)
+}
