@@ -1,3 +1,5 @@
+import type { PrimitiveLikeType, PrimitiveType } from 'types'
+
 import _isNumber from 'is-number'
 
 import { toType } from './toType'
@@ -29,11 +31,6 @@ export function isPrimitive(input: unknown): input is PrimitiveType {
     return input !== Object(input)
 }
 
-const PRIMITIVE_LIKE = new Set([
-    'date',
-    'regexp',
-])
-
 /**
  * Checks if a given input is a primitive or primitive-like value.
  *
@@ -55,11 +52,12 @@ const PRIMITIVE_LIKE = new Set([
  * ```
  * @public
  */
-export function isPrimitiveLike(input: any): boolean {
-    return isPrimitive(input) || PRIMITIVE_LIKE.has(toType(input))
+export function isPrimitiveLike(input: unknown): input is PrimitiveType | PrimitiveLikeType {
+    const type = toType(input)
+    return isPrimitive(input) || type === 'date' || type === 'regexp'
 }
 
-export const isNumber: (input: unknown) => boolean = _isNumber.bind(null)
+export const isNumber = (input: unknown): input is number => _isNumber(input)
 
 /**
  * Determines if a given input can not be treated as a number.
