@@ -1,5 +1,7 @@
 import type { AnyTypesName } from '../types'
 
+const toString = ({}).toString
+
 /**
  * Takes any JavaScript value as input and returns its type as a string.
  *
@@ -20,12 +22,12 @@ import type { AnyTypesName } from '../types'
  * ```
  * @public
  */
-export function toType(input: any): AnyTypesName {
-    const protoName = ({}).toString.call(input).match(/\s([a-zA-Z]+)/)![1].toLowerCase()
+export function toType(input: unknown) {
+    const protoName = toString.call(input).match(/\s([a-zA-Z]+)/)![1].toLowerCase()
+    const ctrName = input?.constructor?.name ?? ''
+
     if (protoName === 'object' || protoName === 'arguments')
         return protoName
-    const ctorName = input?.constructor
-        ? input.constructor.name.toLowerCase()
-        : ''
-    return ((ctorName || protoName))
+
+    return (ctrName.toLowerCase() || protoName) as AnyTypesName
 }
