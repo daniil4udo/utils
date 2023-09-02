@@ -69,19 +69,12 @@ export function filterObject<T>(object: TargetObject<T>, predicate: PredicateFun
         return object
 
     const result: TargetObject<T> = {}
-    let key: string
-    let value: T
-    let index = 0
+    const keys = Object.keys(object)
 
-    for (key in object) {
-        if (!Object.prototype.hasOwnProperty.call(object, key))
-            continue
-
-        value = object[key]
-        if (predicate(key, value, index, object))
-            result[key] = value
-
-        index++
+    for (let i = 0, len = keys.length; i < len; i++) {
+        const value = object[keys[i]]
+        if (predicate(keys[i], value, i, object))
+            result[keys[i]] = value
     }
 
     return result
