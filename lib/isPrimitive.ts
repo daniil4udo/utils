@@ -25,7 +25,7 @@ import { toType } from './toType'
  * ```
  * @public
  */
-export function isPrimitive(input: any): boolean {
+export function isPrimitive(input: unknown): input is PrimitiveType {
     return input !== Object(input)
 }
 
@@ -70,6 +70,6 @@ export const isNumber: (input: unknown) => boolean = _isNumber.bind(null)
  * @param input - The value to check.
  * @returns True if the input can not be treated as a number, false otherwise.
  */
-export function isProperNaN(input: any) {
+export function isProperNaN<T>(input: T): input is Exclude<T, number> {
     return !isNumber(input)
 }

@@ -4,7 +4,7 @@
  * @typedef {Object} TargetObject
  * @template T The type of the values in the object.
  */
-export type TargetObject<T> = Record<string, T>
+export type TargetObject<T> = Record<PropertyKey, T>
 
 /**
  * Predicate function type definition.
@@ -18,7 +18,7 @@ export type TargetObject<T> = Record<string, T>
  * @return {boolean} True if the current element should be included in the filtered object; otherwise, false.
  */
 export type PredicateFunction<T> = (
-    key: string,
+    key: PropertyKey,
     value: T,
     index: number,
     object: TargetObject<T>
@@ -61,13 +61,10 @@ export type PredicateFunction<T> = (
  * // Filter the object to include only key-value pairs where the key starts with 'a'
  * const filteredObj2 = filterObject(myObj, (key) => key.startsWith('a'))
  * console.log(filteredObj2) // { a: 1 }
- * @public
  * ```
+ * @public
  */
-export function filterObject<T>(
-    object: TargetObject<T>,
-    predicate: PredicateFunction<T>,
-): TargetObject<T> {
+export function filterObject<T>(object: TargetObject<T>, predicate: PredicateFunction<T>): TargetObject<T> {
     if (typeof predicate !== 'function')
         return object
 

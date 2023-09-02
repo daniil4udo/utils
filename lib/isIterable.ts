@@ -22,7 +22,7 @@
  * ```
  * @public
  */
-export function isIterable(input: any): boolean {
+export function isIterable<T>(input: T | Iterable<T>): input is Iterable<T> {
     try {
         return typeof input[Symbol.iterator] === 'function'
     }

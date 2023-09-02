@@ -2,7 +2,7 @@ import { hasValue } from './hasValue'
 import { isNumber } from './isPrimitive'
 import { toType } from './toType'
 
-type Keyable = PropertyKey | ((...args) => string) | null | undefined
+type Keyable = Nullable<PropertyKey> | ((...args) => string)
 type InferredKey<T> = Keyable extends ((...args: any) => PropertyKey)
     ? PropertyKey
     : Keyable extends string

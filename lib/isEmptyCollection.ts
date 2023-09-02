@@ -7,6 +7,6 @@
  */
 import { length } from './length'
 
-export function isEmptyCollection(collection: any): boolean {
+export function isEmptyCollection(collection: unknown): boolean {
     return length(collection) === 0
 }

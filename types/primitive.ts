@@ -13,7 +13,7 @@ export type MapToPrimitiveType<T extends string> =
                     T extends Native<'Symbol'> | Normalized<'Symbol'> ? symbol :
                         T extends Native<'Undefined'> | Normalized<'Undefined'> ? undefined :
                             T extends Native<'Null'> | Normalized<'Null'> ? null :
-                            // PrimitiveLike
+                                // PrimitiveLike
                                 T extends Native<'Date'> | Normalized<'Date'> ? Date :
                                     T extends Native<'RegExp'> | Normalized<'RegExp'> ? RegExp :
                                         never

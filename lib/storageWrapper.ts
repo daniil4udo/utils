@@ -1,3 +1,5 @@
+import type { Nullable } from 'types'
+
 import { safeJSONParse } from './safeJSONParse'
 
 /**
@@ -60,7 +62,7 @@ class StorageWrapper<T, K extends string> {
      * @param key - The key for which to retrieve the value.
      * @returns The retrieved value, if it exists and is successfully retrieved and deserialized. Otherwise, null.
      */
-    getItem(key: K): T | null {
+    getItem(key: K): Nullable<T> {
         try {
             const encodedValue = window[this.storage].getItem(key)
             if (!encodedValue)

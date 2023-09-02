@@ -30,6 +30,6 @@ export function safeJSONParse<T>(input: string): T | string {
         return JSON.parse(input) as T
     }
     catch {
-        return input as string
+        return input
     }
 }

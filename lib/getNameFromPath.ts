@@ -50,8 +50,8 @@ export function trimFileExtension(path = '') {
  *
  * console.log(getNameFromPath('/path/to/file.txt')); // Outputs: 'file.txt'
  * console.log(getNameFromPath('/path/to/file.txt', { extension: false })); // Outputs: 'file'
- * @public
  * ```
+ * @public
  */
 export function getNameFromPath(path = '', { extension = true } = {}) {
     if (typeof path !== 'string')

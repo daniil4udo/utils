@@ -128,8 +128,8 @@ function createTagAttributes(input: null | string | Record<string, string>[] | R
  * const matches5 = [[0, 4]];
  * const options5 = { tag: 'em' };
  * console.log(highlightMatch(str5, matches5, options5)); // Output: '<em>Hello</em>, world!'
- * @public
  * ```
+ * @public
  */
 export function highlightMatch(
     str: string,

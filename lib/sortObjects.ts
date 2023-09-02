@@ -1,12 +1,7 @@
-/**
- * Represents a collection of sortable items.
- *
- * @interface SortableItems
- * @property {string | number | null | undefined} [key] - The key of the sortable item.
- * @property {string | number | null | undefined} [value] - The value of the sortable item.
- */
+import type { Nullable, ParsablePrimitiveType } from 'types'
+
 interface SortableItems {
-    [key: string]: string | number | null | undefined
+    [key: string]: Nullable<ParsablePrimitiveType>
 }
 
 /**

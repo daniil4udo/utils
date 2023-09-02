@@ -27,7 +27,7 @@ type Length<T extends any[]> = T['length']
  * ```
  * @public
  */
-export function splitByIndex<T extends any[]>(array: T, splitIndex: Length<T> = array.length) {
+export function splitByIndex<T extends unknown[]>(array: T, splitIndex: Length<T> = array.length) {
     // given a default value of array.length, so when no index is provided,
     // the function will return the original array as the first element in the result array,
     // and an empty array as the second element.

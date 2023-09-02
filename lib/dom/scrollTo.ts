@@ -1,3 +1,5 @@
+import type { Nullable } from 'types'
+
 /**
  * Scrolls the window to a specified element.
 *
@@ -37,7 +39,7 @@
  * ```
  * @public
  */
-export function scrollTo(element: HTMLElement | null | undefined, offset = 0) {
+export function scrollTo(element: Nullable<HTMLElement>, offset = 0) {
     if (typeof window === 'undefined')
         return
 

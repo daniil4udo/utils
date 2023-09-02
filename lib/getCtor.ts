@@ -46,8 +46,8 @@ interface EsModule<Module> {
  * // ES module
  * const myEsModule = { __esModule: true, default: { foo: "bar" } };
  * console.log(getCtor(myEsModule)); // { foo: "bar" }
- * @public
  * ```
+ * @public
  */
 export function getCtor<Module>(module: EsModule<Module> | Module): Module | undefined {
     if (module != null && typeof module === 'object' && ('__esModule' in module || module[Symbol.toStringTag] === 'Module'))

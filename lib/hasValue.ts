@@ -18,10 +18,10 @@
  * console.log(isNil(null));       // Outputs: true
  * console.log(isNil(undefined));  // Outputs: true
  * console.log(isNil(''));         // Outputs: false
- * @public
  * ```
+ * @public
  */
-export function isNil(input: any) {
+export function isNil(input: unknown): input is null | undefined {
     return input == null
 }
 
@@ -45,10 +45,10 @@ export function isNil(input: any) {
  * console.log(isDefined(null));       // Outputs: false
  * console.log(isDefined(undefined));  // Outputs: false
  * console.log(isDefined(''));         // Outputs: true
- * @public
  * ```
+ * @public
  */
-export function isDefined(input: any) {
+export function isDefined<T>(input: T): input is NonNullable<T> {
     return !isNil(input)
 }
 
@@ -73,9 +73,9 @@ export function isDefined(input: any) {
  * console.log(hasValue(undefined));  // Outputs: false
  * console.log(hasValue(''));         // Outputs: false
  * console.log(hasValue('Hello'));    // Outputs: true
- * @public
  * ```
+ * @public
  */
-export function hasValue(input: any) {
+export function hasValue<T>(input: T): input is NonNullable<T> {
     return !isNil(input) && input !== ''
 }

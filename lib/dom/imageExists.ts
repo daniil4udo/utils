@@ -1,3 +1,5 @@
+import type { Nullable } from 'types'
+
 interface ImageExistsOptions {
     /**
      * A boolean value indicating whether an error should be thrown if the image does not exist.
@@ -35,7 +37,7 @@ interface ImageExistsOptions {
  * @public
  */
 export async function imageExists<T extends string>(
-    url: T | null | undefined,
+    url: Nullable<T>,
     options: ImageExistsOptions = {},
 ): Promise<T | boolean> {
     const { throwError = false } = options
@@ -57,10 +59,10 @@ export async function imageExists<T extends string>(
     })
 }
 
-export async function allImagesExist<T extends string>(urls: Array<T | null | undefined>, options: ImageExistsOptions = {}): Promise<(string | boolean)[]> {
+export async function allImagesExist<T extends string>(urls: Array<Nullable<T>>, options: ImageExistsOptions = {}): Promise<(string | boolean)[]> {
     return Promise.all(urls.map(url => imageExists(url, options)))
 }
 
-export async function anyImagesExist<T extends string>(urls: Array<T | null | undefined>, options: ImageExistsOptions = {}): Promise<(string | boolean)[]> {
+export async function anyImagesExist<T extends string>(urls: Array<Nullable<T>>, options: ImageExistsOptions = {}): Promise<(string | boolean)[]> {
     return (Promise as any).any(urls.map(url => imageExists(url, options)))
 }
