@@ -12,7 +12,7 @@ describe('@/lib/length.ts', () => {
     })
 
     it('should return 0 for an empty string (when includeString is false)', () => {
-        expect(length('')).toBe(0)
+        expect(length('')).toBeNull()
     })
 
     it('should return the correct length for a string (when includeString is true)', () => {
@@ -28,8 +28,8 @@ describe('@/lib/length.ts', () => {
     })
 
     it('should return 0 for undefined or null', () => {
-        expect(length(undefined)).toBe(0)
-        expect(length(null)).toBe(0)
+        expect(length(undefined)).toBeNull()
+        expect(length(null)).toBeNull()
     })
 
     it('should return 0 if an exception occurs', () => {

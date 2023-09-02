@@ -1,21 +1,19 @@
-import { isNumber } from './isPrimitive'
+import type { Nullable } from 'types'
+
 import { toType } from './toType'
 
-export function length(collection: any, { includeString = false } = {}): number {
+export function length(collection: any, { includeString = false } = {}): Nullable<number> {
     try {
         // Object.keys converts string to Array
         if ((!includeString && typeof collection === 'string'))
-            return 0
+            return null
 
-        if (toType(collection) !== 'object' && isNumber(collection?.length))
-            return collection.length
-
-        if (toType(collection) !== 'object' && isNumber(collection?.size))
-            return collection.size
+        if (toType(collection) !== 'object')
+            return collection?.length ?? collection?.size ?? null
 
         return Object.keys(collection).length
     }
     catch {
-        return 0
+        return null
     }
 }
