@@ -1,4 +1,6 @@
-import _deepClone from 'rfdc'
+import rfdc from 'rfdc'
+
+const _deepClone = rfdc({ proto: false })
 
 /**
  * Creates a deep clone of the input value.
@@ -39,6 +41,6 @@ export function deepClone<T>(input: T): T {
         return structuredClone(input)
     }
     catch {
-        return _deepClone({ proto: false })(input)
+        return _deepClone(input)
     }
 }
