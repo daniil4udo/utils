@@ -1,5 +1,5 @@
 {
-	"extends": "@vue/tsconfig/tsconfig.dom.json",
+    "extends": "@vue/tsconfig/tsconfig.dom.json",
     "include": [
         "env.d.ts",
         "lib/*.ts",
@@ -13,21 +13,23 @@
         "tests/*"
     ],
     "compilerOptions": {
-        "moduleResolution": "Node",
         "baseUrl": ".",
-        "outDir": "dist",
-        "target": "ESNext",
-        "module": "ESNext",
-        "strict": true,
         "allowSyntheticDefaultImports": true,
         "declaration": true,
-        "esModuleInterop": true,
         "importHelpers": true,
         "isolatedModules": true,
-        "noImplicitAny": false,
+        "moduleResolution": "Node",
+        "noUncheckedIndexedAccess": true,
+        "noUnusedLocals": true,
+        "outDir": "dist",
         "pretty": true,
-        "skipLibCheck": true,
         "strictBindCallApply": true,
+        "lib": [
+            "ESNext",
+            "ESNext.WeakRef",
+            "DOM",
+            "DOM.Iterable"
+        ],
         "types": [
             "node",
             "vite/client"
