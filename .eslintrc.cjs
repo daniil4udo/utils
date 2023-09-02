@@ -20,8 +20,8 @@ module.exports = {
                 // '**/tests/unit/**/*.spec.{j,t}s?(x)',
                 // '**/(*.)spec.{j,t}s?(x)',
             ],
-            extends: ["plugin:vitest/recommended"],
-            plugins: ['vitest'],
+            extends: [ 'plugin:vitest/recommended' ],
+            plugins: [ 'vitest' ],
         },
-    ]
+    ],
 }
