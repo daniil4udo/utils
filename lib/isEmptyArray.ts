@@ -1,4 +1,4 @@
-import { hasValue, isNil } from './hasValue'
+import { hasValue } from './hasValue'
 
 /**
  * Represents options for the isEmptyArray function.

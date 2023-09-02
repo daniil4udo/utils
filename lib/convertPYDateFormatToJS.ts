@@ -1,4 +1,3 @@
-import { hasValue } from './hasValue'
 import { toType } from './toType'
 
 /**
