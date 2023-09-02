@@ -6,16 +6,16 @@ import { hasValue, isNil } from './hasValue'
  * @template T - The type of value being processed.
  *
  * @interface Options
- * @property {boolean} [recursive] - A flag indicating whether to check nested arrays recursively.
+ * @property {boolean} [deep] - A flag indicating whether to check nested arrays deeply.
  * @property {(value: T) => boolean} [comparator] - A comparator function used to determine if an array element is considered "empty".
  */
 interface Options<T> {
     /**
-     * Whether to check nested arrays recursively.
+     * Whether to check nested arrays deeply.
      *
      * @defaultValue `true`
      */
-    recursive?: boolean
+    deep?: boolean
     /**
      * A comparator function used to determine if an array element is considered "empty".
      *
@@ -27,7 +27,7 @@ interface Options<T> {
 /**
  * Checks whether the given array is "empty". The criteria for an array being considered "empty" is that either the array itself is null/undefined,
  * the array has no elements, or all elements of the array are themselves "empty" according to the provided `comparator` function.
- * If the `recursive` option is true (the default), then nested arrays are checked recursively.
+ * If the `deep` option is true (the default), then nested arrays are checked deeply.
  *
  * @remarks
  * This function is part of the {@link https://github.com/daniil4udo/utils | @democrance/utils} library.
@@ -47,33 +47,29 @@ interface Options<T> {
  * ```
  * @public
  */
-export function isEmptyArray<T>(array: T | T[] = [], options: Options<T> = {}): boolean {
-    if (isNil(array))
-        return true
-
+export function isEmptyArray<T>(array: T, options: Options<T> = {}): boolean {
     if (Array.isArray(array)) {
         let { length } = array
         if (length === 0)
             return true
 
         const {
-            recursive = true,
+            deep = true,
             comparator = hasValue,
         } = options
 
         let isEmpty = true
-        if (length > 0) {
-            while (length--) {
-                isEmpty = (recursive && Array.isArray(array[length]))
-                    ? isEmptyArray(array[length], options)
-                    : !comparator(array[length])
+        while (length--) {
+            isEmpty = (deep && Array.isArray(array[length]))
+                ? isEmptyArray(array[length], options)
+                : !comparator(array[length])
 
-                if (!isEmpty)
-                    break
-            }
+            if (!isEmpty)
+                break
         }
+
         return isEmpty
     }
 
-    return false
+    return true
 }

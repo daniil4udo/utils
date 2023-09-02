@@ -24,7 +24,7 @@ describe('@/lib/isEmptyArray.ts', () => {
     })
 
     it('returns true for an array with only empty arrays (recursive false)', () => {
-        expect(isEmptyArray([ [], [] ], { recursive: false })).toBeFalsy()
+        expect(isEmptyArray([ [], [] ], { deep: false })).toBeFalsy()
     })
 
     it('returns true for a deeply nested array with only empty arrays', () => {
@@ -32,7 +32,7 @@ describe('@/lib/isEmptyArray.ts', () => {
     })
 
     it('returns true for a deeply nested array with only empty arrays (recursive false)', () => {
-        expect(isEmptyArray([ [], [ [], [] ] ], { recursive: false })).toBeFalsy()
+        expect(isEmptyArray([ [], [ [], [] ] ], { deep: false })).toBeFalsy()
     })
 
     it('returns false for a deeply nested array with a non-empty array', () => {
@@ -40,13 +40,13 @@ describe('@/lib/isEmptyArray.ts', () => {
     })
 
     it('returns false for a deeply nested array with a non-empty array (recursive false)', () => {
-        expect(isEmptyArray([ [], [ [], [ 1 ] ] ], { recursive: false })).toBeFalsy()
+        expect(isEmptyArray([ [], [ [], [ 1 ] ] ], { deep: false })).toBeFalsy()
     })
 
     it('returns true for an array with elements that the comparator considers empty', () => {
         const omitZeros = value => value !== 0
         expect(isEmptyArray([ 0, 0, 0 ], { comparator: omitZeros })).toBeTruthy()
-        expect(isEmptyArray([ 0, 0, [ 0 ] ], { recursive: false, comparator: omitZeros })).toBeFalsy()
+        expect(isEmptyArray([ 0, 0, [ 0 ] ], { deep: false, comparator: omitZeros })).toBeFalsy()
     })
 
     it('returns false for an array with elements that the comparator does not consider empty', () => {
