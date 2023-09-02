@@ -1,4 +1,5 @@
 import { hasValue } from './hasValue'
+import { toType } from './toType'
 
 /**
  * Map that defines the conversion from Python-style date format to JavaScript-style date format.
@@ -55,8 +56,8 @@ export const PYTHON_TO_JAVASCRIPT_DATE_MAP = new Map([
  * @public
  */
 export function convertPYDateFormatToJS(unformatted: string) {
-    if (!hasValue(unformatted) && typeof unformatted !== 'string')
-        throw new TypeError(`[convertPYDateFormatToJS] - input should be type 'string'. Got ${typeof unformatted}`)
+    if (typeof unformatted !== 'string')
+        throw new TypeError(`[convertPYDateFormatToJS] - input should be type 'string'. Got ${toType(unformatted)}`)
 
     let formatted = unformatted
     PYTHON_TO_JAVASCRIPT_DATE_MAP.forEach((value, key) => {
