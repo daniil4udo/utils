@@ -4,12 +4,11 @@ import { hasValue } from './hasValue'
 import { isPropertyKey } from './isPropertyKey'
 import { toType } from './toType'
 
-type Keyable = Nullable<PropertyKey> | ((...args) => string)
-type InferredKey<T> = Keyable extends ((...args: any) => PropertyKey)
-    ? PropertyKey
-    : Keyable extends string
-        ? keyof T
-        : PropertyKey
+type KeyableFn = (...args: any) => PropertyKey
+type Keyable = Nullable<PropertyKey> | KeyableFn
+type InferredKey<T> = Keyable extends PropertyKey
+    ? keyof T
+    : PropertyKey
 
 /**
  * Creates an object composed of keys generated from the results of running each element of `array` through `keyOrFunction`.
@@ -37,25 +36,27 @@ type InferredKey<T> = Keyable extends ((...args: any) => PropertyKey)
  * ```
  * @public
  */
-export function keyBy<T>(array: T[], keyOrFunction?: Keyable) {
-    const keyedCollection = {} as Record<InferredKey<T>, T>
-    const { length } = array
-
+export function keyBy<T extends PropertyKey | Record<PropertyKey, any>>(
+    array: T[],
+    keyOrFunction?: Keyable,
+): Record<InferredKey<T>, T> {
     if (hasValue(keyOrFunction) && typeof keyOrFunction !== 'function' && !isPropertyKey(keyOrFunction))
         throw new TypeError(`[keyBy] - "${toType(keyOrFunction)}" cannot be used to index your Array`)
 
-    for (let i = 0, l = length; i < l; i++) {
-        const el = array[i]
+    const keyedCollection = {} as Record<InferredKey<T>, T>
+
+    for (let i = 0, l = array.length; i < l; i++) {
+        const el = array[i] as T
 
         if (typeof keyOrFunction === 'function')
             keyedCollection[keyOrFunction(el, i)] = el
 
-        else if (typeof keyOrFunction === 'string')
+        else if (isPropertyKey(keyOrFunction) && !isPropertyKey(el))
             keyedCollection[el[keyOrFunction]] = el
 
         // If simply array if indexable values -> create object
-        else if (!hasValue(keyOrFunction) && isPropertyKey(el))
-            keyedCollection[el as PropertyKey] = el
+        else if (isPropertyKey(el))
+            keyedCollection[el] = el
     }
 
     return keyedCollection
