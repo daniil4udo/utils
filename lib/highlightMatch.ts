@@ -1,3 +1,5 @@
+import type { Nullable } from 'types'
+
 import { hasValue } from './hasValue'
 import { toType } from './toType'
 
@@ -26,7 +28,7 @@ interface Options {
      * @defaultValue `strong`
      */
     tag?: string
-    attrs?: null | string | Record<string, string>[] | Record<string, string>
+    attrs?: Nullable<string | Record<string, string> | Record<string, string>[]>
 }
 
 /**
@@ -40,7 +42,7 @@ interface Options {
  *
  * If the input isn't one of these types, a TypeError is thrown.
  *
- * @param {null | string | Record<string, string>[] | Record<string, string>} input - The input to format.
+ * @param {Nullable<string | Record<string, string> | Record<string, string>[]>} input - The input to format.
  *
  * @returns {string} The formatted attributes.
  *
@@ -66,7 +68,7 @@ interface Options {
  * createTagAttributes(42)
  * // Throws: TypeError: Unsupported attributes type: number
  */
-function createTagAttributes(input: null | string | Record<string, string>[] | Record<string, string>) {
+function createTagAttributes<T extends Nullable<string | Record<string, string> | Record<string, string>[]>>(input: T): string {
     if (typeof input === 'string') {
         return input
     }
@@ -133,7 +135,7 @@ function createTagAttributes(input: null | string | Record<string, string>[] | R
  */
 export function highlightMatch(
     str: string,
-    indices: MatchRange = [],
+    indices: MatchRange,
     { tag = 'strong', attrs = null }: Options = {},
 ) {
     if (!str || indices.length === 0)
@@ -148,10 +150,10 @@ export function highlightMatch(
 
     // Merge overlapping or adjacent ranges
     const mergedMatches: Array<[number, number]> = []
-    let currentMatch = matches[0]
+    let currentMatch = matches[0] as [number, number]
 
-    for (let i = 1; i < matches.length; i++) {
-        const [ nextStart, nextEnd ] = matches[i]
+    for (let i = 1, l = matches.length; i < l; i++) {
+        const [ nextStart, nextEnd ] = matches[i] as [number, number]
 
         // If the next match overlaps or is adjacent with the current match, merge them
         if (nextStart <= currentMatch[1] + 1) {
@@ -161,7 +163,7 @@ export function highlightMatch(
             // If the next match doesn't overlap or is adjacent,
             // add the current match to the merged list and start a new current match
             mergedMatches.push(currentMatch)
-            currentMatch = matches[i]
+            currentMatch = matches[i] as [number, number]
         }
     }
     mergedMatches.push(currentMatch) // Add the last match
