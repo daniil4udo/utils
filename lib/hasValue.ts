@@ -77,5 +77,5 @@ export function isDefined<T>(input: T): input is NonNullable<T> {
  * @public
  */
 export function hasValue<T>(input: T): input is NonNullable<T> {
-    return !isNil(input) && input !== ''
+    return input != null && (typeof input === 'string' ? input.trim() !== '' : true)
 }
