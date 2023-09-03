@@ -15,6 +15,7 @@
 - [AnyParsableNativeTypesName](modules.md#anyparsablenativetypesname)
 - [AnyParsableTypesName](modules.md#anyparsabletypesname)
 - [AnyTypesName](modules.md#anytypesname)
+- [Length](modules.md#length)
 - [MapToPrimitiveType](modules.md#maptoprimitivetype)
 - [NativeNonPrimitiveName](modules.md#nativenonprimitivename)
 - [NativeParsableNonPrimitiveName](modules.md#nativeparsablenonprimitivename)
@@ -36,7 +37,8 @@
 - [PrimitiveName](modules.md#primitivename)
 - [PrimitiveParsableName](modules.md#primitiveparsablename)
 - [PrimitiveType](modules.md#primitivetype)
-- [TargetObject](modules.md#targetobject)
+- [UnicodeResultSupportMap](modules.md#unicoderesultsupportmap)
+- [UnicodeSupportTestMap](modules.md#unicodesupporttestmap)
 - [UrlTemplateContext](modules.md#urltemplatecontext)
 
 ### Variables
@@ -67,19 +69,19 @@
 - [debounce](modules.md#debounce)
 - [deepClone](modules.md#deepclone)
 - [deepEqual](modules.md#deepequal)
-- [deepForEach](modules.md#deepforeach)
 - [defaultsDeep](modules.md#defaultsdeep)
 - [defaultsDeepArrayFn](modules.md#defaultsdeeparrayfn)
 - [defaultsDeepFn](modules.md#defaultsdeepfn)
-- [detectMode](modules.md#detectmode)
 - [emojiToIso](modules.md#emojitoiso)
 - [filterObject](modules.md#filterobject)
 - [formatValue](modules.md#formatvalue)
+- [generateUnicodeSupportMap](modules.md#generateunicodesupportmap)
 - [getCtor](modules.md#getctor)
 - [getLocalStorageItem](modules.md#getlocalstorageitem)
 - [getNameFromPath](modules.md#getnamefrompath)
 - [getSessionStorageItem](modules.md#getsessionstorageitem)
 - [getUnicodeSupportMap](modules.md#getunicodesupportmap)
+- [has](modules.md#has)
 - [hasValue](modules.md#hasvalue)
 - [highlightMatch](modules.md#highlightmatch)
 - [htmlTruncate](modules.md#htmltruncate)
@@ -98,16 +100,20 @@
 - [isKeyCapEmoji](modules.md#iskeycapemoji)
 - [isNil](modules.md#isnil)
 - [isNumber](modules.md#isnumber)
+- [isParsablePropertyKey](modules.md#isparsablepropertykey)
 - [isPersonZwjEmoji](modules.md#ispersonzwjemoji)
+- [isPlainObject](modules.md#isplainobject)
 - [isPrimitive](modules.md#isprimitive)
 - [isPrimitiveLike](modules.md#isprimitivelike)
 - [isProperNaN](modules.md#ispropernan)
+- [isPropertyKey](modules.md#ispropertykey)
 - [isRainbowFlagEmoji](modules.md#israinbowflagemoji)
 - [isSkinToneComboEmoji](modules.md#isskintonecomboemoji)
 - [isSubstringInString](modules.md#issubstringinstring)
+- [isTuple](modules.md#istuple)
 - [isoToEmoji](modules.md#isotoemoji)
 - [keyBy](modules.md#keyby)
-- [length](modules.md#length)
+- [length](modules.md#length-1)
 - [memoize](modules.md#memoize)
 - [memoizeDeep](modules.md#memoizedeep)
 - [memoizeLast](modules.md#memoizelast)
@@ -158,7 +164,7 @@ Use AllTypesName instead.
 
 #### Defined in
 
-[types/primitive.ts:174](https://github.com/daniil4udo/utils/blob/be7174d/types/primitive.ts#L174)
+[types/primitive.ts:174](https://github.com/daniil4udo/utils/blob/be1b5fa/types/primitive.ts#L174)
 
 ___
 
@@ -171,7 +177,7 @@ and non-primitive names.
 
 #### Defined in
 
-[types/primitive.ts:186](https://github.com/daniil4udo/utils/blob/be7174d/types/primitive.ts#L186)
+[types/primitive.ts:186](https://github.com/daniil4udo/utils/blob/be1b5fa/types/primitive.ts#L186)
 
 ___
 
@@ -181,7 +187,7 @@ ___
 
 #### Defined in
 
-[types/primitive.ts:187](https://github.com/daniil4udo/utils/blob/be7174d/types/primitive.ts#L187)
+[types/primitive.ts:187](https://github.com/daniil4udo/utils/blob/be1b5fa/types/primitive.ts#L187)
 
 ___
 
@@ -191,7 +197,7 @@ ___
 
 #### Defined in
 
-[types/primitive.ts:180](https://github.com/daniil4udo/utils/blob/be7174d/types/primitive.ts#L180)
+[types/primitive.ts:180](https://github.com/daniil4udo/utils/blob/be1b5fa/types/primitive.ts#L180)
 
 ___
 
@@ -203,7 +209,25 @@ Type alias representing all types in JavaScript, including primitive, primitive-
 
 #### Defined in
 
-[types/primitive.ts:179](https://github.com/daniil4udo/utils/blob/be7174d/types/primitive.ts#L179)
+[types/primitive.ts:179](https://github.com/daniil4udo/utils/blob/be1b5fa/types/primitive.ts#L179)
+
+___
+
+### Length
+
+Ƭ **Length**<`T`\>: `T`[``"length"``]
+
+Type alias to get the length of an array.
+
+#### Type parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `T` | extends `unknown`[] | The type of the array. |
+
+#### Defined in
+
+[types/utils.ts:10](https://github.com/daniil4udo/utils/blob/be1b5fa/types/utils.ts#L10)
 
 ___
 
@@ -224,7 +248,7 @@ as Date and RegExp.
 
 #### Defined in
 
-[types/primitive.ts:7](https://github.com/daniil4udo/utils/blob/be7174d/types/primitive.ts#L7)
+[types/primitive.ts:7](https://github.com/daniil4udo/utils/blob/be1b5fa/types/primitive.ts#L7)
 
 ___
 
@@ -237,7 +261,7 @@ types like Array, ArrayBuffer, various Typed Arrays, and others.
 
 #### Defined in
 
-[types/primitive.ts:144](https://github.com/daniil4udo/utils/blob/be7174d/types/primitive.ts#L144)
+[types/primitive.ts:144](https://github.com/daniil4udo/utils/blob/be1b5fa/types/primitive.ts#L144)
 
 ___
 
@@ -250,7 +274,7 @@ a JSON-like structure, specifically Object and Array.
 
 #### Defined in
 
-[types/primitive.ts:150](https://github.com/daniil4udo/utils/blob/be7174d/types/primitive.ts#L150)
+[types/primitive.ts:150](https://github.com/daniil4udo/utils/blob/be1b5fa/types/primitive.ts#L150)
 
 ___
 
@@ -263,7 +287,7 @@ JSON, excluding BigInt, Symbol, and Undefined.
 
 #### Defined in
 
-[types/primitive.ts:51](https://github.com/daniil4udo/utils/blob/be7174d/types/primitive.ts#L51)
+[types/primitive.ts:51](https://github.com/daniil4udo/utils/blob/be1b5fa/types/primitive.ts#L51)
 
 ___
 
@@ -275,7 +299,7 @@ Represents the internal string representation of JavaScript primitive-like types
 
 #### Defined in
 
-[types/primitive.ts:92](https://github.com/daniil4udo/utils/blob/be7174d/types/primitive.ts#L92)
+[types/primitive.ts:92](https://github.com/daniil4udo/utils/blob/be1b5fa/types/primitive.ts#L92)
 
 ___
 
@@ -288,7 +312,7 @@ returned by `Object.prototype.toString`.
 
 #### Defined in
 
-[types/primitive.ts:45](https://github.com/daniil4udo/utils/blob/be7174d/types/primitive.ts#L45)
+[types/primitive.ts:45](https://github.com/daniil4udo/utils/blob/be1b5fa/types/primitive.ts#L45)
 
 ___
 
@@ -304,7 +328,7 @@ Use NonPrimitiveName instead.
 
 #### Defined in
 
-[types/primitive.ts:162](https://github.com/daniil4udo/utils/blob/be7174d/types/primitive.ts#L162)
+[types/primitive.ts:162](https://github.com/daniil4udo/utils/blob/be1b5fa/types/primitive.ts#L162)
 
 ___
 
@@ -317,7 +341,7 @@ types, typed arrays, and others.
 
 #### Defined in
 
-[types/primitive.ts:156](https://github.com/daniil4udo/utils/blob/be7174d/types/primitive.ts#L156)
+[types/primitive.ts:156](https://github.com/daniil4udo/utils/blob/be1b5fa/types/primitive.ts#L156)
 
 ___
 
@@ -330,7 +354,7 @@ specifically 'object' and 'array'.
 
 #### Defined in
 
-[types/primitive.ts:168](https://github.com/daniil4udo/utils/blob/be7174d/types/primitive.ts#L168)
+[types/primitive.ts:168](https://github.com/daniil4udo/utils/blob/be1b5fa/types/primitive.ts#L168)
 
 ___
 
@@ -346,7 +370,7 @@ ___
 
 #### Defined in
 
-[types/utils.ts:2](https://github.com/daniil4udo/utils/blob/be7174d/types/utils.ts#L2)
+[types/utils.ts:2](https://github.com/daniil4udo/utils/blob/be1b5fa/types/utils.ts#L2)
 
 ___
 
@@ -356,7 +380,7 @@ ___
 
 #### Defined in
 
-[types/utils.ts:1](https://github.com/daniil4udo/utils/blob/be7174d/types/utils.ts#L1)
+[types/utils.ts:1](https://github.com/daniil4udo/utils/blob/be1b5fa/types/utils.ts#L1)
 
 ___
 
@@ -368,7 +392,7 @@ Represents the actual JavaScript primitive types that can be represented in JSON
 
 #### Defined in
 
-[types/primitive.ts:81](https://github.com/daniil4udo/utils/blob/be7174d/types/primitive.ts#L81)
+[types/primitive.ts:81](https://github.com/daniil4udo/utils/blob/be1b5fa/types/primitive.ts#L81)
 
 ___
 
@@ -378,19 +402,19 @@ ___
 
 #### Defined in
 
-[types/primitive.ts:83](https://github.com/daniil4udo/utils/blob/be7174d/types/primitive.ts#L83)
+[types/primitive.ts:83](https://github.com/daniil4udo/utils/blob/be1b5fa/types/primitive.ts#L83)
 
 ___
 
 ### PredicateFunction
 
-Ƭ **PredicateFunction**<`T`\>: (`key`: `string`, `value`: `T`, `index`: `number`, `object`: [`TargetObject`](modules.md#targetobject)<`T`\>) => `boolean`
+Ƭ **PredicateFunction**<`T`\>: (`key`: keyof `T`, `value`: `T`[keyof `T`], `index`: `number`, `object`: `T`) => `boolean`
 
 #### Type parameters
 
-| Name | Description |
-| :------ | :------ |
-| `T` | The type of the values in the object. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `T` | extends `Record`<`PropertyKey`, `unknown`\> | The type of the values in the object. |
 
 #### Type declaration
 
@@ -402,10 +426,10 @@ Predicate function type definition.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `key` | `string` | The key of the current element being processed in the object. |
-| `value` | `T` | The value of the current element being processed in the object. |
+| `key` | keyof `T` | The key of the current element being processed in the object. |
+| `value` | `T`[keyof `T`] | The value of the current element being processed in the object. |
 | `index` | `number` | The index of the current element being processed in the object. |
-| `object` | [`TargetObject`](modules.md#targetobject)<`T`\> | The object filterObject was called upon. |
+| `object` | `T` | The object filterObject was called upon. |
 
 ##### Returns
 
@@ -415,7 +439,7 @@ True if the current element should be included in the filtered object; otherwise
 
 #### Defined in
 
-[lib/filterObject.ts:20](https://github.com/daniil4udo/utils/blob/be7174d/lib/filterObject.ts#L20)
+[lib/filterObject.ts:12](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/filterObject.ts#L12)
 
 ___
 
@@ -431,7 +455,7 @@ Use PrimitiveName instead.
 
 #### Defined in
 
-[types/primitive.ts:66](https://github.com/daniil4udo/utils/blob/be7174d/types/primitive.ts#L66)
+[types/primitive.ts:66](https://github.com/daniil4udo/utils/blob/be1b5fa/types/primitive.ts#L66)
 
 ___
 
@@ -447,7 +471,7 @@ Use PrimitiveLikeName instead.
 
 #### Defined in
 
-[types/primitive.ts:103](https://github.com/daniil4udo/utils/blob/be7174d/types/primitive.ts#L103)
+[types/primitive.ts:103](https://github.com/daniil4udo/utils/blob/be1b5fa/types/primitive.ts#L103)
 
 ___
 
@@ -459,7 +483,7 @@ Represents the names of JavaScript primitive-like types, such as Date and RegExp
 
 #### Defined in
 
-[types/primitive.ts:97](https://github.com/daniil4udo/utils/blob/be7174d/types/primitive.ts#L97)
+[types/primitive.ts:97](https://github.com/daniil4udo/utils/blob/be1b5fa/types/primitive.ts#L97)
 
 ___
 
@@ -471,7 +495,7 @@ Represents the actual JavaScript primitive-like types.
 
 #### Defined in
 
-[types/primitive.ts:108](https://github.com/daniil4udo/utils/blob/be7174d/types/primitive.ts#L108)
+[types/primitive.ts:108](https://github.com/daniil4udo/utils/blob/be1b5fa/types/primitive.ts#L108)
 
 ___
 
@@ -483,7 +507,7 @@ Represents the names of JavaScript primitive types as string literals.
 
 #### Defined in
 
-[types/primitive.ts:60](https://github.com/daniil4udo/utils/blob/be7174d/types/primitive.ts#L60)
+[types/primitive.ts:60](https://github.com/daniil4udo/utils/blob/be1b5fa/types/primitive.ts#L60)
 
 ___
 
@@ -495,7 +519,7 @@ Represents the names of JavaScript primitive types as string literals that can b
 
 #### Defined in
 
-[types/primitive.ts:71](https://github.com/daniil4udo/utils/blob/be7174d/types/primitive.ts#L71)
+[types/primitive.ts:71](https://github.com/daniil4udo/utils/blob/be1b5fa/types/primitive.ts#L71)
 
 ___
 
@@ -507,25 +531,27 @@ Represents the actual JavaScript primitive types.
 
 #### Defined in
 
-[types/primitive.ts:76](https://github.com/daniil4udo/utils/blob/be7174d/types/primitive.ts#L76)
+[types/primitive.ts:76](https://github.com/daniil4udo/utils/blob/be1b5fa/types/primitive.ts#L76)
 
 ___
 
-### TargetObject
+### UnicodeResultSupportMap
 
-Ƭ **TargetObject**<`T`\>: `Record`<`string`, `T`\>
-
-Type definition for an object with string keys and values of a certain type
-
-#### Type parameters
-
-| Name | Description |
-| :------ | :------ |
-| `T` | The type of the values in the object. |
+Ƭ **UnicodeResultSupportMap**: { [K in keyof UnicodeSupportTestMap]: boolean } & { `meta`: { `chromeVersion`: [`Nullable`](modules.md#nullable)<`number`\> ; `isChrome`: `boolean`  }  }
 
 #### Defined in
 
-[lib/filterObject.ts:7](https://github.com/daniil4udo/utils/blob/be7174d/lib/filterObject.ts#L7)
+[lib/emoji/emojiSupportMap.ts:69](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/emoji/emojiSupportMap.ts#L69)
+
+___
+
+### UnicodeSupportTestMap
+
+Ƭ **UnicodeSupportTestMap**: typeof `unicodeSupportTestMap`
+
+#### Defined in
+
+[lib/emoji/emojiSupportMap.ts:68](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/emoji/emojiSupportMap.ts#L68)
 
 ___
 
@@ -535,7 +561,7 @@ ___
 
 #### Defined in
 
-[lib/urlTemplate.ts:25](https://github.com/daniil4udo/utils/blob/be7174d/lib/urlTemplate.ts#L25)
+[lib/urlTemplate.ts:3](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/urlTemplate.ts#L3)
 
 ## Variables
 
@@ -562,7 +588,7 @@ ___
 
 #### Defined in
 
-[lib/dom/toggleKeyboardFocus.ts:19](https://github.com/daniil4udo/utils/blob/be7174d/lib/dom/toggleKeyboardFocus.ts#L19)
+[lib/dom/toggleKeyboardFocus.ts:19](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/dom/toggleKeyboardFocus.ts#L19)
 
 ___
 
@@ -574,7 +600,7 @@ Map that defines the conversion from Python-style date format to JavaScript-styl
 
 #### Defined in
 
-[lib/convertPYDateFormatToJS.ts:7](https://github.com/daniil4udo/utils/blob/be7174d/lib/convertPYDateFormatToJS.ts#L7)
+[lib/convertPYDateFormatToJS.ts:7](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/convertPYDateFormatToJS.ts#L7)
 
 ___
 
@@ -608,7 +634,7 @@ lib/preset/autoImportUtilsPreset.ts:2
 
 | Name | Type |
 | :------ | :------ |
-| `urls` | (`undefined` \| ``null`` \| `T`)[] |
+| `urls` | [`Nullable`](modules.md#nullable)<`T`\>[] |
 | `options` | `ImageExistsOptions` |
 
 #### Returns
@@ -617,7 +643,7 @@ lib/preset/autoImportUtilsPreset.ts:2
 
 #### Defined in
 
-[lib/dom/imageExists.ts:60](https://github.com/daniil4udo/utils/blob/be7174d/lib/dom/imageExists.ts#L60)
+[lib/dom/imageExists.ts:62](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/dom/imageExists.ts#L62)
 
 ___
 
@@ -635,7 +661,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `urls` | (`undefined` \| ``null`` \| `T`)[] |
+| `urls` | [`Nullable`](modules.md#nullable)<`T`\>[] |
 | `options` | `ImageExistsOptions` |
 
 #### Returns
@@ -644,13 +670,13 @@ ___
 
 #### Defined in
 
-[lib/dom/imageExists.ts:64](https://github.com/daniil4udo/utils/blob/be7174d/lib/dom/imageExists.ts#L64)
+[lib/dom/imageExists.ts:69](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/dom/imageExists.ts#L69)
 
 ___
 
 ### applyCurrencySign
 
-▸ **applyCurrencySign**(`formattedPrice`, `options`): `string`
+▸ **applyCurrencySign**(`formattedPrice`, `options?`): `string`
 
 Applies currency sign and price format to a formatted price string.
 
@@ -686,7 +712,7 @@ console.log(formattedPrice); // Outputs: "$1,234.56"
 
 #### Defined in
 
-[lib/price.ts:150](https://github.com/daniil4udo/utils/blob/be7174d/lib/price.ts#L150)
+[lib/price.ts:156](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/price.ts#L156)
 
 ___
 
@@ -730,7 +756,7 @@ console.log(arrayBufferToString(buffer)); // Outputs: A
 
 #### Defined in
 
-[lib/arrayBuffer.ts:26](https://github.com/daniil4udo/utils/blob/be7174d/lib/arrayBuffer.ts#L26)
+[lib/arrayBuffer.ts:26](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/arrayBuffer.ts#L26)
 
 ___
 
@@ -775,13 +801,13 @@ console.log(capitalize('')); // Outputs: ''
 
 #### Defined in
 
-[lib/changeCase.ts:24](https://github.com/daniil4udo/utils/blob/be7174d/lib/changeCase.ts#L24)
+[lib/changeCase.ts:24](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/changeCase.ts#L24)
 
 ___
 
 ### checkFlagEmojiSupport
 
-▸ **checkFlagEmojiSupport**(`unicodeSupportMap`, `emojiUnicode`): `any`
+▸ **checkFlagEmojiSupport**(`unicodeSupportMap`, `emojiUnicode`): `boolean`
 
 Checks if a given emoji Unicode is supported as a flag emoji according to a provided Unicode support map.
 
@@ -789,24 +815,24 @@ Checks if a given emoji Unicode is supported as a flag emoji according to a prov
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `unicodeSupportMap` | `any` | The map showing the support for various Unicode features. |
-| `emojiUnicode` | `any` | The emoji Unicode string to check. |
+| `unicodeSupportMap` | [`UnicodeResultSupportMap`](modules.md#unicoderesultsupportmap) | The map showing the support for various Unicode features. |
+| `emojiUnicode` | `string` | The emoji Unicode string to check. |
 
 #### Returns
 
-`any`
+`boolean`
 
 True if the emoji Unicode is supported as a flag emoji, false otherwise.
 
 #### Defined in
 
-[lib/emoji/emojiSupport.ts:148](https://github.com/daniil4udo/utils/blob/be7174d/lib/emoji/emojiSupport.ts#L148)
+[lib/emoji/emojiSupport.ts:153](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/emoji/emojiSupport.ts#L153)
 
 ___
 
 ### checkHorseRacingSkinToneComboEmojiSupport
 
-▸ **checkHorseRacingSkinToneComboEmojiSupport**(`unicodeSupportMap`, `emojiUnicode`): `any`
+▸ **checkHorseRacingSkinToneComboEmojiSupport**(`unicodeSupportMap`, `emojiUnicode`): `boolean`
 
 Checks if a given emoji Unicode is supported as a horse racing skin tone combo emoji according to a provided Unicode support map.
 
@@ -814,24 +840,24 @@ Checks if a given emoji Unicode is supported as a horse racing skin tone combo e
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `unicodeSupportMap` | `any` | The map showing the support for various Unicode features. |
-| `emojiUnicode` | `any` | The emoji Unicode string to check. |
+| `unicodeSupportMap` | [`UnicodeResultSupportMap`](modules.md#unicoderesultsupportmap) | The map showing the support for various Unicode features. |
+| `emojiUnicode` | `string` | The emoji Unicode string to check. |
 
 #### Returns
 
-`any`
+`boolean`
 
 True if the emoji Unicode is supported as a horse racing skin tone combo emoji, false otherwise.
 
 #### Defined in
 
-[lib/emoji/emojiSupport.ts:177](https://github.com/daniil4udo/utils/blob/be7174d/lib/emoji/emojiSupport.ts#L177)
+[lib/emoji/emojiSupport.ts:188](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/emoji/emojiSupport.ts#L188)
 
 ___
 
 ### checkPersonEmojiSupport
 
-▸ **checkPersonEmojiSupport**(`unicodeSupportMap`, `emojiUnicode`): `any`
+▸ **checkPersonEmojiSupport**(`unicodeSupportMap`, `emojiUnicode`): `boolean`
 
 Checks if a given emoji Unicode is supported as a person Zero Width Joiner (ZWJ) emoji according to a provided Unicode support map.
 
@@ -839,24 +865,24 @@ Checks if a given emoji Unicode is supported as a person Zero Width Joiner (ZWJ)
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `unicodeSupportMap` | `any` | The map showing the support for various Unicode features. |
-| `emojiUnicode` | `any` | The emoji Unicode string to check. |
+| `unicodeSupportMap` | [`UnicodeResultSupportMap`](modules.md#unicoderesultsupportmap) | The map showing the support for various Unicode features. |
+| `emojiUnicode` | `string` | The emoji Unicode string to check. |
 
 #### Returns
 
-`any`
+`boolean`
 
 True if the emoji Unicode is supported as a person ZWJ emoji, false otherwise.
 
 #### Defined in
 
-[lib/emoji/emojiSupport.ts:193](https://github.com/daniil4udo/utils/blob/be7174d/lib/emoji/emojiSupport.ts#L193)
+[lib/emoji/emojiSupport.ts:204](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/emoji/emojiSupport.ts#L204)
 
 ___
 
 ### checkSkinToneModifierSupport
 
-▸ **checkSkinToneModifierSupport**(`unicodeSupportMap`, `emojiUnicode`): `any`
+▸ **checkSkinToneModifierSupport**(`unicodeSupportMap`, `emojiUnicode`): `boolean`
 
 Checks if a given emoji Unicode is supported with a skin tone modifier according to a provided Unicode support map.
 
@@ -864,18 +890,18 @@ Checks if a given emoji Unicode is supported with a skin tone modifier according
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `unicodeSupportMap` | `any` | The map showing the support for various Unicode features. |
-| `emojiUnicode` | `any` | The emoji Unicode string to check. |
+| `unicodeSupportMap` | [`UnicodeResultSupportMap`](modules.md#unicoderesultsupportmap) | The map showing the support for various Unicode features. |
+| `emojiUnicode` | `string` | The emoji Unicode string to check. |
 
 #### Returns
 
-`any`
+`boolean`
 
 True if the emoji Unicode is supported with a skin tone modifier, false otherwise.
 
 #### Defined in
 
-[lib/emoji/emojiSupport.ts:164](https://github.com/daniil4udo/utils/blob/be7174d/lib/emoji/emojiSupport.ts#L164)
+[lib/emoji/emojiSupport.ts:172](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/emoji/emojiSupport.ts#L172)
 
 ___
 
@@ -953,7 +979,7 @@ If an error occurs during the operation, an error message is logged to the conso
 
 #### Defined in
 
-[lib/storageWrapper.ts:104](https://github.com/daniil4udo/utils/blob/be7174d/lib/storageWrapper.ts#L104)
+[lib/storageWrapper.ts:105](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/storageWrapper.ts#L105)
 
 ___
 
@@ -971,7 +997,7 @@ If an error occurs during the operation, an error message is logged to the conso
 
 #### Defined in
 
-[lib/storageWrapper.ts:104](https://github.com/daniil4udo/utils/blob/be7174d/lib/storageWrapper.ts#L104)
+[lib/storageWrapper.ts:105](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/storageWrapper.ts#L105)
 
 ___
 
@@ -1016,7 +1042,7 @@ console.log(convertPYDateFormatToJS('%m/%d/%y %I:%M %p')); // Outputs: 'MM/DD/YY
 
 #### Defined in
 
-[lib/convertPYDateFormatToJS.ts:57](https://github.com/daniil4udo/utils/blob/be7174d/lib/convertPYDateFormatToJS.ts#L57)
+[lib/convertPYDateFormatToJS.ts:57](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/convertPYDateFormatToJS.ts#L57)
 
 ___
 
@@ -1124,7 +1150,7 @@ deCamelize('helloWorld123'); // Returns 'hello World123'
 
 #### Defined in
 
-[lib/slugify.ts:12](https://github.com/daniil4udo/utils/blob/be7174d/lib/slugify.ts#L12)
+[lib/slugify.ts:12](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/slugify.ts#L12)
 
 ___
 
@@ -1241,7 +1267,7 @@ console.log(clonedArr === array); // Output: false (clonedArr is a deep clone of
 
 #### Defined in
 
-[lib/deepClone.ts:37](https://github.com/daniil4udo/utils/blob/be7174d/lib/deepClone.ts#L37)
+[lib/deepClone.ts:39](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/deepClone.ts#L39)
 
 ___
 
@@ -1272,35 +1298,6 @@ Whether the items passed are deeply-equal in value.
 #### Defined in
 
 node_modules/.pnpm/fast-equals@5.0.1/node_modules/fast-equals/index.d.ts:13
-
-___
-
-### deepForEach
-
-▸ **deepForEach**<`Collection`\>(`value`, `fn`, `path?`, `depth?`): `void`
-
-#### Type parameters
-
-| Name |
-| :------ |
-| `Collection` |
-
-#### Parameters
-
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| `value` | `Collection`[] \| `Record`<`string`, `Collection`\> | `undefined` |
-| `fn` | `Fn` | `undefined` |
-| `path` | `string` | `''` |
-| `depth` | `number` | `-1` |
-
-#### Returns
-
-`void`
-
-#### Defined in
-
-[lib/deepForEach.ts:29](https://github.com/daniil4udo/utils/blob/be7174d/lib/deepForEach.ts#L29)
 
 ___
 
@@ -1388,42 +1385,9 @@ node_modules/.pnpm/defu@6.1.2/node_modules/defu/dist/defu.d.ts:9
 
 ___
 
-### detectMode
-
-▸ **detectMode**(): ``null`` \| `NODE_ENV`
-
-Detects the current mode of the environment.
-
-It first tries to retrieve the mode from the `import.meta.env` object.
-If that fails (i.e., the object is `undefined`), it retrieves the mode from the `process.env` object.
-
-#### Returns
-
-``null`` \| `NODE_ENV`
-
-The mode of the current environment or `undefined` if neither `import.meta.env.MODE` nor `process.env.NODE_ENV` exist.
-
-**`Remarks`**
-
-This function is part of the [@democrance/utils](https://github.com/daniil4udo/utils) library.
-
-**`Example`**
-
-```ts
-import { detectMode } from '@democrance/utils';
-
-console.log(detectMode()); // Outputs: 'development', 'production', or undefined
-```
-
-#### Defined in
-
-[lib/detectMode.ts:21](https://github.com/daniil4udo/utils/blob/be7174d/lib/detectMode.ts#L21)
-
-___
-
 ### emojiToIso
 
-▸ **emojiToIso**(`emoji?`): ``null`` \| `string`
+▸ **emojiToIso**(`emoji?`): [`Nullable`](modules.md#nullable)<`string`\>
 
 Converts a flag emoji to a country ISO code.
 
@@ -1435,7 +1399,7 @@ Converts a flag emoji to a country ISO code.
 
 #### Returns
 
-``null`` \| `string`
+[`Nullable`](modules.md#nullable)<`string`\>
 
 The country ISO code corresponding to the flag emoji, or null if the emoji is not a valid flag.
 
@@ -1449,13 +1413,13 @@ emojiToIso('👍'); // Outputs: null
 
 #### Defined in
 
-[lib/emoji/isoToEmojiToISO.ts:56](https://github.com/daniil4udo/utils/blob/be7174d/lib/emoji/isoToEmojiToISO.ts#L56)
+[lib/emoji/isoToEmojiToISO.ts:58](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/emoji/isoToEmojiToISO.ts#L58)
 
 ___
 
 ### filterObject
 
-▸ **filterObject**<`T`\>(`object`, `predicate`): [`TargetObject`](modules.md#targetobject)<`T`\>
+▸ **filterObject**<`T`\>(`object`, `predicate`): `T`
 
 This utility function iterates over the properties of the given object and includes them in the
 returned object if the predicate function returns `true` for the given property.
@@ -1468,20 +1432,20 @@ object is returned without any filtering.
 
 #### Type parameters
 
-| Name | Description |
-| :------ | :------ |
-| `T` | The type of the values in the object. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `T` | extends `Record`<`PropertyKey`, `unknown`\> | The type of the values in the object. |
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | [`TargetObject`](modules.md#targetobject)<`T`\> | The object to filter. |
+| `object` | `T` | The object to filter. |
 | `predicate` | [`PredicateFunction`](modules.md#predicatefunction)<`T`\> | The function used to test each item of the object. This function should return `true` to keep the item, or `false` otherwise. It accepts four arguments: `key` The key of the current element being processed in the object. `value` The value of the current element being processed in the object. `index` The index of the current element being processed in the object. `object` The object `filterObject` was called upon. |
 
 #### Returns
 
-[`TargetObject`](modules.md#targetobject)<`T`\>
+`T`
 
 A new object with the properties that passed the test.
      If no properties pass the test, an empty object will be returned.
@@ -1502,12 +1466,11 @@ console.log(filteredObj) // { b: 2, c: 3 }
 // Filter the object to include only key-value pairs where the key starts with 'a'
 const filteredObj2 = filterObject(myObj, (key) => key.startsWith('a'))
 console.log(filteredObj2) // { a: 1 }
-@public
 ```
 
 #### Defined in
 
-[lib/filterObject.ts:67](https://github.com/daniil4udo/utils/blob/be7174d/lib/filterObject.ts#L67)
+[lib/filterObject.ts:59](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/filterObject.ts#L59)
 
 ___
 
@@ -1558,13 +1521,33 @@ formatValue(1234.5678, 2, 'de-DE'); // Outputs: "1.234,57"
 
 #### Defined in
 
-[lib/price.ts:103](https://github.com/daniil4udo/utils/blob/be7174d/lib/price.ts#L103)
+[lib/price.ts:108](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/price.ts#L108)
+
+___
+
+### generateUnicodeSupportMap
+
+▸ **generateUnicodeSupportMap**(`testMap?`): [`UnicodeResultSupportMap`](modules.md#unicoderesultsupportmap)
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `testMap` | `Readonly`<{ `1.1`: ``"❤"`` = '\u{2764}'; `10.0`: ``"🤩"`` = '\u{1F929}'; `11.0`: ``"🥰"`` = '\u{1F970}'; `12.0`: ``"🥱"`` = '\u{1F971}'; `13.0`: ``"🥸"`` = '\u{1F978}'; `14.0`: ``"🫠"`` = '\u{1FAE0}'; `15.0`: ``"🫨"`` = '\u{1FAE8}'; `3.0`: ``"ℹ"`` = '\u{2139}'; `3.2`: ``"♻"`` = '\u{267B}'; `4.0`: ``"⚡"`` = '\u{26A1}'; `4.1`: ``"⚙"`` = '\u{2699}'; `5.1`: ``"🀄"`` = '\u{1F004}'; `5.2`: ``"⛵"`` = '\u{26F5}'; `6.0`: ``"👺"`` = '\u{1F47A}'; `6.1`: ``"😑"`` = '\u{1F611}'; `7.0`: ``"🕵"`` = '\u{1F575}'; `8.0`: ``"🤘"`` = '\u{1F918}'; `9.0`: ``"🤣"`` = '\u{1F923}'; `flag`: ``"🇺🇸"`` = '\u{1F1FA}\u{1F1F8}'; `horseRacing`: ``"🏇🏿"`` = '\u{1F3C7}\u{1F3FF}'; `personZwj`: ``"👨‍👩‍👧‍👦"`` = '\u{1F468}\u{200D}\u{1F469}\u{200D}\u{1F467}\u{200D}\u{1F466}'; `rainbowFlag`: ``"🏳🌈"`` = '\u{1F3F3}\u{1F308}'; `skinToneModifier`: `string`[]  }\> | `unicodeSupportTestMap` |
+
+#### Returns
+
+[`UnicodeResultSupportMap`](modules.md#unicoderesultsupportmap)
+
+#### Defined in
+
+[lib/emoji/emojiSupportMap.ts:105](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/emoji/emojiSupportMap.ts#L105)
 
 ___
 
 ### getCtor
 
-▸ **getCtor**<`Module`\>(`module`): `Module` \| `undefined`
+▸ **getCtor**<`Module`\>(`module`): `Module` \| `Partial`<`EsModule`<`Module`\>\>
 
 Returns the default export if the provided module is an ECMAScript (ES) module,
 otherwise returns the module itself.
@@ -1586,11 +1569,11 @@ the `module` as a CommonJS module and returns it as is.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `module` | `Module` \| `EsModule`<`Module`\> | The module to check. It could either be an ES module with `__esModule` or `Symbol.toStringTag` properties or a CommonJS module. |
+| `module` | `Partial`<`EsModule`<`Module`\>\> | The module to check. It could either be an ES module with `__esModule` or `Symbol.toStringTag` properties or a CommonJS module. |
 
 #### Returns
 
-`Module` \| `undefined`
+`Module` \| `Partial`<`EsModule`<`Module`\>\>
 
 The default export of the module if it's an ES module, otherwise the module
 itself. Returns `undefined` if `default` is not defined on an ES module.
@@ -1611,12 +1594,11 @@ console.log(getCtor(myCjsModule)); // { foo: "bar" }
 // ES module
 const myEsModule = { __esModule: true, default: { foo: "bar" } };
 console.log(getCtor(myEsModule)); // { foo: "bar" }
-@public
 ```
 
 #### Defined in
 
-[lib/getCtor.ts:52](https://github.com/daniil4udo/utils/blob/be7174d/lib/getCtor.ts#L52)
+[lib/getCtor.ts:60](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/getCtor.ts#L60)
 
 ___
 
@@ -1645,7 +1627,7 @@ The retrieved value, if it exists and is successfully retrieved and deserialized
 
 #### Defined in
 
-[lib/storageWrapper.ts:64](https://github.com/daniil4udo/utils/blob/be7174d/lib/storageWrapper.ts#L64)
+[lib/storageWrapper.ts:65](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/storageWrapper.ts#L65)
 
 ___
 
@@ -1688,12 +1670,11 @@ import { getNameFromPath } from '@democrance/utils';
 
 console.log(getNameFromPath('/path/to/file.txt')); // Outputs: 'file.txt'
 console.log(getNameFromPath('/path/to/file.txt', { extension: false })); // Outputs: 'file'
-@public
 ```
 
 #### Defined in
 
-[lib/getNameFromPath.ts:56](https://github.com/daniil4udo/utils/blob/be7174d/lib/getNameFromPath.ts#L56)
+[lib/getNameFromPath.ts:56](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/getNameFromPath.ts#L56)
 
 ___
 
@@ -1722,27 +1703,75 @@ The retrieved value, if it exists and is successfully retrieved and deserialized
 
 #### Defined in
 
-[lib/storageWrapper.ts:64](https://github.com/daniil4udo/utils/blob/be7174d/lib/storageWrapper.ts#L64)
+[lib/storageWrapper.ts:65](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/storageWrapper.ts#L65)
 
 ___
 
 ### getUnicodeSupportMap
 
-▸ **getUnicodeSupportMap**(): `any`
+▸ **getUnicodeSupportMap**(): [`UnicodeResultSupportMap`](modules.md#unicoderesultsupportmap)
 
 #### Returns
 
-`any`
+[`UnicodeResultSupportMap`](modules.md#unicoderesultsupportmap)
 
 #### Defined in
 
-[lib/emoji/emojiSupportMap.ts:166](https://github.com/daniil4udo/utils/blob/be7174d/lib/emoji/emojiSupportMap.ts#L166)
+[lib/emoji/emojiSupportMap.ts:172](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/emoji/emojiSupportMap.ts#L172)
+
+___
+
+### has
+
+▸ **has**<`T`, `K`\>(`object`, `key`): object is T & Record<K, unknown\>
+
+Checks whether the given object is not null and has the specified property.
+This function narrows down the type of the input object to `T & Record<PropertyKey, T>` when it returns `true`, which helps in TypeScript type inference.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | `T` |
+| `K` | extends `PropertyKey` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `object` | [`Nullable`](modules.md#nullable)<`T`\> | The object to be checked. It can be `null` or `undefined`. |
+| `key` | `K` | The key (property) to check for on the object. Can be a `string`, `number`, or `symbol`. |
+
+#### Returns
+
+object is T & Record<K, unknown\>
+
+- Returns `true` if the object is not null and has the specified property, otherwise returns `false`.
+
+**`Remarks`**
+
+This function is part of the [@democrance/utils](https://github.com/daniil4udo/utils) library.
+
+**`Example`**
+
+```typescript
+import { has } from '@democrance/utils';
+
+const obj = { a: 1 };
+if (has(obj, 'a')) {
+  console.log(obj.a);  // TypeScript knows that `obj.a` exists and is a number
+}
+```
+
+#### Defined in
+
+[lib/has.ts:25](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/has.ts#L25)
 
 ___
 
 ### hasValue
 
-▸ **hasValue**(`input`): `boolean`
+▸ **hasValue**<`T`\>(`input`): input is NonNullable<T\>
 
 Checks if a value is defined and not an empty string.
 
@@ -1750,15 +1779,21 @@ This function first checks if a value is null or undefined using `isNil()`. If t
 it then checks if the value is not an empty string. This is useful when you want to ensure that a string variable
 has been assigned a non-empty value.
 
+#### Type parameters
+
+| Name |
+| :------ |
+| `T` |
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `input` | `any` | The value to check. |
+| `input` | `T` | The value to check. |
 
 #### Returns
 
-`boolean`
+input is NonNullable<T\>
 
 `true` if the value is not null, not undefined, and not an empty string, `false` otherwise.
 
@@ -1775,18 +1810,17 @@ console.log(hasValue(null));       // Outputs: false
 console.log(hasValue(undefined));  // Outputs: false
 console.log(hasValue(''));         // Outputs: false
 console.log(hasValue('Hello'));    // Outputs: true
-@public
 ```
 
 #### Defined in
 
-[lib/hasValue.ts:79](https://github.com/daniil4udo/utils/blob/be7174d/lib/hasValue.ts#L79)
+[lib/hasValue.ts:79](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/hasValue.ts#L79)
 
 ___
 
 ### highlightMatch
 
-▸ **highlightMatch**(`str`, `indices?`, `options?`): `string`
+▸ **highlightMatch**(`str`, `indices`, `options?`): `string`
 
 A function that highlights matches in a `str` string by wrapping them in HTML tags.
 
@@ -1799,11 +1833,11 @@ If no tag is specified, the function uses 'strong' as the default tag.
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `str` | `string` | `undefined` | The string in which to highlight matches. |
-| `indices` | `MatchRange` | `[]` | - |
-| `options` | `Options` | `{}` | An options object. It currently supports one option: 'tag', which specifies the HTML tag to use for wrapping matches. Defaults to an object with 'tag' set to 'strong'. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `str` | `string` | The string in which to highlight matches. |
+| `indices` | `MatchRange` | - |
+| `options` | `Options` | An options object. It currently supports one option: 'tag', which specifies the HTML tag to use for wrapping matches. Defaults to an object with 'tag' set to 'strong'. |
 
 #### Returns
 
@@ -1840,12 +1874,11 @@ const str5 = 'Hello, world!';
 const matches5 = [[0, 4]];
 const options5 = { tag: 'em' };
 console.log(highlightMatch(str5, matches5, options5)); // Output: '<em>Hello</em>, world!'
-@public
 ```
 
 #### Defined in
 
-[lib/highlightMatch.ts:134](https://github.com/daniil4udo/utils/blob/be7174d/lib/highlightMatch.ts#L134)
+[lib/highlightMatch.ts:136](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/highlightMatch.ts#L136)
 
 ___
 
@@ -1896,7 +1929,7 @@ console.log(htmlTruncate(html, 20)); // Output: '<p>This is an <strong>exa</stro
 
 #### Defined in
 
-[lib/htmlTruncate.ts:41](https://github.com/daniil4udo/utils/blob/be7174d/lib/htmlTruncate.ts#L41)
+[lib/htmlTruncate.ts:41](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/htmlTruncate.ts#L41)
 
 ___
 
@@ -1916,7 +1949,7 @@ Checks if an image exists at the given URL.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `url` | `undefined` \| ``null`` \| `T` | The URL of the image to check. |
+| `url` | [`Nullable`](modules.md#nullable)<`T`\> | The URL of the image to check. |
 | `options` | `ImageExistsOptions` | An optional ImageExistsOptions object. |
 
 #### Returns
@@ -1950,7 +1983,7 @@ try {
 
 #### Defined in
 
-[lib/dom/imageExists.ts:37](https://github.com/daniil4udo/utils/blob/be7174d/lib/dom/imageExists.ts#L37)
+[lib/dom/imageExists.ts:39](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/dom/imageExists.ts#L39)
 
 ___
 
@@ -1996,7 +2029,7 @@ console.log(isAbsoluteURL('mailto:test@example.com')); // Output: false
 
 #### Defined in
 
-[lib/isAbsoluteURL.ts:28](https://github.com/daniil4udo/utils/blob/be7174d/lib/isAbsoluteURL.ts#L28)
+[lib/isAbsoluteURL.ts:28](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/isAbsoluteURL.ts#L28)
 
 ___
 
@@ -2040,7 +2073,7 @@ console.log(isColor('invalid color')); // returns false
 
 #### Defined in
 
-[lib/dom/isColor.ts:30](https://github.com/daniil4udo/utils/blob/be7174d/lib/dom/isColor.ts#L30)
+[lib/dom/isColor.ts:30](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/dom/isColor.ts#L30)
 
 ___
 
@@ -2072,13 +2105,13 @@ isCountryIso('123'); // Outputs:  false
 
 #### Defined in
 
-[lib/emoji/isoToEmojiToISO.ts:15](https://github.com/daniil4udo/utils/blob/be7174d/lib/emoji/isoToEmojiToISO.ts#L15)
+[lib/emoji/isoToEmojiToISO.ts:17](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/emoji/isoToEmojiToISO.ts#L17)
 
 ___
 
 ### isDefined
 
-▸ **isDefined**(`input`): `boolean`
+▸ **isDefined**<`T`\>(`input`): input is NonNullable<T\>
 
 Checks if a value is defined, i.e., not null or undefined.
 
@@ -2086,15 +2119,21 @@ This function is the inverse of `isNil()`. It uses `isNil()` to check if a value
 and then negates the result. This is useful when you want to ensure that a variable has been
 assigned a value.
 
+#### Type parameters
+
+| Name |
+| :------ |
+| `T` |
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `input` | `any` | The value to check. |
+| `input` | `T` | The value to check. |
 
 #### Returns
 
-`boolean`
+input is NonNullable<T\>
 
 `true` if the value is not null or undefined, `false` otherwise.
 
@@ -2110,18 +2149,17 @@ import { isDefined } from '@democrance/utils';
 console.log(isDefined(null));       // Outputs: false
 console.log(isDefined(undefined));  // Outputs: false
 console.log(isDefined(''));         // Outputs: true
-@public
 ```
 
 #### Defined in
 
-[lib/hasValue.ts:51](https://github.com/daniil4udo/utils/blob/be7174d/lib/hasValue.ts#L51)
+[lib/hasValue.ts:51](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/hasValue.ts#L51)
 
 ___
 
 ### isEmojiUnicodeSupported
 
-▸ **isEmojiUnicodeSupported**(`unicodeSupportMap`, `emojiUnicode`, `unicodeVersion?`): `any`
+▸ **isEmojiUnicodeSupported**(`unicodeSupportMap`, `emojiUnicode`, `unicodeVersion?`): `boolean`
 
 Checks if a given emoji Unicode is supported according to a provided Unicode support map and version.
 
@@ -2129,29 +2167,29 @@ Checks if a given emoji Unicode is supported according to a provided Unicode sup
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `unicodeSupportMap` | `any` | `undefined` | The map showing the support for various Unicode features. |
-| `emojiUnicode` | `any` | `undefined` | The emoji Unicode string to check. |
-| `unicodeVersion?` | `string` | `'flag'` | The Unicode version to check for. |
+| `unicodeSupportMap` | [`UnicodeResultSupportMap`](modules.md#unicoderesultsupportmap) | `undefined` | The map showing the support for various Unicode features. |
+| `emojiUnicode` | `string` | `undefined` | The emoji Unicode string to check. |
+| `unicodeVersion?` | ``"meta"`` \| ``"personZwj"`` \| ``"horseRacing"`` \| ``"flag"`` \| ``"rainbowFlag"`` \| ``"skinToneModifier"`` \| ``"15.0"`` \| ``"14.0"`` \| ``"13.0"`` \| ``"12.0"`` \| ``"11.0"`` \| ``"10.0"`` \| ``"9.0"`` \| ``"8.0"`` \| ``"7.0"`` \| ``"6.1"`` \| ``"6.0"`` \| ``"5.2"`` \| ``"5.1"`` \| ``"4.1"`` \| ``"4.0"`` \| ``"3.2"`` \| ``"3.0"`` \| ``"1.1"`` | `'flag'` | The Unicode version to check for. |
 
 #### Returns
 
-`any`
+`boolean`
 
 True if the emoji Unicode is supported, false otherwise.
 
 #### Defined in
 
-[lib/emoji/emojiSupport.ts:127](https://github.com/daniil4udo/utils/blob/be7174d/lib/emoji/emojiSupport.ts#L127)
+[lib/emoji/emojiSupport.ts:129](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/emoji/emojiSupport.ts#L129)
 
 ___
 
 ### isEmptyArray
 
-▸ **isEmptyArray**<`T`\>(`array?`, `options?`): `boolean`
+▸ **isEmptyArray**<`T`\>(`array`, `options?`): array is never[]
 
 Checks whether the given array is "empty". The criteria for an array being considered "empty" is that either the array itself is null/undefined,
 the array has no elements, or all elements of the array are themselves "empty" according to the provided `comparator` function.
-If the `recursive` option is true (the default), then nested arrays are checked recursively.
+If the `deep` option is true (the default), then nested arrays are checked deeply.
 
 #### Type parameters
 
@@ -2161,14 +2199,14 @@ If the `recursive` option is true (the default), then nested arrays are checked 
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `array` | `T` \| `T`[] | `[]` | The array to check. |
-| `options` | `Options`<`T`\> | `{}` | An options object. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `array` | `T`[] | The array to check. |
+| `options` | `Options`<`T`\> | An options object. |
 
 #### Returns
 
-`boolean`
+array is never[]
 
 `true` if the array is considered "empty", `false` otherwise.
 
@@ -2189,7 +2227,7 @@ console.log(isEmptyArray([[], [[], [1]]])); // Returns false
 
 #### Defined in
 
-[lib/isEmptyArray.ts:50](https://github.com/daniil4udo/utils/blob/be7174d/lib/isEmptyArray.ts#L50)
+[lib/isEmptyArray.ts:52](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/isEmptyArray.ts#L52)
 
 ___
 
@@ -2201,7 +2239,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `collection` | `any` |
+| `collection` | `unknown` |
 
 #### Returns
 
@@ -2209,7 +2247,7 @@ ___
 
 #### Defined in
 
-[lib/isEmptyCollection.ts:10](https://github.com/daniil4udo/utils/blob/be7174d/lib/isEmptyCollection.ts#L10)
+[lib/isEmptyCollection.ts:10](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/isEmptyCollection.ts#L10)
 
 ___
 
@@ -2234,7 +2272,7 @@ True if the string is a flag emoji, false otherwise.
 
 #### Defined in
 
-[lib/emoji/emojiSupport.ts:10](https://github.com/daniil4udo/utils/blob/be7174d/lib/emoji/emojiSupport.ts#L10)
+[lib/emoji/emojiSupport.ts:12](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/emoji/emojiSupport.ts#L12)
 
 ___
 
@@ -2276,7 +2314,7 @@ isHTML('Hello, World!'); // Outputs: false (plain text is not considered valid H
 
 #### Defined in
 
-[lib/dom/isHTML.ts:21](https://github.com/daniil4udo/utils/blob/be7174d/lib/dom/isHTML.ts#L21)
+[lib/dom/isHTML.ts:21](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/dom/isHTML.ts#L21)
 
 ___
 
@@ -2300,13 +2338,13 @@ True if the string is a horse racing skin tone combo emoji, false otherwise.
 
 #### Defined in
 
-[lib/emoji/emojiSupport.ts:86](https://github.com/daniil4udo/utils/blob/be7174d/lib/emoji/emojiSupport.ts#L86)
+[lib/emoji/emojiSupport.ts:88](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/emoji/emojiSupport.ts#L88)
 
 ___
 
 ### isIterable
 
-▸ **isIterable**(`input`): `boolean`
+▸ **isIterable**<`T`\>(`input`): input is Iterable<T\>
 
 Checks if a given input is iterable.
 
@@ -2315,15 +2353,21 @@ are looped over in a `for..of` construct. Some built-in types, like `Array` or
 `Map`, have a default iteration behavior, while other types (such as `Object`)
 do not. In order to be iterable, an object must implement the `@@iterator` method.
 
+#### Type parameters
+
+| Name |
+| :------ |
+| `T` |
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `input` | `any` | The input to check for iterability. |
+| `input` | `T` \| `Iterable`<`T`\> | The input to check for iterability. |
 
 #### Returns
 
-`boolean`
+input is Iterable<T\>
 
 Returns `true` if the input is iterable, otherwise `false`.
 
@@ -2346,7 +2390,7 @@ isIterable(123); // Outputs: false
 
 #### Defined in
 
-[lib/isIterable.ts:25](https://github.com/daniil4udo/utils/blob/be7174d/lib/isIterable.ts#L25)
+[lib/isIterable.ts:25](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/isIterable.ts#L25)
 
 ___
 
@@ -2373,13 +2417,13 @@ True if the string is a keycap emoji, false otherwise.
 
 #### Defined in
 
-[lib/emoji/emojiSupport.ts:56](https://github.com/daniil4udo/utils/blob/be7174d/lib/emoji/emojiSupport.ts#L56)
+[lib/emoji/emojiSupport.ts:58](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/emoji/emojiSupport.ts#L58)
 
 ___
 
 ### isNil
 
-▸ **isNil**(`input`): `boolean`
+▸ **isNil**(`input`): input is undefined \| null
 
 Checks if a value is null or undefined.
 
@@ -2391,11 +2435,11 @@ This is useful when you want to check if a variable has been assigned a value or
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `input` | `any` | The value to check. |
+| `input` | `unknown` | The value to check. |
 
 #### Returns
 
-`boolean`
+input is undefined \| null
 
 `true` if the value is null or undefined, `false` otherwise.
 
@@ -2411,18 +2455,17 @@ import { isNil } from '@democrance/utils';
 console.log(isNil(null));       // Outputs: true
 console.log(isNil(undefined));  // Outputs: true
 console.log(isNil(''));         // Outputs: false
-@public
 ```
 
 #### Defined in
 
-[lib/hasValue.ts:24](https://github.com/daniil4udo/utils/blob/be7174d/lib/hasValue.ts#L24)
+[lib/hasValue.ts:24](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/hasValue.ts#L24)
 
 ___
 
 ### isNumber
 
-▸ **isNumber**(`input`): `boolean`
+▸ **isNumber**(`input`): input is number
 
 #### Parameters
 
@@ -2432,11 +2475,39 @@ ___
 
 #### Returns
 
-`boolean`
+input is number
 
 #### Defined in
 
-[lib/isPrimitive.ts:62](https://github.com/daniil4udo/utils/blob/be7174d/lib/isPrimitive.ts#L62)
+[lib/is.ts:7](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/is.ts#L7)
+
+___
+
+### isParsablePropertyKey
+
+▸ **isParsablePropertyKey**(`input`): input is ParsablePropertyKey
+
+Checks if the given input can be parsed as a property key.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `input` | `unknown` | The value to be checked. |
+
+#### Returns
+
+input is ParsablePropertyKey
+
+A type predicate that narrows down the type of `input` to `ParsablePropertyKey` if the function returns `true`.
+
+**`Remarks`**
+
+A parsable property key is a value that can be easily converted to a valid JavaScript property key. This function considers `string` and `number` types as parsable property keys.
+
+#### Defined in
+
+[lib/isPropertyKey.ts:32](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/isPropertyKey.ts#L32)
 
 ___
 
@@ -2460,13 +2531,33 @@ True if the string is a person ZWJ emoji, false otherwise.
 
 #### Defined in
 
-[lib/emoji/emojiSupport.ts:100](https://github.com/daniil4udo/utils/blob/be7174d/lib/emoji/emojiSupport.ts#L100)
+[lib/emoji/emojiSupport.ts:102](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/emoji/emojiSupport.ts#L102)
+
+___
+
+### isPlainObject
+
+▸ **isPlainObject**(`input`): input is Record<PropertyKey, unknown\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `input` | `unknown` |
+
+#### Returns
+
+input is Record<PropertyKey, unknown\>
+
+#### Defined in
+
+[lib/is.ts:30](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/is.ts#L30)
 
 ___
 
 ### isPrimitive
 
-▸ **isPrimitive**(`input`): `boolean`
+▸ **isPrimitive**(`input`): input is PrimitiveType
 
 Checks if a given input is a primitive value.
 
@@ -2478,11 +2569,11 @@ is not an object and has no methods. There are 7 primitive data types:
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `input` | `any` | The input to check for being a primitive value. |
+| `input` | `unknown` | The input to check for being a primitive value. |
 
 #### Returns
 
-`boolean`
+input is PrimitiveType
 
 Returns `true` if the input is a primitive value, otherwise `false`.
 
@@ -2505,13 +2596,13 @@ isPrimitive({}) // Outputs: false
 
 #### Defined in
 
-[lib/isPrimitive.ts:28](https://github.com/daniil4udo/utils/blob/be7174d/lib/isPrimitive.ts#L28)
+[lib/isPrimitive.ts:28](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/isPrimitive.ts#L28)
 
 ___
 
 ### isPrimitiveLike
 
-▸ **isPrimitiveLike**(`input`): `boolean`
+▸ **isPrimitiveLike**(`input`): input is PrimitiveType \| PrimitiveLikeType
 
 Checks if a given input is a primitive or primitive-like value.
 
@@ -2522,11 +2613,11 @@ as primitive-like as they hold primitive values and can be immutable if their st
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `input` | `any` | The input to check for being a primitive-like value. |
+| `input` | `unknown` | The input to check for being a primitive-like value. |
 
 #### Returns
 
-`boolean`
+input is PrimitiveType \| PrimitiveLikeType
 
 Returns `true` if the input is a primitive-like value, otherwise `false`.
 
@@ -2544,25 +2635,31 @@ isPrimitiveLike({})
 
 #### Defined in
 
-[lib/isPrimitive.ts:58](https://github.com/daniil4udo/utils/blob/be7174d/lib/isPrimitive.ts#L58)
+[lib/isPrimitive.ts:53](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/isPrimitive.ts#L53)
 
 ___
 
 ### isProperNaN
 
-▸ **isProperNaN**(`input`): `boolean`
+▸ **isProperNaN**<`T`\>(`input`): input is Exclude<T, number\>
 
 Determines if a given input can not be treated as a number.
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `T` |
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `input` | `any` | The value to check. |
+| `input` | `T` | The value to check. |
 
 #### Returns
 
-`boolean`
+input is Exclude<T, number\>
 
 True if the input can not be treated as a number, false otherwise.
 
@@ -2572,7 +2669,35 @@ This function utilizes the isNumber function to verify if the input can not be t
 
 #### Defined in
 
-[lib/isPrimitive.ts:73](https://github.com/daniil4udo/utils/blob/be7174d/lib/isPrimitive.ts#L73)
+[lib/is.ts:26](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/is.ts#L26)
+
+___
+
+### isPropertyKey
+
+▸ **isPropertyKey**(`input`): input is PropertyKey
+
+Checks if the given input is a valid JavaScript property key.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `input` | `unknown` | The value to be checked. |
+
+#### Returns
+
+input is PropertyKey
+
+A type predicate that narrows down the type of `input` to `PropertyKey` if the function returns `true`.
+
+**`Remarks`**
+
+A property key in JavaScript can be a `string`, `symbol`, or `number`. This function uses type narrowing to assert whether a given unknown input conforms to these types.
+
+#### Defined in
+
+[lib/isPropertyKey.ts:16](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/isPropertyKey.ts#L16)
 
 ___
 
@@ -2597,7 +2722,7 @@ True if the string is a rainbow flag emoji, false otherwise.
 
 #### Defined in
 
-[lib/emoji/emojiSupport.ts:28](https://github.com/daniil4udo/utils/blob/be7174d/lib/emoji/emojiSupport.ts#L28)
+[lib/emoji/emojiSupport.ts:30](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/emoji/emojiSupport.ts#L30)
 
 ___
 
@@ -2621,7 +2746,7 @@ True if the string is a skin tone combo emoji, false otherwise.
 
 #### Defined in
 
-[lib/emoji/emojiSupport.ts:66](https://github.com/daniil4udo/utils/blob/be7174d/lib/emoji/emojiSupport.ts#L66)
+[lib/emoji/emojiSupport.ts:68](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/emoji/emojiSupport.ts#L68)
 
 ___
 
@@ -2668,13 +2793,40 @@ console.log(isSubstringInString('Hello world', 'goodbye')); // Outputs: false
 
 #### Defined in
 
-[lib/isSubstringInString.ts:25](https://github.com/daniil4udo/utils/blob/be7174d/lib/isSubstringInString.ts#L25)
+[lib/isSubstringInString.ts:25](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/isSubstringInString.ts#L25)
+
+___
+
+### isTuple
+
+▸ **isTuple**<`T`, `V`\>(`input`): input is [T, V]
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends `number` |
+| `V` | extends `number` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `input` | `unknown` |
+
+#### Returns
+
+input is [T, V]
+
+#### Defined in
+
+[lib/is.ts:3](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/is.ts#L3)
 
 ___
 
 ### isoToEmoji
 
-▸ **isoToEmoji**(`iso?`): ``null`` \| `string`
+▸ **isoToEmoji**(`iso?`): [`Nullable`](modules.md#nullable)<`string`\>
 
 Converts a country ISO code to a flag emoji.
 
@@ -2686,7 +2838,7 @@ Converts a country ISO code to a flag emoji.
 
 #### Returns
 
-``null`` \| `string`
+[`Nullable`](modules.md#nullable)<`string`\>
 
 The flag emoji corresponding to the country ISO code, or null if the ISO code is invalid.
 
@@ -2700,13 +2852,13 @@ isoToEmoji('123'); // Outputs:  null
 
 #### Defined in
 
-[lib/emoji/isoToEmojiToISO.ts:37](https://github.com/daniil4udo/utils/blob/be7174d/lib/emoji/isoToEmojiToISO.ts#L37)
+[lib/emoji/isoToEmojiToISO.ts:39](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/emoji/isoToEmojiToISO.ts#L39)
 
 ___
 
 ### keyBy
 
-▸ **keyBy**<`T`\>(`array`, `keyOrFunction?`): `Record`<`PropertyKey`, `T`\>
+▸ **keyBy**<`T`\>(`array`, `keyOrFunction?`): `Record`<`InferredKey`<`T`\>, `T`\>
 
 Creates an object composed of keys generated from the results of running each element of `array` through `keyOrFunction`.
 If `keyOrFunction` is a function, it's invoked with one argument: the array element.
@@ -2715,9 +2867,9 @@ If `keyOrFunction` is undefined or not provided, the array element itself is use
 
 #### Type parameters
 
-| Name | Description |
-| :------ | :------ |
-| `T` | the type of elements in the input array. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `T` | extends `PropertyKey` \| `Record`<`PropertyKey`, `any`\> | the type of elements in the input array. |
 
 #### Parameters
 
@@ -2728,7 +2880,7 @@ If `keyOrFunction` is undefined or not provided, the array element itself is use
 
 #### Returns
 
-`Record`<`PropertyKey`, `T`\>
+`Record`<`InferredKey`<`T`\>, `T`\>
 
 Returns the composed aggregate object.
 
@@ -2752,13 +2904,13 @@ keyBy([{id: 1}, {id: 2}], obj => 'prefix' + obj.id) // Outputs: {prefix1: {id: 1
 
 #### Defined in
 
-[lib/keyBy.ts:41](https://github.com/daniil4udo/utils/blob/be7174d/lib/keyBy.ts#L41)
+[lib/keyBy.ts:39](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/keyBy.ts#L39)
 
 ___
 
 ### length
 
-▸ **length**(`collection`, `«destructured»?`): `number`
+▸ **length**(`collection`, `«destructured»?`): [`Nullable`](modules.md#nullable)<`number`\>
 
 #### Parameters
 
@@ -2770,11 +2922,11 @@ ___
 
 #### Returns
 
-`number`
+[`Nullable`](modules.md#nullable)<`number`\>
 
 #### Defined in
 
-[lib/length.ts:4](https://github.com/daniil4udo/utils/blob/be7174d/lib/length.ts#L4)
+[lib/length.ts:5](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/length.ts#L5)
 
 ___
 
@@ -2828,7 +2980,7 @@ ___
 
 #### Defined in
 
-[lib/memoize.ts:40](https://github.com/daniil4udo/utils/blob/be7174d/lib/memoize.ts#L40)
+[lib/memoize.ts:40](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/memoize.ts#L40)
 
 ___
 
@@ -2855,13 +3007,13 @@ ___
 
 #### Defined in
 
-[lib/memoize.ts:86](https://github.com/daniil4udo/utils/blob/be7174d/lib/memoize.ts#L86)
+[lib/memoize.ts:89](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/memoize.ts#L89)
 
 ___
 
 ### movePropLevelUp
 
-▸ **movePropLevelUp**<`T`\>(`parentObject`, `propertyName`): `T`
+▸ **movePropLevelUp**<`T`, `K`\>(`parentObject`, `propertyName`): `Omit`<`T`, `K`\> & `T`[`K`]
 
 Moves a property level up in an object, while maintaining the original property order.
 The function uses deep cloning to avoid mutation of the nested property.
@@ -2870,18 +3022,19 @@ The function uses deep cloning to avoid mutation of the nested property.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `T` | extends `object` | The type of the object |
+| `T` | extends `Record`<`PropertyKey`, `unknown`\> | The type of the object |
+| `K` | extends `string` \| `number` \| `symbol` | - |
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `parentObject` | `T` | The object containing the property to be moved. |
-| `propertyName` | keyof `T` | The name of the property to be moved a level up. |
+| `propertyName` | `K` | The name of the property to be moved a level up. |
 
 #### Returns
 
-`T`
+`Omit`<`T`, `K`\> & `T`[`K`]
 
 A new object with the specified property moved up a level.
 
@@ -2914,7 +3067,7 @@ const result = movePropLevelUp(obj, 'b'); // Outputs: { a: 1, c: 2, d: 3, e: 4 }
 
 #### Defined in
 
-[lib/movePropLevelUp.ts:37](https://github.com/daniil4udo/utils/blob/be7174d/lib/movePropLevelUp.ts#L37)
+[lib/movePropLevelUp.ts:40](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/movePropLevelUp.ts#L40)
 
 ___
 
@@ -2932,7 +3085,7 @@ with a dot to create a string that can be parsed by JavaScript's parseFloat func
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `value` | `any` | The string to be parsed. This should contain a number formatted according to the rules of the specified locale. For example, if the locale is 'de-DE', then the number should be formatted with '.' as the thousands separator and ',' as the decimal separator. |
+| `value` | `string` \| `number` | The string to be parsed. This should contain a number formatted according to the rules of the specified locale. For example, if the locale is 'de-DE', then the number should be formatted with '.' as the thousands separator and ',' as the decimal separator. |
 | `locale` | `string` | The IETF language tag of the locale that the number is formatted in. This is used to determine the thousands and decimal separators that are used in the number string. |
 
 #### Returns
@@ -2964,7 +3117,7 @@ parseLocaleNumber('1.000.000,1', 'de-DE');
 
 #### Defined in
 
-[lib/price.ts:61](https://github.com/daniil4udo/utils/blob/be7174d/lib/price.ts#L61)
+[lib/price.ts:63](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/price.ts#L63)
 
 ___
 
@@ -2990,7 +3143,7 @@ ___
 
 ### price
 
-▸ **price**(`value?`, `locale`, `fractions`): `string` \| `number`
+▸ **price**(`value?`, `locale`, `fractions`): `string`
 
 Formats a price value with currency sign and formatting options.
 
@@ -3004,7 +3157,7 @@ Formats a price value with currency sign and formatting options.
 
 #### Returns
 
-`string` \| `number`
+`string`
 
 The formatted price string.
 
@@ -3027,7 +3180,7 @@ price(1234.5678, { currencySign: '€', priceFormat: '{currency} {amount}' }, 3)
 
 #### Defined in
 
-[lib/price.ts:178](https://github.com/daniil4udo/utils/blob/be7174d/lib/price.ts#L178)
+[lib/price.ts:187](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/price.ts#L187)
 
 ___
 
@@ -3051,7 +3204,7 @@ If an error occurs during the operation, an error message is logged to the conso
 
 #### Defined in
 
-[lib/storageWrapper.ts:90](https://github.com/daniil4udo/utils/blob/be7174d/lib/storageWrapper.ts#L90)
+[lib/storageWrapper.ts:91](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/storageWrapper.ts#L91)
 
 ___
 
@@ -3075,7 +3228,7 @@ If an error occurs during the operation, an error message is logged to the conso
 
 #### Defined in
 
-[lib/storageWrapper.ts:90](https://github.com/daniil4udo/utils/blob/be7174d/lib/storageWrapper.ts#L90)
+[lib/storageWrapper.ts:91](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/storageWrapper.ts#L91)
 
 ___
 
@@ -3127,7 +3280,7 @@ console.log(result); // Outputs: '{ "name": "John, "age": 30 }'
 
 #### Defined in
 
-[lib/safeJSONParse.ts:28](https://github.com/daniil4udo/utils/blob/be7174d/lib/safeJSONParse.ts#L28)
+[lib/safeJSONParse.ts:28](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/safeJSONParse.ts#L28)
 
 ___
 
@@ -3230,7 +3383,7 @@ The scrolling is performed using the browser's native `scrollTo` method with 'sm
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `element` | `undefined` \| ``null`` \| `HTMLElement` | `undefined` | The element to scroll to. Can be an HTMLElement, null, or undefined. |
+| `element` | [`Nullable`](modules.md#nullable)<`HTMLElement`\> | `undefined` | The element to scroll to. Can be an HTMLElement, null, or undefined. |
 | `offset?` | `number` | `0` | The offset value to adjust the scroll position. Defaults to 0. |
 
 #### Returns
@@ -3264,7 +3417,7 @@ scrollTo();
 
 #### Defined in
 
-[lib/dom/scrollTo.ts:40](https://github.com/daniil4udo/utils/blob/be7174d/lib/dom/scrollTo.ts#L40)
+[lib/dom/scrollTo.ts:42](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/dom/scrollTo.ts#L42)
 
 ___
 
@@ -3292,7 +3445,7 @@ If an error occurs during the operation, an error message is logged to the conso
 
 #### Defined in
 
-[lib/storageWrapper.ts:38](https://github.com/daniil4udo/utils/blob/be7174d/lib/storageWrapper.ts#L38)
+[lib/storageWrapper.ts:39](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/storageWrapper.ts#L39)
 
 ___
 
@@ -3320,7 +3473,7 @@ If an error occurs during the operation, an error message is logged to the conso
 
 #### Defined in
 
-[lib/storageWrapper.ts:38](https://github.com/daniil4udo/utils/blob/be7174d/lib/storageWrapper.ts#L38)
+[lib/storageWrapper.ts:39](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/storageWrapper.ts#L39)
 
 ___
 
@@ -3398,7 +3551,7 @@ shuffle(['a', 'b', 'c']); // Possible output: ['b', 'a', 'c']
 
 #### Defined in
 
-[lib/shuffle.ts:23](https://github.com/daniil4udo/utils/blob/be7174d/lib/shuffle.ts#L23)
+[lib/shuffle.ts:23](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/shuffle.ts#L23)
 
 ___
 
@@ -3411,9 +3564,9 @@ and converting to lowercase.
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `str?` | `string` | `''` | The input string to be converted into a slug. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `str?` | `string` | The input string to be converted into a slug. |
 
 #### Returns
 
@@ -3441,27 +3594,33 @@ slugify('Déjà Vu'); // Returns 'deja-vu'
 
 #### Defined in
 
-[lib/slugify.ts:44](https://github.com/daniil4udo/utils/blob/be7174d/lib/slugify.ts#L44)
+[lib/slugify.ts:44](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/slugify.ts#L44)
 
 ___
 
 ### sortObjects
 
-▸ **sortObjects**(`array`, `key`, `locale?`): `SortableItems`[]
+▸ **sortObjects**<`T`\>(`array`, `key`, `locale?`): `T`[]
 
 Sorts an array of objects based on a specific key using string comparison in a specified locale.
+
+#### Type parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `T` | extends `SortableItems` | A subtype of `Localizable` where every property value is a string. |
 
 #### Parameters
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `array` | `SortableItems`[] | `undefined` | - |
+| `array` | `T`[] | `undefined` | - |
 | `key` | `string` | `undefined` | The key to sort the objects by. |
 | `locale?` | `string` | `'en-US'` | The locale to use for string comparison. |
 
 #### Returns
 
-`SortableItems`[]
+`T`[]
 
 The sorted collection.
 
@@ -3484,32 +3643,32 @@ sortObjects(collection, 'name'); // Outputs: [{ name: 'Amy' }, { name: 'Mark' },
 
 #### Defined in
 
-[lib/sortObjects.ts:35](https://github.com/daniil4udo/utils/blob/be7174d/lib/sortObjects.ts#L35)
+[lib/sortObjects.ts:30](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/sortObjects.ts#L30)
 
 ___
 
 ### splitByIndex
 
-▸ **splitByIndex**<`T`\>(`array`, `splitIndex?`): `any`[][]
+▸ **splitByIndex**<`T`\>(`array`, `splitIndex?`): [`T`[], `T`[]]
 
 Splits an array at a specific index into two separate arrays.
 
 #### Type parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `T` | extends `any`[] | The type of the elements. |
+| Name | Description |
+| :------ | :------ |
+| `T` | The type of the elements. |
 
 #### Parameters
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `array` | `T` | `undefined` | The array to split. |
-| `splitIndex?` | `Length`<`T`\> | `array.length` | The index at which to split the array. |
+| `array` | `T`[] | `undefined` | The array to split. |
+| `splitIndex?` | `number` | `array.length` | The index at which to split the array. |
 
 #### Returns
 
-`any`[][]
+[`T`[], `T`[]]
 
 An array of two arrays - the first one is the part before the index and the second one is the part after (and including) the index.
 
@@ -3531,7 +3690,7 @@ splitByIndex([1, 2, 3, 4, 5], 2); // Outputs: [[1, 2], [3, 4, 5]]
 
 #### Defined in
 
-[lib/splitByIndex.ts:30](https://github.com/daniil4udo/utils/blob/be7174d/lib/splitByIndex.ts#L30)
+[lib/splitByIndex.ts:24](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/splitByIndex.ts#L24)
 
 ___
 
@@ -3567,7 +3726,7 @@ strToRegexp('[abc]'); // Outputs: /\[abc\]/
 
 #### Defined in
 
-[lib/stringToRegexp.ts:36](https://github.com/daniil4udo/utils/blob/be7174d/lib/stringToRegexp.ts#L36)
+[lib/stringToRegexp.ts:36](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/stringToRegexp.ts#L36)
 
 ___
 
@@ -3733,7 +3892,7 @@ console.log(buffer.byteLength); // Outputs: 2
 
 #### Defined in
 
-[lib/arrayBuffer.ts:55](https://github.com/daniil4udo/utils/blob/be7174d/lib/arrayBuffer.ts#L55)
+[lib/arrayBuffer.ts:55](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/arrayBuffer.ts#L55)
 
 ___
 
@@ -3783,7 +3942,7 @@ toArray([1, [2, 3]], { deep: true }); //  Outputs: [1, [2, 3]]
 
 #### Defined in
 
-[lib/toArray.ts:40](https://github.com/daniil4udo/utils/blob/be7174d/lib/toArray.ts#L40)
+[lib/toArray.ts:40](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/toArray.ts#L40)
 
 ___
 
@@ -3826,7 +3985,7 @@ console.log(toLower('')); // Outputs: ''
 
 #### Defined in
 
-[lib/changeCase.ts:78](https://github.com/daniil4udo/utils/blob/be7174d/lib/changeCase.ts#L78)
+[lib/changeCase.ts:78](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/changeCase.ts#L78)
 
 ___
 
@@ -3840,7 +3999,7 @@ Takes any JavaScript value as input and returns its type as a string.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `input` | `any` | The input value for which to get the type. |
+| `input` | `unknown` | The input value for which to get the type. |
 
 #### Returns
 
@@ -3868,7 +4027,7 @@ toType([]); // Outputs: 'array'
 
 #### Defined in
 
-[lib/toType.ts:23](https://github.com/daniil4udo/utils/blob/be7174d/lib/toType.ts#L23)
+[lib/toType.ts:25](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/toType.ts#L25)
 
 ___
 
@@ -3911,7 +4070,7 @@ console.log(toUpper('')); // Outputs: ''
 
 #### Defined in
 
-[lib/changeCase.ts:51](https://github.com/daniil4udo/utils/blob/be7174d/lib/changeCase.ts#L51)
+[lib/changeCase.ts:51](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/changeCase.ts#L51)
 
 ___
 
@@ -3966,7 +4125,7 @@ toggleKeyboardFocus(container, 0);
 
 #### Defined in
 
-[lib/dom/toggleKeyboardFocus.ts:57](https://github.com/daniil4udo/utils/blob/be7174d/lib/dom/toggleKeyboardFocus.ts#L57)
+[lib/dom/toggleKeyboardFocus.ts:57](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/dom/toggleKeyboardFocus.ts#L57)
 
 ___
 
@@ -4010,7 +4169,7 @@ console.log(trimFileExtension('/path/to/file.txt')); // Outputs: '/path/to/file'
 
 #### Defined in
 
-[lib/getNameFromPath.ts:23](https://github.com/daniil4udo/utils/blob/be7174d/lib/getNameFromPath.ts#L23)
+[lib/getNameFromPath.ts:23](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/getNameFromPath.ts#L23)
 
 ___
 
@@ -4277,7 +4436,7 @@ ___
 
 #### Defined in
 
-[lib/urlTemplate.ts:27](https://github.com/daniil4udo/utils/blob/be7174d/lib/urlTemplate.ts#L27)
+[lib/urlTemplate.ts:5](https://github.com/daniil4udo/utils/blob/be1b5fa/lib/urlTemplate.ts#L5)
 
 ___
 
