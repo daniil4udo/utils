@@ -1,3 +1,5 @@
+import type { Nullable } from 'types'
+
 const GL_EMOJI_VERSION = '0.2.0'
 
 const unicodeSupportTestMap = {
@@ -63,9 +65,15 @@ const unicodeSupportTestMap = {
 } as const
 
 // Create a type based on the `unicodeSupportTestMap` keys
-type UnicodeSupportTestMap = typeof unicodeSupportTestMap
-type UnicodeSupportTestMapKeys = keyof UnicodeSupportTestMap
-type UnicodeSupportTestMapValue = UnicodeSupportTestMap[UnicodeSupportTestMapKeys]
+export type UnicodeSupportTestMap = typeof unicodeSupportTestMap
+export type UnicodeResultSupportMap = {
+    [K in keyof UnicodeSupportTestMap]: boolean
+} & {
+    meta: {
+        isChrome: boolean
+        chromeVersion: Nullable<number>
+    }
+}
 /**
  * Checks whether a specific pixel in an image data array has a visible color.
  *
@@ -74,7 +82,10 @@ type UnicodeSupportTestMapValue = UnicodeSupportTestMap[UnicodeSupportTestMapKey
  *
  * @return {boolean} `true` if the pixel is visible and has a color other than black, `false` otherwise.
  */
-function checkPixelInImageDataArray(pixelOffset: number, imageDataArray: Uint8ClampedArray): boolean {
+function checkPixelInImageDataArray(
+    pixelOffset: number,
+    imageDataArray: Uint8ClampedArray,
+): boolean {
     // `4 *` because of RGBA
     const indexOffset = 4 * pixelOffset
     // Check if any of the RGB values are not 0
@@ -91,37 +102,33 @@ function checkPixelInImageDataArray(pixelOffset: number, imageDataArray: Uint8Cl
     return false
 }
 
-function generateUnicodeSupportMap(testMap: UnicodeSupportTestMap) {
+export function generateUnicodeSupportMap(
+    testMap: UnicodeSupportTestMap = unicodeSupportTestMap,
+): UnicodeResultSupportMap {
     // We use 16px because mobile Safari (iOS 9.3) doesn't properly scale emojis :/
     // See 32px, https://i.imgur.com/htY6Zym.png
     // See 16px, https://i.imgur.com/FPPsIF8.png
     const fontSize = 16
 
-    const testMapKeys = Object.keys(testMap) as UnicodeSupportTestMapKeys[]
-    const numTestEntries = testMapKeys.reduce((list, testKey) => list.concat(testMap[testKey]), [] as UnicodeSupportTestMapValue[]).length
-    const canvas = document.createElement('canvas')
+    const testMapValues = Object.values(unicodeSupportTestMap).flat()
 
     // (window.gl || window).testEmojiUnicodeSupportMapCanvas = canvas;
-    const ctx = canvas.getContext('2d') as CanvasRenderingContext2D
+    const canvas = document.createElement('canvas')
     canvas.width = 2 * fontSize
-    canvas.height = numTestEntries * fontSize
+    canvas.height = testMapValues.length * fontSize
+
+    const ctx = canvas.getContext('2d') as CanvasRenderingContext2D
     ctx.fillStyle = '#000000'
     ctx.textBaseline = 'middle'
     ctx.font = `${fontSize}px "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"`
 
     // Write each emoji to the canvas vertically
-    let writeIndex = 0
-    testMapKeys.forEach(testKey => {
-        const testEntry = testMap[testKey];
-        [].concat(testEntry as any).forEach(emojiUnicode => {
-            ctx.fillText(emojiUnicode, 0, writeIndex * fontSize + fontSize / 2)
-            writeIndex += 1
-        })
+    testMapValues.forEach((emojiUnicode, writeIndex) => {
+        ctx.fillText(emojiUnicode, 0, writeIndex * fontSize + fontSize / 2)
     })
 
     // Read from the canvas
-    let readIndex = 0
-    const resultMap: any = testMapKeys.reduce((acc, testKey) => {
+    const resultMap = Object.keys(unicodeSupportTestMap).reduce((acc, testKey, readIndex) => {
         const testEntry = testMap[testKey]
         // This needs to be a `reduce` instead of `every` because we need to
         // keep the `readIndex` in sync from the writes by running all entries
@@ -147,28 +154,27 @@ function generateUnicodeSupportMap(testMap: UnicodeSupportTestMap) {
                 }
             }
 
-            readIndex += 1
             return isSatisfied && isValidEmoji
         }, true)
 
         return Object.assign(acc, { [testKey]: isTestSatisfied })
-    })
+    }, {} as UnicodeResultSupportMap)
 
     const chromeMatches = navigator.userAgent.match(/Chrom(?:e|ium)\/([0-9]+)\./)
     resultMap.meta = {
-        isChrome: chromeMatches && chromeMatches.length > 0,
-        chromeVersion: chromeMatches && chromeMatches[1] && Number.parseInt(chromeMatches[1], 10),
+        isChrome: (chromeMatches?.length ?? 0) > 0,
+        chromeVersion: chromeMatches?.[1] ? Number.parseInt(chromeMatches[1], 10) : null,
     }
 
     return resultMap
 }
 
-export function getUnicodeSupportMap() {
+export function getUnicodeSupportMap(): UnicodeResultSupportMap {
     const glEmojiVersionFromCache = window.localStorage.getItem('gl-emoji-version')
     const userAgentFromCache = window.localStorage.getItem('gl-emoji-user-agent')
     const glEmojiUnicodeSupportMapFromCache = window.localStorage.getItem('gl-emoji-unicode-support-map')
 
-    let unicodeSupportMap = glEmojiUnicodeSupportMapFromCache ? JSON.parse(glEmojiUnicodeSupportMapFromCache) : null
+    let unicodeSupportMap: UnicodeResultSupportMap = glEmojiUnicodeSupportMapFromCache ? JSON.parse(glEmojiUnicodeSupportMapFromCache) : null
 
     if (
         !unicodeSupportMap

@@ -1,3 +1,5 @@
+import type { UnicodeResultSupportMap } from './emojiSupportMap'
+
 import { getUnicodeSupportMap } from './emojiSupportMap'
 
 /**
@@ -124,10 +126,13 @@ export function isPersonZwjEmoji(emojiUnicode: string): boolean {
  * @param {string} [unicodeVersion='flag'] - The Unicode version to check for.
  * @returns {boolean} True if the emoji Unicode is supported, false otherwise.
  */
-export function isEmojiUnicodeSupported(unicodeSupportMap, emojiUnicode, unicodeVersion = 'flag') {
-    const isOlderThanChrome57
-        = unicodeSupportMap?.meta
-        && unicodeSupportMap.meta.isChrome
+export function isEmojiUnicodeSupported(
+    unicodeSupportMap: UnicodeResultSupportMap,
+    emojiUnicode: string,
+    unicodeVersion: keyof UnicodeResultSupportMap = 'flag',
+): boolean {
+    const isOlderThanChrome57 = unicodeSupportMap.meta.isChrome
+        && unicodeSupportMap.meta.chromeVersion
         && unicodeSupportMap.meta.chromeVersion < 57
 
     return unicodeSupportMap[unicodeVersion]
@@ -145,7 +150,10 @@ export function isEmojiUnicodeSupported(unicodeSupportMap, emojiUnicode, unicode
  * @param {string} emojiUnicode - The emoji Unicode string to check.
  * @returns {boolean} True if the emoji Unicode is supported as a flag emoji, false otherwise.
  */
-export function checkFlagEmojiSupport(unicodeSupportMap, emojiUnicode) {
+export function checkFlagEmojiSupport(
+    unicodeSupportMap: UnicodeResultSupportMap,
+    emojiUnicode: string,
+): boolean {
     const isFlagResult = isFlagEmoji(emojiUnicode)
     const isRainbowFlagResult = isRainbowFlagEmoji(emojiUnicode)
 
@@ -161,7 +169,10 @@ export function checkFlagEmojiSupport(unicodeSupportMap, emojiUnicode) {
  * @param {string} emojiUnicode - The emoji Unicode string to check.
  * @returns {boolean} True if the emoji Unicode is supported with a skin tone modifier, false otherwise.
  */
-export function checkSkinToneModifierSupport(unicodeSupportMap, emojiUnicode) {
+export function checkSkinToneModifierSupport(
+    unicodeSupportMap: UnicodeResultSupportMap,
+    emojiUnicode: string,
+): boolean {
     const isSkinToneResult = isSkinToneComboEmoji(emojiUnicode)
     return (unicodeSupportMap.skinToneModifier && isSkinToneResult)
         || !isSkinToneResult
@@ -175,9 +186,9 @@ export function checkSkinToneModifierSupport(unicodeSupportMap, emojiUnicode) {
  * @returns {boolean} True if the emoji Unicode is supported as a horse racing skin tone combo emoji, false otherwise.
  */
 export function checkHorseRacingSkinToneComboEmojiSupport(
-    unicodeSupportMap,
-    emojiUnicode,
-) {
+    unicodeSupportMap: UnicodeResultSupportMap,
+    emojiUnicode: string,
+): boolean {
     const isHorseRacingSkinToneResult = isHorseRacingSkinToneComboEmoji(emojiUnicode)
     return (unicodeSupportMap.horseRacing && isHorseRacingSkinToneResult)
         || !isHorseRacingSkinToneResult
@@ -190,14 +201,20 @@ export function checkHorseRacingSkinToneComboEmojiSupport(
  * @param {string} emojiUnicode - The emoji Unicode string to check.
  * @returns {boolean} True if the emoji Unicode is supported as a person ZWJ emoji, false otherwise.
  */
-export function checkPersonEmojiSupport(unicodeSupportMap, emojiUnicode) {
+export function checkPersonEmojiSupport(
+    unicodeSupportMap: UnicodeResultSupportMap,
+    emojiUnicode: string,
+): boolean {
     const isPersonZwjResult = isPersonZwjEmoji(emojiUnicode)
     return (unicodeSupportMap.personZwj && isPersonZwjResult) || !isPersonZwjResult
 }
 
-let browserUnicodeSupportMap
+let browserUnicodeSupportMap: UnicodeResultSupportMap
 
-export default function isEmojiUnicodeSupportedByBrowser(emojiUnicode, unicodeVersion) {
+export default function isEmojiUnicodeSupportedByBrowser(
+    emojiUnicode: string,
+    unicodeVersion: keyof UnicodeResultSupportMap,
+): boolean {
     // Skipping the map creation for Bots + RSPec
     const userAgents = [ 'HeadlessChrome', 'Lighthouse', 'Speedindex' ]
 

@@ -1,3 +1,5 @@
+import type { Nullable } from 'types'
+
 import { isFlagEmoji } from './emojiSupport'
 import { toUpper } from '../changeCase'
 
@@ -12,7 +14,7 @@ import { toUpper } from '../changeCase'
  * isCountryIso('UK'); // Outputs:  true
  * isCountryIso('123'); // Outputs:  false
  */
-export function isCountryIso(iso = '') {
+export function isCountryIso(iso: string = ''): boolean {
     return /^[a-z]{2}([-_][a-z]{2})?$/i.test(iso)
 }
 
@@ -27,14 +29,14 @@ const OFFSET = 127397 // 'A'.codePointAt(0) - 127462
  * Converts a country ISO code to a flag emoji.
  *
  * @param {string} [iso=''] - The country ISO code to convert.
- * @returns {string | null} The flag emoji corresponding to the country ISO code, or null if the ISO code is invalid.
+ * @returns {Nullable<string>} The flag emoji corresponding to the country ISO code, or null if the ISO code is invalid.
  *
  * @example
  * isoToEmoji('us'); // Outputs:  '🇺🇸'
  * isoToEmoji('GB'); // Outputs:  '🇬🇧'
  * isoToEmoji('123'); // Outputs:  null
  */
-export function isoToEmoji(iso = '') {
+export function isoToEmoji(iso: string = ''): Nullable<string> {
     // ISO has to be upper case
     if (!isCountryIso(iso))
         return null
@@ -46,14 +48,14 @@ export function isoToEmoji(iso = '') {
  * Converts a flag emoji to a country ISO code.
  *
  * @param {string} [emoji=''] - The flag emoji to convert.
- * @returns {string | null} The country ISO code corresponding to the flag emoji, or null if the emoji is not a valid flag.
+ * @returns {Nullable<string>} The country ISO code corresponding to the flag emoji, or null if the emoji is not a valid flag.
  *
  * @example
  * emojiToIso('🇺🇸'); // Outputs: 'US'
  * emojiToIso('🇬🇧'); // Outputs: 'GB'
  * emojiToIso('👍'); // Outputs: null
  */
-export function emojiToIso(emoji = '') {
+export function emojiToIso(emoji: string = ''): Nullable<string> {
     if (!isFlagEmoji(emoji))
         return null
 
