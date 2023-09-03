@@ -22,12 +22,12 @@ const toString = ({}).toString
  * ```
  * @public
  */
-export function toType(input: unknown) {
-    const protoName = toString.call(input).match(/\s([a-zA-Z]+)/)![1].toLowerCase()
+export function toType(input: unknown): AnyTypesName {
+    const [ , protoName ] = toString.call(input).match(/\s([a-zA-Z]+)/) as RegExpMatchArray
+
+    if (protoName === 'Object' || protoName === 'Arguments')
+        return protoName.toLowerCase() as AnyTypesName
+
     const ctrName = input?.constructor?.name ?? ''
-
-    if (protoName === 'object' || protoName === 'arguments')
-        return protoName
-
-    return (ctrName.toLowerCase() || protoName) as AnyTypesName
+    return (ctrName.toLowerCase() || protoName!.toLowerCase()) as AnyTypesName
 }
