@@ -1,5 +1,8 @@
+import toFastProperties from 'to-fast-properties'
+
 import { deepClone } from './deepClone'
-import { toType } from './toType'
+import { has } from './has'
+import { isPlainObject } from './is'
 
 /**
  * Moves a property level up in an object, while maintaining the original property order.
@@ -12,8 +15,8 @@ import { toType } from './toType'
  *
  * @function movePropLevelUp
  * @param {T} parentObject - The object containing the property to be moved.
- * @param {keyof T} propertyName - The name of the property to be moved a level up.
- * @returns {T} A new object with the specified property moved up a level.
+ * @param {K} propertyName - The name of the property to be moved a level up.
+ * @returns A new object with the specified property moved up a level.
  *
  * If the `parentObject` is not an object or does not contain the specified property,
  * the function returns the `parentObject` unchanged.
@@ -34,15 +37,17 @@ import { toType } from './toType'
  * ```
  * @public
  */
-export function movePropLevelUp<T extends object>(parentObject: T, propertyName: keyof T) {
-    if (toType(parentObject) !== 'object')
+export function movePropLevelUp<T extends Record<PropertyKey, unknown>, K extends keyof T>(
+    parentObject: T,
+    propertyName: K,
+) {
+    if (!isPlainObject(parentObject) || !has(parentObject, propertyName))
         return parentObject
 
     const parentObjectClone = { ...parentObject }
 
-    if (propertyName in parentObjectClone) {
-        Object.assign(parentObjectClone, deepClone(parentObjectClone[propertyName]))
-        delete parentObjectClone[propertyName]
-    }
-    return parentObjectClone
+    Object.assign(parentObjectClone, deepClone(parentObjectClone[propertyName]))
+    delete parentObjectClone[propertyName]
+
+    return toFastProperties(parentObjectClone) as Omit<T, K> & T[K]
 }
