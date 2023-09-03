@@ -1,3 +1,5 @@
+import type { Nullable } from 'types'
+
 import { hasValue } from './hasValue'
 
 /**
@@ -21,7 +23,7 @@ interface Options<T> {
      *
      * @defaultValue `hasValue`
      */
-    comparator?: (value: T) => boolean
+    comparator?: (value: Nullable<T | undefined>) => boolean
 }
 
 /**
@@ -47,7 +49,7 @@ interface Options<T> {
  * ```
  * @public
  */
-export function isEmptyArray<T>(array: T, options: Options<T> = {}): boolean {
+export function isEmptyArray<T>(array: T[], options: Options<T> = {}): array is never[] {
     if (Array.isArray(array)) {
         let { length } = array
         if (length === 0)
@@ -60,9 +62,10 @@ export function isEmptyArray<T>(array: T, options: Options<T> = {}): boolean {
 
         let isEmpty = true
         while (length--) {
-            isEmpty = (deep && Array.isArray(array[length]))
-                ? isEmptyArray(array[length], options)
-                : !comparator(array[length])
+            if (deep === true && Array.isArray(array[length]))
+                isEmpty = isEmptyArray(array[length] as T[], options)
+            else
+                isEmpty = !comparator(array[length])
 
             if (!isEmpty)
                 break
