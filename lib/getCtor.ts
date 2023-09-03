@@ -8,9 +8,17 @@
  * @property Symbol.toStringTag - A string representation of the module.
  */
 interface EsModule<Module> {
-    __esModule?: boolean
-    default?: Module
-    [Symbol.toStringTag]?: string
+    __esModule: boolean
+    default: Module
+    [Symbol.toStringTag]: string
+}
+
+type MaybeEsModule<Module> = Partial<EsModule<Module>>
+
+function isEsModule<Module>(module: MaybeEsModule<Module>): module is EsModule<Module> {
+    return module != null
+        && typeof module === 'object'
+        && ('__esModule' in module || module[Symbol.toStringTag] === 'Module')
 }
 
 /**
@@ -49,9 +57,9 @@ interface EsModule<Module> {
  * ```
  * @public
  */
-export function getCtor<Module>(module: EsModule<Module> | Module): Module | undefined {
-    if (module != null && typeof module === 'object' && ('__esModule' in module || module[Symbol.toStringTag] === 'Module'))
-        return (module as EsModule<Module>).default
+export function getCtor<Module>(module: MaybeEsModule<Module>) {
+    if (isEsModule(module))
+        return module.default
 
-    return module as Module
+    return module
 }
