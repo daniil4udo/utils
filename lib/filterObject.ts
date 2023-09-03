@@ -1,12 +1,4 @@
 /**
- * Type definition for an object with string keys and values of a certain type
- *
- * @typedef {Object} TargetObject
- * @template T The type of the values in the object.
- */
-export type TargetObject<T> = Record<PropertyKey, T>
-
-/**
  * Predicate function type definition.
  *
  * @callback PredicateFunction
@@ -17,11 +9,11 @@ export type TargetObject<T> = Record<PropertyKey, T>
  * @param {TargetObject<T>} object - The object filterObject was called upon.
  * @return {boolean} True if the current element should be included in the filtered object; otherwise, false.
  */
-export type PredicateFunction<T> = (
-    key: PropertyKey,
-    value: T,
+export type PredicateFunction<T extends Record<PropertyKey, unknown>> = (
+    key: keyof T,
+    value: T[keyof T],
     index: number,
-    object: TargetObject<T>
+    object: T
 ) => boolean
 
 /**
@@ -64,17 +56,22 @@ export type PredicateFunction<T> = (
  * ```
  * @public
  */
-export function filterObject<T>(object: TargetObject<T>, predicate: PredicateFunction<T>): TargetObject<T> {
+export function filterObject<T extends Record<PropertyKey, unknown>>(
+    object: T,
+    predicate: PredicateFunction<T>,
+): T {
     if (typeof predicate !== 'function')
         return object
 
-    const result: TargetObject<T> = {}
-    const keys = Object.keys(object)
+    const result = {} as T
+    const keys = Object.keys(object) as (keyof T)[]
 
-    for (let i = 0, len = keys.length; i < len; i++) {
-        const value = object[keys[i]]
-        if (predicate(keys[i], value, i, object))
-            result[keys[i]] = value
+    for (let i = 0, l = keys.length; i < l; i++) {
+        const key = keys[i] as keyof T
+        const value = object[key]
+
+        if (predicate(key, value, i, object))
+            result[key] = value
     }
 
     return result
