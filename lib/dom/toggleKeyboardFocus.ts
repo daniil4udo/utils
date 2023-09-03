@@ -54,7 +54,10 @@ export const POSSIBLE_FOCUSABLE_TAGS = `a[href], area[href], button, details, in
  * ```
  * @public
  */
-export function toggleKeyboardFocus(scope = document.body, tabIndex = -1) {
+export function toggleKeyboardFocus(
+    scope: HTMLElement = document.body,
+    tabIndex: number = -1,
+): void {
     if (!window || !scope)
         return
 
@@ -63,6 +66,10 @@ export function toggleKeyboardFocus(scope = document.body, tabIndex = -1) {
 
     while (i--) {
         const el = elArr[i]
+
+        if (el == null)
+            continue
+
         requestAnimationFrame(() => {
             if (!el.hasAttribute('disabled'))
                 el.tabIndex = tabIndex
