@@ -37,7 +37,10 @@ import { deepEqual } from './deepEqual'
  * ```
  * @public
  */
-export function memoizeDeep<Fn extends AnyFn>(fn: Fn | Memoized<Fn>, options?: Options<Fn>) {
+export function memoizeDeep<Fn extends AnyFn>(
+    fn: Fn | Memoized<Fn>,
+    options?: Options<Fn>,
+): Memoized<Fn> {
     return memoize(fn, {
         ...options,
         isEqual: deepEqual,
@@ -83,7 +86,10 @@ export function memoizeDeep<Fn extends AnyFn>(fn: Fn | Memoized<Fn>, options?: O
  * ```
  * @public
  */
-export function memoizeLast<Fn extends AnyFn>(fn: Fn | Memoized<Fn>, options?: Options<Fn>) {
+export function memoizeLast<Fn extends AnyFn>(
+    fn: Fn | Memoized<Fn>,
+    options?: Options<Fn>,
+): Memoized<Fn> {
     return memoize(fn, {
         ...options,
         maxSize: 1,

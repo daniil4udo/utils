@@ -24,7 +24,7 @@
  */
 export function isIterable<T>(input: T | Iterable<T>): input is Iterable<T> {
     try {
-        return typeof input[Symbol.iterator] === 'function'
+        return typeof (input as any)[Symbol.iterator] === 'function'
     }
     catch {
         return false

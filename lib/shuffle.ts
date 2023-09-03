@@ -32,8 +32,8 @@ export function shuffle<T>(array: Readonly<T[]>): T[] {
         i = Math.floor(Math.random() * m--)
 
         // And swap it with the current element.
-        t = a[m]
-        a[m] = a[i]
+        t = a[m]!
+        a[m] = a[i]!
         a[i] = t
     }
 

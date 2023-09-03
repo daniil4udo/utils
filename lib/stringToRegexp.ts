@@ -16,7 +16,7 @@
  * ```
  * @public
  */
-const escapeStringRegExp = (str: string) => str.replace(/[|\\{}()[\]^$+*?.]/g, '\\$&')
+const escapeStringRegExp = (str: string): string => str.replace(/[|\\{}()[\]^$+*?.]/g, '\\$&')
 
 /**
  * Converts a string into a RegExp instance, escaping any special characters.
@@ -33,4 +33,4 @@ const escapeStringRegExp = (str: string) => str.replace(/[|\\{}()[\]^$+*?.]/g, '
  * ```
  * @public
  */
-export const strToRegexp = (str: string) => new RegExp(escapeStringRegExp(str))
+export const strToRegexp = (str: string): RegExp => new RegExp(escapeStringRegExp(str))

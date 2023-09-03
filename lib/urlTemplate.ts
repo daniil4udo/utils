@@ -1,3 +1,14 @@
+import { parseTemplate } from 'url-template'
+
+export type UrlTemplateContext = Parameters<ReturnType<typeof parseTemplate>['expand']>[0]
+
+export function urlTemplate(
+    url: string,
+    context: UrlTemplateContext,
+): string {
+    return parseTemplate(url).expand(context)
+}
+
 /**
  * Takes a URL template as input and returns an object with an `expand` method.
  *
@@ -20,12 +31,4 @@
  * ```
  * @public
  */
-import { parseTemplate } from 'url-template'
-
-export type UrlTemplateContext = Parameters<ReturnType<typeof parseTemplate>['expand']>[0]
-
-export function urlTemplate(url: string, context: UrlTemplateContext) {
-    return parseTemplate(url).expand(context)
-}
-
 export { parseTemplate as parseURLTemplate }

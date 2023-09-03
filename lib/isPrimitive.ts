@@ -1,7 +1,5 @@
 import type { PrimitiveLikeType, PrimitiveType } from 'types'
 
-import _isNumber from 'is-number'
-
 import { toType } from './toType'
 
 /**
@@ -55,19 +53,4 @@ export function isPrimitive(input: unknown): input is PrimitiveType {
 export function isPrimitiveLike(input: unknown): input is PrimitiveType | PrimitiveLikeType {
     const type = toType(input)
     return isPrimitive(input) || type === 'date' || type === 'regexp'
-}
-
-export const isNumber = (input: unknown): input is number => _isNumber(input)
-
-/**
- * Determines if a given input can not be treated as a number.
- *
- * @remarks
- * This function utilizes the isNumber function to verify if the input can not be treated as a number.
- *
- * @param input - The value to check.
- * @returns True if the input can not be treated as a number, false otherwise.
- */
-export function isProperNaN<T>(input: T): input is Exclude<T, number> {
-    return !isNumber(input)
 }

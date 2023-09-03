@@ -9,7 +9,7 @@
  * deCamelize('helloWorld'); // Returns 'hello World'
  * deCamelize('helloWorld123'); // Returns 'hello World123'
  */
-export function deCamelize(str = '') {
+export function deCamelize(str: string = ''): string {
     return str
         // Separate capitalized words.
         .replace(/([A-Z]{2,})(\d+)/g, '$1 $2')
@@ -41,7 +41,7 @@ export function deCamelize(str = '') {
  * ```
  * @public
  */
-export function slugify(str: string) {
+export function slugify(str: string): string {
     if (typeof str !== 'string')
         throw new TypeError(`[slugify] - Expected a string, got \`${typeof str}\``)
 

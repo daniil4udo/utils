@@ -59,10 +59,16 @@ export async function imageExists<T extends string>(
     })
 }
 
-export async function allImagesExist<T extends string>(urls: Array<Nullable<T>>, options: ImageExistsOptions = {}): Promise<(string | boolean)[]> {
+export async function allImagesExist<T extends string>(
+    urls: Array<Nullable<T>>,
+    options: ImageExistsOptions = {},
+): Promise<(string | boolean)[]> {
     return Promise.all(urls.map(url => imageExists(url, options)))
 }
 
-export async function anyImagesExist<T extends string>(urls: Array<Nullable<T>>, options: ImageExistsOptions = {}): Promise<(string | boolean)[]> {
+export async function anyImagesExist<T extends string>(
+    urls: Array<Nullable<T>>,
+    options: ImageExistsOptions = {},
+): Promise<(string | boolean)[]> {
     return (Promise as any).any(urls.map(url => imageExists(url, options)))
 }

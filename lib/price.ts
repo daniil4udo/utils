@@ -1,4 +1,4 @@
-import { isProperNaN } from './isPrimitive'
+import { isProperNaN } from './is'
 import { toType } from './toType'
 
 /**
@@ -23,6 +23,8 @@ interface IFormat {
 interface ILocate extends IFormat {
     readonly defaultLocale?: string
 }
+
+const MAX_SAFE_FRACTIONS = 20
 
 /**
  * Parses a string containing a locale-formatted number into a JavaScript number.
@@ -58,7 +60,10 @@ interface ILocate extends IFormat {
  * ```
  * @public
  */
-export function parseLocaleNumber(value, locale: string) {
+export function parseLocaleNumber(
+    value: number | string,
+    locale: string,
+): number {
     const format = new Intl.NumberFormat(locale).format(1000.1)
     const [ thousandsSeparator, decimalSeparator ] = format.match(/[\D]/g) as RegExpMatchArray
 
@@ -100,24 +105,25 @@ export function parseLocaleNumber(value, locale: string) {
  * ```
  * @public
  */
-export function formatValue(value: string | number, fractions: boolean | number = true, locale = 'en'): string {
-    const MAX_SAFE_FRACTIONS = 20
-
+export function formatValue(
+    value: string | number,
+    fractions: boolean | number = true,
+    locale: string = 'en',
+): string {
     const valueNumber = isProperNaN(value) ? parseLocaleNumber(value, locale) : Number(value)
-    const valueType = toType(fractions)
 
-    if (valueType !== 'boolean' && valueType !== 'number')
-        throw new TypeError(`[formatValue] - fractions should be either Boolean or Number. Got ${valueType}`)
+    if (typeof fractions !== 'boolean' && typeof fractions !== 'number')
+        throw new TypeError(`[formatValue] - fractions should be either Boolean or Number. Got ${toType(fractions)}`)
 
     let options: Intl.NumberFormatOptions = {}
 
-    if (valueType === 'boolean') {
+    if (typeof fractions === 'boolean') {
         options = {
             maximumFractionDigits: fractions ? MAX_SAFE_FRACTIONS : 0,
         }
     }
     else {
-        const safeFractions = Math.min(fractions as number, MAX_SAFE_FRACTIONS)
+        const safeFractions = Math.min(fractions, MAX_SAFE_FRACTIONS)
         options = {
             minimumFractionDigits: safeFractions,
             maximumFractionDigits: safeFractions,
@@ -147,7 +153,10 @@ export function formatValue(value: string | number, fractions: boolean | number 
  * ```
  * @public
  */
-export function applyCurrencySign(formattedPrice: string, { currencySign = '', priceFormat = '{currency} {amount}' }: IFormat) {
+export function applyCurrencySign(
+    formattedPrice: string,
+    { currencySign = '', priceFormat = '{currency} {amount}' }: IFormat = {},
+): string {
     return priceFormat
         .replace('{currency}', currencySign)
         .replace('{amount}', formattedPrice)
@@ -175,7 +184,11 @@ export function applyCurrencySign(formattedPrice: string, { currencySign = '', p
  * ```
  * @public
  */
-export function price(value: number, locale: ILocate, fractions: number) {
+export function price(
+    value: number,
+    locale: ILocate,
+    fractions: number,
+): string {
     if (isProperNaN(value))
         return value
 

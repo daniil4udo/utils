@@ -22,6 +22,9 @@ import type { Nullable } from 'types'
  * ```
  * @public
  */
-export function has<T>(object: Nullable<T>, key: PropertyKey): object is T & Record<PropertyKey, T> {
+export function has<T, K extends PropertyKey>(
+    object: Nullable<T>,
+    key: K,
+): object is T & Record<K, unknown> {
     return object != null && Object.prototype.hasOwnProperty.call(object, key)
 }

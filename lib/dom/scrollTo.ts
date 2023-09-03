@@ -39,7 +39,7 @@ import type { Nullable } from 'types'
  * ```
  * @public
  */
-export function scrollTo(element: Nullable<HTMLElement>, offset = 0) {
+export function scrollTo(element: Nullable<HTMLElement>, offset: number = 0): void {
     if (typeof window === 'undefined')
         return
 

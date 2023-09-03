@@ -27,7 +27,7 @@
  * ```
  * @public
  */
-export function isColor(str: string) {
+export function isColor(str: string): boolean {
     if (!str)
         return false
 

@@ -40,6 +40,7 @@ interface Options {
 export function toArray<T>(array: T | T[], options: Options = { shallow: false, deep: false }): T[] {
     if (array == null)
         return []
+
     if (Array.isArray(array)) {
         if (options.shallow === true)
             return [ ...array ]

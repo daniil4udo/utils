@@ -20,6 +20,9 @@ async function generateIndexFile(isRoot = false) {
                 'preset',
                 'index.*',
                 '**/index.*',
+
+                // TODO: remove after find a way to us import.meta
+                'detectMode.ts',
             ],
             // absolute: true,
             // objectMode: true,

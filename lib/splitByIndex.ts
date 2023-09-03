@@ -1,10 +1,4 @@
-/**
- * Type alias to get the length of an array.
- *
- * @template T - The type of the array.
- * @typedef {T['length']} Length
- */
-type Length<T extends any[]> = T['length']
+import type { Length } from 'types'
 
 /**
  * Splits an array at a specific index into two separate arrays.
@@ -27,7 +21,7 @@ type Length<T extends any[]> = T['length']
  * ```
  * @public
  */
-export function splitByIndex<T extends unknown[]>(array: T, splitIndex: Length<T> = array.length) {
+export function splitByIndex<T>(array: T[], splitIndex: Length<T[]> = array.length): [T[], T[]] {
     // given a default value of array.length, so when no index is provided,
     // the function will return the original array as the first element in the result array,
     // and an empty array as the second element.

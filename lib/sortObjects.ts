@@ -27,7 +27,11 @@ interface SortableItems {
  * ```
  * @public
  */
-export function sortObjects(array: SortableItems[], key: string, locale = 'en-US'): SortableItems[] {
+export function sortObjects<T extends SortableItems>(
+    array: T[],
+    key: string,
+    locale: string = 'en-US',
+): T[] {
     const collator = new Intl.Collator(locale, { numeric: true, sensitivity: 'base' })
     return array.sort((a, b) => {
         // If a[key] and b[key] are both null or undefined, they are considered equal
@@ -40,6 +44,6 @@ export function sortObjects(array: SortableItems[], key: string, locale = 'en-US
         if ((b[key] === undefined || b[key] === null))
             return 1
 
-        return collator.compare(String(a[key]), String(b[key]))
+        return collator.compare(`${a[key]}`, `${b[key]}`)
     })
 }

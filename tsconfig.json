@@ -4,8 +4,7 @@
         "env.d.ts",
         "lib/*.ts",
         "types/*.ts",
-        "tests/*.spec.js",
-        "tests/*.spec.ts",
+        "tests/*.spec.{js,ts}",
     ],
     "exclude": [
         "dist",
@@ -32,7 +31,17 @@
         ],
         "types": [
             "node",
-            "vite/client"
+            "vite/client",
+
+            "defu",
+            "fast-equals",
+            "file-saver-es",
+            "micro-memoize",
+            "perfect-debounce",
+            "proper-url-join",
+            "rfdc",
+            "text-clipper",
+            "zipcelx",
         ]
     },
 }
