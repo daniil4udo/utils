@@ -2,7 +2,7 @@ import type { Nullable } from 'types'
 
 const GL_EMOJI_VERSION = '0.2.0'
 
-const unicodeSupportTestMap = {
+const unicodeSupportTestMap = Object.freeze({
     // man, student (emojione does not have any of these yet), https://emojipedia.org/emoji-zwj-sequences/
     // occupationZwj: '\u{1F468}\u{200D}\u{1F393}',
     // woman, biking (emojione does not have any of these yet), https://emojipedia.org/emoji-zwj-sequences/
@@ -62,7 +62,7 @@ const unicodeSupportTestMap = {
     '3.0': '\u{2139}',
     // heart, https://emojipedia.org/unicode-1.1/
     '1.1': '\u{2764}',
-} as const
+})
 
 // Create a type based on the `unicodeSupportTestMap` keys
 export type UnicodeSupportTestMap = typeof unicodeSupportTestMap
