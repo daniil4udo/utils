@@ -39,7 +39,7 @@
         "node": ">=16"
     },
     "scripts": {
-        "postinstall": "npx simple-git-hooks",
+        "prepare": "npx simple-git-hooks",
         "build": "./scripts/build.sh",
         "dev": "concurrently --prefix-colors yellow,blue \"pnpm:test\" \"pnpm:typecheck\"",
         "lint": "pnpm lint:eslint . ",
