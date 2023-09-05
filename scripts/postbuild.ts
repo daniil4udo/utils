@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url'
 
 import fg from 'fast-glob'
 
-async function run() {
+export async function patchCJS() {
     // fix cjs exports
     const files = await fg('**/*.cjs', {
         ignore: [ 'chunk-*' ],
@@ -14,7 +14,7 @@ async function run() {
         cwd: resolve(fileURLToPath(import.meta.url), '../../dist'),
     })
     for (const file of files) {
-        console.log('[postbuild]', basename(file))
+        console.log('[patchCJS]', basename(file))
 
         fsp.readFile(file, 'utf8')
         let code = await fsp.readFile(file, 'utf8')
@@ -24,4 +24,4 @@ async function run() {
     }
 }
 
-run()
+patchCJS()
