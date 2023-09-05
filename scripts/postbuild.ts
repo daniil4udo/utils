@@ -1,27 +1,34 @@
 /* eslint-disable no-await-in-loop */
 import fsp from 'node:fs/promises'
 import { resolve } from 'node:path'
-import { basename } from 'node:path/posix'
+import { basename, dirname } from 'node:path/posix'
 import { fileURLToPath } from 'node:url'
 
 import fg from 'fast-glob'
 
-export async function patchCJS() {
-    // fix cjs exports
-    const files = await fg('**/*.cjs', {
-        ignore: [ 'chunk-*' ],
-        absolute: true,
-        cwd: resolve(fileURLToPath(import.meta.url), '../../dist'),
-    })
+export async function patchCJS(files: string[]) {
     for (const file of files) {
         console.log('[patchCJS]', basename(file))
 
-        fsp.readFile(file, 'utf8')
         let code = await fsp.readFile(file, 'utf8')
         code = code.replace('exports.default =', 'module.exports =')
         code += 'exports.default = module.exports;'
-        await fsp.writeFile(file, code)
+
+        fsp.writeFile(file, code)
     }
 }
 
-patchCJS()
+// Isomorphic `__dirname`
+const _dirname = typeof __dirname !== 'undefined'
+    ? __dirname
+    : dirname(fileURLToPath(import.meta.url))
+
+// All CJS files
+const files = await fg('**/*.cjs', {
+    ignore: [ 'chunk-*' ],
+    absolute: true,
+    cwd: resolve(_dirname, '../dist'),
+})
+
+// fix cjs exports
+patchCJS(files)

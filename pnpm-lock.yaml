@@ -77,6 +77,9 @@ devDependencies:
   eslint:
     specifier: ^8.48.0
     version: 8.48.0
+  fast-glob:
+    specifier: ^3.3.1
+    version: 3.3.1
   jsdom:
     specifier: ^22.1.0
     version: 22.1.0
