@@ -64,7 +64,7 @@
         "zipcelx": "^1.6.2"
     },
     "devDependencies": {
-        "@democrance/eslint-config": "^0.9.0",
+        "@democrance/eslint-config": "^0.10.0",
         "@types/file-saver-es": "^2.0.1",
         "@types/node": "^18.17.14",
         "@types/proper-url-join": "^2.1.1",
@@ -81,7 +81,7 @@
         "prettier": "^3.0.3",
         "simple-git-hooks": "^2.9.0",
         "tsup": "^7.2.0",
-        "typedoc": "^0.25.0",
+        "typedoc": "^0.25.1",
         "typedoc-plugin-markdown": "^3.16.0",
         "typescript": "^5.2.2",
         "url-template": "^3.1.0",
