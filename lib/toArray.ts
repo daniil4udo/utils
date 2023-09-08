@@ -1,4 +1,5 @@
 import { deepClone } from './deepClone'
+import { isIterable } from './isIterable'
 
 /**
  * Options to configure how the `toArray` function should handle arrays.
@@ -23,7 +24,7 @@ interface Options {
  * @template T - The type of the elements.
  *
  * @function toArray
- * @param {T | T[]} array - The value to be converted into an array.
+ * @param {T | T[]} input - The value to be converted into an array.
  * @param {Options} [options={ shallow: false, deep: false }] - Options for handling arrays.
  * @returns {T[]} The value converted into an array.
  *
@@ -37,16 +38,22 @@ interface Options {
  * ```
  * @public
  */
-export function toArray<T>(array: T | T[], options: Options = { shallow: false, deep: false }): T[] {
-    if (array == null)
+export function toArray<T>(input: T | T[], options: Options = { shallow: false, deep: false }): T[] {
+    if (input == null)
         return []
 
-    if (Array.isArray(array)) {
-        if (options.shallow === true)
-            return [ ...array ]
+    if (Array.isArray(input)) {
         if (options.deep === true)
-            return deepClone(array)
-        return array
+            return deepClone(input)
+
+        if (options.shallow === true)
+            return [ ...input ]
+
+        return input
     }
-    return [ array ]
+
+    if (typeof input !== 'string' && isIterable(input))
+        return [ ...input ]
+
+    return [ input ]
 }
