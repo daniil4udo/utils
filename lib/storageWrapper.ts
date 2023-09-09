@@ -1,6 +1,6 @@
 import type { Nullable } from 'types'
 
-import { safeJSONParse } from './safeJSONParse'
+import { safeJSONParse } from './safeJSON'
 
 /**
  * `StorageWrapper` is a class that wraps local and session storage functionalities.
