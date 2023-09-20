@@ -100,10 +100,11 @@ function createTagAttributes<T extends Nullable<string | Record<string, string> 
  * This function is part of the {@link https://github.com/daniil4udo/utils | @democrance/utils} library.
  *
  * @param str - The string in which to highlight matches.
- * @param matches - An array of match ranges. Each match range is a two-element array containing the start and
+ * @param indices - An array of match ranges. Each match range is a two-element array containing the start and
  *      end indices of the match. Defaults to an empty array.
  * @param options - An options object. It currently supports one option: 'tag', which specifies the HTML tag to
  *      use for wrapping matches. Defaults to an object with 'tag' set to 'strong'.
+ *
  * @returns The string with matches highlighted.
  *
  * @example

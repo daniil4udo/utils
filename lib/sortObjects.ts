@@ -10,20 +10,23 @@ interface SortableItems {
  * @remarks
  * This function is a part of the {@link https://github.com/daniil4udo/utils | @democrance/utils} library.
  *
- * @template T - A subtype of `Localizable` where every property value is a string.
+ * @template T - A subtype of `SortableItems` where every property value can be compared as a string.
  *
- * @function sortObjects
- * @param {T[]} [collection=[]] - The collection of objects to sort.
- * @param {keyof T} key - The key to sort the objects by.
- * @param {string} [locale='en'] - The locale to use for string comparison.
- * @returns {T[]} The sorted collection.
+ * @param {string} str - The string in which to highlight matches.
+ * @param {Array<[number, number]>} indices - An array of match ranges. Each match range is a two-element array containing the start and
+ *      end indices of the match. Defaults to an empty array.
+ * @param {object} [options] - An options object. Defaults to an object with 'tag' set to 'strong'.
+ * @param {string} [options.tag] - Specifies the HTML tag to use for wrapping matches.
+ * @param {object} [options.attrs] - Specifies the HTML attributes to add to the tag.
+ *
+ * @returns {T[]} The sorted array.
  *
  * @example
  * ```ts
  * import { sortObjects } from '@democrance/utils';
  *
- * const collection = [{ name: 'Zoe' }, { name: 'Amy' }, { name: 'Mark' }];
- * sortObjects(collection, 'name'); // Outputs: [{ name: 'Amy' }, { name: 'Mark' }, { name: 'Zoe' }]
+ * const array = [{ name: 'Zoe' }, { name: 'Amy' }, { name: 'Mark' }];
+ * sortObjects(array, 'name'); // Outputs: [{ name: 'Amy' }, { name: 'Mark' }, { name: 'Zoe' }]
  * ```
  * @public
  */

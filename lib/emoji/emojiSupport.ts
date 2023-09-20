@@ -121,9 +121,9 @@ export function isPersonZwjEmoji(emojiUnicode: string): boolean {
 /**
  * Checks if a given emoji Unicode is supported according to a provided Unicode support map and version.
  *
- * @param {Object} unicodeSupportMap - The map showing the support for various Unicode features.
+ * @param {object} unicodeSupportMap - The map showing the support for various Unicode features.
  * @param {string} emojiUnicode - The emoji Unicode string to check.
- * @param {string} [unicodeVersion='flag'] - The Unicode version to check for.
+ * @param {string} [unicodeVersion] - The Unicode version to check for.
  * @returns {boolean} True if the emoji Unicode is supported, false otherwise.
  */
 export function isEmojiUnicodeSupported(
@@ -146,7 +146,7 @@ export function isEmojiUnicodeSupported(
 /**
  * Checks if a given emoji Unicode is supported as a flag emoji according to a provided Unicode support map.
  *
- * @param {Object} unicodeSupportMap - The map showing the support for various Unicode features.
+ * @param {object} unicodeSupportMap - The map showing the support for various Unicode features.
  * @param {string} emojiUnicode - The emoji Unicode string to check.
  * @returns {boolean} True if the emoji Unicode is supported as a flag emoji, false otherwise.
  */
@@ -165,7 +165,7 @@ export function checkFlagEmojiSupport(
 /**
  * Checks if a given emoji Unicode is supported with a skin tone modifier according to a provided Unicode support map.
  *
- * @param {Object} unicodeSupportMap - The map showing the support for various Unicode features.
+ * @param {object} unicodeSupportMap - The map showing the support for various Unicode features.
  * @param {string} emojiUnicode - The emoji Unicode string to check.
  * @returns {boolean} True if the emoji Unicode is supported with a skin tone modifier, false otherwise.
  */
@@ -181,7 +181,7 @@ export function checkSkinToneModifierSupport(
 /**
  * Checks if a given emoji Unicode is supported as a horse racing skin tone combo emoji according to a provided Unicode support map.
  *
- * @param {Object} unicodeSupportMap - The map showing the support for various Unicode features.
+ * @param {object} unicodeSupportMap - The map showing the support for various Unicode features.
  * @param {string} emojiUnicode - The emoji Unicode string to check.
  * @returns {boolean} True if the emoji Unicode is supported as a horse racing skin tone combo emoji, false otherwise.
  */
@@ -197,7 +197,7 @@ export function checkHorseRacingSkinToneComboEmojiSupport(
 /**
  * Checks if a given emoji Unicode is supported as a person Zero Width Joiner (ZWJ) emoji according to a provided Unicode support map.
  *
- * @param {Object} unicodeSupportMap - The map showing the support for various Unicode features.
+ * @param {object} unicodeSupportMap - The map showing the support for various Unicode features.
  * @param {string} emojiUnicode - The emoji Unicode string to check.
  * @returns {boolean} True if the emoji Unicode is supported as a person ZWJ emoji, false otherwise.
  */

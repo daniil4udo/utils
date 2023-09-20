@@ -40,7 +40,6 @@ class StorageWrapper<T, K extends string> {
         try {
             const serializedValue = JSON.stringify(value)
             const encodedValue = process.env.NODE_ENV !== 'development'
-                // eslint-disable-next-line n/prefer-global/buffer
                 ? Buffer.from(serializedValue).toString('base64')
                 : serializedValue
 
@@ -69,7 +68,6 @@ class StorageWrapper<T, K extends string> {
                 return null
 
             const serializedValue = process.env.NODE_ENV !== 'development'
-                // eslint-disable-next-line n/prefer-global/buffer
                 ? Buffer.from(encodedValue, 'base64').toString()
                 : encodedValue
 

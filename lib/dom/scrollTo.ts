@@ -2,24 +2,24 @@ import type { Nullable } from 'types'
 
 /**
  * Scrolls the window to a specified element.
-*
-* If the `element` parameter is provided, the function calculates the scroll position based on the element's position
-* and the current scroll position, taking into account the specified `offset` value.
-*
-* If the `element` parameter is not provided or is null/undefined, the function scrolls to the top of the window.
-*
-* The function uses the 'scrollRestoration' feature of the browser's history API to restore the scroll position
-* after a page navigation or refresh. If the 'scrollRestoration' feature is not supported, it does not change
-* the default behavior of the browser.
-*
-* The scrolling is performed using the browser's native `scrollTo` method with 'smooth' behavior for a smooth scrolling effect.
+ *
+ * If the `element` parameter is provided, the function calculates the scroll position based on the element's position
+ * and the current scroll position, taking into account the specified `offset` value.
+ *
+ * If the `element` parameter is not provided or is null/undefined, the function scrolls to the top of the window.
+ *
+ * The function uses the 'scrollRestoration' feature of the browser's history API to restore the scroll position
+ * after a page navigation or refresh. If the 'scrollRestoration' feature is not supported, it does not change
+ * the default behavior of the browser.
+ *
+ * The scrolling is performed using the browser's native `scrollTo` method with 'smooth' behavior for a smooth scrolling effect.
  *
  * @remarks
  * This function is a part of the {@link https://github.com/daniil4udo/utils | @democrance/utils} library.
  *
  * @function scrollTo
  * @param {HTMLElement | null | undefined} element - The element to scroll to. Can be an HTMLElement, null, or undefined.
- * @param {number} [offset=0] - The offset value to adjust the scroll position. Defaults to 0.
+ * @param {number} [offset] - The offset value to adjust the scroll position. Defaults to 0.
  * @returns {void}
  *
  * @example

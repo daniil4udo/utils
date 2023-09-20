@@ -1,34 +1,14 @@
 {
     "extends": "@vue/tsconfig/tsconfig.dom.json",
-    "include": [
-        "env.d.ts",
-        "lib/*.ts",
-        "types/*.ts",
-        "tests/*.spec.{js,ts}",
-    ],
-    "exclude": [
-        "dist",
-        "node_modules",
-        "tests/*"
-    ],
     "compilerOptions": {
-        "baseUrl": ".",
-        "allowSyntheticDefaultImports": true,
-        "declaration": true,
-        "importHelpers": true,
-        "isolatedModules": true,
-        "moduleResolution": "Node",
-        "noUncheckedIndexedAccess": true,
-        "noUnusedLocals": true,
-        "outDir": "dist",
-        "pretty": true,
-        "strictBindCallApply": true,
         "lib": [
             "ESNext",
             "ESNext.WeakRef",
             "DOM",
             "DOM.Iterable"
         ],
+        "moduleResolution": "Node",
+        "baseUrl": ".",
         "types": [
             "node",
             "fast-glob",
@@ -42,7 +22,27 @@
             "proper-url-join",
             "rfdc",
             "text-clipper",
-            "zipcelx",
-        ]
+            "zipcelx"
+        ],
+        "declaration": true,
+        "outDir": "dist",
+        "importHelpers": true,
+        "isolatedModules": true,
+        "allowSyntheticDefaultImports": true,
+        "strictBindCallApply": true,
+        "noUncheckedIndexedAccess": true,
+        "noUnusedLocals": true,
+        "pretty": true
     },
+    "include": [
+        "env.d.ts",
+        "lib/*.ts",
+        "types/*.ts",
+        "tests/*.spec.{js,ts}"
+    ],
+    "exclude": [
+        "dist",
+        "node_modules",
+        "tests/*"
+    ]
 }

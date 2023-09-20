@@ -6,7 +6,7 @@ import { toUpper } from '../changeCase'
 /**
  * Checks if a string is a valid country ISO code.
  *
- * @param {string} [iso=''] - The input string to check.
+ * @param {string} [iso] - The input string to check.
  * @returns {boolean} True if the string is a valid country ISO code, false otherwise.
  *
  * @example
@@ -28,7 +28,7 @@ const OFFSET = 127397 // 'A'.codePointAt(0) - 127462
 /**
  * Converts a country ISO code to a flag emoji.
  *
- * @param {string} [iso=''] - The country ISO code to convert.
+ * @param {string} [iso] - The country ISO code to convert.
  * @returns {Nullable<string>} The flag emoji corresponding to the country ISO code, or null if the ISO code is invalid.
  *
  * @example
@@ -47,7 +47,7 @@ export function isoToEmoji(iso: string = ''): Nullable<string> {
 /**
  * Converts a flag emoji to a country ISO code.
  *
- * @param {string} [emoji=''] - The flag emoji to convert.
+ * @param {string} [emoji] - The flag emoji to convert.
  * @returns {Nullable<string>} The country ISO code corresponding to the flag emoji, or null if the emoji is not a valid flag.
  *
  * @example

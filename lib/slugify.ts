@@ -2,7 +2,7 @@
  * Converts a camelCase or PascalCase string to a space-separated string.
  *
  * @function deCamelize
- * @param {string} [str=''] - The input string to be converted.
+ * @param {string} [str] - The input string to be converted.
  * @returns {string} The de-camelized string.
  *
  * @example
@@ -28,7 +28,7 @@ export function deCamelize(str: string = ''): string {
  * This function is a part of the {@link https://github.com/daniil4udo/utils | @democrance/utils} library.
  *
  * @function slugify
- * @param {string} [str=''] - The input string to be converted into a slug.
+ * @param {string} [str] - The input string to be converted into a slug.
  * @returns {string} The slugified string.
  *
  * @example

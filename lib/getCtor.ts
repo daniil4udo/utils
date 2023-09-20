@@ -1,20 +1,30 @@
 /**
  * Interface for an ECMAScript module with optional properties.
  *
- * @typeParam Module - The type of the module.
+ * @template Module - The type of the module.
  *
- * @property __esModule - A flag indicating whether the module is an ECMAScript module.
- * @property default - The default export of the module.
- * @property Symbol.toStringTag - A string representation of the module.
+ * @property {boolean} __esModule - A flag indicating whether the module is an ECMAScript module.
+ * @property {Module} default - The default export of the module.
  */
 interface EsModule<Module> {
     __esModule: boolean
     default: Module
+
+    /**
+     * A string representation of the module.
+     *
+     * @type {string}
+     */
     [Symbol.toStringTag]: string
 }
 
 type MaybeEsModule<Module> = Partial<EsModule<Module>>
 
+/**
+ * @template Module - The type of the module.
+ * @param {MaybeEsModule<Module>} module - The module to check.
+ * @returns {boolean} True if the module is an ES module, otherwise false.
+ */
 function isEsModule<Module>(module: MaybeEsModule<Module>): module is EsModule<Module> {
     return module != null
         && typeof module === 'object'
@@ -35,12 +45,12 @@ function isEsModule<Module>(module: MaybeEsModule<Module>): module is EsModule<M
  * @remarks
  * This function is part of the {@link https://github.com/daniil4udo/utils | @democrance/utils} library.
  *
- * @typeParam Module - The type of the module's default export (for ES modules) or the
+ * @template Module - The type of the module's default export (for ES modules) or the
  * module itself (for CommonJS modules).
  *
- * @param module - The module to check. It could either be an ES module with `__esModule`
+ * @param {MaybeEsModule<Module>} module - The module to check. It could either be an ES module with `__esModule`
  * or `Symbol.toStringTag` properties or a CommonJS module.
- * @returns The default export of the module if it's an ES module, otherwise the module
+ * @returns {Module | Partial<EsModule<Module>>} The default export of the module if it's an ES module, otherwise the module
  * itself. Returns `undefined` if `default` is not defined on an ES module.
  *
  * @example
@@ -57,9 +67,10 @@ function isEsModule<Module>(module: MaybeEsModule<Module>): module is EsModule<M
  * ```
  * @public
  */
-export function getCtor<Module>(module: MaybeEsModule<Module>) {
+export function getCtor<Module>(module: MaybeEsModule<Module>): Module | Partial<EsModule<Module>> {
     if (isEsModule(module))
         return module.default
+
 
     return module
 }

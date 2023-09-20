@@ -10,7 +10,7 @@ import type { Length } from 'types'
  *
  * @function splitByIndex
  * @param {T[]} array - The array to split.
- * @param {Length<T>} [splitIndex=0] - The index at which to split the array.
+ * @param {Length<T>} [splitIndex] - The index at which to split the array.
  * @returns {[T[], T[]]} An array of two arrays - the first one is the part before the index and the second one is the part after (and including) the index.
  *
  * @example

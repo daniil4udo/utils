@@ -31,9 +31,9 @@ export const POSSIBLE_FOCUSABLE_TAGS = `a[href], area[href], button, details, in
  * This function is a part of the {@link https://github.com/daniil4udo/utils | @democrance/utils} library.
  *
  * @function toggleKeyboardFocus
- * @param {HTMLElement} [scope=document.body] - The scope within which to toggle the keyboard focus state.
+ * @param {HTMLElement} [scope] - The scope within which to toggle the keyboard focus state.
  *      Default is the document body. It is expected to be an HTML element.
- * @param {number} [tabIndex=-1] - The tabIndex value to assign to each focusable element.
+ * @param {number} [tabIndex] - The tabIndex value to assign to each focusable element.
  *      Default is -1 which makes the element focusable, but not reachable via sequential keyboard navigation.
  *      But it can be focused by calling its focus method programmatically.
  * @returns {void} This function does not return a value.

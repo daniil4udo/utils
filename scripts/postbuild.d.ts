@@ -1,1 +1,1 @@
-export declare function patchCJS(): Promise<void>;
+export declare function patchCJS(): Promise<void>

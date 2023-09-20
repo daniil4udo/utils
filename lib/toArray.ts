@@ -25,7 +25,7 @@ interface Options {
  *
  * @function toArray
  * @param {T | T[]} input - The value to be converted into an array.
- * @param {Options} [options={ shallow: false, deep: false }] - Options for handling arrays.
+ * @param {Options} [options] - Options for handling arrays.
  * @returns {T[]} The value converted into an array.
  *
  * @example

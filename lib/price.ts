@@ -89,8 +89,8 @@ export function parseLocaleNumber(
  * This function is a part of the {@link https://github.com/daniil4udo/utils | @democrance/utils} library.
  *
  * @param {string | number} value - The value to be formatted. If it is a string, it will be converted to a number.
- * @param {boolean | number} [fractions=true] - Determines the number of fraction digits in the formatted output.
- * @param {string} [locale='en'] - The locale in which the number should be formatted. Default is 'en' for English.
+ * @param {boolean | number} [fractions] - Determines the number of fraction digits in the formatted output.
+ * @param {string} [locale] - The locale in which the number should be formatted. Default is 'en' for English.
  * @throws {TypeError} - Will throw an error if fractions is not a boolean or a number.
  *
  * @returns {string} - The formatted number as a string.
@@ -170,7 +170,7 @@ export function applyCurrencySign(
  * This function is a part of the {@link https://github.com/daniil4udo/utils | @democrance/utils} library.
  *
  * @function price
- * @param {string | number} [value=0] - The price value to format. Can be a string or number. Defaults to 0.
+ * @param {string | number} [value] - The price value to format. Can be a string or number. Defaults to 0.
  * @param {ILocate} locale - The localization options for number and currency formatting.
  * @param {number} fractions - The number of decimal places to display.
  * @returns {string} The formatted price string.

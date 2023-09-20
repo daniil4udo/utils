@@ -1,17 +1,18 @@
 {
     "name": "@democrance/utils",
+    "type": "module",
     "version": "0.18.1",
+    "packageManager": "pnpm@8.7.0",
     "description": "Set of popular utils",
+    "author": "Daniil Chumachenko <daniil4udo@gmail.com>",
+    "license": "MIT",
+    "repository": "daniil4udo/utils",
     "keywords": [
         "console",
         "utils",
         "log"
     ],
-    "repository": "daniil4udo/utils",
-    "license": "MIT",
-    "author": "Daniil Chumachenko <daniil4udo@gmail.com>",
     "sideEffects": false,
-    "type": "module",
     "exports": {
         ".": {
             "types": "./dist/index.d.ts",
@@ -34,6 +35,9 @@
     "files": [
         "dist"
     ],
+    "engines": {
+        "node": ">=16"
+    },
     "scripts": {
         "prepare": "npx simple-git-hooks",
         "build": "./scripts/build.sh",
@@ -41,18 +45,10 @@
         "release": "bumpp --commit --tag --no-push && pnpm publish --access public",
         "dev": "concurrently --prefix-colors yellow,blue \"pnpm:test\" \"pnpm:typecheck\"",
         "lint": "pnpm lint:eslint . ",
-        "lint:eslint": "eslint --color --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+        "lint:eslint": "eslint --color --fix --ignore-path .gitignore",
         "lint:prettier": "prettier --write --log-level warn",
         "test": "vitest --ui --coverage",
-        "typedoc": "typedoc --plugin typedoc-plugin-markdown ./lib/index.ts",
-        "vn": "vite-node ./lib/siteConfigs.ts"
-    },
-    "simple-git-hooks": {
-        "pre-commit": "pnpm lint-staged"
-    },
-    "lint-staged": {
-        "*.js,*.ts": "pnpm lint:eslint",
-        "*.json,.!(eslint)*.json,.code-snippets,.!(browserslist)*rc}": "pnpm lint:prettier"
+        "typedoc": "typedoc --plugin typedoc-plugin-markdown ./lib/index.ts"
     },
     "dependencies": {
         "defu": "^6.1.2",
@@ -91,14 +87,17 @@
         "url-template": "^3.1.0",
         "vitest": "^0.34.3"
     },
-    "packageManager": "pnpm@8.7.0",
-    "engines": {
-        "node": ">=16"
-    },
     "pnpm": {
         "overrides": {
             "file-saver": "npm:file-saver-es@^2.0.5",
-            "vite": "^5.0.0-beta.0"
+            "vite": "^5.0.0-beta.2"
         }
+    },
+    "simple-git-hooks": {
+        "pre-commit": "pnpm lint-staged"
+    },
+    "lint-staged": {
+        "*.js,*.ts": "pnpm lint:eslint",
+        "*.json,.!(eslint)*.json,.code-snippets,.!(browserslist)*rc}": "pnpm lint:prettier"
     }
 }
