@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { isColor } from '../lib/'
+import { isColor } from '../../lib/'
 
 describe('@/lib/isColor.ts', () => {
     it('returns false for null', () => {

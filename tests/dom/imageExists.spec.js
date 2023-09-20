@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
 
-import { imageExists } from '../lib/'
+import { imageExists } from '../../lib'
 
 // Helper function to create an Image instance
 function mockImageInstance() {

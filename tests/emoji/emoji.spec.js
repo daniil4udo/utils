@@ -8,7 +8,7 @@ import {
     isKeyCapEmoji,
     isPersonZwjEmoji,
     isRainbowFlagEmoji, isSkinToneComboEmoji, isoToEmoji,
-} from '../lib/'
+} from '../../lib'
 
 describe('@/lib/isoToEmojiToISO.ts', () => {
     describe('isCountryIso', () => {

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { isHTML } from '../lib/'
+import { isHTML } from '../../lib/'
 
 describe('@/lib/isHTML.ts', () => {
     it('isHTML to be false with non-string input', () => {
