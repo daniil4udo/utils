@@ -5,10 +5,13 @@ import { basename, dirname } from 'node:path/posix'
 import { fileURLToPath } from 'node:url'
 
 import fg from 'fast-glob'
+import { createLogger } from 'vite'
+
+export const logger = createLogger()
 
 export async function patchCJS(files: string[]) {
     for (const file of files) {
-        console.log('[patchCJS]', basename(file))
+        logger.info(`[patchCJS] - ${basename(file)}`)
 
         let code = await fsp.readFile(file, 'utf8')
         code = code.replace('exports.default =', 'module.exports =')
