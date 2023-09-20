@@ -18,7 +18,7 @@ export function urlTemplate(
  * @function
  * @name parseTemplate
  * @param {string} template - The URL template string to parse.
- * @returns {Object} Returns an object with an `expand` method that can be used
+ * @returns {object} Returns an object with an `expand` method that can be used
  *      to replace expressions in the template with actual values.
  *
  * @example

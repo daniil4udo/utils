@@ -79,10 +79,10 @@ export function memoizeDeep<Fn extends AnyFn>(
  *
  * // Call it with different arguments (this will compute the result and update the cache)
  * memoizedExpensiveFunction('different', 'arguments');
-*
-* // Call it again with the same arguments (this will compute it again)
-* memoizedExpensiveFunction('some', 'arguments');
-*
+ *
+ * // Call it again with the same arguments (this will compute it again)
+ * memoizedExpensiveFunction('some', 'arguments');
+ *
  * ```
  * @public
  */

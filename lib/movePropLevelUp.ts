@@ -1,6 +1,6 @@
 import toFastProperties from 'to-fast-properties'
 
-import { deepClone } from './deepClone'
+import { deepClone } from './external/deepClone'
 import { has } from './has'
 import { isPlainObject } from './is'
 

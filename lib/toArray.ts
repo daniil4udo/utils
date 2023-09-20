@@ -1,4 +1,4 @@
-import { deepClone } from './deepClone'
+import { deepClone } from './external/deepClone'
 import { isIterable } from './isIterable'
 
 /**
