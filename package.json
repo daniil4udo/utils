@@ -42,7 +42,7 @@
         "prepare": "npx simple-git-hooks",
         "build": "./scripts/build.sh",
         "prepublishOnly": "pnpm build",
-        "release": "bumpp --commit --tag --no-push && pnpm publish --access public",
+        "release": "bumpp --commit 'release: 🔖 v' --tag --no-push && pnpm publish --access public",
         "dev": "concurrently --prefix-colors yellow,blue \"pnpm:test\" \"pnpm:typecheck\"",
         "lint": "pnpm lint:eslint . ",
         "lint:eslint": "eslint --color --fix --ignore-path .gitignore",
