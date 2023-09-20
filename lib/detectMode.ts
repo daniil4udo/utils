@@ -2,7 +2,7 @@ type NODE_ENV = 'development' | 'production' | 'test'
 
 /**
  * Detects the current mode of the environment.
-*
+ *
  * It first tries to retrieve the mode from the `import.meta.env` object.
  * If that fails (i.e., the object is `undefined`), it retrieves the mode from the `process.env` object.
  *
@@ -20,7 +20,9 @@ type NODE_ENV = 'development' | 'production' | 'test'
  */
 export function detectMode() {
     try {
-        return (import.meta.env.MODE ?? process.env.NODE_ENV ?? null) as NODE_ENV | null
+        return (typeof import.meta.env.MODE !== 'undefined'
+            ? import.meta.env.MODE
+            : process.env.NODE_ENV ?? null) as NODE_ENV | null
     }
     catch {
         return (process.env.NODE_ENV ?? null) as NODE_ENV | null
