@@ -37,7 +37,7 @@ import { isPlainObject } from './is'
  * ```
  * @public
  */
-export function movePropLevelUp<T extends Record<PropertyKey, unknown>, K extends keyof T>(
+export function movePropLevelUp<T extends Record<PropertyKey, any>, K extends keyof T>(
     parentObject: T,
     propertyName: K,
 ) {

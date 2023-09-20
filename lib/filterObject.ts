@@ -9,7 +9,7 @@
  * @param {TargetObject<T>} object - The object filterObject was called upon.
  * @return {boolean} True if the current element should be included in the filtered object; otherwise, false.
  */
-export type PredicateFunction<T extends Record<PropertyKey, unknown>> = (
+export type PredicateFunction<T extends Record<PropertyKey, any>> = (
     key: keyof T,
     value: T[keyof T],
     index: number,
@@ -56,7 +56,7 @@ export type PredicateFunction<T extends Record<PropertyKey, unknown>> = (
  * ```
  * @public
  */
-export function filterObject<T extends Record<PropertyKey, unknown>>(
+export function filterObject<T extends Record<PropertyKey, any>>(
     object: T,
     predicate: PredicateFunction<T>,
 ): T {

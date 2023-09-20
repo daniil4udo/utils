@@ -27,7 +27,7 @@ export function isProperNaN<T>(input: T): input is Exclude<T, number> {
     return Number.isNaN(input) || !isNumber(input)
 }
 
-export function isPlainObject(input: unknown): input is Record<PropertyKey, unknown> {
+export function isPlainObject<T extends Record<PropertyKey, any>>(input: unknown): input is T {
     if (input == null || toType(input) !== 'object')
         return false
 
