@@ -21,7 +21,7 @@
 
 #### Defined in
 
-node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-join/index.d.ts:44
+node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-join/index.d.ts:44
 
 ### urlJoin
 
@@ -41,7 +41,7 @@ node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-j
 
 #### Defined in
 
-node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-join/index.d.ts:45
+node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-join/index.d.ts:45
 
 ### urlJoin
 
@@ -62,7 +62,7 @@ node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-j
 
 #### Defined in
 
-node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-join/index.d.ts:46
+node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-join/index.d.ts:46
 
 ### urlJoin
 
@@ -84,7 +84,7 @@ node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-j
 
 #### Defined in
 
-node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-join/index.d.ts:47
+node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-join/index.d.ts:47
 
 ### urlJoin
 
@@ -107,7 +107,7 @@ node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-j
 
 #### Defined in
 
-node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-join/index.d.ts:48
+node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-join/index.d.ts:48
 
 ### urlJoin
 
@@ -131,7 +131,7 @@ node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-j
 
 #### Defined in
 
-node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-join/index.d.ts:49
+node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-join/index.d.ts:49
 
 ### urlJoin
 
@@ -156,7 +156,7 @@ node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-j
 
 #### Defined in
 
-node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-join/index.d.ts:50
+node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-join/index.d.ts:50
 
 ### urlJoin
 
@@ -182,7 +182,7 @@ node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-j
 
 #### Defined in
 
-node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-join/index.d.ts:51
+node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-join/index.d.ts:60
 
 ### urlJoin
 
@@ -209,7 +209,7 @@ node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-j
 
 #### Defined in
 
-node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-join/index.d.ts:52
+node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-join/index.d.ts:71
 
 ### urlJoin
 
@@ -237,7 +237,7 @@ node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-j
 
 #### Defined in
 
-node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-join/index.d.ts:53
+node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-join/index.d.ts:83
 
 ### urlJoin
 
@@ -266,4 +266,4 @@ node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-j
 
 #### Defined in
 
-node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-join/index.d.ts:54
+node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-join/index.d.ts:96

@@ -165,7 +165,7 @@ Use AllTypesName instead.
 
 #### Defined in
 
-[types/primitive.ts:174](https://github.com/daniil4udo/utils/blob/41730b8/types/primitive.ts#L174)
+[types/primitive.ts:174](https://github.com/daniil4udo/utils/blob/347183d/types/primitive.ts#L174)
 
 ___
 
@@ -178,7 +178,7 @@ and non-primitive names.
 
 #### Defined in
 
-[types/primitive.ts:186](https://github.com/daniil4udo/utils/blob/41730b8/types/primitive.ts#L186)
+[types/primitive.ts:186](https://github.com/daniil4udo/utils/blob/347183d/types/primitive.ts#L186)
 
 ___
 
@@ -188,7 +188,7 @@ ___
 
 #### Defined in
 
-[types/primitive.ts:187](https://github.com/daniil4udo/utils/blob/41730b8/types/primitive.ts#L187)
+[types/primitive.ts:187](https://github.com/daniil4udo/utils/blob/347183d/types/primitive.ts#L187)
 
 ___
 
@@ -198,7 +198,7 @@ ___
 
 #### Defined in
 
-[types/primitive.ts:180](https://github.com/daniil4udo/utils/blob/41730b8/types/primitive.ts#L180)
+[types/primitive.ts:180](https://github.com/daniil4udo/utils/blob/347183d/types/primitive.ts#L180)
 
 ___
 
@@ -210,7 +210,7 @@ Type alias representing all types in JavaScript, including primitive, primitive-
 
 #### Defined in
 
-[types/primitive.ts:179](https://github.com/daniil4udo/utils/blob/41730b8/types/primitive.ts#L179)
+[types/primitive.ts:179](https://github.com/daniil4udo/utils/blob/347183d/types/primitive.ts#L179)
 
 ___
 
@@ -228,7 +228,7 @@ Type alias to get the length of an array.
 
 #### Defined in
 
-[types/utils.ts:10](https://github.com/daniil4udo/utils/blob/41730b8/types/utils.ts#L10)
+[types/utils.ts:10](https://github.com/daniil4udo/utils/blob/347183d/types/utils.ts#L10)
 
 ___
 
@@ -249,7 +249,7 @@ as Date and RegExp.
 
 #### Defined in
 
-[types/primitive.ts:7](https://github.com/daniil4udo/utils/blob/41730b8/types/primitive.ts#L7)
+[types/primitive.ts:7](https://github.com/daniil4udo/utils/blob/347183d/types/primitive.ts#L7)
 
 ___
 
@@ -262,7 +262,7 @@ types like Array, ArrayBuffer, various Typed Arrays, and others.
 
 #### Defined in
 
-[types/primitive.ts:144](https://github.com/daniil4udo/utils/blob/41730b8/types/primitive.ts#L144)
+[types/primitive.ts:144](https://github.com/daniil4udo/utils/blob/347183d/types/primitive.ts#L144)
 
 ___
 
@@ -275,7 +275,7 @@ a JSON-like structure, specifically Object and Array.
 
 #### Defined in
 
-[types/primitive.ts:150](https://github.com/daniil4udo/utils/blob/41730b8/types/primitive.ts#L150)
+[types/primitive.ts:150](https://github.com/daniil4udo/utils/blob/347183d/types/primitive.ts#L150)
 
 ___
 
@@ -288,7 +288,7 @@ JSON, excluding BigInt, Symbol, and Undefined.
 
 #### Defined in
 
-[types/primitive.ts:51](https://github.com/daniil4udo/utils/blob/41730b8/types/primitive.ts#L51)
+[types/primitive.ts:51](https://github.com/daniil4udo/utils/blob/347183d/types/primitive.ts#L51)
 
 ___
 
@@ -300,7 +300,7 @@ Represents the internal string representation of JavaScript primitive-like types
 
 #### Defined in
 
-[types/primitive.ts:92](https://github.com/daniil4udo/utils/blob/41730b8/types/primitive.ts#L92)
+[types/primitive.ts:92](https://github.com/daniil4udo/utils/blob/347183d/types/primitive.ts#L92)
 
 ___
 
@@ -313,7 +313,7 @@ returned by `Object.prototype.toString`.
 
 #### Defined in
 
-[types/primitive.ts:45](https://github.com/daniil4udo/utils/blob/41730b8/types/primitive.ts#L45)
+[types/primitive.ts:45](https://github.com/daniil4udo/utils/blob/347183d/types/primitive.ts#L45)
 
 ___
 
@@ -329,7 +329,7 @@ Use NonPrimitiveName instead.
 
 #### Defined in
 
-[types/primitive.ts:162](https://github.com/daniil4udo/utils/blob/41730b8/types/primitive.ts#L162)
+[types/primitive.ts:162](https://github.com/daniil4udo/utils/blob/347183d/types/primitive.ts#L162)
 
 ___
 
@@ -342,7 +342,7 @@ types, typed arrays, and others.
 
 #### Defined in
 
-[types/primitive.ts:156](https://github.com/daniil4udo/utils/blob/41730b8/types/primitive.ts#L156)
+[types/primitive.ts:156](https://github.com/daniil4udo/utils/blob/347183d/types/primitive.ts#L156)
 
 ___
 
@@ -355,7 +355,7 @@ specifically 'object' and 'array'.
 
 #### Defined in
 
-[types/primitive.ts:168](https://github.com/daniil4udo/utils/blob/41730b8/types/primitive.ts#L168)
+[types/primitive.ts:168](https://github.com/daniil4udo/utils/blob/347183d/types/primitive.ts#L168)
 
 ___
 
@@ -371,7 +371,7 @@ ___
 
 #### Defined in
 
-[types/utils.ts:2](https://github.com/daniil4udo/utils/blob/41730b8/types/utils.ts#L2)
+[types/utils.ts:2](https://github.com/daniil4udo/utils/blob/347183d/types/utils.ts#L2)
 
 ___
 
@@ -381,7 +381,7 @@ ___
 
 #### Defined in
 
-[types/utils.ts:1](https://github.com/daniil4udo/utils/blob/41730b8/types/utils.ts#L1)
+[types/utils.ts:1](https://github.com/daniil4udo/utils/blob/347183d/types/utils.ts#L1)
 
 ___
 
@@ -393,7 +393,7 @@ Represents the actual JavaScript primitive types that can be represented in JSON
 
 #### Defined in
 
-[types/primitive.ts:81](https://github.com/daniil4udo/utils/blob/41730b8/types/primitive.ts#L81)
+[types/primitive.ts:81](https://github.com/daniil4udo/utils/blob/347183d/types/primitive.ts#L81)
 
 ___
 
@@ -403,7 +403,7 @@ ___
 
 #### Defined in
 
-[types/primitive.ts:83](https://github.com/daniil4udo/utils/blob/41730b8/types/primitive.ts#L83)
+[types/primitive.ts:83](https://github.com/daniil4udo/utils/blob/347183d/types/primitive.ts#L83)
 
 ___
 
@@ -440,7 +440,7 @@ True if the current element should be included in the filtered object; otherwise
 
 #### Defined in
 
-[lib/filterObject.ts:12](https://github.com/daniil4udo/utils/blob/41730b8/lib/filterObject.ts#L12)
+[lib/filterObject.ts:12](https://github.com/daniil4udo/utils/blob/347183d/lib/filterObject.ts#L12)
 
 ___
 
@@ -456,7 +456,7 @@ Use PrimitiveName instead.
 
 #### Defined in
 
-[types/primitive.ts:66](https://github.com/daniil4udo/utils/blob/41730b8/types/primitive.ts#L66)
+[types/primitive.ts:66](https://github.com/daniil4udo/utils/blob/347183d/types/primitive.ts#L66)
 
 ___
 
@@ -472,7 +472,7 @@ Use PrimitiveLikeName instead.
 
 #### Defined in
 
-[types/primitive.ts:103](https://github.com/daniil4udo/utils/blob/41730b8/types/primitive.ts#L103)
+[types/primitive.ts:103](https://github.com/daniil4udo/utils/blob/347183d/types/primitive.ts#L103)
 
 ___
 
@@ -484,7 +484,7 @@ Represents the names of JavaScript primitive-like types, such as Date and RegExp
 
 #### Defined in
 
-[types/primitive.ts:97](https://github.com/daniil4udo/utils/blob/41730b8/types/primitive.ts#L97)
+[types/primitive.ts:97](https://github.com/daniil4udo/utils/blob/347183d/types/primitive.ts#L97)
 
 ___
 
@@ -496,7 +496,7 @@ Represents the actual JavaScript primitive-like types.
 
 #### Defined in
 
-[types/primitive.ts:108](https://github.com/daniil4udo/utils/blob/41730b8/types/primitive.ts#L108)
+[types/primitive.ts:108](https://github.com/daniil4udo/utils/blob/347183d/types/primitive.ts#L108)
 
 ___
 
@@ -508,7 +508,7 @@ Represents the names of JavaScript primitive types as string literals.
 
 #### Defined in
 
-[types/primitive.ts:60](https://github.com/daniil4udo/utils/blob/41730b8/types/primitive.ts#L60)
+[types/primitive.ts:60](https://github.com/daniil4udo/utils/blob/347183d/types/primitive.ts#L60)
 
 ___
 
@@ -520,7 +520,7 @@ Represents the names of JavaScript primitive types as string literals that can b
 
 #### Defined in
 
-[types/primitive.ts:71](https://github.com/daniil4udo/utils/blob/41730b8/types/primitive.ts#L71)
+[types/primitive.ts:71](https://github.com/daniil4udo/utils/blob/347183d/types/primitive.ts#L71)
 
 ___
 
@@ -532,7 +532,7 @@ Represents the actual JavaScript primitive types.
 
 #### Defined in
 
-[types/primitive.ts:76](https://github.com/daniil4udo/utils/blob/41730b8/types/primitive.ts#L76)
+[types/primitive.ts:76](https://github.com/daniil4udo/utils/blob/347183d/types/primitive.ts#L76)
 
 ___
 
@@ -542,7 +542,7 @@ ___
 
 #### Defined in
 
-[lib/emoji/emojiSupportMap.ts:69](https://github.com/daniil4udo/utils/blob/41730b8/lib/emoji/emojiSupportMap.ts#L69)
+[lib/emoji/emojiSupportMap.ts:69](https://github.com/daniil4udo/utils/blob/347183d/lib/emoji/emojiSupportMap.ts#L69)
 
 ___
 
@@ -552,7 +552,7 @@ ___
 
 #### Defined in
 
-[lib/emoji/emojiSupportMap.ts:68](https://github.com/daniil4udo/utils/blob/41730b8/lib/emoji/emojiSupportMap.ts#L68)
+[lib/emoji/emojiSupportMap.ts:68](https://github.com/daniil4udo/utils/blob/347183d/lib/emoji/emojiSupportMap.ts#L68)
 
 ___
 
@@ -562,7 +562,7 @@ ___
 
 #### Defined in
 
-[lib/external/urlTemplate.ts:3](https://github.com/daniil4udo/utils/blob/41730b8/lib/external/urlTemplate.ts#L3)
+[lib/external/urlTemplate.ts:3](https://github.com/daniil4udo/utils/blob/347183d/lib/external/urlTemplate.ts#L3)
 
 ## Variables
 
@@ -589,7 +589,7 @@ ___
 
 #### Defined in
 
-[lib/dom/toggleKeyboardFocus.ts:19](https://github.com/daniil4udo/utils/blob/41730b8/lib/dom/toggleKeyboardFocus.ts#L19)
+[lib/dom/toggleKeyboardFocus.ts:19](https://github.com/daniil4udo/utils/blob/347183d/lib/dom/toggleKeyboardFocus.ts#L19)
 
 ___
 
@@ -601,7 +601,7 @@ Map that defines the conversion from Python-style date format to JavaScript-styl
 
 #### Defined in
 
-[lib/convertPYDateFormatToJS.ts:7](https://github.com/daniil4udo/utils/blob/41730b8/lib/convertPYDateFormatToJS.ts#L7)
+[lib/convertPYDateFormatToJS.ts:7](https://github.com/daniil4udo/utils/blob/347183d/lib/convertPYDateFormatToJS.ts#L7)
 
 ___
 
@@ -613,7 +613,55 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `@democrance/utils` | readonly [``"dmcUtilsAutoImportPreset"``, ``"arrayBufferToString"``, ``"stringToArrayBuffer"``, ``"capitalize"``, ``"toUpper"``, ``"toLower"``, ``"PYTHON_TO_JAVASCRIPT_DATE_MAP"``, ``"convertPYDateFormatToJS"``, ``"debounce"``, ``"deepClone"``, ``"deepEqual"``, ``"circularDeepEqual"``, ``"circularShallowEqual"``, ``"createCustomEqual"``, ``"sameValueZeroEqual"``, ``"shallowEqual"``, ``"strictCircularDeepEqual"``, ``"strictCircularShallowEqual"``, ``"strictDeepEqual"``, ``"strictShallowEqual"``, ``"defaultsDeep"``, ``"createDefaultsDeep"``, ``"defaultsDeepFn"``, ``"defaultsDeepArrayFn"``, ``"filterObject"``, ``"getCtor"``, ``"trimFileExtension"``, ``"getNameFromPath"``, ``"has"``, ``"isNil"``, ``"isDefined"``, ``"hasValue"``, ``"highlightMatch"``, ``"htmlTruncate"``, ``"isTuple"``, ``"isNumber"``, ``"isProperNaN"``, ``"isPlainObject"``, ``"isAbsoluteURL"``, ``"isEmptyArray"``, ``"isEmptyCollection"``, ``"isIterable"``, ``"isPrimitive"``, ``"isPrimitiveLike"``, ``"isPropertyKey"``, ``"isParsablePropertyKey"``, ``"isSubstringInString"``, ``"keyBy"``, ``"length"``, ``"memoizeDeep"``, ``"memoizeLast"``, ``"memoize"``, ``"movePropLevelUp"``, ``"parseLocaleNumber"``, ``"formatValue"``, ``"applyCurrencySign"``, ``"price"``, ``"safeJSONParse"``, ``"saveAs"``, ``"shuffle"``, ``"deCamelize"``, ``"slugify"``, ``"sortObjects"``, ``"splitByIndex"``, ``"setLocalStorageItem"``, ``"getLocalStorageItem"``, ``"removeLocalStorageItem"``, ``"clearLocalStorage"``, ``"setSessionStorageItem"``, ``"getSessionStorageItem"``, ``"removeSessionStorageItem"``, ``"clearSessionStorage"``, ``"strToRegexp"``, ``"toArray"``, ``"toType"``, ``"urlJoin"``, ``"urlTemplate"``, ``"parseURLTemplate"``, ``"zipcelx"``, ``"imageExists"``, ``"allImagesExist"``, ``"anyImagesExist"``, ``"isColor"``, ``"isHTML"``, ``"scrollTo"``, ``"POSSIBLE_FOCUSABLE_TAGS"``, ``"toggleKeyboardFocus"``, ``"isFlagEmoji"``, ``"isRainbowFlagEmoji"``, ``"isKeyCapEmoji"``, ``"isSkinToneComboEmoji"``, ``"isHorseRacingSkinToneComboEmoji"``, ``"isPersonZwjEmoji"``, ``"isEmojiUnicodeSupported"``, ``"checkFlagEmojiSupport"``, ``"checkSkinToneModifierSupport"``, ``"checkHorseRacingSkinToneComboEmojiSupport"``, ``"checkPersonEmojiSupport"``, ``"generateUnicodeSupportMap"``, ``"getUnicodeSupportMap"``, ``"isCountryIso"``, ``"isoToEmoji"``, ``"emojiToIso"``] |
+| `@democrance/utils/arrayBuffer` | readonly [``"arrayBufferToString"``, ``"stringToArrayBuffer"``] |
+| `@democrance/utils/changeCase` | readonly [``"capitalize"``, ``"toUpper"``, ``"toLower"``] |
+| `@democrance/utils/convertPYDateFormatToJS` | readonly [``"PYTHON_TO_JAVASCRIPT_DATE_MAP"``, ``"convertPYDateFormatToJS"``] |
+| `@democrance/utils/dom/imageExists` | readonly [``"imageExists"``, ``"allImagesExist"``, ``"anyImagesExist"``] |
+| `@democrance/utils/dom/isColor` | readonly [``"isColor"``] |
+| `@democrance/utils/dom/isHTML` | readonly [``"isHTML"``] |
+| `@democrance/utils/dom/queryElement` | readonly [``"queryElement"``] |
+| `@democrance/utils/dom/scrollTo` | readonly [``"scrollTo"``] |
+| `@democrance/utils/dom/toggleKeyboardFocus` | readonly [``"POSSIBLE_FOCUSABLE_TAGS"``, ``"toggleKeyboardFocus"``] |
+| `@democrance/utils/emoji/emojiSupport` | readonly [``"isFlagEmoji"``, ``"isRainbowFlagEmoji"``, ``"isKeyCapEmoji"``, ``"isSkinToneComboEmoji"``, ``"isHorseRacingSkinToneComboEmoji"``, ``"isPersonZwjEmoji"``, ``"isEmojiUnicodeSupported"``, ``"checkFlagEmojiSupport"``, ``"checkSkinToneModifierSupport"``, ``"checkHorseRacingSkinToneComboEmojiSupport"``, ``"checkPersonEmojiSupport"``, ``"default"``] |
+| `@democrance/utils/emoji/emojiSupportMap` | readonly [``"generateUnicodeSupportMap"``, ``"getUnicodeSupportMap"``] |
+| `@democrance/utils/emoji/isoToEmojiToISO` | readonly [``"isCountryIso"``, ``"isoToEmoji"``, ``"emojiToIso"``] |
+| `@democrance/utils/external/debounce` | readonly [``"debounce"``] |
+| `@democrance/utils/external/deepClone` | readonly [``"deepClone"``] |
+| `@democrance/utils/external/deepEqual` | readonly [``"deepEqual"``, ``"circularDeepEqual"``, ``"circularShallowEqual"``, ``"createCustomEqual"``, ``"sameValueZeroEqual"``, ``"shallowEqual"``, ``"strictCircularDeepEqual"``, ``"strictCircularShallowEqual"``, ``"strictDeepEqual"``, ``"strictShallowEqual"``] |
+| `@democrance/utils/external/defaultsDeep` | readonly [``"defaultsDeep"``, ``"createDefaultsDeep"``, ``"defaultsDeepFn"``, ``"defaultsDeepArrayFn"``] |
+| `@democrance/utils/external/memoize` | readonly [``"memoizeDeep"``, ``"memoizeLast"``, ``"memoize"``] |
+| `@democrance/utils/external/saveAs` | readonly [``"saveAs"``] |
+| `@democrance/utils/external/urlJoin` | readonly [``"urlJoin"``] |
+| `@democrance/utils/external/urlTemplate` | readonly [``"urlTemplate"``, ``"parseURLTemplate"``] |
+| `@democrance/utils/external/zipcelx` | readonly [``"zipcelx"``] |
+| `@democrance/utils/filterObject` | readonly [``"filterObject"``] |
+| `@democrance/utils/getCtor` | readonly [``"getCtor"``] |
+| `@democrance/utils/getNameFromPath` | readonly [``"trimFileExtension"``, ``"getNameFromPath"``] |
+| `@democrance/utils/has` | readonly [``"has"``] |
+| `@democrance/utils/hasValue` | readonly [``"isNil"``, ``"isDefined"``, ``"hasValue"``] |
+| `@democrance/utils/highlightMatch` | readonly [``"highlightMatch"``] |
+| `@democrance/utils/htmlTruncate` | readonly [``"htmlTruncate"``] |
+| `@democrance/utils/is` | readonly [``"isTuple"``, ``"isNumber"``, ``"isProperNaN"``, ``"isPlainObject"``] |
+| `@democrance/utils/isAbsoluteURL` | readonly [``"isAbsoluteURL"``] |
+| `@democrance/utils/isEmptyArray` | readonly [``"isEmptyArray"``] |
+| `@democrance/utils/isEmptyCollection` | readonly [``"isEmptyCollection"``] |
+| `@democrance/utils/isIterable` | readonly [``"isIterable"``] |
+| `@democrance/utils/isPrimitive` | readonly [``"isPrimitive"``, ``"isPrimitiveLike"``] |
+| `@democrance/utils/isPropertyKey` | readonly [``"isPropertyKey"``, ``"isParsablePropertyKey"``] |
+| `@democrance/utils/isSubstringInString` | readonly [``"isSubstringInString"``] |
+| `@democrance/utils/keyBy` | readonly [``"keyBy"``] |
+| `@democrance/utils/length` | readonly [``"length"``] |
+| `@democrance/utils/movePropLevelUp` | readonly [``"movePropLevelUp"``] |
+| `@democrance/utils/price` | readonly [``"parseLocaleNumber"``, ``"formatValue"``, ``"applyCurrencySign"``, ``"price"``] |
+| `@democrance/utils/safeJSON` | readonly [``"safeJSONParse"``, ``"default"``] |
+| `@democrance/utils/shuffle` | readonly [``"shuffle"``] |
+| `@democrance/utils/slugify` | readonly [``"deCamelize"``, ``"slugify"``] |
+| `@democrance/utils/sortObjects` | readonly [``"sortObjects"``] |
+| `@democrance/utils/splitByIndex` | readonly [``"splitByIndex"``] |
+| `@democrance/utils/storageWrapper` | readonly [``"setLocalStorageItem"``, ``"getLocalStorageItem"``, ``"removeLocalStorageItem"``, ``"clearLocalStorage"``, ``"setSessionStorageItem"``, ``"getSessionStorageItem"``, ``"removeSessionStorageItem"``, ``"clearSessionStorage"``] |
+| `@democrance/utils/stringToRegexp` | readonly [``"strToRegexp"``] |
+| `@democrance/utils/toArray` | readonly [``"toArray"``] |
+| `@democrance/utils/toType` | readonly [``"toType"``] |
 
 #### Defined in
 
@@ -644,7 +692,7 @@ lib/preset/autoImportUtilsPreset.ts:2
 
 #### Defined in
 
-[lib/dom/imageExists.ts:62](https://github.com/daniil4udo/utils/blob/41730b8/lib/dom/imageExists.ts#L62)
+[lib/dom/imageExists.ts:62](https://github.com/daniil4udo/utils/blob/347183d/lib/dom/imageExists.ts#L62)
 
 ___
 
@@ -671,7 +719,7 @@ ___
 
 #### Defined in
 
-[lib/dom/imageExists.ts:69](https://github.com/daniil4udo/utils/blob/41730b8/lib/dom/imageExists.ts#L69)
+[lib/dom/imageExists.ts:69](https://github.com/daniil4udo/utils/blob/347183d/lib/dom/imageExists.ts#L69)
 
 ___
 
@@ -713,7 +761,7 @@ console.log(formattedPrice); // Outputs: "$1,234.56"
 
 #### Defined in
 
-[lib/price.ts:156](https://github.com/daniil4udo/utils/blob/41730b8/lib/price.ts#L156)
+[lib/price.ts:156](https://github.com/daniil4udo/utils/blob/347183d/lib/price.ts#L156)
 
 ___
 
@@ -757,7 +805,7 @@ console.log(arrayBufferToString(buffer)); // Outputs: A
 
 #### Defined in
 
-[lib/arrayBuffer.ts:26](https://github.com/daniil4udo/utils/blob/41730b8/lib/arrayBuffer.ts#L26)
+[lib/arrayBuffer.ts:26](https://github.com/daniil4udo/utils/blob/347183d/lib/arrayBuffer.ts#L26)
 
 ___
 
@@ -802,7 +850,7 @@ console.log(capitalize('')); // Outputs: ''
 
 #### Defined in
 
-[lib/changeCase.ts:24](https://github.com/daniil4udo/utils/blob/41730b8/lib/changeCase.ts#L24)
+[lib/changeCase.ts:24](https://github.com/daniil4udo/utils/blob/347183d/lib/changeCase.ts#L24)
 
 ___
 
@@ -827,7 +875,7 @@ True if the emoji Unicode is supported as a flag emoji, false otherwise.
 
 #### Defined in
 
-[lib/emoji/emojiSupport.ts:153](https://github.com/daniil4udo/utils/blob/41730b8/lib/emoji/emojiSupport.ts#L153)
+[lib/emoji/emojiSupport.ts:153](https://github.com/daniil4udo/utils/blob/347183d/lib/emoji/emojiSupport.ts#L153)
 
 ___
 
@@ -852,7 +900,7 @@ True if the emoji Unicode is supported as a horse racing skin tone combo emoji, 
 
 #### Defined in
 
-[lib/emoji/emojiSupport.ts:188](https://github.com/daniil4udo/utils/blob/41730b8/lib/emoji/emojiSupport.ts#L188)
+[lib/emoji/emojiSupport.ts:188](https://github.com/daniil4udo/utils/blob/347183d/lib/emoji/emojiSupport.ts#L188)
 
 ___
 
@@ -877,7 +925,7 @@ True if the emoji Unicode is supported as a person ZWJ emoji, false otherwise.
 
 #### Defined in
 
-[lib/emoji/emojiSupport.ts:204](https://github.com/daniil4udo/utils/blob/41730b8/lib/emoji/emojiSupport.ts#L204)
+[lib/emoji/emojiSupport.ts:204](https://github.com/daniil4udo/utils/blob/347183d/lib/emoji/emojiSupport.ts#L204)
 
 ___
 
@@ -902,7 +950,7 @@ True if the emoji Unicode is supported with a skin tone modifier, false otherwis
 
 #### Defined in
 
-[lib/emoji/emojiSupport.ts:172](https://github.com/daniil4udo/utils/blob/41730b8/lib/emoji/emojiSupport.ts#L172)
+[lib/emoji/emojiSupport.ts:172](https://github.com/daniil4udo/utils/blob/347183d/lib/emoji/emojiSupport.ts#L172)
 
 ___
 
@@ -980,7 +1028,7 @@ If an error occurs during the operation, an error message is logged to the conso
 
 #### Defined in
 
-[lib/storageWrapper.ts:103](https://github.com/daniil4udo/utils/blob/41730b8/lib/storageWrapper.ts#L103)
+[lib/storageWrapper.ts:103](https://github.com/daniil4udo/utils/blob/347183d/lib/storageWrapper.ts#L103)
 
 ___
 
@@ -998,7 +1046,7 @@ If an error occurs during the operation, an error message is logged to the conso
 
 #### Defined in
 
-[lib/storageWrapper.ts:103](https://github.com/daniil4udo/utils/blob/41730b8/lib/storageWrapper.ts#L103)
+[lib/storageWrapper.ts:103](https://github.com/daniil4udo/utils/blob/347183d/lib/storageWrapper.ts#L103)
 
 ___
 
@@ -1043,7 +1091,7 @@ console.log(convertPYDateFormatToJS('%m/%d/%y %I:%M %p')); // Outputs: 'MM/DD/YY
 
 #### Defined in
 
-[lib/convertPYDateFormatToJS.ts:57](https://github.com/daniil4udo/utils/blob/41730b8/lib/convertPYDateFormatToJS.ts#L57)
+[lib/convertPYDateFormatToJS.ts:57](https://github.com/daniil4udo/utils/blob/347183d/lib/convertPYDateFormatToJS.ts#L57)
 
 ___
 
@@ -1151,7 +1199,7 @@ deCamelize('helloWorld123'); // Returns 'hello World123'
 
 #### Defined in
 
-[lib/slugify.ts:12](https://github.com/daniil4udo/utils/blob/41730b8/lib/slugify.ts#L12)
+[lib/slugify.ts:12](https://github.com/daniil4udo/utils/blob/347183d/lib/slugify.ts#L12)
 
 ___
 
@@ -1268,7 +1316,7 @@ console.log(clonedArr === array); // Output: false (clonedArr is a deep clone of
 
 #### Defined in
 
-[lib/external/deepClone.ts:39](https://github.com/daniil4udo/utils/blob/41730b8/lib/external/deepClone.ts#L39)
+[lib/external/deepClone.ts:39](https://github.com/daniil4udo/utils/blob/347183d/lib/external/deepClone.ts#L39)
 
 ___
 
@@ -1414,7 +1462,7 @@ emojiToIso('👍'); // Outputs: null
 
 #### Defined in
 
-[lib/emoji/isoToEmojiToISO.ts:58](https://github.com/daniil4udo/utils/blob/41730b8/lib/emoji/isoToEmojiToISO.ts#L58)
+[lib/emoji/isoToEmojiToISO.ts:58](https://github.com/daniil4udo/utils/blob/347183d/lib/emoji/isoToEmojiToISO.ts#L58)
 
 ___
 
@@ -1471,7 +1519,7 @@ console.log(filteredObj2) // { a: 1 }
 
 #### Defined in
 
-[lib/filterObject.ts:59](https://github.com/daniil4udo/utils/blob/41730b8/lib/filterObject.ts#L59)
+[lib/filterObject.ts:59](https://github.com/daniil4udo/utils/blob/347183d/lib/filterObject.ts#L59)
 
 ___
 
@@ -1522,7 +1570,7 @@ formatValue(1234.5678, 2, 'de-DE'); // Outputs: "1.234,57"
 
 #### Defined in
 
-[lib/price.ts:108](https://github.com/daniil4udo/utils/blob/41730b8/lib/price.ts#L108)
+[lib/price.ts:108](https://github.com/daniil4udo/utils/blob/347183d/lib/price.ts#L108)
 
 ___
 
@@ -1542,7 +1590,7 @@ ___
 
 #### Defined in
 
-[lib/emoji/emojiSupportMap.ts:105](https://github.com/daniil4udo/utils/blob/41730b8/lib/emoji/emojiSupportMap.ts#L105)
+[lib/emoji/emojiSupportMap.ts:105](https://github.com/daniil4udo/utils/blob/347183d/lib/emoji/emojiSupportMap.ts#L105)
 
 ___
 
@@ -1599,7 +1647,7 @@ console.log(getCtor(myEsModule)); // { foo: "bar" }
 
 #### Defined in
 
-[lib/getCtor.ts:70](https://github.com/daniil4udo/utils/blob/41730b8/lib/getCtor.ts#L70)
+[lib/getCtor.ts:70](https://github.com/daniil4udo/utils/blob/347183d/lib/getCtor.ts#L70)
 
 ___
 
@@ -1628,7 +1676,7 @@ The retrieved value, if it exists and is successfully retrieved and deserialized
 
 #### Defined in
 
-[lib/storageWrapper.ts:64](https://github.com/daniil4udo/utils/blob/41730b8/lib/storageWrapper.ts#L64)
+[lib/storageWrapper.ts:64](https://github.com/daniil4udo/utils/blob/347183d/lib/storageWrapper.ts#L64)
 
 ___
 
@@ -1675,7 +1723,7 @@ console.log(getNameFromPath('/path/to/file.txt', { extension: false })); // Outp
 
 #### Defined in
 
-[lib/getNameFromPath.ts:56](https://github.com/daniil4udo/utils/blob/41730b8/lib/getNameFromPath.ts#L56)
+[lib/getNameFromPath.ts:56](https://github.com/daniil4udo/utils/blob/347183d/lib/getNameFromPath.ts#L56)
 
 ___
 
@@ -1704,7 +1752,7 @@ The retrieved value, if it exists and is successfully retrieved and deserialized
 
 #### Defined in
 
-[lib/storageWrapper.ts:64](https://github.com/daniil4udo/utils/blob/41730b8/lib/storageWrapper.ts#L64)
+[lib/storageWrapper.ts:64](https://github.com/daniil4udo/utils/blob/347183d/lib/storageWrapper.ts#L64)
 
 ___
 
@@ -1718,7 +1766,7 @@ ___
 
 #### Defined in
 
-[lib/emoji/emojiSupportMap.ts:172](https://github.com/daniil4udo/utils/blob/41730b8/lib/emoji/emojiSupportMap.ts#L172)
+[lib/emoji/emojiSupportMap.ts:172](https://github.com/daniil4udo/utils/blob/347183d/lib/emoji/emojiSupportMap.ts#L172)
 
 ___
 
@@ -1766,7 +1814,7 @@ if (has(obj, 'a')) {
 
 #### Defined in
 
-[lib/has.ts:25](https://github.com/daniil4udo/utils/blob/41730b8/lib/has.ts#L25)
+[lib/has.ts:25](https://github.com/daniil4udo/utils/blob/347183d/lib/has.ts#L25)
 
 ___
 
@@ -1815,7 +1863,7 @@ console.log(hasValue('Hello'));    // Outputs: true
 
 #### Defined in
 
-[lib/hasValue.ts:79](https://github.com/daniil4udo/utils/blob/41730b8/lib/hasValue.ts#L79)
+[lib/hasValue.ts:79](https://github.com/daniil4udo/utils/blob/347183d/lib/hasValue.ts#L79)
 
 ___
 
@@ -1879,7 +1927,7 @@ console.log(highlightMatch(str5, matches5, options5)); // Output: '<em>Hello</em
 
 #### Defined in
 
-[lib/highlightMatch.ts:137](https://github.com/daniil4udo/utils/blob/41730b8/lib/highlightMatch.ts#L137)
+[lib/highlightMatch.ts:137](https://github.com/daniil4udo/utils/blob/347183d/lib/highlightMatch.ts#L137)
 
 ___
 
@@ -1930,7 +1978,7 @@ console.log(htmlTruncate(html, 20)); // Output: '<p>This is an <strong>exa</stro
 
 #### Defined in
 
-[lib/htmlTruncate.ts:41](https://github.com/daniil4udo/utils/blob/41730b8/lib/htmlTruncate.ts#L41)
+[lib/htmlTruncate.ts:41](https://github.com/daniil4udo/utils/blob/347183d/lib/htmlTruncate.ts#L41)
 
 ___
 
@@ -1984,7 +2032,7 @@ try {
 
 #### Defined in
 
-[lib/dom/imageExists.ts:39](https://github.com/daniil4udo/utils/blob/41730b8/lib/dom/imageExists.ts#L39)
+[lib/dom/imageExists.ts:39](https://github.com/daniil4udo/utils/blob/347183d/lib/dom/imageExists.ts#L39)
 
 ___
 
@@ -2030,7 +2078,7 @@ console.log(isAbsoluteURL('mailto:test@example.com')); // Output: false
 
 #### Defined in
 
-[lib/isAbsoluteURL.ts:28](https://github.com/daniil4udo/utils/blob/41730b8/lib/isAbsoluteURL.ts#L28)
+[lib/isAbsoluteURL.ts:28](https://github.com/daniil4udo/utils/blob/347183d/lib/isAbsoluteURL.ts#L28)
 
 ___
 
@@ -2074,7 +2122,7 @@ console.log(isColor('invalid color')); // returns false
 
 #### Defined in
 
-[lib/dom/isColor.ts:30](https://github.com/daniil4udo/utils/blob/41730b8/lib/dom/isColor.ts#L30)
+[lib/dom/isColor.ts:30](https://github.com/daniil4udo/utils/blob/347183d/lib/dom/isColor.ts#L30)
 
 ___
 
@@ -2106,7 +2154,7 @@ isCountryIso('123'); // Outputs:  false
 
 #### Defined in
 
-[lib/emoji/isoToEmojiToISO.ts:17](https://github.com/daniil4udo/utils/blob/41730b8/lib/emoji/isoToEmojiToISO.ts#L17)
+[lib/emoji/isoToEmojiToISO.ts:17](https://github.com/daniil4udo/utils/blob/347183d/lib/emoji/isoToEmojiToISO.ts#L17)
 
 ___
 
@@ -2154,7 +2202,7 @@ console.log(isDefined(''));         // Outputs: true
 
 #### Defined in
 
-[lib/hasValue.ts:51](https://github.com/daniil4udo/utils/blob/41730b8/lib/hasValue.ts#L51)
+[lib/hasValue.ts:51](https://github.com/daniil4udo/utils/blob/347183d/lib/hasValue.ts#L51)
 
 ___
 
@@ -2180,7 +2228,7 @@ True if the emoji Unicode is supported, false otherwise.
 
 #### Defined in
 
-[lib/emoji/emojiSupport.ts:129](https://github.com/daniil4udo/utils/blob/41730b8/lib/emoji/emojiSupport.ts#L129)
+[lib/emoji/emojiSupport.ts:129](https://github.com/daniil4udo/utils/blob/347183d/lib/emoji/emojiSupport.ts#L129)
 
 ___
 
@@ -2228,7 +2276,7 @@ console.log(isEmptyArray([[], [[], [1]]])); // Returns false
 
 #### Defined in
 
-[lib/isEmptyArray.ts:52](https://github.com/daniil4udo/utils/blob/41730b8/lib/isEmptyArray.ts#L52)
+[lib/isEmptyArray.ts:52](https://github.com/daniil4udo/utils/blob/347183d/lib/isEmptyArray.ts#L52)
 
 ___
 
@@ -2248,7 +2296,7 @@ ___
 
 #### Defined in
 
-[lib/isEmptyCollection.ts:10](https://github.com/daniil4udo/utils/blob/41730b8/lib/isEmptyCollection.ts#L10)
+[lib/isEmptyCollection.ts:10](https://github.com/daniil4udo/utils/blob/347183d/lib/isEmptyCollection.ts#L10)
 
 ___
 
@@ -2273,7 +2321,7 @@ True if the string is a flag emoji, false otherwise.
 
 #### Defined in
 
-[lib/emoji/emojiSupport.ts:12](https://github.com/daniil4udo/utils/blob/41730b8/lib/emoji/emojiSupport.ts#L12)
+[lib/emoji/emojiSupport.ts:12](https://github.com/daniil4udo/utils/blob/347183d/lib/emoji/emojiSupport.ts#L12)
 
 ___
 
@@ -2315,7 +2363,7 @@ isHTML('Hello, World!'); // Outputs: false (plain text is not considered valid H
 
 #### Defined in
 
-[lib/dom/isHTML.ts:21](https://github.com/daniil4udo/utils/blob/41730b8/lib/dom/isHTML.ts#L21)
+[lib/dom/isHTML.ts:21](https://github.com/daniil4udo/utils/blob/347183d/lib/dom/isHTML.ts#L21)
 
 ___
 
@@ -2339,7 +2387,7 @@ True if the string is a horse racing skin tone combo emoji, false otherwise.
 
 #### Defined in
 
-[lib/emoji/emojiSupport.ts:88](https://github.com/daniil4udo/utils/blob/41730b8/lib/emoji/emojiSupport.ts#L88)
+[lib/emoji/emojiSupport.ts:88](https://github.com/daniil4udo/utils/blob/347183d/lib/emoji/emojiSupport.ts#L88)
 
 ___
 
@@ -2391,7 +2439,7 @@ isIterable(123); // Outputs: false
 
 #### Defined in
 
-[lib/isIterable.ts:25](https://github.com/daniil4udo/utils/blob/41730b8/lib/isIterable.ts#L25)
+[lib/isIterable.ts:25](https://github.com/daniil4udo/utils/blob/347183d/lib/isIterable.ts#L25)
 
 ___
 
@@ -2418,7 +2466,7 @@ True if the string is a keycap emoji, false otherwise.
 
 #### Defined in
 
-[lib/emoji/emojiSupport.ts:58](https://github.com/daniil4udo/utils/blob/41730b8/lib/emoji/emojiSupport.ts#L58)
+[lib/emoji/emojiSupport.ts:58](https://github.com/daniil4udo/utils/blob/347183d/lib/emoji/emojiSupport.ts#L58)
 
 ___
 
@@ -2460,7 +2508,7 @@ console.log(isNil(''));         // Outputs: false
 
 #### Defined in
 
-[lib/hasValue.ts:24](https://github.com/daniil4udo/utils/blob/41730b8/lib/hasValue.ts#L24)
+[lib/hasValue.ts:24](https://github.com/daniil4udo/utils/blob/347183d/lib/hasValue.ts#L24)
 
 ___
 
@@ -2480,7 +2528,7 @@ input is number
 
 #### Defined in
 
-[lib/is.ts:7](https://github.com/daniil4udo/utils/blob/41730b8/lib/is.ts#L7)
+[lib/is.ts:7](https://github.com/daniil4udo/utils/blob/347183d/lib/is.ts#L7)
 
 ___
 
@@ -2508,7 +2556,7 @@ A parsable property key is a value that can be easily converted to a valid JavaS
 
 #### Defined in
 
-[lib/isPropertyKey.ts:32](https://github.com/daniil4udo/utils/blob/41730b8/lib/isPropertyKey.ts#L32)
+[lib/isPropertyKey.ts:32](https://github.com/daniil4udo/utils/blob/347183d/lib/isPropertyKey.ts#L32)
 
 ___
 
@@ -2532,7 +2580,7 @@ True if the string is a person ZWJ emoji, false otherwise.
 
 #### Defined in
 
-[lib/emoji/emojiSupport.ts:102](https://github.com/daniil4udo/utils/blob/41730b8/lib/emoji/emojiSupport.ts#L102)
+[lib/emoji/emojiSupport.ts:102](https://github.com/daniil4udo/utils/blob/347183d/lib/emoji/emojiSupport.ts#L102)
 
 ___
 
@@ -2558,7 +2606,7 @@ input is T
 
 #### Defined in
 
-[lib/is.ts:30](https://github.com/daniil4udo/utils/blob/41730b8/lib/is.ts#L30)
+[lib/is.ts:30](https://github.com/daniil4udo/utils/blob/347183d/lib/is.ts#L30)
 
 ___
 
@@ -2603,7 +2651,7 @@ isPrimitive({}) // Outputs: false
 
 #### Defined in
 
-[lib/isPrimitive.ts:28](https://github.com/daniil4udo/utils/blob/41730b8/lib/isPrimitive.ts#L28)
+[lib/isPrimitive.ts:28](https://github.com/daniil4udo/utils/blob/347183d/lib/isPrimitive.ts#L28)
 
 ___
 
@@ -2642,7 +2690,7 @@ isPrimitiveLike({})
 
 #### Defined in
 
-[lib/isPrimitive.ts:53](https://github.com/daniil4udo/utils/blob/41730b8/lib/isPrimitive.ts#L53)
+[lib/isPrimitive.ts:53](https://github.com/daniil4udo/utils/blob/347183d/lib/isPrimitive.ts#L53)
 
 ___
 
@@ -2676,7 +2724,7 @@ This function utilizes the isNumber function to verify if the input can not be t
 
 #### Defined in
 
-[lib/is.ts:26](https://github.com/daniil4udo/utils/blob/41730b8/lib/is.ts#L26)
+[lib/is.ts:26](https://github.com/daniil4udo/utils/blob/347183d/lib/is.ts#L26)
 
 ___
 
@@ -2704,7 +2752,7 @@ A property key in JavaScript can be a `string`, `symbol`, or `number`. This func
 
 #### Defined in
 
-[lib/isPropertyKey.ts:16](https://github.com/daniil4udo/utils/blob/41730b8/lib/isPropertyKey.ts#L16)
+[lib/isPropertyKey.ts:16](https://github.com/daniil4udo/utils/blob/347183d/lib/isPropertyKey.ts#L16)
 
 ___
 
@@ -2729,7 +2777,7 @@ True if the string is a rainbow flag emoji, false otherwise.
 
 #### Defined in
 
-[lib/emoji/emojiSupport.ts:30](https://github.com/daniil4udo/utils/blob/41730b8/lib/emoji/emojiSupport.ts#L30)
+[lib/emoji/emojiSupport.ts:30](https://github.com/daniil4udo/utils/blob/347183d/lib/emoji/emojiSupport.ts#L30)
 
 ___
 
@@ -2753,7 +2801,7 @@ True if the string is a skin tone combo emoji, false otherwise.
 
 #### Defined in
 
-[lib/emoji/emojiSupport.ts:68](https://github.com/daniil4udo/utils/blob/41730b8/lib/emoji/emojiSupport.ts#L68)
+[lib/emoji/emojiSupport.ts:68](https://github.com/daniil4udo/utils/blob/347183d/lib/emoji/emojiSupport.ts#L68)
 
 ___
 
@@ -2800,7 +2848,7 @@ console.log(isSubstringInString('Hello world', 'goodbye')); // Outputs: false
 
 #### Defined in
 
-[lib/isSubstringInString.ts:25](https://github.com/daniil4udo/utils/blob/41730b8/lib/isSubstringInString.ts#L25)
+[lib/isSubstringInString.ts:25](https://github.com/daniil4udo/utils/blob/347183d/lib/isSubstringInString.ts#L25)
 
 ___
 
@@ -2827,7 +2875,7 @@ input is [T, V]
 
 #### Defined in
 
-[lib/is.ts:3](https://github.com/daniil4udo/utils/blob/41730b8/lib/is.ts#L3)
+[lib/is.ts:3](https://github.com/daniil4udo/utils/blob/347183d/lib/is.ts#L3)
 
 ___
 
@@ -2859,7 +2907,7 @@ isoToEmoji('123'); // Outputs:  null
 
 #### Defined in
 
-[lib/emoji/isoToEmojiToISO.ts:39](https://github.com/daniil4udo/utils/blob/41730b8/lib/emoji/isoToEmojiToISO.ts#L39)
+[lib/emoji/isoToEmojiToISO.ts:39](https://github.com/daniil4udo/utils/blob/347183d/lib/emoji/isoToEmojiToISO.ts#L39)
 
 ___
 
@@ -2911,7 +2959,7 @@ keyBy([{id: 1}, {id: 2}], obj => 'prefix' + obj.id) // Outputs: {prefix1: {id: 1
 
 #### Defined in
 
-[lib/keyBy.ts:39](https://github.com/daniil4udo/utils/blob/41730b8/lib/keyBy.ts#L39)
+[lib/keyBy.ts:39](https://github.com/daniil4udo/utils/blob/347183d/lib/keyBy.ts#L39)
 
 ___
 
@@ -2933,7 +2981,7 @@ ___
 
 #### Defined in
 
-[lib/length.ts:5](https://github.com/daniil4udo/utils/blob/41730b8/lib/length.ts#L5)
+[lib/length.ts:5](https://github.com/daniil4udo/utils/blob/347183d/lib/length.ts#L5)
 
 ___
 
@@ -2987,7 +3035,7 @@ ___
 
 #### Defined in
 
-[lib/external/memoize.ts:40](https://github.com/daniil4udo/utils/blob/41730b8/lib/external/memoize.ts#L40)
+[lib/external/memoize.ts:40](https://github.com/daniil4udo/utils/blob/347183d/lib/external/memoize.ts#L40)
 
 ___
 
@@ -3014,7 +3062,7 @@ ___
 
 #### Defined in
 
-[lib/external/memoize.ts:89](https://github.com/daniil4udo/utils/blob/41730b8/lib/external/memoize.ts#L89)
+[lib/external/memoize.ts:89](https://github.com/daniil4udo/utils/blob/347183d/lib/external/memoize.ts#L89)
 
 ___
 
@@ -3074,7 +3122,7 @@ const result = movePropLevelUp(obj, 'b'); // Outputs: { a: 1, c: 2, d: 3, e: 4 }
 
 #### Defined in
 
-[lib/movePropLevelUp.ts:40](https://github.com/daniil4udo/utils/blob/41730b8/lib/movePropLevelUp.ts#L40)
+[lib/movePropLevelUp.ts:40](https://github.com/daniil4udo/utils/blob/347183d/lib/movePropLevelUp.ts#L40)
 
 ___
 
@@ -3124,7 +3172,7 @@ parseLocaleNumber('1.000.000,1', 'de-DE');
 
 #### Defined in
 
-[lib/price.ts:63](https://github.com/daniil4udo/utils/blob/41730b8/lib/price.ts#L63)
+[lib/price.ts:63](https://github.com/daniil4udo/utils/blob/347183d/lib/price.ts#L63)
 
 ___
 
@@ -3187,7 +3235,7 @@ price(1234.5678, { currencySign: '€', priceFormat: '{currency} {amount}' }, 3)
 
 #### Defined in
 
-[lib/price.ts:187](https://github.com/daniil4udo/utils/blob/41730b8/lib/price.ts#L187)
+[lib/price.ts:187](https://github.com/daniil4udo/utils/blob/347183d/lib/price.ts#L187)
 
 ___
 
@@ -3228,7 +3276,7 @@ queryElement('div > .my-class');
 
 #### Defined in
 
-[lib/dom/queryElement.ts:29](https://github.com/daniil4udo/utils/blob/41730b8/lib/dom/queryElement.ts#L29)
+[lib/dom/queryElement.ts:29](https://github.com/daniil4udo/utils/blob/347183d/lib/dom/queryElement.ts#L29)
 
 ___
 
@@ -3252,7 +3300,7 @@ If an error occurs during the operation, an error message is logged to the conso
 
 #### Defined in
 
-[lib/storageWrapper.ts:89](https://github.com/daniil4udo/utils/blob/41730b8/lib/storageWrapper.ts#L89)
+[lib/storageWrapper.ts:89](https://github.com/daniil4udo/utils/blob/347183d/lib/storageWrapper.ts#L89)
 
 ___
 
@@ -3276,7 +3324,7 @@ If an error occurs during the operation, an error message is logged to the conso
 
 #### Defined in
 
-[lib/storageWrapper.ts:89](https://github.com/daniil4udo/utils/blob/41730b8/lib/storageWrapper.ts#L89)
+[lib/storageWrapper.ts:89](https://github.com/daniil4udo/utils/blob/347183d/lib/storageWrapper.ts#L89)
 
 ___
 
@@ -3328,7 +3376,7 @@ console.log(result); // Outputs: '{ "name": "John, "age": 30 }'
 
 #### Defined in
 
-[lib/safeJSON.ts:29](https://github.com/daniil4udo/utils/blob/41730b8/lib/safeJSON.ts#L29)
+[lib/safeJSON.ts:29](https://github.com/daniil4udo/utils/blob/347183d/lib/safeJSON.ts#L29)
 
 ___
 
@@ -3465,7 +3513,7 @@ scrollTo();
 
 #### Defined in
 
-[lib/dom/scrollTo.ts:42](https://github.com/daniil4udo/utils/blob/41730b8/lib/dom/scrollTo.ts#L42)
+[lib/dom/scrollTo.ts:42](https://github.com/daniil4udo/utils/blob/347183d/lib/dom/scrollTo.ts#L42)
 
 ___
 
@@ -3493,7 +3541,7 @@ If an error occurs during the operation, an error message is logged to the conso
 
 #### Defined in
 
-[lib/storageWrapper.ts:39](https://github.com/daniil4udo/utils/blob/41730b8/lib/storageWrapper.ts#L39)
+[lib/storageWrapper.ts:39](https://github.com/daniil4udo/utils/blob/347183d/lib/storageWrapper.ts#L39)
 
 ___
 
@@ -3521,7 +3569,7 @@ If an error occurs during the operation, an error message is logged to the conso
 
 #### Defined in
 
-[lib/storageWrapper.ts:39](https://github.com/daniil4udo/utils/blob/41730b8/lib/storageWrapper.ts#L39)
+[lib/storageWrapper.ts:39](https://github.com/daniil4udo/utils/blob/347183d/lib/storageWrapper.ts#L39)
 
 ___
 
@@ -3599,7 +3647,7 @@ shuffle(['a', 'b', 'c']); // Possible output: ['b', 'a', 'c']
 
 #### Defined in
 
-[lib/shuffle.ts:23](https://github.com/daniil4udo/utils/blob/41730b8/lib/shuffle.ts#L23)
+[lib/shuffle.ts:23](https://github.com/daniil4udo/utils/blob/347183d/lib/shuffle.ts#L23)
 
 ___
 
@@ -3642,7 +3690,7 @@ slugify('Déjà Vu'); // Returns 'deja-vu'
 
 #### Defined in
 
-[lib/slugify.ts:44](https://github.com/daniil4udo/utils/blob/41730b8/lib/slugify.ts#L44)
+[lib/slugify.ts:44](https://github.com/daniil4udo/utils/blob/347183d/lib/slugify.ts#L44)
 
 ___
 
@@ -3687,7 +3735,7 @@ sortObjects(array, 'name'); // Outputs: [{ name: 'Amy' }, { name: 'Mark' }, { na
 
 #### Defined in
 
-[lib/sortObjects.ts:33](https://github.com/daniil4udo/utils/blob/41730b8/lib/sortObjects.ts#L33)
+[lib/sortObjects.ts:33](https://github.com/daniil4udo/utils/blob/347183d/lib/sortObjects.ts#L33)
 
 ___
 
@@ -3734,7 +3782,7 @@ splitByIndex([1, 2, 3, 4, 5], 2); // Outputs: [[1, 2], [3, 4, 5]]
 
 #### Defined in
 
-[lib/splitByIndex.ts:24](https://github.com/daniil4udo/utils/blob/41730b8/lib/splitByIndex.ts#L24)
+[lib/splitByIndex.ts:24](https://github.com/daniil4udo/utils/blob/347183d/lib/splitByIndex.ts#L24)
 
 ___
 
@@ -3770,7 +3818,7 @@ strToRegexp('[abc]'); // Outputs: /\[abc\]/
 
 #### Defined in
 
-[lib/stringToRegexp.ts:36](https://github.com/daniil4udo/utils/blob/41730b8/lib/stringToRegexp.ts#L36)
+[lib/stringToRegexp.ts:36](https://github.com/daniil4udo/utils/blob/347183d/lib/stringToRegexp.ts#L36)
 
 ___
 
@@ -3936,7 +3984,7 @@ console.log(buffer.byteLength); // Outputs: 2
 
 #### Defined in
 
-[lib/arrayBuffer.ts:55](https://github.com/daniil4udo/utils/blob/41730b8/lib/arrayBuffer.ts#L55)
+[lib/arrayBuffer.ts:55](https://github.com/daniil4udo/utils/blob/347183d/lib/arrayBuffer.ts#L55)
 
 ___
 
@@ -3986,7 +4034,7 @@ toArray([1, [2, 3]], { deep: true }); //  Outputs: [1, [2, 3]]
 
 #### Defined in
 
-[lib/toArray.ts:41](https://github.com/daniil4udo/utils/blob/41730b8/lib/toArray.ts#L41)
+[lib/toArray.ts:41](https://github.com/daniil4udo/utils/blob/347183d/lib/toArray.ts#L41)
 
 ___
 
@@ -4029,7 +4077,7 @@ console.log(toLower('')); // Outputs: ''
 
 #### Defined in
 
-[lib/changeCase.ts:78](https://github.com/daniil4udo/utils/blob/41730b8/lib/changeCase.ts#L78)
+[lib/changeCase.ts:78](https://github.com/daniil4udo/utils/blob/347183d/lib/changeCase.ts#L78)
 
 ___
 
@@ -4071,7 +4119,7 @@ toType([]); // Outputs: 'array'
 
 #### Defined in
 
-[lib/toType.ts:25](https://github.com/daniil4udo/utils/blob/41730b8/lib/toType.ts#L25)
+[lib/toType.ts:25](https://github.com/daniil4udo/utils/blob/347183d/lib/toType.ts#L25)
 
 ___
 
@@ -4114,7 +4162,7 @@ console.log(toUpper('')); // Outputs: ''
 
 #### Defined in
 
-[lib/changeCase.ts:51](https://github.com/daniil4udo/utils/blob/41730b8/lib/changeCase.ts#L51)
+[lib/changeCase.ts:51](https://github.com/daniil4udo/utils/blob/347183d/lib/changeCase.ts#L51)
 
 ___
 
@@ -4169,7 +4217,7 @@ toggleKeyboardFocus(container, 0);
 
 #### Defined in
 
-[lib/dom/toggleKeyboardFocus.ts:57](https://github.com/daniil4udo/utils/blob/41730b8/lib/dom/toggleKeyboardFocus.ts#L57)
+[lib/dom/toggleKeyboardFocus.ts:57](https://github.com/daniil4udo/utils/blob/347183d/lib/dom/toggleKeyboardFocus.ts#L57)
 
 ___
 
@@ -4213,7 +4261,7 @@ console.log(trimFileExtension('/path/to/file.txt')); // Outputs: '/path/to/file'
 
 #### Defined in
 
-[lib/getNameFromPath.ts:23](https://github.com/daniil4udo/utils/blob/41730b8/lib/getNameFromPath.ts#L23)
+[lib/getNameFromPath.ts:23](https://github.com/daniil4udo/utils/blob/347183d/lib/getNameFromPath.ts#L23)
 
 ___
 
@@ -4234,7 +4282,7 @@ ___
 
 #### Defined in
 
-node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-join/index.d.ts:44
+node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-join/index.d.ts:44
 
 ▸ **urlJoin**(`p1`, `p2`, `options?`): `string`
 
@@ -4252,7 +4300,7 @@ node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-j
 
 #### Defined in
 
-node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-join/index.d.ts:45
+node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-join/index.d.ts:45
 
 ▸ **urlJoin**(`p1`, `p2`, `p3`, `options?`): `string`
 
@@ -4271,7 +4319,7 @@ node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-j
 
 #### Defined in
 
-node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-join/index.d.ts:46
+node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-join/index.d.ts:46
 
 ▸ **urlJoin**(`p1`, `p2`, `p3`, `p4`, `options?`): `string`
 
@@ -4291,7 +4339,7 @@ node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-j
 
 #### Defined in
 
-node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-join/index.d.ts:47
+node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-join/index.d.ts:47
 
 ▸ **urlJoin**(`p1`, `p2`, `p3`, `p4`, `p5`, `options?`): `string`
 
@@ -4312,7 +4360,7 @@ node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-j
 
 #### Defined in
 
-node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-join/index.d.ts:48
+node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-join/index.d.ts:48
 
 ▸ **urlJoin**(`p1`, `p2`, `p3`, `p4`, `p5`, `p6`, `options?`): `string`
 
@@ -4334,7 +4382,7 @@ node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-j
 
 #### Defined in
 
-node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-join/index.d.ts:49
+node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-join/index.d.ts:49
 
 ▸ **urlJoin**(`p1`, `p2`, `p3`, `p4`, `p5`, `p6`, `p7`, `options?`): `string`
 
@@ -4357,7 +4405,7 @@ node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-j
 
 #### Defined in
 
-node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-join/index.d.ts:50
+node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-join/index.d.ts:50
 
 ▸ **urlJoin**(`p1`, `p2`, `p3`, `p4`, `p5`, `p6`, `p7`, `p8`, `options?`): `string`
 
@@ -4381,7 +4429,7 @@ node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-j
 
 #### Defined in
 
-node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-join/index.d.ts:51
+node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-join/index.d.ts:60
 
 ▸ **urlJoin**(`p1`, `p2`, `p3`, `p4`, `p5`, `p6`, `p7`, `p8`, `p9`, `options?`): `string`
 
@@ -4406,7 +4454,7 @@ node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-j
 
 #### Defined in
 
-node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-join/index.d.ts:52
+node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-join/index.d.ts:71
 
 ▸ **urlJoin**(`p1`, `p2`, `p3`, `p4`, `p5`, `p6`, `p7`, `p8`, `p9`, `p10`, `options?`): `string`
 
@@ -4432,7 +4480,7 @@ node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-j
 
 #### Defined in
 
-node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-join/index.d.ts:53
+node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-join/index.d.ts:83
 
 ▸ **urlJoin**(`p1`, `p2`, `p3`, `p4`, `p5`, `p6`, `p7`, `p8`, `p9`, `p10`, `p11`, `...args`): `string`
 
@@ -4459,7 +4507,7 @@ node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-j
 
 #### Defined in
 
-node_modules/.pnpm/@types+proper-url-join@2.1.1/node_modules/@types/proper-url-join/index.d.ts:54
+node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-join/index.d.ts:96
 
 ___
 
@@ -4480,7 +4528,7 @@ ___
 
 #### Defined in
 
-[lib/external/urlTemplate.ts:5](https://github.com/daniil4udo/utils/blob/41730b8/lib/external/urlTemplate.ts#L5)
+[lib/external/urlTemplate.ts:5](https://github.com/daniil4udo/utils/blob/347183d/lib/external/urlTemplate.ts#L5)
 
 ___
 
