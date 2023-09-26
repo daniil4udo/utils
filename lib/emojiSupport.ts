@@ -211,7 +211,7 @@ export function checkPersonEmojiSupport(
 
 let browserUnicodeSupportMap: UnicodeResultSupportMap
 
-export default function isEmojiUnicodeSupportedByBrowser(
+export function isEmojiUnicodeSupportedByBrowser(
     emojiUnicode: string,
     unicodeVersion: keyof UnicodeResultSupportMap,
 ): boolean {
