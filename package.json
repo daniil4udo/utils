@@ -53,7 +53,7 @@
     "dependencies": {
         "defu": "^6.1.2",
         "fast-equals": "^5.0.1",
-        "file-saver-es": "^2.0.5",
+        "file-saver": "^2.0.5",
         "micro-memoize": "^4.1.2",
         "perfect-debounce": "^1.0.0",
         "proper-url-join": "^2.1.1",
@@ -64,8 +64,8 @@
     },
     "devDependencies": {
         "@democrance/eslint-config": "^0.11.1",
-        "@types/file-saver-es": "^2.0.1",
-        "@types/node": "^18.17.19",
+        "@types/file-saver": "^2.0.5",
+        "@types/node": "^18.18.0",
         "@types/proper-url-join": "^2.1.2",
         "@types/url-template": "^2.0.29",
         "@types/zipcelx": "^1.5.0",
@@ -89,7 +89,7 @@
     },
     "pnpm": {
         "overrides": {
-            "file-saver": "npm:file-saver-es@^2.0.5",
+            "file-saver": "npm:file-saver@^2.0.5",
             "vite": "^5.0.0-beta.2"
         }
     },

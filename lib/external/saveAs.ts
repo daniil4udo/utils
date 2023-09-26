@@ -1,8 +1,8 @@
 /**
- * file-saver-es is a library for saving files in JavaScript.
+ * file-saver is a library for saving files in JavaScript.
  * It provides a cross-platform solution for saving files from the browser to the local file system.
  *
- * @module file-saver-es
+ * @module file-saver
  * @see {@link https://github.com/eligrey/FileSaver.js}
  *
  * @function
@@ -18,6 +18,6 @@
  * ```
  * @public
  */
-import * as fileSaver from 'file-saver-es'
+import fileSaver from 'file-saver'
 
 export const { saveAs } = fileSaver

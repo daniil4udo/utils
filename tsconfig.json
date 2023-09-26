@@ -16,7 +16,7 @@
 
             "defu",
             "fast-equals",
-            "file-saver-es",
+            "file-saver",
             "micro-memoize",
             "perfect-debounce",
             "proper-url-join",
