@@ -71,6 +71,5 @@ export function getCtor<Module>(module: MaybeEsModule<Module>): Module | Partial
     if (isEsModule(module))
         return module.default
 
-
     return module
 }

@@ -29,7 +29,6 @@ type ObjectKeys<T> = IsAny<T> extends true
                 ? string[]
                 : never
 
-
 declare global {
     interface ObjectConstructor {
         keys<T>(o: T): ObjectKeys<T>

@@ -107,8 +107,6 @@ describe('@/lib/queryElement.ts', () => {
             expect(result?.[0].id).toBe('pid1')
         })
 
-
-
         it('should return null when querying by ID in non-Document context', () => {
             const divContext = globalThis.document.createElement('div')
             const result = queryElement('#id1', divContext)
@@ -185,5 +183,4 @@ describe('@/lib/queryElement.ts', () => {
             expect(result?.length).toBe(2)
         })
     })
-
 })

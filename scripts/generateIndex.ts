@@ -6,7 +6,6 @@ import { URL, fileURLToPath } from 'node:url'
 import fg from 'fast-glob'
 import { createLogger } from 'vite'
 
-import * as allModules from '../lib'
 import pckg from '../package.json'
 
 const pathToLib = fileURLToPath(new URL(`../lib/`, import.meta.url))
