@@ -1,4 +1,4 @@
-import { isProperNaN } from './is'
+import { isProperNaN } from './isProperNaN'
 import { toType } from './toType'
 
 /**

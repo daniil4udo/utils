@@ -1,8 +1,8 @@
 import toFastProperties from 'to-fast-properties'
 
-import { deepClone } from './external/deepClone'
+import { deepClone } from './deepClone'
 import { has } from './has'
-import { isPlainObject } from './is'
+import { isPlainObject } from './isPlainObject'
 
 /**
  * Moves a property level up in an object, while maintaining the original property order.

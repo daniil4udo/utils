@@ -18,3 +18,5 @@
  * @public
  */
 export { debounce } from 'perfect-debounce'
+
+export type { DebounceOptions } from 'perfect-debounce'

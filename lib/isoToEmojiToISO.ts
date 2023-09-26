@@ -1,7 +1,7 @@
 import type { Nullable } from 'types'
 
+import { toUpper } from './changeCase'
 import { isFlagEmoji } from './emojiSupport'
-import { toUpper } from '../changeCase'
 
 /**
  * Checks if a string is a valid country ISO code.

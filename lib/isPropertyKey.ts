@@ -1,6 +1,6 @@
 import type { ParsablePropertyKey } from 'types'
 
-import { isNumber } from './is'
+import { isNumber } from './isNumber'
 
 /**
  * Checks if the given input is a valid JavaScript property key.
