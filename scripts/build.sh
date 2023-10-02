@@ -20,6 +20,5 @@ else
         "vitest run" \
         "pnpm:typedoc" \
         "rimraf dist" \
-        "tsup" \
-        "vite-node scripts/postbuild.ts"
+        "tsup"
 fi

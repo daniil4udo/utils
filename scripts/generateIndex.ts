@@ -60,9 +60,9 @@ async function generateAutoImportPreset(files: string[]) {
 
     const importPreset = files.reduce((acc, module, i) => {
         const exportNames = Object.keys(esModules[i]).filter(m => {
-            if (m === 'default') {
+            if (m === 'default')
                 logger.warn(`🟡 [generateAutoImportPreset] - Default export found in ${module}`)
-            }
+
             return m !== 'default'
         })
         acc[`${pckg.name}/${trimExt(module)}`] = exportNames
