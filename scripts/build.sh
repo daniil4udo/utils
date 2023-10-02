@@ -15,7 +15,7 @@ if [[ $(git diff --stat) != '' ]]; then
     echo '🛑 You have uncommited changes'
 else
     concurrently $CONCURRENTLY_FLAGS \
-        "vite-node scripts/generateIndex.ts" \
+        "bun scripts/generateIndex.ts" \
         "eslint lib/preset/autoImportUtilsPreset.ts lib/index.ts --fix" \
         "vitest run" \
         "pnpm:typedoc" \

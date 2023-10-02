@@ -38,7 +38,7 @@ export default defineConfig({
         })
 
         for (const file of files) {
-            logger.info(`[patchCJS] - ${basename(file)}`)
+            logger.info(`PATCH_CJS ${basename(file)}`)
 
             let code = await fsp.readFile(file, 'utf8')
             code = code.replace('exports.default =', 'module.exports =')

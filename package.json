@@ -39,7 +39,7 @@
         "node": ">=16"
     },
     "scripts": {
-        "prepare": "npx simple-git-hooks",
+        "prepare": "pnpm exec simple-git-hooks",
         "build": "./scripts/build.sh",
         "prepublishOnly": "pnpm build",
         "release": "bumpp --commit 'release: 🔖 v' --tag --no-push && pnpm publish --access public",
