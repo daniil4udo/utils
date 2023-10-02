@@ -57,8 +57,15 @@ async function generateAutoImportPreset(files: string[]) {
     const esModules = await Promise.all(
         files.map(moduleImportPath => import(path.resolve(cwd, moduleImportPath))),
     )
+
     const importPreset = files.reduce((acc, module, i) => {
-        acc[`${pckg.name}/${trimExt(module)}`] = Object.keys(esModules[i])
+        const exportNames = Object.keys(esModules[i]).filter(m => {
+            if (m === 'default') {
+                logger.warn(`🟡 [generateAutoImportPreset] - Default export found in ${module}`)
+            }
+            return m !== 'default'
+        })
+        acc[`${pckg.name}/${trimExt(module)}`] = exportNames
         return acc
     }, {})
 
