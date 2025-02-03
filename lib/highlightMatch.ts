@@ -1,4 +1,4 @@
-import type { Nullable } from 'types'
+import type { Nullable } from './types';
 
 import { hasValue } from './hasValue';
 import { toType } from './toType';

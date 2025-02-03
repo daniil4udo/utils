@@ -1,4 +1,4 @@
-import type { Nullable } from 'types'
+import type { Nullable } from './types';
 
 import { toUpper } from './changeCase';
 import { isFlagEmoji } from './emojiSupport';

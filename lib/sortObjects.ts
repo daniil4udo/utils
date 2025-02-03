@@ -1,4 +1,4 @@
-import type { Nullable, ParsablePrimitiveType } from 'types'
+import type { Nullable, ParsablePrimitiveType } from './types';
 
 interface SortableItems {
     [key: string]: Nullable<ParsablePrimitiveType>

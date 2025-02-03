@@ -48,7 +48,7 @@ async function generateIndexFile(isRoot = false) {
     }
 
     // add Types to maintain flat structure
-    exports += '\nexport * from \'../types/\'\n'
+    exports += '\nexport * from \'./types/\'\n';
 
     await fsp.writeFile(`${pathToLib}/index.ts`, exports, 'utf-8');
 }

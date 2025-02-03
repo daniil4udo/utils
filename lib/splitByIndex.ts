@@ -1,4 +1,4 @@
-import type { Length } from 'types'
+import type { Length } from './types';
 
 /**
  * Splits an array at a specific index into two separate arrays.

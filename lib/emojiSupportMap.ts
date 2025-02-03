@@ -1,4 +1,4 @@
-import type { Nullable } from 'types'
+import type { Nullable } from './types';
 
 const GL_EMOJI_VERSION = '0.2.0';
 

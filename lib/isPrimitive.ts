@@ -1,4 +1,4 @@
-import type { PrimitiveLikeType, PrimitiveType } from 'types'
+import type { PrimitiveLikeType, PrimitiveType } from './types';
 
 import { toType } from './toType';
 

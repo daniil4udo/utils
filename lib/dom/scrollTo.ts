@@ -1,4 +1,4 @@
-import type { Nullable } from 'types'
+import type { Nullable } from '../types';
 
 /**
  * Scrolls the window to a specified element.

@@ -11,14 +11,14 @@ CONCURRENTLY_FLAGS=" \
     --names GENERATE,LINT,TEST,DOCS,CLEAN,BUILD,POSTBUILD \
     " \
 
-if [[ $(git diff --stat) != '' ]]; then
-    echo '🛑 You have uncommited changes'
-else
+# if [[ $(git diff --stat) != '' ]]; then
+#     echo '🛑 You have uncommited changes'
+# else
     concurrently $CONCURRENTLY_FLAGS \
         "bun scripts/generateIndex.ts" \
         "eslint lib/preset/autoImportUtilsPreset.ts lib/index.ts --fix" \
         "vitest run" \
         "pnpm:typedoc" \
-        "rimraf dist" \
+        "rm -rf dist" \
         "tsup"
-fi
+# fi

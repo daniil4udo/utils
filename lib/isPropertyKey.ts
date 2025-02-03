@@ -1,4 +1,4 @@
-import type { ParsablePropertyKey } from 'types'
+import type { ParsablePropertyKey } from './types';
 
 import { isNumber } from './isNumber';
 

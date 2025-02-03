@@ -1,4 +1,4 @@
-import type { AnyTypesName } from '../types'
+import type { AnyTypesName } from './types';
 
 const toString = ({}).toString;
 

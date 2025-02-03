@@ -1,4 +1,4 @@
-import type { Nullable } from 'types'
+import type { Nullable } from './types';
 
 /**
  * Checks whether the given object is not null and has the specified property.

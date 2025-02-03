@@ -1,4 +1,4 @@
-import { toType } from './toType'
+import { toType } from './toType';
 
 /**
  * Map that defines the conversion from Python-style date format to JavaScript-style date format.
