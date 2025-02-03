@@ -1,7 +1,7 @@
 {
     "name": "@democrance/utils",
     "type": "module",
-    "version": "0.20.1",
+    "version": "1.0.0",
     "packageManager": "pnpm@10.0.0",
     "description": "Set of popular utils",
     "author": "Daniil Chumachenko <daniil4udo@gmail.com>",
