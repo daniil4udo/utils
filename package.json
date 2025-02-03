@@ -51,6 +51,7 @@
         "typedoc": "typedoc --plugin typedoc-plugin-markdown ./lib/index.ts"
     },
     "dependencies": {
+        "@fastify/deepmerge": "^2.0.2",
         "change-case": "^5.4.4",
         "defu": "^6.1.4",
         "fast-equals": "^5.2.2",

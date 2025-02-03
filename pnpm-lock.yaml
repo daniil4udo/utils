@@ -11,6 +11,9 @@ importers:
 
   .:
     dependencies:
+      '@fastify/deepmerge':
+        specifier: ^2.0.2
+        version: 2.0.2
       change-case:
         specifier: ^5.4.4
         version: 5.4.4
@@ -21,7 +24,7 @@ importers:
         specifier: ^5.2.2
         version: 5.2.2
       file-saver:
-        specifier: ^2.0.5
+        specifier: npm:file-saver@^2.0.5
         version: 2.0.5
       micro-memoize:
         specifier: ^4.1.3
@@ -465,6 +468,9 @@ packages:
   '@eslint/plugin-kit@0.2.5':
     resolution: {integrity: sha512-lB05FkqEdUg2AA0xEbUz0SnkXT1LcCTa438W4IWTUh4hdOnVbQyOJ81OrDXsJk/LSiJHubgGEFoR5EHq1NsH1A==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@fastify/deepmerge@2.0.2':
+    resolution: {integrity: sha512-3wuLdX5iiiYeZWP6bQrjqhrcvBIf0NHbQH1Ur1WbHvoiuTYUEItgygea3zs8aHpiitn0lOB8gX20u1qO+FDm7Q==}
 
   '@gerrit0/mini-shiki@1.27.2':
     resolution: {integrity: sha512-GeWyHz8ao2gBiUW4OJnQDxXQnFgZQwwQk05t/CVVgNBN7/rK8XZ7xY6YhLVv9tH3VppWWmr9DCl3MwemB/i+Og==}
@@ -3907,6 +3913,8 @@ snapshots:
     dependencies:
       '@eslint/core': 0.10.0
       levn: 0.4.1
+
+  '@fastify/deepmerge@2.0.2': {}
 
   '@gerrit0/mini-shiki@1.27.2':
     dependencies:
