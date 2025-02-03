@@ -1,4 +1,4 @@
-import { toArray } from '../toArray'
+import { toArray } from '../toArray';
 
 /**
  * Queries for elements in the DOM based on a selector string.
@@ -28,36 +28,37 @@ import { toArray } from '../toArray'
  */
 export function queryElement(selector: string, context: Document | Element = document) {
     if (context == null)
-        throw new TypeError('[queryElement]: context must be a Document | Element')
+        throw new TypeError('[queryElement]: context must be a Document | Element');
 
     try {
         // Redirect simple selectors to the more performant function
+        // eslint-disable-next-line regexp/strict, regexp/no-unused-capturing-group
         if (/^(#?[\w-]+|\.[\w-.]+)$/.test(selector)) {
-            const classes = selector.slice(1).replace(/\./g, ' ')
+            const classes = selector.slice(1).replace(/\./g, ' ');
             switch (selector.charAt(0)) {
                 case '#':
                     // Handle ID-based selectors
                     // Check if the context is a Document because only Document has getElementById
                     if ('getElementById' in context) {
-                        const el = context.getElementById(selector.slice(1))
+                        const el = context.getElementById(selector.slice(1));
                         if (el != null)
-                            return toArray(el)
+                            return toArray(el);
                     }
-                    break
+                    break;
                 case '.':
                     // Handle class-based selectors
                     // Query by multiple classes by converting the selector
                     // string into single spaced class names
-                    return Array.from(context.getElementsByClassName(classes)).filter(Boolean)
+                    return Array.from(context.getElementsByClassName(classes)).filter(Boolean);
                 default:
                     // Handle tag-based selectors
-                    return Array.from(context.getElementsByTagName(selector)).filter(Boolean)
+                    return Array.from(context.getElementsByTagName(selector)).filter(Boolean);
             }
         }
 
-        return Array.from(context.querySelectorAll(selector)).filter(Boolean)
+        return Array.from(context.querySelectorAll(selector)).filter(Boolean);
     }
     catch {
-        return []
+        return [];
     }
 }

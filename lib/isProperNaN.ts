@@ -1,4 +1,4 @@
-import { isNumber } from './isNumber'
+import { isNumber } from './isNumber';
 
 /**
  * Determines if a given input can not be treated as a number.
@@ -10,5 +10,5 @@ import { isNumber } from './isNumber'
  * @returns True if the input can not be treated as a number, false otherwise.
  */
 export function isProperNaN<T>(input: T): input is Exclude<T, number> {
-    return Number.isNaN(input) || !isNumber(input)
+    return Number.isNaN(input) || !isNumber(input);
 }

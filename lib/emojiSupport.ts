@@ -1,6 +1,6 @@
-import type { UnicodeResultSupportMap } from './emojiSupportMap'
+import type { UnicodeResultSupportMap } from './emojiSupportMap';
 
-import { getUnicodeSupportMap } from './emojiSupportMap'
+import { getUnicodeSupportMap } from './emojiSupportMap';
 
 /**
  * Checks if a given string is a Unicode flag emoji.
@@ -10,14 +10,14 @@ import { getUnicodeSupportMap } from './emojiSupportMap'
  * @returns {boolean} True if the string is a flag emoji, false otherwise.
  */
 export function isFlagEmoji(emojiUnicode: string): boolean {
-    const flagACodePoint = 127462 // parseInt('1F1E6', 16)
-    const flagZCodePoint = 127487 // parseInt('1F1FF', 16)
-    const cp = emojiUnicode.codePointAt(0) ?? 0
+    const flagACodePoint = 127462; // parseInt('1F1E6', 16)
+    const flagZCodePoint = 127487; // parseInt('1F1FF', 16)
+    const cp = emojiUnicode.codePointAt(0) ?? 0;
 
     // Length 4 because flags are made of 2 characters which are surrogate pairs
     return emojiUnicode.length === 4
         && cp >= flagACodePoint
-        && cp <= flagZCodePoint
+        && cp <= flagZCodePoint;
 }
 
 /**
@@ -28,13 +28,13 @@ export function isFlagEmoji(emojiUnicode: string): boolean {
  * @returns {boolean} True if the string is a rainbow flag emoji, false otherwise.
  */
 export function isRainbowFlagEmoji(emojiUnicode: string): boolean {
-    const whiteFlagCodePoint = 127987 // parseInt('1F3F3', 16)
-    const rainbowCodePoint = 127752 // parseInt('1F308', 16)
-    const variationSelector16 = 65039 // parseInt('FE0F', 16)
-    const zeroWidthJoiner = 8205 // parseInt('200D', 16)
+    const whiteFlagCodePoint = 127987; // parseInt('1F3F3', 16)
+    const rainbowCodePoint = 127752; // parseInt('1F308', 16)
+    const variationSelector16 = 65039; // parseInt('FE0F', 16)
+    const zeroWidthJoiner = 8205; // parseInt('200D', 16)
 
     // Convert the emojiUnicode string to an array of code points
-    const codePoints = Array.from(emojiUnicode, c => c.codePointAt(0))
+    const codePoints = Array.from(emojiUnicode, c => c.codePointAt(0));
 
     // The Rainbow Flag emoji consists of 4 Unicode scalar values (code points)
     return (
@@ -43,7 +43,7 @@ export function isRainbowFlagEmoji(emojiUnicode: string): boolean {
         && codePoints[1] === variationSelector16
         && codePoints[2] === zeroWidthJoiner
         && codePoints[3] === rainbowCodePoint
-    )
+    );
 }
 
 /**
@@ -56,7 +56,7 @@ export function isRainbowFlagEmoji(emojiUnicode: string): boolean {
  * @returns {boolean} True if the string is a keycap emoji, false otherwise.
  */
 export function isKeyCapEmoji(emojiUnicode: string): boolean {
-    return emojiUnicode.length === 3 && emojiUnicode[2] === '\u20E3'
+    return emojiUnicode.length === 3 && emojiUnicode[2] === '\u20E3';
 }
 
 /**
@@ -66,17 +66,17 @@ export function isKeyCapEmoji(emojiUnicode: string): boolean {
  * @returns {boolean} True if the string is a skin tone combo emoji, false otherwise.
  */
 export function isSkinToneComboEmoji(emojiUnicode: string): boolean {
-    const tone1 = 127995 // parseInt('1F3FB', 16)
-    const tone5 = 127999 // parseInt('1F3FF', 16)
+    const tone1 = 127995; // parseInt('1F3FB', 16)
+    const tone5 = 127999; // parseInt('1F3FF', 16)
 
     if (emojiUnicode.length > 2) {
         return Array.from(emojiUnicode).some(char => {
-            const cp = char.codePointAt(0) ?? 0
-            return cp >= tone1 && cp <= tone5
-        })
+            const cp = char.codePointAt(0) ?? 0;
+            return cp >= tone1 && cp <= tone5;
+        });
     }
 
-    return false
+    return false;
 }
 
 /**
@@ -86,11 +86,11 @@ export function isSkinToneComboEmoji(emojiUnicode: string): boolean {
  * @returns {boolean} True if the string is a horse racing skin tone combo emoji, false otherwise.
  */
 export function isHorseRacingSkinToneComboEmoji(emojiUnicode: string): boolean {
-    const horseRacingCodePoint = 127943 // parseInt('1F3C7', 16)
-    const firstCharacter = Array.from(emojiUnicode)[0]
+    const horseRacingCodePoint = 127943; // parseInt('1F3C7', 16)
+    const firstCharacter = Array.from(emojiUnicode)[0];
 
     return firstCharacter?.codePointAt(0) === horseRacingCodePoint
-        && isSkinToneComboEmoji(emojiUnicode)
+        && isSkinToneComboEmoji(emojiUnicode);
 }
 
 /**
@@ -100,22 +100,22 @@ export function isHorseRacingSkinToneComboEmoji(emojiUnicode: string): boolean {
  * @returns {boolean} True if the string is a person ZWJ emoji, false otherwise.
  */
 export function isPersonZwjEmoji(emojiUnicode: string): boolean {
-    const zwj = 8205 // parseInt('200D', 16)
-    const personStartCodePoint = 128102 // parseInt('1F466', 16)
-    const personEndCodePoint = 128105 // parseInt('1F469', 16)
+    const zwj = 8205; // parseInt('200D', 16)
+    const personStartCodePoint = 128102; // parseInt('1F466', 16)
+    const personEndCodePoint = 128105; // parseInt('1F469', 16)
 
-    let hasPersonEmoji = false
-    let hasZwj = false
+    let hasPersonEmoji = false;
+    let hasZwj = false;
 
     Array.from(emojiUnicode).forEach(character => {
-        const cp = character.codePointAt(0) ?? 0
+        const cp = character.codePointAt(0) ?? 0;
         if (cp === zwj)
-            hasZwj = true
+            hasZwj = true;
         else if (cp >= personStartCodePoint && cp <= personEndCodePoint)
-            hasPersonEmoji = true
-    })
+            hasPersonEmoji = true;
+    });
 
-    return hasPersonEmoji && hasZwj
+    return hasPersonEmoji && hasZwj;
 }
 
 /**
@@ -133,14 +133,14 @@ export function isEmojiUnicodeSupported(
 ): boolean {
     const isOlderThanChrome57 = unicodeSupportMap.meta.isChrome
         && unicodeSupportMap.meta.chromeVersion
-        && unicodeSupportMap.meta.chromeVersion < 57
+        && unicodeSupportMap.meta.chromeVersion < 57;
 
     return unicodeSupportMap[unicodeVersion]
         && !(isOlderThanChrome57 && isKeyCapEmoji(emojiUnicode))
         && checkFlagEmojiSupport(unicodeSupportMap, emojiUnicode)
         && checkSkinToneModifierSupport(unicodeSupportMap, emojiUnicode)
         && checkHorseRacingSkinToneComboEmojiSupport(unicodeSupportMap, emojiUnicode)
-        && checkPersonEmojiSupport(unicodeSupportMap, emojiUnicode)
+        && checkPersonEmojiSupport(unicodeSupportMap, emojiUnicode);
 }
 
 /**
@@ -154,12 +154,12 @@ export function checkFlagEmojiSupport(
     unicodeSupportMap: UnicodeResultSupportMap,
     emojiUnicode: string,
 ): boolean {
-    const isFlagResult = isFlagEmoji(emojiUnicode)
-    const isRainbowFlagResult = isRainbowFlagEmoji(emojiUnicode)
+    const isFlagResult = isFlagEmoji(emojiUnicode);
+    const isRainbowFlagResult = isRainbowFlagEmoji(emojiUnicode);
 
     return (unicodeSupportMap.flag && isFlagResult)
         || (unicodeSupportMap.rainbowFlag && isRainbowFlagResult)
-        || (!isFlagResult && !isRainbowFlagResult)
+        || (!isFlagResult && !isRainbowFlagResult);
 }
 
 /**
@@ -173,9 +173,9 @@ export function checkSkinToneModifierSupport(
     unicodeSupportMap: UnicodeResultSupportMap,
     emojiUnicode: string,
 ): boolean {
-    const isSkinToneResult = isSkinToneComboEmoji(emojiUnicode)
+    const isSkinToneResult = isSkinToneComboEmoji(emojiUnicode);
     return (unicodeSupportMap.skinToneModifier && isSkinToneResult)
-        || !isSkinToneResult
+        || !isSkinToneResult;
 }
 
 /**
@@ -189,9 +189,9 @@ export function checkHorseRacingSkinToneComboEmojiSupport(
     unicodeSupportMap: UnicodeResultSupportMap,
     emojiUnicode: string,
 ): boolean {
-    const isHorseRacingSkinToneResult = isHorseRacingSkinToneComboEmoji(emojiUnicode)
+    const isHorseRacingSkinToneResult = isHorseRacingSkinToneComboEmoji(emojiUnicode);
     return (unicodeSupportMap.horseRacing && isHorseRacingSkinToneResult)
-        || !isHorseRacingSkinToneResult
+        || !isHorseRacingSkinToneResult;
 }
 
 /**
@@ -205,22 +205,22 @@ export function checkPersonEmojiSupport(
     unicodeSupportMap: UnicodeResultSupportMap,
     emojiUnicode: string,
 ): boolean {
-    const isPersonZwjResult = isPersonZwjEmoji(emojiUnicode)
-    return (unicodeSupportMap.personZwj && isPersonZwjResult) || !isPersonZwjResult
+    const isPersonZwjResult = isPersonZwjEmoji(emojiUnicode);
+    return (unicodeSupportMap.personZwj && isPersonZwjResult) || !isPersonZwjResult;
 }
 
-let browserUnicodeSupportMap: UnicodeResultSupportMap
+let browserUnicodeSupportMap: UnicodeResultSupportMap;
 
 export function isEmojiUnicodeSupportedByBrowser(
     emojiUnicode: string,
     unicodeVersion: keyof UnicodeResultSupportMap,
 ): boolean {
     // Skipping the map creation for Bots + RSPec
-    const userAgents = [ 'HeadlessChrome', 'Lighthouse', 'Speedindex' ]
+    const userAgents = [ 'HeadlessChrome', 'Lighthouse', 'Speedindex' ];
 
     if (userAgents.some(agent => navigator.userAgent.includes(agent)))
-        return true
+        return true;
 
-    browserUnicodeSupportMap = browserUnicodeSupportMap || getUnicodeSupportMap()
-    return isEmojiUnicodeSupported(browserUnicodeSupportMap, emojiUnicode, unicodeVersion)
+    browserUnicodeSupportMap = browserUnicodeSupportMap || getUnicodeSupportMap();
+    return isEmojiUnicodeSupported(browserUnicodeSupportMap, emojiUnicode, unicodeVersion);
 }

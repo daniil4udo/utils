@@ -1,6 +1,6 @@
 import type { Nullable } from 'types'
 
-import { safeJSONParse } from './safeJSON'
+import { safeJSONParse } from './safeJSON';
 
 /**
  * `StorageWrapper` is a class that wraps local and session storage functionalities.
@@ -20,9 +20,9 @@ import { safeJSONParse } from './safeJSON'
  * @private
  */
 class StorageWrapper<T, K extends string> {
-    private storage: 'localStorage' | 'sessionStorage'
+    private storage: 'localStorage' | 'sessionStorage';
     constructor(storage: 'localStorage' | 'sessionStorage' = 'localStorage') {
-        this.storage = storage
+        this.storage = storage;
     }
 
     /**
@@ -38,15 +38,15 @@ class StorageWrapper<T, K extends string> {
      */
     setItem(key: K, value: T): void {
         try {
-            const serializedValue = JSON.stringify(value)
+            const serializedValue = JSON.stringify(value);
             const encodedValue = process.env.NODE_ENV !== 'development'
                 ? Buffer.from(serializedValue).toString('base64')
-                : serializedValue
+                : serializedValue;
 
-            window[this.storage].setItem(key, encodedValue)
+            window[this.storage].setItem(key, encodedValue);
         }
         catch (error) {
-            console.error(`Error setting item to ${this.storage}: ${error}`)
+            console.error(`Error setting item to ${this.storage}: ${error}`);
         }
     }
 
@@ -63,19 +63,19 @@ class StorageWrapper<T, K extends string> {
      */
     getItem(key: K): Nullable<T> {
         try {
-            const encodedValue = window[this.storage].getItem(key)
+            const encodedValue = window[this.storage].getItem(key);
             if (!encodedValue)
-                return null
+                return null;
 
             const serializedValue = process.env.NODE_ENV !== 'development'
                 ? Buffer.from(encodedValue, 'base64').toString()
-                : encodedValue
+                : encodedValue;
 
-            return safeJSONParse(serializedValue) as T
+            return safeJSONParse(serializedValue) as T;
         }
         catch (error) {
-            console.error(`Error getting item from ${this.storage}: ${error}`)
-            return null
+            console.error(`Error getting item from ${this.storage}: ${error}`);
+            return null;
         }
     }
 
@@ -88,10 +88,10 @@ class StorageWrapper<T, K extends string> {
      */
     removeItem(key: K): void {
         try {
-            window[this.storage].removeItem(key)
+            window[this.storage].removeItem(key);
         }
         catch (error) {
-            console.error(`Error removing item from ${this.storage}: ${error}`)
+            console.error(`Error removing item from ${this.storage}: ${error}`);
         }
     }
 
@@ -102,10 +102,10 @@ class StorageWrapper<T, K extends string> {
      */
     clear(): void {
         try {
-            window[this.storage].clear()
+            window[this.storage].clear();
         }
         catch (error) {
-            console.error(`Error clearing ${this.storage}: ${error}`)
+            console.error(`Error clearing ${this.storage}: ${error}`);
         }
     }
 }
@@ -126,12 +126,12 @@ class StorageWrapper<T, K extends string> {
  * LocalStorageWrapper.removeItem('key');
  * ```
  */
-const LocalStorageWrapper = new StorageWrapper('localStorage')
+const LocalStorageWrapper = new StorageWrapper('localStorage');
 
-export const setLocalStorageItem = LocalStorageWrapper.setItem.bind(LocalStorageWrapper)
-export const getLocalStorageItem = LocalStorageWrapper.getItem.bind(LocalStorageWrapper)
-export const removeLocalStorageItem = LocalStorageWrapper.removeItem.bind(LocalStorageWrapper)
-export const clearLocalStorage = LocalStorageWrapper.clear.bind(LocalStorageWrapper)
+export const setLocalStorageItem = LocalStorageWrapper.setItem.bind(LocalStorageWrapper);
+export const getLocalStorageItem = LocalStorageWrapper.getItem.bind(LocalStorageWrapper);
+export const removeLocalStorageItem = LocalStorageWrapper.removeItem.bind(LocalStorageWrapper);
+export const clearLocalStorage = LocalStorageWrapper.clear.bind(LocalStorageWrapper);
 
 /**
  * Pre-instantiated `StorageWrapper` instance for sessionStorage.
@@ -149,9 +149,9 @@ export const clearLocalStorage = LocalStorageWrapper.clear.bind(LocalStorageWrap
  * SessionStorageWrapper.removeItem('key');
  * ```
  */
-const SessionStorageWrapper = new StorageWrapper('sessionStorage')
+const SessionStorageWrapper = new StorageWrapper('sessionStorage');
 
-export const setSessionStorageItem = SessionStorageWrapper.setItem.bind(SessionStorageWrapper)
-export const getSessionStorageItem = SessionStorageWrapper.getItem.bind(SessionStorageWrapper)
-export const removeSessionStorageItem = SessionStorageWrapper.removeItem.bind(SessionStorageWrapper)
-export const clearSessionStorage = SessionStorageWrapper.clear.bind(SessionStorageWrapper)
+export const setSessionStorageItem = SessionStorageWrapper.setItem.bind(SessionStorageWrapper);
+export const getSessionStorageItem = SessionStorageWrapper.getItem.bind(SessionStorageWrapper);
+export const removeSessionStorageItem = SessionStorageWrapper.removeItem.bind(SessionStorageWrapper);
+export const clearSessionStorage = SessionStorageWrapper.clear.bind(SessionStorageWrapper);

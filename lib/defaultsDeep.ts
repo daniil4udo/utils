@@ -4,12 +4,6 @@
  *
  * @see {@link https://github.com/unjs/defu | defu} for more about the functions and their behaviors.
  *
- * @exports
- * @function defaultsDeep
- * @function createDefaultsDeep
- * @function defaultsDeepFn
- * @function defaultsDeepArrayFn
- *
  * @example
  * ```ts
  * import { defaultsDeep } from '@democrance/utils';
@@ -23,8 +17,8 @@
  * @public
  */
 export {
-    defu as defaultsDeep,
     createDefu as createDefaultsDeep,
-    defuFn as defaultsDeepFn,
+    defu as defaultsDeep,
     defuArrayFn as defaultsDeepArrayFn,
-} from 'defu'
+    defuFn as defaultsDeepFn,
+} from 'defu';

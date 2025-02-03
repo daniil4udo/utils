@@ -9,7 +9,6 @@
  * @remarks
  * This function is a part of the {@link https://github.com/daniil4udo/utils | @democrance/utils} library.
  *
- * @function isIterable
  * @param {any} input - The input to check for iterability.
  * @returns {boolean} Returns `true` if the input is iterable, otherwise `false`.
  *
@@ -24,9 +23,9 @@
  */
 export function isIterable<T>(input: T | Iterable<T>): input is Iterable<T> {
     try {
-        return typeof (input as any)[Symbol.iterator] === 'function'
+        return typeof (input as any)[Symbol.iterator] === 'function';
     }
     catch {
-        return false
+        return false;
     }
 }

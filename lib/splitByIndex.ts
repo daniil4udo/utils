@@ -8,7 +8,6 @@ import type { Length } from 'types'
  *
  * @template T - The type of the elements.
  *
- * @function splitByIndex
  * @param {T[]} array - The array to split.
  * @param {Length<T>} [splitIndex] - The index at which to split the array.
  * @returns {[T[], T[]]} An array of two arrays - the first one is the part before the index and the second one is the part after (and including) the index.
@@ -26,10 +25,10 @@ export function splitByIndex<T>(array: T[], splitIndex: Length<T[]> = array.leng
     // the function will return the original array as the first element in the result array,
     // and an empty array as the second element.
     if (splitIndex > array.length)
-        throw new Error(`[splitByIndex] - splitIndex is out of bound`)
+        throw new Error(`[splitByIndex] - splitIndex is out of bound`);
 
-    const x = array.slice(0, splitIndex)
-    const y = array.slice(splitIndex)
+    const x = array.slice(0, splitIndex);
+    const y = array.slice(splitIndex);
 
-    return [ x, y ]
+    return [ x, y ];
 }

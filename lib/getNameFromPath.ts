@@ -22,9 +22,9 @@
  */
 export function trimFileExtension(path = '') {
     if (typeof path !== 'string')
-        throw new TypeError('[trimFileExtension] - Path must be a string')
+        throw new TypeError('[trimFileExtension] - Path must be a string');
 
-    return path.replace(/\.[^/.]+$/, '')
+    return path.replace(/\.[^/.]+$/, '');
 }
 
 /**
@@ -55,15 +55,15 @@ export function trimFileExtension(path = '') {
  */
 export function getNameFromPath(path = '', { extension = true } = {}) {
     if (typeof path !== 'string')
-        throw new TypeError('[getNameFromPath] - Path must be a string')
+        throw new TypeError('[getNameFromPath] - Path must be a string');
 
     const fileName = path
         .split('\\')
         .pop()
         ?.split('/')
-        .pop()
+        .pop();
 
     return extension
         ? fileName
-        : trimFileExtension(fileName)
+        : trimFileExtension(fileName);
 }

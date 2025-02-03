@@ -1,5 +1,5 @@
-import { isProperNaN } from './isProperNaN'
-import { toType } from './toType'
+import { isProperNaN } from './isProperNaN';
+import { toType } from './toType';
 
 /**
  * Represents the format options for currency and price.
@@ -24,7 +24,7 @@ interface ILocate extends IFormat {
     readonly defaultLocale?: string
 }
 
-const MAX_SAFE_FRACTIONS = 20
+const MAX_SAFE_FRACTIONS = 20;
 
 /**
  * Parses a string containing a locale-formatted number into a JavaScript number.
@@ -36,7 +36,6 @@ const MAX_SAFE_FRACTIONS = 20
  * @remarks
  * This function is a part of the {@link https://github.com/daniil4udo/utils | @democrance/utils} library.
  *
- * @function parseLocaleNumber
  * @param {string} value - The string to be parsed. This should contain a number formatted according
  *      to the rules of the specified locale. For example, if the locale is 'de-DE',
  *      then the number should be formatted with '.' as the thousands separator
@@ -64,15 +63,15 @@ export function parseLocaleNumber(
     value: number | string,
     locale: string,
 ): number {
-    const format = new Intl.NumberFormat(locale).format(1000.1)
-    const [ thousandsSeparator, decimalSeparator ] = format.match(/[\D]/g) as RegExpMatchArray
+    const format = new Intl.NumberFormat(locale).format(1000.1);
+    const [ thousandsSeparator, decimalSeparator ] = format.match(/\D/g) as RegExpMatchArray;
 
     const normalized = value
         .toString()
         .replace(new RegExp(`\\${thousandsSeparator}`, 'g'), '') // Remove thousands separators
-        .replace(new RegExp(`\\${decimalSeparator}`), '.') // Replace decimal separator with '.'
+        .replace(new RegExp(`\\${decimalSeparator}`), '.'); // Replace decimal separator with '.'
 
-    return Number.parseFloat(normalized)
+    return Number.parseFloat(normalized);
 }
 
 /**
@@ -110,27 +109,27 @@ export function formatValue(
     fractions: boolean | number = true,
     locale: string = 'en',
 ): string {
-    const valueNumber = isProperNaN(value) ? parseLocaleNumber(value, locale) : Number(value)
+    const valueNumber = isProperNaN(value) ? parseLocaleNumber(value, locale) : Number(value);
 
     if (typeof fractions !== 'boolean' && typeof fractions !== 'number')
-        throw new TypeError(`[formatValue] - fractions should be either Boolean or Number. Got ${toType(fractions)}`)
+        throw new TypeError(`[formatValue] - fractions should be either Boolean or Number. Got ${toType(fractions)}`);
 
-    let options: Intl.NumberFormatOptions = {}
+    let options: Intl.NumberFormatOptions = {};
 
     if (typeof fractions === 'boolean') {
         options = {
             maximumFractionDigits: fractions ? MAX_SAFE_FRACTIONS : 0,
-        }
+        };
     }
     else {
-        const safeFractions = Math.min(fractions, MAX_SAFE_FRACTIONS)
+        const safeFractions = Math.min(fractions, MAX_SAFE_FRACTIONS);
         options = {
             minimumFractionDigits: safeFractions,
             maximumFractionDigits: safeFractions,
-        }
+        };
     }
 
-    return valueNumber.toLocaleString(locale, options)
+    return valueNumber.toLocaleString(locale, options);
 }
 
 /**
@@ -139,7 +138,6 @@ export function formatValue(
  * @remarks
  * This function is a part of the {@link https://github.com/daniil4udo/utils | @democrance/utils} library.
  *
- * @function applyCurrencySign
  * @param {string} formattedPrice - The formatted price value.
  * @param {IFormat} options - The currency format options.
  * @returns {string} The formatted price with currency sign and format applied.
@@ -160,7 +158,7 @@ export function applyCurrencySign(
     return priceFormat
         .replace('{currency}', currencySign)
         .replace('{amount}', formattedPrice)
-        .trim()
+        .trim();
 }
 
 /**
@@ -169,7 +167,6 @@ export function applyCurrencySign(
  * @remarks
  * This function is a part of the {@link https://github.com/daniil4udo/utils | @democrance/utils} library.
  *
- * @function price
  * @param {string | number} [value] - The price value to format. Can be a string or number. Defaults to 0.
  * @param {ILocate} locale - The localization options for number and currency formatting.
  * @param {number} fractions - The number of decimal places to display.
@@ -190,15 +187,15 @@ export function price(
     fractions: number,
 ): string {
     if (isProperNaN(value))
-        return value
+        return value;
 
-    const { defaultLocale, ...priceOpts } = locale || {}
+    const { defaultLocale, ...priceOpts } = locale || {};
 
-    const formattedValue = formatValue(Math.abs(value), fractions, defaultLocale)
-    const valueWithSign = applyCurrencySign(formattedValue, priceOpts)
+    const formattedValue = formatValue(Math.abs(value), fractions, defaultLocale);
+    const valueWithSign = applyCurrencySign(formattedValue, priceOpts);
 
     if (value >= 0)
-        return valueWithSign
+        return valueWithSign;
 
-    return `-${valueWithSign}`
+    return `-${valueWithSign}`;
 }

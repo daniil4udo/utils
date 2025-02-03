@@ -24,7 +24,7 @@
  */
 export function isSubstringInString(str = '', subString = '', { caseSensitive = false } = {}): boolean {
     if (typeof str !== 'string' || typeof subString !== 'string')
-        throw new TypeError(`[isSubstringInString] - input should be type 'string'. Got ${typeof str}`)
+        throw new TypeError(`[isSubstringInString] - input should be type 'string'. Got ${typeof str}`);
 
-    return new RegExp(subString, caseSensitive ? '' : 'i').test(str)
+    return new RegExp(subString, caseSensitive ? '' : 'i').test(str);
 }

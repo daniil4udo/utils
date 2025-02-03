@@ -1,8 +1,8 @@
-import type { AnyFn, Memoized, Options } from 'micro-memoize'
+import type { AnyFn, Memoized, Options } from 'micro-memoize';
 
-import memoize from 'micro-memoize'
+import memoize from 'micro-memoize';
 
-import { deepEqual } from './deepEqual'
+import { deepEqual } from './deepEqual';
 
 /**
  * Creates a memoized version of a function using deep equality comparison for arguments.
@@ -44,7 +44,7 @@ export function memoizeDeep<Fn extends AnyFn>(
     return memoize(fn, {
         ...options,
         isEqual: deepEqual,
-    })
+    });
 }
 
 /**
@@ -93,7 +93,7 @@ export function memoizeLast<Fn extends AnyFn>(
     return memoize(fn, {
         ...options,
         maxSize: 1,
-    })
+    });
 }
 
-export { memoize }
+export { memoize };

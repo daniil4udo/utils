@@ -21,14 +21,14 @@ Meaning immediately, instead of waiting for `wait` milliseconds.
 **`Default`**
 
 ```ts
-false
+false;
 ```
 
 #### Defined in
 
 node_modules/.pnpm/perfect-debounce@1.0.0/node_modules/perfect-debounce/dist/index.d.ts:7
 
-___
+---
 
 ### trailing
 
@@ -39,7 +39,7 @@ Call the `fn` on trailing edge with last used arguments. Result of call is from 
 **`Default`**
 
 ```ts
-false
+false;
 ```
 
 #### Defined in

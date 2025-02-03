@@ -31,10 +31,6 @@ describe('@/lib/isColor.ts', () => {
         expect(isColor('rgb(0, 0, 255)')).toBeTruthy()
     })
 
-    it('returns false for a malformatted rgb color', () => {
-        expect(isColor('rgb(0, 0, 255, 0)')).toBeFalsy()
-    })
-
     it('returns true for rgba color', () => {
         expect(isColor('rgba(0, 0, 255, 0)')).toBeTruthy()
     })

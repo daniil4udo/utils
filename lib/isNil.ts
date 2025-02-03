@@ -22,5 +22,5 @@
  * @public
  */
 export function isNil(input: unknown): input is null | undefined {
-    return input == null
+    return input == null;
 }

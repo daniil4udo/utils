@@ -1,7 +1,7 @@
 import type { Nullable } from 'types'
 
-import { hasValue } from './hasValue'
-import { toType } from './toType'
+import { hasValue } from './hasValue';
+import { toType } from './toType';
 
 /**
  * The `MatchRange` type is an array of tuples.
@@ -15,7 +15,7 @@ import { toType } from './toType'
  * The indices are inclusive and based on zero-indexed positions in the string.
  * Negative indices or indices outside the string's length are ignored.
  */
-type MatchRange = ReadonlyArray<[number, number]>
+type MatchRange = ReadonlyArray<[number, number]>;
 
 /**
  * The `Options` interface is used to customize the behavior of the `highlightMatch` function.
@@ -70,19 +70,22 @@ interface Options {
  */
 function createTagAttributes<T extends Nullable<string | Record<string, string> | Record<string, string>[]>>(input: T): string {
     if (typeof input === 'string') {
-        return input
+        return input;
     }
     else if (Array.isArray(input)) {
-        return input.map(createTagAttributes).join(' ')
+        return input.map(createTagAttributes).join(' ');
     }
-    else if (toType(input) === 'object') {
-        return Object.entries(input)
-            .map(([ key, value ]) => hasValue(value) ? `${key}="${value}"` : null)
-            .filter(Boolean)
-            .join(' ')
+    else if (toType(input) === 'object' && input !== null) {
+        let result = '';
+        for (const [ key, value ] of Object.entries(input)) {
+            if (hasValue(value))
+                result += `${key}="${value}" `;
+        }
+        result = result.trim();
+        return result;
     }
     else {
-        throw new TypeError(`[createTagAttributes] - Unsupported attributes type: ${toType(input)}`)
+        throw new TypeError(`[createTagAttributes] - Unsupported attributes type: ${toType(input)}`);
     }
 }
 
@@ -99,10 +102,10 @@ function createTagAttributes<T extends Nullable<string | Record<string, string> 
  * @remarks
  * This function is part of the {@link https://github.com/daniil4udo/utils | @democrance/utils} library.
  *
- * @param str - The string in which to highlight matches.
- * @param indices - An array of match ranges. Each match range is a two-element array containing the start and
+ * @param {string} str - The string in which to highlight matches.
+ * @param {[number, number]} indices - An array of match ranges. Each match range is a two-element array containing the start and
  *      end indices of the match. Defaults to an empty array.
- * @param options - An options object. It currently supports one option: 'tag', which specifies the HTML tag to
+ * @param {{ tag: string; attrs: string }} options - An options object. It currently supports one option: 'tag', which specifies the HTML tag to
  *      use for wrapping matches. Defaults to an object with 'tag' set to 'strong'.
  *
  * @returns The string with matches highlighted.
@@ -140,62 +143,62 @@ export function highlightMatch(
     { tag = 'strong', attrs = null }: Options = {},
 ) {
     if (!str || indices.length === 0)
-        return str
+        return str;
 
     const openTag = attrs
         ? `${tag} ${createTagAttributes(attrs)}`
-        : tag
+        : tag;
 
     // Sort matches by start index
-    const matches = indices.slice().sort((a, b) => a[0] - b[0])
+    const matches = indices.slice().sort((a, b) => a[0] - b[0]);
 
     // Merge overlapping or adjacent ranges
-    const mergedMatches: Array<[number, number]> = []
-    let currentMatch = matches[0] as [number, number]
+    const mergedMatches: Array<[number, number]> = [];
+    let currentMatch = matches[0] as [number, number];
 
     for (let i = 1, l = matches.length; i < l; i++) {
-        const [ nextStart, nextEnd ] = matches[i] as [number, number]
+        const [ nextStart, nextEnd ] = matches[i] as [number, number];
 
         // If the next match overlaps or is adjacent with the current match, merge them
         if (nextStart <= currentMatch[1] + 1) {
-            currentMatch[1] = Math.max(nextEnd, currentMatch[1])
+            currentMatch[1] = Math.max(nextEnd, currentMatch[1]);
         }
         else {
             // If the next match doesn't overlap or is adjacent,
             // add the current match to the merged list and start a new current match
-            mergedMatches.push(currentMatch)
-            currentMatch = matches[i] as [number, number]
+            mergedMatches.push(currentMatch);
+            currentMatch = matches[i] as [number, number];
         }
     }
-    mergedMatches.push(currentMatch) // Add the last match
+    mergedMatches.push(currentMatch); // Add the last match
 
-    let result = ''
-    let lastMatchEndIndex = 0
+    let result = '';
+    let lastMatchEndIndex = 0;
 
     for (const match of mergedMatches) {
-        let [ startIndex, endIndex ] = match
+        let [ startIndex, endIndex ] = match;
 
         // Ignore negative indices or entirely out of range indices
         if (startIndex < 0 || endIndex < 0 || startIndex >= str.length)
-            continue
+            continue;
 
         // Treat indices beyond the length of the string as the end of the string
-        startIndex = Math.min(startIndex, str.length)
-        endIndex = Math.min(endIndex, str.length)
+        startIndex = Math.min(startIndex, str.length);
+        endIndex = Math.min(endIndex, str.length);
 
         // Handle non-sequential matches
         if (startIndex > lastMatchEndIndex)
-            result += str.slice(lastMatchEndIndex, startIndex)
+            result += str.slice(lastMatchEndIndex, startIndex);
 
-        const matchText = str.slice(startIndex, endIndex + 1) // Add 1 to endIndex in the slice call
-        result += `<${openTag}>${matchText}</${tag}>`
+        const matchText = str.slice(startIndex, endIndex + 1); // Add 1 to endIndex in the slice call
+        result += `<${openTag}>${matchText}</${tag}>`;
 
-        lastMatchEndIndex = endIndex + 1
+        lastMatchEndIndex = endIndex + 1;
     }
 
     // Append remaining str
     if (lastMatchEndIndex < str.length)
-        result += str.slice(lastMatchEndIndex)
+        result += str.slice(lastMatchEndIndex);
 
-    return result
+    return result;
 }

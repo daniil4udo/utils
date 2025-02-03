@@ -28,10 +28,10 @@
  */
 export function safeJSONParse<T>(input: string, reviver?: Parameters<typeof JSON.parse>[1]): T | string {
     try {
-        return JSON.parse(input, reviver) as T
+        return JSON.parse(input, reviver) as T;
     }
     catch {
-        return input
+        return input;
     }
 }
 
@@ -48,4 +48,4 @@ export function safeJSONParse<T>(input: string, reviver?: Parameters<typeof JSON
 export default {
     parse: safeJSONParse,
     stringify: JSON.stringify,
-}
+};

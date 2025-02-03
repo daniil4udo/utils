@@ -17,7 +17,6 @@ import type { Nullable } from 'types'
  * @remarks
  * This function is a part of the {@link https://github.com/daniil4udo/utils | @democrance/utils} library.
  *
- * @function scrollTo
  * @param {HTMLElement | null | undefined} element - The element to scroll to. Can be an HTMLElement, null, or undefined.
  * @param {number} [offset] - The offset value to adjust the scroll position. Defaults to 0.
  * @returns {void}
@@ -41,18 +40,16 @@ import type { Nullable } from 'types'
  */
 export function scrollTo(element: Nullable<HTMLElement>, offset: number = 0): void {
     if (typeof window === 'undefined')
-        return
+        return;
 
     const top = element
-        ? element.getBoundingClientRect().top
-            + (window.scrollY || document.documentElement.scrollTop)
-            - offset
-        : 0
+        ? element.getBoundingClientRect().top + (window.scrollY || document.documentElement.scrollTop) - offset
+        : 0;
 
     if ('scrollRestoration' in history)
-        history.scrollRestoration = 'auto'
+        history.scrollRestoration = 'auto';
 
     requestAnimationFrame(() => {
-        window.scrollTo(({ top, left: 0, behavior: 'smooth' }))
-    })
+        window.scrollTo(({ top, left: 0, behavior: 'smooth' }));
+    });
 }

@@ -40,35 +40,35 @@ export async function imageExists<T extends string>(
     url: Nullable<T>,
     options: ImageExistsOptions = {},
 ): Promise<T | boolean> {
-    const { throwError = false } = options
+    const { throwError = false } = options;
 
-    if (typeof url !== 'string' || url === '')
-        return false
+    if (window === undefined || typeof url !== 'string' || url === '')
+        return false;
 
     return new Promise((resolve, reject) => {
-        const image = new Image()
-        image.onload = () => resolve(url)
+        const image = new Image();
+        image.onload = () => resolve(url);
 
         if (throwError === false)
-            image.onerror = () => resolve(false)
+            image.onerror = () => resolve(false);
 
         else
-            image.onerror = () => reject(new Error(`[imageExists]: Image ${url} does not exist`))
+            image.onerror = () => reject(new Error(`[imageExists]: Image ${url} does not exist`));
 
-        image.src = url
-    })
+        image.src = url;
+    });
 }
 
 export async function allImagesExist<T extends string>(
     urls: Array<Nullable<T>>,
     options: ImageExistsOptions = {},
 ): Promise<(string | boolean)[]> {
-    return Promise.all(urls.map(url => imageExists(url, options)))
+    return Promise.all(urls.map(url => imageExists(url, options)));
 }
 
 export async function anyImagesExist<T extends string>(
     urls: Array<Nullable<T>>,
     options: ImageExistsOptions = {},
 ): Promise<(string | boolean)[]> {
-    return (Promise as any).any(urls.map(url => imageExists(url, options)))
+    return (Promise as any).any(urls.map(url => imageExists(url, options)));
 }

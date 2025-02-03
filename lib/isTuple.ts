@@ -21,5 +21,5 @@
  * }
  */
 export function isTuple<T, V>(input: unknown): input is [T, V] {
-    return Array.isArray(input) && input.length === 2
+    return Array.isArray(input) && input.length === 2;
 }

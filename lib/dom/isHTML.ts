@@ -4,7 +4,6 @@
  * @remarks
  * This function is a part of the {@link https://github.com/daniil4udo/utils | @democrance/utils} library.
  *
- * @function isHTML
  * @param {string} str - The string to validate as HTML.
  * @returns {boolean} Returns `true` if the string is valid HTML, otherwise `false`.
  *
@@ -20,12 +19,12 @@
  */
 export function isHTML(str: string): boolean {
     try {
-        const fragment = new DOMParser().parseFromString(str, 'text/html')
-        const hasChildren = fragment.body.children.length > 0
-        const hasErrors = fragment.querySelector('parsererror') !== null || !hasChildren
-        return hasChildren && !hasErrors
+        const fragment = new DOMParser().parseFromString(str, 'text/html');
+        const hasChildren = fragment.body.children.length > 0;
+        const hasErrors = fragment.querySelector('parsererror') !== null || !hasChildren;
+        return hasChildren && !hasErrors;
     }
-    catch (error) {
-        return false
+    catch {
+        return false;
     }
 }

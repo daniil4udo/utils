@@ -23,5 +23,5 @@
  * @public
  */
 export function hasValue<T>(input: T): input is NonNullable<T> {
-    return input != null && (typeof input === 'string' ? input.trim() !== '' : true)
+    return input != null && (typeof input === 'string' ? input.trim() !== '' : true);
 }

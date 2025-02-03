@@ -44,8 +44,8 @@
 
 ### Variables
 
-- [POSSIBLE\_FOCUSABLE\_TAGS](modules.md#possible_focusable_tags)
-- [PYTHON\_TO\_JAVASCRIPT\_DATE\_MAP](modules.md#python_to_javascript_date_map)
+- [POSSIBLE_FOCUSABLE_TAGS](modules.md#possible_focusable_tags)
+- [PYTHON_TO_JAVASCRIPT_DATE_MAP](modules.md#python_to_javascript_date_map)
 - [dmcUtilsAutoImportPreset](modules.md#dmcutilsautoimportpreset)
 
 ### Functions
@@ -169,7 +169,7 @@ Use AllTypesName instead.
 
 [types/primitive.ts:174](https://github.com/daniil4udo/utils/blob/f0fc279/types/primitive.ts#L174)
 
-___
+---
 
 ### AnyNativeTypesName
 
@@ -182,7 +182,7 @@ and non-primitive names.
 
 [types/primitive.ts:186](https://github.com/daniil4udo/utils/blob/f0fc279/types/primitive.ts#L186)
 
-___
+---
 
 ### AnyParsableNativeTypesName
 
@@ -192,7 +192,7 @@ ___
 
 [types/primitive.ts:187](https://github.com/daniil4udo/utils/blob/f0fc279/types/primitive.ts#L187)
 
-___
+---
 
 ### AnyParsableTypesName
 
@@ -202,7 +202,7 @@ ___
 
 [types/primitive.ts:180](https://github.com/daniil4udo/utils/blob/f0fc279/types/primitive.ts#L180)
 
-___
+---
 
 ### AnyTypesName
 
@@ -214,7 +214,7 @@ Type alias representing all types in JavaScript, including primitive, primitive-
 
 [types/primitive.ts:179](https://github.com/daniil4udo/utils/blob/f0fc279/types/primitive.ts#L179)
 
-___
+---
 
 ### Length
 
@@ -224,19 +224,19 @@ Type alias to get the length of an array.
 
 #### Type parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `T` | extends `unknown`[] | The type of the array. |
+| Name | Type                | Description            |
+| :--- | :------------------ | :--------------------- |
+| `T`  | extends `unknown`[] | The type of the array. |
 
 #### Defined in
 
 [types/utils.ts:10](https://github.com/daniil4udo/utils/blob/f0fc279/types/utils.ts#L10)
 
-___
+---
 
 ### MapToPrimitiveType
 
-Ƭ **MapToPrimitiveType**<`T`\>: `T` extends `Native`<``"Boolean"``\> \| `Normalized`<``"Boolean"``\> ? `boolean` : `T` extends `Native`<``"Number"``\> \| `Normalized`<``"Number"``\> ? `number` : `T` extends `Native`<``"BigInt"``\> \| `Normalized`<``"BigInt"``\> ? `bigint` : `T` extends `Native`<``"String"``\> \| `Normalized`<``"String"``\> ? `string` : `T` extends `Native`<``"Symbol"``\> \| `Normalized`<``"Symbol"``\> ? `symbol` : `T` extends `Native`<``"Undefined"``\> \| `Normalized`<``"Undefined"``\> ? `undefined` : `T` extends `Native`<``"Null"``\> \| `Normalized`<``"Null"``\> ? ``null`` : `T` extends `Native`<``"Date"``\> \| `Normalized`<``"Date"``\> ? `Date` : `T` extends `Native`<``"RegExp"``\> \| `Normalized`<``"RegExp"``\> ? `RegExp` : `never`
+Ƭ **MapToPrimitiveType**<`T`\>: `T` extends `Native`<`"Boolean"`\> \| `Normalized`<`"Boolean"`\> ? `boolean` : `T` extends `Native`<`"Number"`\> \| `Normalized`<`"Number"`\> ? `number` : `T` extends `Native`<`"BigInt"`\> \| `Normalized`<`"BigInt"`\> ? `bigint` : `T` extends `Native`<`"String"`\> \| `Normalized`<`"String"`\> ? `string` : `T` extends `Native`<`"Symbol"`\> \| `Normalized`<`"Symbol"`\> ? `symbol` : `T` extends `Native`<`"Undefined"`\> \| `Normalized`<`"Undefined"`\> ? `undefined` : `T` extends `Native`<`"Null"`\> \| `Normalized`<`"Null"`\> ? `null` : `T` extends `Native`<`"Date"`\> \| `Normalized`<`"Date"`\> ? `Date` : `T` extends `Native`<`"RegExp"`\> \| `Normalized`<`"RegExp"`\> ? `RegExp` : `never`
 
 Maps a given type name to the corresponding JavaScript primitive type. The type name can be provided as
 a conventional string (e.g., 'boolean', 'number') or using its internal representation in JavaScript
@@ -245,15 +245,15 @@ as Date and RegExp.
 
 #### Type parameters
 
-| Name | Type |
-| :------ | :------ |
-| `T` | extends `string` |
+| Name | Type             |
+| :--- | :--------------- |
+| `T`  | extends `string` |
 
 #### Defined in
 
 [types/primitive.ts:7](https://github.com/daniil4udo/utils/blob/f0fc279/types/primitive.ts#L7)
 
-___
+---
 
 ### NativeNonPrimitiveName
 
@@ -266,11 +266,11 @@ types like Array, ArrayBuffer, various Typed Arrays, and others.
 
 [types/primitive.ts:144](https://github.com/daniil4udo/utils/blob/f0fc279/types/primitive.ts#L144)
 
-___
+---
 
 ### NativeParsableNonPrimitiveName
 
-Ƭ **NativeParsableNonPrimitiveName**: `Native`<`Extract`<`NonPrimitiveCtr`, ``"Object"`` \| ``"Array"``\>\>
+Ƭ **NativeParsableNonPrimitiveName**: `Native`<`Extract`<`NonPrimitiveCtr`, `"Object"` \| `"Array"`\>\>
 
 Represents the internal string representation of JavaScript non-primitive types that can be parsed from
 a JSON-like structure, specifically Object and Array.
@@ -279,11 +279,11 @@ a JSON-like structure, specifically Object and Array.
 
 [types/primitive.ts:150](https://github.com/daniil4udo/utils/blob/f0fc279/types/primitive.ts#L150)
 
-___
+---
 
 ### NativeParsablePrimitiveName
 
-Ƭ **NativeParsablePrimitiveName**: `Native`<`Exclude`<`PrimitiveCtr`, ``"BigInt"`` \| ``"Symbol"`` \| ``"Undefined"``\>\>
+Ƭ **NativeParsablePrimitiveName**: `Native`<`Exclude`<`PrimitiveCtr`, `"BigInt"` \| `"Symbol"` \| `"Undefined"`\>\>
 
 Represents the internal string representation of JavaScript primitive types that can be represented in
 JSON, excluding BigInt, Symbol, and Undefined.
@@ -292,7 +292,7 @@ JSON, excluding BigInt, Symbol, and Undefined.
 
 [types/primitive.ts:51](https://github.com/daniil4udo/utils/blob/f0fc279/types/primitive.ts#L51)
 
-___
+---
 
 ### NativePrimitiveLikeName
 
@@ -304,7 +304,7 @@ Represents the internal string representation of JavaScript primitive-like types
 
 [types/primitive.ts:92](https://github.com/daniil4udo/utils/blob/f0fc279/types/primitive.ts#L92)
 
-___
+---
 
 ### NativePrimitiveName
 
@@ -317,7 +317,7 @@ returned by `Object.prototype.toString`.
 
 [types/primitive.ts:45](https://github.com/daniil4udo/utils/blob/f0fc279/types/primitive.ts#L45)
 
-___
+---
 
 ### NonPrimitive
 
@@ -333,7 +333,7 @@ Use NonPrimitiveName instead.
 
 [types/primitive.ts:162](https://github.com/daniil4udo/utils/blob/f0fc279/types/primitive.ts#L162)
 
-___
+---
 
 ### NonPrimitiveName
 
@@ -346,11 +346,11 @@ types, typed arrays, and others.
 
 [types/primitive.ts:156](https://github.com/daniil4udo/utils/blob/f0fc279/types/primitive.ts#L156)
 
-___
+---
 
 ### NonPrimitiveParsableName
 
-Ƭ **NonPrimitiveParsableName**: `Normalized`<`Extract`<`NonPrimitiveCtr`, ``"Object"`` \| ``"Array"``\>\>
+Ƭ **NonPrimitiveParsableName**: `Normalized`<`Extract`<`NonPrimitiveCtr`, `"Object"` \| `"Array"`\>\>
 
 Represents the names of JavaScript non-primitive types as string literals that can be represented in JSON,
 specifically 'object' and 'array'.
@@ -359,33 +359,33 @@ specifically 'object' and 'array'.
 
 [types/primitive.ts:168](https://github.com/daniil4udo/utils/blob/f0fc279/types/primitive.ts#L168)
 
-___
+---
 
 ### Nullable
 
-Ƭ **Nullable**<`T`\>: `T` \| ``null``
+Ƭ **Nullable**<`T`\>: `T` \| `null`
 
 #### Type parameters
 
 | Name |
-| :------ |
-| `T` |
+| :--- |
+| `T`  |
 
 #### Defined in
 
 [types/utils.ts:2](https://github.com/daniil4udo/utils/blob/f0fc279/types/utils.ts#L2)
 
-___
+---
 
 ### Nullish
 
-Ƭ **Nullish**: ``null`` \| `undefined` \| `void`
+Ƭ **Nullish**: `null` \| `undefined` \| `void`
 
 #### Defined in
 
 [types/utils.ts:1](https://github.com/daniil4udo/utils/blob/f0fc279/types/utils.ts#L1)
 
-___
+---
 
 ### ParsablePrimitiveType
 
@@ -397,7 +397,7 @@ Represents the actual JavaScript primitive types that can be represented in JSON
 
 [types/primitive.ts:81](https://github.com/daniil4udo/utils/blob/f0fc279/types/primitive.ts#L81)
 
-___
+---
 
 ### ParsablePropertyKey
 
@@ -407,7 +407,7 @@ ___
 
 [types/primitive.ts:83](https://github.com/daniil4udo/utils/blob/f0fc279/types/primitive.ts#L83)
 
-___
+---
 
 ### PredicateFunction
 
@@ -415,9 +415,9 @@ ___
 
 #### Type parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `T` | extends `Record`<`PropertyKey`, `any`\> | The type of the values in the object. |
+| Name | Type                                    | Description                           |
+| :--- | :-------------------------------------- | :------------------------------------ |
+| `T`  | extends `Record`<`PropertyKey`, `any`\> | The type of the values in the object. |
 
 #### Type declaration
 
@@ -427,12 +427,12 @@ Predicate function type definition.
 
 ##### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `key` | keyof `T` | The key of the current element being processed in the object. |
-| `value` | `T`[keyof `T`] | The value of the current element being processed in the object. |
-| `index` | `number` | The index of the current element being processed in the object. |
-| `object` | `T` | The object filterObject was called upon. |
+| Name     | Type           | Description                                                     |
+| :------- | :------------- | :-------------------------------------------------------------- |
+| `key`    | keyof `T`      | The key of the current element being processed in the object.   |
+| `value`  | `T`[keyof `T`] | The value of the current element being processed in the object. |
+| `index`  | `number`       | The index of the current element being processed in the object. |
+| `object` | `T`            | The object filterObject was called upon.                        |
 
 ##### Returns
 
@@ -444,7 +444,7 @@ True if the current element should be included in the filtered object; otherwise
 
 [lib/filterObject.ts:12](https://github.com/daniil4udo/utils/blob/f0fc279/lib/filterObject.ts#L12)
 
-___
+---
 
 ### Primitive
 
@@ -460,7 +460,7 @@ Use PrimitiveName instead.
 
 [types/primitive.ts:66](https://github.com/daniil4udo/utils/blob/f0fc279/types/primitive.ts#L66)
 
-___
+---
 
 ### PrimitiveLike
 
@@ -476,7 +476,7 @@ Use PrimitiveLikeName instead.
 
 [types/primitive.ts:103](https://github.com/daniil4udo/utils/blob/f0fc279/types/primitive.ts#L103)
 
-___
+---
 
 ### PrimitiveLikeName
 
@@ -488,7 +488,7 @@ Represents the names of JavaScript primitive-like types, such as Date and RegExp
 
 [types/primitive.ts:97](https://github.com/daniil4udo/utils/blob/f0fc279/types/primitive.ts#L97)
 
-___
+---
 
 ### PrimitiveLikeType
 
@@ -500,7 +500,7 @@ Represents the actual JavaScript primitive-like types.
 
 [types/primitive.ts:108](https://github.com/daniil4udo/utils/blob/f0fc279/types/primitive.ts#L108)
 
-___
+---
 
 ### PrimitiveName
 
@@ -512,11 +512,11 @@ Represents the names of JavaScript primitive types as string literals.
 
 [types/primitive.ts:60](https://github.com/daniil4udo/utils/blob/f0fc279/types/primitive.ts#L60)
 
-___
+---
 
 ### PrimitiveParsableName
 
-Ƭ **PrimitiveParsableName**: `Normalized`<`Exclude`<`PrimitiveCtr`, ``"BigInt"`` \| ``"Symbol"`` \| ``"Undefined"``\>\>
+Ƭ **PrimitiveParsableName**: `Normalized`<`Exclude`<`PrimitiveCtr`, `"BigInt"` \| `"Symbol"` \| `"Undefined"`\>\>
 
 Represents the names of JavaScript primitive types as string literals that can be represented in JSON
 
@@ -524,7 +524,7 @@ Represents the names of JavaScript primitive types as string literals that can b
 
 [types/primitive.ts:71](https://github.com/daniil4udo/utils/blob/f0fc279/types/primitive.ts#L71)
 
-___
+---
 
 ### PrimitiveType
 
@@ -536,17 +536,17 @@ Represents the actual JavaScript primitive types.
 
 [types/primitive.ts:76](https://github.com/daniil4udo/utils/blob/f0fc279/types/primitive.ts#L76)
 
-___
+---
 
 ### UnicodeResultSupportMap
 
-Ƭ **UnicodeResultSupportMap**: { [K in keyof UnicodeSupportTestMap]: boolean } & { `meta`: { `chromeVersion`: [`Nullable`](modules.md#nullable)<`number`\> ; `isChrome`: `boolean`  }  }
+Ƭ **UnicodeResultSupportMap**: { [K in keyof UnicodeSupportTestMap]: boolean } & { `meta`: { `chromeVersion`: [`Nullable`](modules.md#nullable)<`number`\> ; `isChrome`: `boolean` } }
 
 #### Defined in
 
 [lib/emojiSupportMap.ts:69](https://github.com/daniil4udo/utils/blob/f0fc279/lib/emojiSupportMap.ts#L69)
 
-___
+---
 
 ### UnicodeSupportTestMap
 
@@ -556,7 +556,7 @@ ___
 
 [lib/emojiSupportMap.ts:68](https://github.com/daniil4udo/utils/blob/f0fc279/lib/emojiSupportMap.ts#L68)
 
-___
+---
 
 ### UrlTemplateContext
 
@@ -568,9 +568,9 @@ ___
 
 ## Variables
 
-### POSSIBLE\_FOCUSABLE\_TAGS
+### POSSIBLE_FOCUSABLE_TAGS
 
-• `Const` **POSSIBLE\_FOCUSABLE\_TAGS**: ``"a[href], area[href], button, details, input, textarea, select, [tabindex]:not([tabindex^=\"-\"])"``
+• `Const` **POSSIBLE_FOCUSABLE_TAGS**: `"a[href], area[href], button, details, input, textarea, select, [tabindex]:not([tabindex^=\"-\"])"`
 
 'a[href]',
 'area[href]',
@@ -593,11 +593,11 @@ ___
 
 [lib/dom/toggleKeyboardFocus.ts:19](https://github.com/daniil4udo/utils/blob/f0fc279/lib/dom/toggleKeyboardFocus.ts#L19)
 
-___
+---
 
-### PYTHON\_TO\_JAVASCRIPT\_DATE\_MAP
+### PYTHON_TO_JAVASCRIPT_DATE_MAP
 
-• `Const` **PYTHON\_TO\_JAVASCRIPT\_DATE\_MAP**: `Map`<`string`, `string`\>
+• `Const` **PYTHON_TO_JAVASCRIPT_DATE_MAP**: `Map`<`string`, `string`\>
 
 Map that defines the conversion from Python-style date format to JavaScript-style date format.
 
@@ -605,7 +605,7 @@ Map that defines the conversion from Python-style date format to JavaScript-styl
 
 [lib/convertPYDateFormatToJS.ts:7](https://github.com/daniil4udo/utils/blob/f0fc279/lib/convertPYDateFormatToJS.ts#L7)
 
-___
+---
 
 ### dmcUtilsAutoImportPreset
 
@@ -613,62 +613,62 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
-| `@democrance/utils/arrayBuffer` | readonly [``"arrayBufferToString"``, ``"stringToArrayBuffer"``] |
-| `@democrance/utils/changeCase` | readonly [``"capitalize"``, ``"toLower"``, ``"toUpper"``] |
-| `@democrance/utils/convertPYDateFormatToJS` | readonly [``"PYTHON_TO_JAVASCRIPT_DATE_MAP"``, ``"convertPYDateFormatToJS"``] |
-| `@democrance/utils/debounce` | readonly [``"debounce"``] |
-| `@democrance/utils/deepClone` | readonly [``"deepClone"``] |
-| `@democrance/utils/deepEqual` | readonly [``"circularDeepEqual"``, ``"circularShallowEqual"``, ``"createCustomEqual"``, ``"deepEqual"``, ``"sameValueZeroEqual"``, ``"shallowEqual"``, ``"strictCircularDeepEqual"``, ``"strictCircularShallowEqual"``, ``"strictDeepEqual"``, ``"strictShallowEqual"``] |
-| `@democrance/utils/defaultsDeep` | readonly [``"createDefaultsDeep"``, ``"defaultsDeep"``, ``"defaultsDeepArrayFn"``, ``"defaultsDeepFn"``] |
-| `@democrance/utils/dom/imageExists` | readonly [``"allImagesExist"``, ``"anyImagesExist"``, ``"imageExists"``] |
-| `@democrance/utils/dom/isColor` | readonly [``"isColor"``] |
-| `@democrance/utils/dom/isHTML` | readonly [``"isHTML"``] |
-| `@democrance/utils/dom/queryElement` | readonly [``"queryElement"``] |
-| `@democrance/utils/dom/scrollTo` | readonly [``"scrollTo"``] |
-| `@democrance/utils/dom/toggleKeyboardFocus` | readonly [``"POSSIBLE_FOCUSABLE_TAGS"``, ``"toggleKeyboardFocus"``] |
-| `@democrance/utils/emojiSupport` | readonly [``"checkFlagEmojiSupport"``, ``"checkHorseRacingSkinToneComboEmojiSupport"``, ``"checkPersonEmojiSupport"``, ``"checkSkinToneModifierSupport"``, ``"isEmojiUnicodeSupported"``, ``"isEmojiUnicodeSupportedByBrowser"``, ``"isFlagEmoji"``, ``"isHorseRacingSkinToneComboEmoji"``, ``"isKeyCapEmoji"``, ``"isPersonZwjEmoji"``, ``"isRainbowFlagEmoji"``, ``"isSkinToneComboEmoji"``] |
-| `@democrance/utils/emojiSupportMap` | readonly [``"generateUnicodeSupportMap"``, ``"getUnicodeSupportMap"``] |
-| `@democrance/utils/filterObject` | readonly [``"filterObject"``] |
-| `@democrance/utils/getCtor` | readonly [``"getCtor"``] |
-| `@democrance/utils/getNameFromPath` | readonly [``"getNameFromPath"``, ``"trimFileExtension"``] |
-| `@democrance/utils/has` | readonly [``"has"``] |
-| `@democrance/utils/hasValue` | readonly [``"hasValue"``] |
-| `@democrance/utils/highlightMatch` | readonly [``"highlightMatch"``] |
-| `@democrance/utils/htmlTruncate` | readonly [``"htmlTruncate"``] |
-| `@democrance/utils/isAbsoluteURL` | readonly [``"isAbsoluteURL"``] |
-| `@democrance/utils/isDefined` | readonly [``"isDefined"``] |
-| `@democrance/utils/isEmptyArray` | readonly [``"isEmptyArray"``] |
-| `@democrance/utils/isEmptyCollection` | readonly [``"isEmptyCollection"``] |
-| `@democrance/utils/isIterable` | readonly [``"isIterable"``] |
-| `@democrance/utils/isNil` | readonly [``"isNil"``] |
-| `@democrance/utils/isNumber` | readonly [``"isNumber"``] |
-| `@democrance/utils/isPlainObject` | readonly [``"isPlainObject"``] |
-| `@democrance/utils/isPrimitive` | readonly [``"isPrimitive"``, ``"isPrimitiveLike"``] |
-| `@democrance/utils/isProperNaN` | readonly [``"isProperNaN"``] |
-| `@democrance/utils/isPropertyKey` | readonly [``"isParsablePropertyKey"``, ``"isPropertyKey"``] |
-| `@democrance/utils/isSubstringInString` | readonly [``"isSubstringInString"``] |
-| `@democrance/utils/isTuple` | readonly [``"isTuple"``] |
-| `@democrance/utils/isoToEmojiToISO` | readonly [``"emojiToIso"``, ``"isCountryIso"``, ``"isoToEmoji"``] |
-| `@democrance/utils/keyBy` | readonly [``"keyBy"``] |
-| `@democrance/utils/length` | readonly [``"length"``] |
-| `@democrance/utils/memoize` | readonly [``"memoize"``, ``"memoizeDeep"``, ``"memoizeLast"``] |
-| `@democrance/utils/movePropLevelUp` | readonly [``"movePropLevelUp"``] |
-| `@democrance/utils/price` | readonly [``"applyCurrencySign"``, ``"formatValue"``, ``"parseLocaleNumber"``, ``"price"``] |
-| `@democrance/utils/safeJSON` | readonly [``"safeJSONParse"``] |
-| `@democrance/utils/saveAs` | readonly [``"saveAs"``] |
-| `@democrance/utils/shuffle` | readonly [``"shuffle"``] |
-| `@democrance/utils/slugify` | readonly [``"deCamelize"``, ``"slugify"``] |
-| `@democrance/utils/sortObjects` | readonly [``"sortObjects"``] |
-| `@democrance/utils/splitByIndex` | readonly [``"splitByIndex"``] |
-| `@democrance/utils/storageWrapper` | readonly [``"clearLocalStorage"``, ``"clearSessionStorage"``, ``"getLocalStorageItem"``, ``"getSessionStorageItem"``, ``"removeLocalStorageItem"``, ``"removeSessionStorageItem"``, ``"setLocalStorageItem"``, ``"setSessionStorageItem"``] |
-| `@democrance/utils/stringToRegexp` | readonly [``"strToRegexp"``] |
-| `@democrance/utils/toArray` | readonly [``"toArray"``] |
-| `@democrance/utils/toType` | readonly [``"toType"``] |
-| `@democrance/utils/urlJoin` | readonly [``"urlJoin"``] |
-| `@democrance/utils/urlTemplate` | readonly [``"parseURLTemplate"``, ``"urlTemplate"``] |
-| `@democrance/utils/zipcelx` | readonly [``"zipcelx"``] |
+| Name                                        | Type                                                                                                                                                                                                                                                                                                                                                                                           |
+| :------------------------------------------ | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `@democrance/utils/arrayBuffer`             | readonly [``"arrayBufferToString"``, ``"stringToArrayBuffer"``]                                                                                                                                                                                                                                                                                                                                |
+| `@democrance/utils/changeCase`              | readonly [``"capitalize"``, ``"toLower"``, ``"toUpper"``]                                                                                                                                                                                                                                                                                                                                      |
+| `@democrance/utils/convertPYDateFormatToJS` | readonly [``"PYTHON_TO_JAVASCRIPT_DATE_MAP"``, ``"convertPYDateFormatToJS"``]                                                                                                                                                                                                                                                                                                                  |
+| `@democrance/utils/debounce`                | readonly [``"debounce"``]                                                                                                                                                                                                                                                                                                                                                                      |
+| `@democrance/utils/deepClone`               | readonly [``"deepClone"``]                                                                                                                                                                                                                                                                                                                                                                     |
+| `@democrance/utils/deepEqual`               | readonly [``"circularDeepEqual"``, ``"circularShallowEqual"``, ``"createCustomEqual"``, ``"deepEqual"``, ``"sameValueZeroEqual"``, ``"shallowEqual"``, ``"strictCircularDeepEqual"``, ``"strictCircularShallowEqual"``, ``"strictDeepEqual"``, ``"strictShallowEqual"``]                                                                                                                       |
+| `@democrance/utils/defaultsDeep`            | readonly [``"createDefaultsDeep"``, ``"defaultsDeep"``, ``"defaultsDeepArrayFn"``, ``"defaultsDeepFn"``]                                                                                                                                                                                                                                                                                       |
+| `@democrance/utils/dom/imageExists`         | readonly [``"allImagesExist"``, ``"anyImagesExist"``, ``"imageExists"``]                                                                                                                                                                                                                                                                                                                       |
+| `@democrance/utils/dom/isColor`             | readonly [``"isColor"``]                                                                                                                                                                                                                                                                                                                                                                       |
+| `@democrance/utils/dom/isHTML`              | readonly [``"isHTML"``]                                                                                                                                                                                                                                                                                                                                                                        |
+| `@democrance/utils/dom/queryElement`        | readonly [``"queryElement"``]                                                                                                                                                                                                                                                                                                                                                                  |
+| `@democrance/utils/dom/scrollTo`            | readonly [``"scrollTo"``]                                                                                                                                                                                                                                                                                                                                                                      |
+| `@democrance/utils/dom/toggleKeyboardFocus` | readonly [``"POSSIBLE_FOCUSABLE_TAGS"``, ``"toggleKeyboardFocus"``]                                                                                                                                                                                                                                                                                                                            |
+| `@democrance/utils/emojiSupport`            | readonly [``"checkFlagEmojiSupport"``, ``"checkHorseRacingSkinToneComboEmojiSupport"``, ``"checkPersonEmojiSupport"``, ``"checkSkinToneModifierSupport"``, ``"isEmojiUnicodeSupported"``, ``"isEmojiUnicodeSupportedByBrowser"``, ``"isFlagEmoji"``, ``"isHorseRacingSkinToneComboEmoji"``, ``"isKeyCapEmoji"``, ``"isPersonZwjEmoji"``, ``"isRainbowFlagEmoji"``, ``"isSkinToneComboEmoji"``] |
+| `@democrance/utils/emojiSupportMap`         | readonly [``"generateUnicodeSupportMap"``, ``"getUnicodeSupportMap"``]                                                                                                                                                                                                                                                                                                                         |
+| `@democrance/utils/filterObject`            | readonly [``"filterObject"``]                                                                                                                                                                                                                                                                                                                                                                  |
+| `@democrance/utils/getCtor`                 | readonly [``"getCtor"``]                                                                                                                                                                                                                                                                                                                                                                       |
+| `@democrance/utils/getNameFromPath`         | readonly [``"getNameFromPath"``, ``"trimFileExtension"``]                                                                                                                                                                                                                                                                                                                                      |
+| `@democrance/utils/has`                     | readonly [``"has"``]                                                                                                                                                                                                                                                                                                                                                                           |
+| `@democrance/utils/hasValue`                | readonly [``"hasValue"``]                                                                                                                                                                                                                                                                                                                                                                      |
+| `@democrance/utils/highlightMatch`          | readonly [``"highlightMatch"``]                                                                                                                                                                                                                                                                                                                                                                |
+| `@democrance/utils/htmlTruncate`            | readonly [``"htmlTruncate"``]                                                                                                                                                                                                                                                                                                                                                                  |
+| `@democrance/utils/isAbsoluteURL`           | readonly [``"isAbsoluteURL"``]                                                                                                                                                                                                                                                                                                                                                                 |
+| `@democrance/utils/isDefined`               | readonly [``"isDefined"``]                                                                                                                                                                                                                                                                                                                                                                     |
+| `@democrance/utils/isEmptyArray`            | readonly [``"isEmptyArray"``]                                                                                                                                                                                                                                                                                                                                                                  |
+| `@democrance/utils/isEmptyCollection`       | readonly [``"isEmptyCollection"``]                                                                                                                                                                                                                                                                                                                                                             |
+| `@democrance/utils/isIterable`              | readonly [``"isIterable"``]                                                                                                                                                                                                                                                                                                                                                                    |
+| `@democrance/utils/isNil`                   | readonly [``"isNil"``]                                                                                                                                                                                                                                                                                                                                                                         |
+| `@democrance/utils/isNumber`                | readonly [``"isNumber"``]                                                                                                                                                                                                                                                                                                                                                                      |
+| `@democrance/utils/isPlainObject`           | readonly [``"isPlainObject"``]                                                                                                                                                                                                                                                                                                                                                                 |
+| `@democrance/utils/isPrimitive`             | readonly [``"isPrimitive"``, ``"isPrimitiveLike"``]                                                                                                                                                                                                                                                                                                                                            |
+| `@democrance/utils/isProperNaN`             | readonly [``"isProperNaN"``]                                                                                                                                                                                                                                                                                                                                                                   |
+| `@democrance/utils/isPropertyKey`           | readonly [``"isParsablePropertyKey"``, ``"isPropertyKey"``]                                                                                                                                                                                                                                                                                                                                    |
+| `@democrance/utils/isSubstringInString`     | readonly [``"isSubstringInString"``]                                                                                                                                                                                                                                                                                                                                                           |
+| `@democrance/utils/isTuple`                 | readonly [``"isTuple"``]                                                                                                                                                                                                                                                                                                                                                                       |
+| `@democrance/utils/isoToEmojiToISO`         | readonly [``"emojiToIso"``, ``"isCountryIso"``, ``"isoToEmoji"``]                                                                                                                                                                                                                                                                                                                              |
+| `@democrance/utils/keyBy`                   | readonly [``"keyBy"``]                                                                                                                                                                                                                                                                                                                                                                         |
+| `@democrance/utils/length`                  | readonly [``"length"``]                                                                                                                                                                                                                                                                                                                                                                        |
+| `@democrance/utils/memoize`                 | readonly [``"memoize"``, ``"memoizeDeep"``, ``"memoizeLast"``]                                                                                                                                                                                                                                                                                                                                 |
+| `@democrance/utils/movePropLevelUp`         | readonly [``"movePropLevelUp"``]                                                                                                                                                                                                                                                                                                                                                               |
+| `@democrance/utils/price`                   | readonly [``"applyCurrencySign"``, ``"formatValue"``, ``"parseLocaleNumber"``, ``"price"``]                                                                                                                                                                                                                                                                                                    |
+| `@democrance/utils/safeJSON`                | readonly [``"safeJSONParse"``]                                                                                                                                                                                                                                                                                                                                                                 |
+| `@democrance/utils/saveAs`                  | readonly [``"saveAs"``]                                                                                                                                                                                                                                                                                                                                                                        |
+| `@democrance/utils/shuffle`                 | readonly [``"shuffle"``]                                                                                                                                                                                                                                                                                                                                                                       |
+| `@democrance/utils/slugify`                 | readonly [``"deCamelize"``, ``"slugify"``]                                                                                                                                                                                                                                                                                                                                                     |
+| `@democrance/utils/sortObjects`             | readonly [``"sortObjects"``]                                                                                                                                                                                                                                                                                                                                                                   |
+| `@democrance/utils/splitByIndex`            | readonly [``"splitByIndex"``]                                                                                                                                                                                                                                                                                                                                                                  |
+| `@democrance/utils/storageWrapper`          | readonly [``"clearLocalStorage"``, ``"clearSessionStorage"``, ``"getLocalStorageItem"``, ``"getSessionStorageItem"``, ``"removeLocalStorageItem"``, ``"removeSessionStorageItem"``, ``"setLocalStorageItem"``, ``"setSessionStorageItem"``]                                                                                                                                                    |
+| `@democrance/utils/stringToRegexp`          | readonly [``"strToRegexp"``]                                                                                                                                                                                                                                                                                                                                                                   |
+| `@democrance/utils/toArray`                 | readonly [``"toArray"``]                                                                                                                                                                                                                                                                                                                                                                       |
+| `@democrance/utils/toType`                  | readonly [``"toType"``]                                                                                                                                                                                                                                                                                                                                                                        |
+| `@democrance/utils/urlJoin`                 | readonly [``"urlJoin"``]                                                                                                                                                                                                                                                                                                                                                                       |
+| `@democrance/utils/urlTemplate`             | readonly [``"parseURLTemplate"``, ``"urlTemplate"``]                                                                                                                                                                                                                                                                                                                                           |
+| `@democrance/utils/zipcelx`                 | readonly [``"zipcelx"``]                                                                                                                                                                                                                                                                                                                                                                       |
 
 #### Defined in
 
@@ -682,16 +682,16 @@ lib/preset/autoImportUtilsPreset.ts:2
 
 #### Type parameters
 
-| Name | Type |
-| :------ | :------ |
-| `T` | extends `string` |
+| Name | Type             |
+| :--- | :--------------- |
+| `T`  | extends `string` |
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `urls` | [`Nullable`](modules.md#nullable)<`T`\>[] |
-| `options` | `ImageExistsOptions` |
+| Name      | Type                                      |
+| :-------- | :---------------------------------------- |
+| `urls`    | [`Nullable`](modules.md#nullable)<`T`\>[] |
+| `options` | `ImageExistsOptions`                      |
 
 #### Returns
 
@@ -701,7 +701,7 @@ lib/preset/autoImportUtilsPreset.ts:2
 
 [lib/dom/imageExists.ts:62](https://github.com/daniil4udo/utils/blob/f0fc279/lib/dom/imageExists.ts#L62)
 
-___
+---
 
 ### anyImagesExist
 
@@ -709,16 +709,16 @@ ___
 
 #### Type parameters
 
-| Name | Type |
-| :------ | :------ |
-| `T` | extends `string` |
+| Name | Type             |
+| :--- | :--------------- |
+| `T`  | extends `string` |
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `urls` | [`Nullable`](modules.md#nullable)<`T`\>[] |
-| `options` | `ImageExistsOptions` |
+| Name      | Type                                      |
+| :-------- | :---------------------------------------- |
+| `urls`    | [`Nullable`](modules.md#nullable)<`T`\>[] |
+| `options` | `ImageExistsOptions`                      |
 
 #### Returns
 
@@ -728,7 +728,7 @@ ___
 
 [lib/dom/imageExists.ts:69](https://github.com/daniil4udo/utils/blob/f0fc279/lib/dom/imageExists.ts#L69)
 
-___
+---
 
 ### applyCurrencySign
 
@@ -738,10 +738,10 @@ Applies currency sign and price format to a formatted price string.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `formattedPrice` | `string` | The formatted price value. |
-| `options` | `IFormat` | The currency format options. |
+| Name             | Type      | Description                  |
+| :--------------- | :-------- | :--------------------------- |
+| `formattedPrice` | `string`  | The formatted price value.   |
+| `options`        | `IFormat` | The currency format options. |
 
 #### Returns
 
@@ -770,7 +770,7 @@ console.log(formattedPrice); // Outputs: "$1,234.56"
 
 [lib/price.ts:156](https://github.com/daniil4udo/utils/blob/f0fc279/lib/price.ts#L156)
 
-___
+---
 
 ### arrayBufferToString
 
@@ -785,8 +785,8 @@ representing a UTF-16 encoded string.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name     | Type          | Description                      |
+| :------- | :------------ | :------------------------------- |
 | `buffer` | `ArrayBuffer` | The ArrayBuffer to be converted. |
 
 #### Returns
@@ -814,7 +814,7 @@ console.log(arrayBufferToString(buffer)); // Outputs: A
 
 [lib/arrayBuffer.ts:26](https://github.com/daniil4udo/utils/blob/f0fc279/lib/arrayBuffer.ts#L26)
 
-___
+---
 
 ### capitalize
 
@@ -827,9 +827,9 @@ with the first letter converted to uppercase and the rest of the string preserve
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `str` | `string` | `''` | The input string to capitalize. Default is an empty string. |
+| Name  | Type     | Default value | Description                                                 |
+| :---- | :------- | :------------ | :---------------------------------------------------------- |
+| `str` | `string` | `''`          | The input string to capitalize. Default is an empty string. |
 
 #### Returns
 
@@ -859,7 +859,7 @@ console.log(capitalize('')); // Outputs: ''
 
 [lib/changeCase.ts:24](https://github.com/daniil4udo/utils/blob/f0fc279/lib/changeCase.ts#L24)
 
-___
+---
 
 ### checkFlagEmojiSupport
 
@@ -869,10 +869,10 @@ Checks if a given emoji Unicode is supported as a flag emoji according to a prov
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name                | Type                                                            | Description                                               |
+| :------------------ | :-------------------------------------------------------------- | :-------------------------------------------------------- |
 | `unicodeSupportMap` | [`UnicodeResultSupportMap`](modules.md#unicoderesultsupportmap) | The map showing the support for various Unicode features. |
-| `emojiUnicode` | `string` | The emoji Unicode string to check. |
+| `emojiUnicode`      | `string`                                                        | The emoji Unicode string to check.                        |
 
 #### Returns
 
@@ -884,7 +884,7 @@ True if the emoji Unicode is supported as a flag emoji, false otherwise.
 
 [lib/emojiSupport.ts:153](https://github.com/daniil4udo/utils/blob/f0fc279/lib/emojiSupport.ts#L153)
 
-___
+---
 
 ### checkHorseRacingSkinToneComboEmojiSupport
 
@@ -894,10 +894,10 @@ Checks if a given emoji Unicode is supported as a horse racing skin tone combo e
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name                | Type                                                            | Description                                               |
+| :------------------ | :-------------------------------------------------------------- | :-------------------------------------------------------- |
 | `unicodeSupportMap` | [`UnicodeResultSupportMap`](modules.md#unicoderesultsupportmap) | The map showing the support for various Unicode features. |
-| `emojiUnicode` | `string` | The emoji Unicode string to check. |
+| `emojiUnicode`      | `string`                                                        | The emoji Unicode string to check.                        |
 
 #### Returns
 
@@ -909,7 +909,7 @@ True if the emoji Unicode is supported as a horse racing skin tone combo emoji, 
 
 [lib/emojiSupport.ts:188](https://github.com/daniil4udo/utils/blob/f0fc279/lib/emojiSupport.ts#L188)
 
-___
+---
 
 ### checkPersonEmojiSupport
 
@@ -919,10 +919,10 @@ Checks if a given emoji Unicode is supported as a person Zero Width Joiner (ZWJ)
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name                | Type                                                            | Description                                               |
+| :------------------ | :-------------------------------------------------------------- | :-------------------------------------------------------- |
 | `unicodeSupportMap` | [`UnicodeResultSupportMap`](modules.md#unicoderesultsupportmap) | The map showing the support for various Unicode features. |
-| `emojiUnicode` | `string` | The emoji Unicode string to check. |
+| `emojiUnicode`      | `string`                                                        | The emoji Unicode string to check.                        |
 
 #### Returns
 
@@ -934,7 +934,7 @@ True if the emoji Unicode is supported as a person ZWJ emoji, false otherwise.
 
 [lib/emojiSupport.ts:204](https://github.com/daniil4udo/utils/blob/f0fc279/lib/emojiSupport.ts#L204)
 
-___
+---
 
 ### checkSkinToneModifierSupport
 
@@ -944,10 +944,10 @@ Checks if a given emoji Unicode is supported with a skin tone modifier according
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name                | Type                                                            | Description                                               |
+| :------------------ | :-------------------------------------------------------------- | :-------------------------------------------------------- |
 | `unicodeSupportMap` | [`UnicodeResultSupportMap`](modules.md#unicoderesultsupportmap) | The map showing the support for various Unicode features. |
-| `emojiUnicode` | `string` | The emoji Unicode string to check. |
+| `emojiUnicode`      | `string`                                                        | The emoji Unicode string to check.                        |
 
 #### Returns
 
@@ -959,7 +959,7 @@ True if the emoji Unicode is supported with a skin tone modifier, false otherwis
 
 [lib/emojiSupport.ts:172](https://github.com/daniil4udo/utils/blob/f0fc279/lib/emojiSupport.ts#L172)
 
-___
+---
 
 ### circularDeepEqual
 
@@ -970,16 +970,16 @@ Whether the items passed are deeply-equal in value, including circular reference
 #### Type parameters
 
 | Name |
-| :------ |
-| `A` |
-| `B` |
+| :--- |
+| `A`  |
+| `B`  |
 
 #### Parameters
 
 | Name | Type |
-| :------ | :------ |
-| `a` | `A` |
-| `b` | `B` |
+| :--- | :--- |
+| `a`  | `A`  |
+| `b`  | `B`  |
 
 #### Returns
 
@@ -989,7 +989,7 @@ Whether the items passed are deeply-equal in value, including circular reference
 
 node_modules/.pnpm/fast-equals@5.0.1/node_modules/fast-equals/index.d.ts:21
 
-___
+---
 
 ### circularShallowEqual
 
@@ -1000,16 +1000,16 @@ Whether the items passed are shallowly-equal in value, including circular refere
 #### Type parameters
 
 | Name |
-| :------ |
-| `A` |
-| `B` |
+| :--- |
+| `A`  |
+| `B`  |
 
 #### Parameters
 
 | Name | Type |
-| :------ | :------ |
-| `a` | `A` |
-| `b` | `B` |
+| :--- | :--- |
+| `a`  | `A`  |
+| `b`  | `B`  |
 
 #### Returns
 
@@ -1019,7 +1019,7 @@ Whether the items passed are shallowly-equal in value, including circular refere
 
 node_modules/.pnpm/fast-equals@5.0.1/node_modules/fast-equals/index.d.ts:38
 
-___
+---
 
 ### clearLocalStorage
 
@@ -1037,7 +1037,7 @@ If an error occurs during the operation, an error message is logged to the conso
 
 [lib/storageWrapper.ts:103](https://github.com/daniil4udo/utils/blob/f0fc279/lib/storageWrapper.ts#L103)
 
-___
+---
 
 ### clearSessionStorage
 
@@ -1055,7 +1055,7 @@ If an error occurs during the operation, an error message is logged to the conso
 
 [lib/storageWrapper.ts:103](https://github.com/daniil4udo/utils/blob/f0fc279/lib/storageWrapper.ts#L103)
 
-___
+---
 
 ### convertPYDateFormatToJS
 
@@ -1068,8 +1068,8 @@ which is a JavaScript-style date format string.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name          | Type     | Description                                      |
+| :------------ | :------- | :----------------------------------------------- |
 | `unformatted` | `string` | The unformatted Python-style date format string. |
 
 #### Returns
@@ -1100,7 +1100,7 @@ console.log(convertPYDateFormatToJS('%m/%d/%y %I:%M %p')); // Outputs: 'MM/DD/YY
 
 [lib/convertPYDateFormatToJS.ts:57](https://github.com/daniil4udo/utils/blob/f0fc279/lib/convertPYDateFormatToJS.ts#L57)
 
-___
+---
 
 ### createCustomEqual
 
@@ -1115,14 +1115,14 @@ support for legacy environments that cannot polyfill for modern features expecte
 
 #### Type parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name   | Type        |
+| :----- | :---------- |
 | `Meta` | `undefined` |
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name       | Type                                 |
+| :--------- | :----------------------------------- |
 | `options?` | `CustomEqualCreatorOptions`<`Meta`\> |
 
 #### Returns
@@ -1134,16 +1134,16 @@ support for legacy environments that cannot polyfill for modern features expecte
 ##### Type parameters
 
 | Name |
-| :------ |
-| `A` |
-| `B` |
+| :--- |
+| `A`  |
+| `B`  |
 
 ##### Parameters
 
 | Name | Type |
-| :------ | :------ |
-| `a` | `A` |
-| `b` | `B` |
+| :--- | :--- |
+| `a`  | `A`  |
+| `b`  | `B`  |
 
 ##### Returns
 
@@ -1153,7 +1153,7 @@ support for legacy environments that cannot polyfill for modern features expecte
 
 node_modules/.pnpm/fast-equals@5.0.1/node_modules/fast-equals/index.d.ts:52
 
-___
+---
 
 ### createDefaultsDeep
 
@@ -1161,8 +1161,8 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name      | Type     |
+| :-------- | :------- |
 | `merger?` | `Merger` |
 
 #### Returns
@@ -1173,7 +1173,7 @@ ___
 
 node_modules/.pnpm/defu@6.1.2/node_modules/defu/dist/defu.d.ts:19
 
-___
+---
 
 ### deCamelize
 
@@ -1183,9 +1183,9 @@ Converts a camelCase or PascalCase string to a space-separated string.
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `str?` | `string` | `''` | The input string to be converted. |
+| Name   | Type     | Default value | Description                       |
+| :----- | :------- | :------------ | :-------------------------------- |
+| `str?` | `string` | `''`          | The input string to be converted. |
 
 #### Returns
 
@@ -1208,7 +1208,7 @@ deCamelize('helloWorld123'); // Returns 'hello World123'
 
 [lib/slugify.ts:12](https://github.com/daniil4udo/utils/blob/f0fc279/lib/slugify.ts#L12)
 
-___
+---
 
 ### debounce
 
@@ -1218,18 +1218,18 @@ Debounce functions
 
 #### Type parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name         | Type                |
+| :----------- | :------------------ |
 | `ArgumentsT` | extends `unknown`[] |
-| `ReturnT` | `ReturnT` |
+| `ReturnT`    | `ReturnT`           |
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `fn` | (...`args`: `ArgumentsT`) => `ReturnT` \| `PromiseLike`<`ReturnT`\> | Promise-returning/async function to debounce. |
-| `wait?` | `number` | Milliseconds to wait before calling `fn`. Default value is 25ms |
-| `options?` | [`DebounceOptions`](interfaces/DebounceOptions.md) | - |
+| Name       | Type                                                                | Description                                                     |
+| :--------- | :------------------------------------------------------------------ | :-------------------------------------------------------------- |
+| `fn`       | (...`args`: `ArgumentsT`) => `ReturnT` \| `PromiseLike`<`ReturnT`\> | Promise-returning/async function to debounce.                   |
+| `wait?`    | `number`                                                            | Milliseconds to wait before calling `fn`. Default value is 25ms |
+| `options?` | [`DebounceOptions`](interfaces/DebounceOptions.md)                  | -                                                               |
 
 #### Returns
 
@@ -1241,8 +1241,8 @@ A function that delays calling `fn` until after `wait` milliseconds have elapsed
 
 ##### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name      | Type         |
+| :-------- | :----------- |
 | `...args` | `ArgumentsT` |
 
 ##### Returns
@@ -1267,7 +1267,7 @@ for (const number of [1, 2, 3]) {
 
 node_modules/.pnpm/perfect-debounce@1.0.0/node_modules/perfect-debounce/dist/index.d.ts:32
 
-___
+---
 
 ### deepClone
 
@@ -1284,15 +1284,15 @@ If `structuredClone` throws an error, it's assumed the input is not structured d
 
 #### Type parameters
 
-| Name | Description |
-| :------ | :------ |
-| `T` | The type of the input and the returned value. |
+| Name | Description                                   |
+| :--- | :-------------------------------------------- |
+| `T`  | The type of the input and the returned value. |
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `input` | `T` | The input value to clone. |
+| Name    | Type | Description               |
+| :------ | :--- | :------------------------ |
+| `input` | `T`  | The input value to clone. |
 
 #### Returns
 
@@ -1302,8 +1302,8 @@ A deep clone of the input value.
 
 **`See`**
 
- - [rfdc](https://github.com/davidmarkclements/rfdc) for the fallback deep clone method.
- - [structuredClone](https://developer.mozilla.org/en-US/docs/Web/API/structuredClone) for more about the structured clone algorithm.
+- [rfdc](https://github.com/davidmarkclements/rfdc) for the fallback deep clone method.
+- [structuredClone](https://developer.mozilla.org/en-US/docs/Web/API/structuredClone) for more about the structured clone algorithm.
 
 **`Example`**
 
@@ -1315,7 +1315,7 @@ const clonedObj = deepClone(obj);
 console.log(clonedObj); // Output: { foo: { bar: { baz: 'qux' } } }
 console.log(clonedObj === obj); // Output: false (clonedObj is a deep clone of obj)
 
-const array = [1, [2, [3, [4]]]];
+const array = [ 1, [ 2, [ 3, [ 4 ] ] ] ];
 const clonedArr = deepClone(array);
 console.log(clonedArr); // Output: [1, [2, [3, [4]]]]
 console.log(clonedArr === array); // Output: false (clonedArr is a deep clone of array)
@@ -1325,7 +1325,7 @@ console.log(clonedArr === array); // Output: false (clonedArr is a deep clone of
 
 [lib/deepClone.ts:39](https://github.com/daniil4udo/utils/blob/f0fc279/lib/deepClone.ts#L39)
 
-___
+---
 
 ### deepEqual
 
@@ -1336,16 +1336,16 @@ Whether the items passed are deeply-equal in value.
 #### Type parameters
 
 | Name |
-| :------ |
-| `A` |
-| `B` |
+| :--- |
+| `A`  |
+| `B`  |
 
 #### Parameters
 
 | Name | Type |
-| :------ | :------ |
-| `a` | `A` |
-| `b` | `B` |
+| :--- | :--- |
+| `a`  | `A`  |
+| `b`  | `B`  |
 
 #### Returns
 
@@ -1355,7 +1355,7 @@ Whether the items passed are deeply-equal in value.
 
 node_modules/.pnpm/fast-equals@5.0.1/node_modules/fast-equals/index.d.ts:13
 
-___
+---
 
 ### defaultsDeep
 
@@ -1363,17 +1363,17 @@ ___
 
 #### Type parameters
 
-| Name | Type |
-| :------ | :------ |
-| `Source` | extends `Input` |
+| Name       | Type                                  |
+| :--------- | :------------------------------------ |
+| `Source`   | extends `Input`                       |
 | `Defaults` | extends (`Input` \| `IgnoredInput`)[] |
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `source` | `Source` \| `IgnoredInput` |
-| `...defaults` | `Defaults` |
+| Name          | Type                       |
+| :------------ | :------------------------- |
+| `source`      | `Source` \| `IgnoredInput` |
+| `...defaults` | `Defaults`                 |
 
 #### Returns
 
@@ -1383,7 +1383,7 @@ ___
 
 node_modules/.pnpm/defu@6.1.2/node_modules/defu/dist/defu.d.ts:11
 
-___
+---
 
 ### defaultsDeepArrayFn
 
@@ -1391,16 +1391,16 @@ ___
 
 #### Type parameters
 
-| Name | Type |
-| :------ | :------ |
-| `Source` | extends `Input` |
+| Name       | Type                                  |
+| :--------- | :------------------------------------ |
+| `Source`   | extends `Input`                       |
 | `Defaults` | extends (`Input` \| `IgnoredInput`)[] |
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `source` | `Source` |
+| Name          | Type       |
+| :------------ | :--------- |
+| `source`      | `Source`   |
 | `...defaults` | `Defaults` |
 
 #### Returns
@@ -1411,7 +1411,7 @@ ___
 
 node_modules/.pnpm/defu@6.1.2/node_modules/defu/dist/defu.d.ts:9
 
-___
+---
 
 ### defaultsDeepFn
 
@@ -1419,16 +1419,16 @@ ___
 
 #### Type parameters
 
-| Name | Type |
-| :------ | :------ |
-| `Source` | extends `Input` |
+| Name       | Type                                  |
+| :--------- | :------------------------------------ |
+| `Source`   | extends `Input`                       |
 | `Defaults` | extends (`Input` \| `IgnoredInput`)[] |
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `source` | `Source` |
+| Name          | Type       |
+| :------------ | :--------- |
+| `source`      | `Source`   |
 | `...defaults` | `Defaults` |
 
 #### Returns
@@ -1439,7 +1439,7 @@ ___
 
 node_modules/.pnpm/defu@6.1.2/node_modules/defu/dist/defu.d.ts:9
 
-___
+---
 
 ### emojiToIso
 
@@ -1449,9 +1449,9 @@ Converts a flag emoji to a country ISO code.
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `emoji?` | `string` | `''` | The flag emoji to convert. |
+| Name     | Type     | Default value | Description                |
+| :------- | :------- | :------------ | :------------------------- |
+| `emoji?` | `string` | `''`          | The flag emoji to convert. |
 
 #### Returns
 
@@ -1471,7 +1471,7 @@ emojiToIso('👍'); // Outputs: null
 
 [lib/isoToEmojiToISO.ts:58](https://github.com/daniil4udo/utils/blob/f0fc279/lib/isoToEmojiToISO.ts#L58)
 
-___
+---
 
 ### filterObject
 
@@ -1488,15 +1488,15 @@ object is returned without any filtering.
 
 #### Type parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `T` | extends `Record`<`PropertyKey`, `any`\> | The type of the values in the object. |
+| Name | Type                                    | Description                           |
+| :--- | :-------------------------------------- | :------------------------------------ |
+| `T`  | extends `Record`<`PropertyKey`, `any`\> | The type of the values in the object. |
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `object` | `T` | The object to filter. |
+| Name        | Type                                                      | Description                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| :---------- | :-------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `object`    | `T`                                                       | The object to filter.                                                                                                                                                                                                                                                                                                                                                                                                            |
 | `predicate` | [`PredicateFunction`](modules.md#predicatefunction)<`T`\> | The function used to test each item of the object. This function should return `true` to keep the item, or `false` otherwise. It accepts four arguments: `key` The key of the current element being processed in the object. `value` The value of the current element being processed in the object. `index` The index of the current element being processed in the object. `object` The object `filterObject` was called upon. |
 
 #### Returns
@@ -1504,7 +1504,7 @@ object is returned without any filtering.
 `T`
 
 A new object with the properties that passed the test.
-     If no properties pass the test, an empty object will be returned.
+If no properties pass the test, an empty object will be returned.
 
 **`Remarks`**
 
@@ -1515,20 +1515,20 @@ This function is part of the [@democrance/utils](https://github.com/daniil4udo/u
 ```ts
 import { filterObject } from '@democrance/utils';
 
-const myObj = { a: 1, b: 2, c: 3 }
+const myObj = { a: 1, b: 2, c: 3 };
 // Filter the object to include only key-value pairs where the value is greater than 1
-const filteredObj = filterObject(myObj, (key, value) => value > 1)
-console.log(filteredObj) // { b: 2, c: 3 }
+const filteredObj = filterObject(myObj, (key, value) => value > 1);
+console.log(filteredObj); // { b: 2, c: 3 }
 // Filter the object to include only key-value pairs where the key starts with 'a'
-const filteredObj2 = filterObject(myObj, (key) => key.startsWith('a'))
-console.log(filteredObj2) // { a: 1 }
+const filteredObj2 = filterObject(myObj, key => key.startsWith('a'));
+console.log(filteredObj2); // { a: 1 }
 ```
 
 #### Defined in
 
 [lib/filterObject.ts:59](https://github.com/daniil4udo/utils/blob/f0fc279/lib/filterObject.ts#L59)
 
-___
+---
 
 ### formatValue
 
@@ -1545,11 +1545,11 @@ The function throws an error if the fractions parameter is not a boolean or numb
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `value` | `string` \| `number` | `undefined` | The value to be formatted. If it is a string, it will be converted to a number. |
-| `fractions?` | `number` \| `boolean` | `true` | Determines the number of fraction digits in the formatted output. |
-| `locale?` | `string` | `'en'` | The locale in which the number should be formatted. Default is 'en' for English. |
+| Name         | Type                  | Default value | Description                                                                      |
+| :----------- | :-------------------- | :------------ | :------------------------------------------------------------------------------- |
+| `value`      | `string` \| `number`  | `undefined`   | The value to be formatted. If it is a string, it will be converted to a number.  |
+| `fractions?` | `number` \| `boolean` | `true`        | Determines the number of fraction digits in the formatted output.                |
+| `locale?`    | `string`              | `'en'`        | The locale in which the number should be formatted. Default is 'en' for English. |
 
 #### Returns
 
@@ -1579,7 +1579,7 @@ formatValue(1234.5678, 2, 'de-DE'); // Outputs: "1.234,57"
 
 [lib/price.ts:108](https://github.com/daniil4udo/utils/blob/f0fc279/lib/price.ts#L108)
 
-___
+---
 
 ### generateUnicodeSupportMap
 
@@ -1587,9 +1587,9 @@ ___
 
 #### Parameters
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| `testMap` | `Readonly`<{ `1.1`: ``"❤"`` = '\u{2764}'; `10.0`: ``"🤩"`` = '\u{1F929}'; `11.0`: ``"🥰"`` = '\u{1F970}'; `12.0`: ``"🥱"`` = '\u{1F971}'; `13.0`: ``"🥸"`` = '\u{1F978}'; `14.0`: ``"🫠"`` = '\u{1FAE0}'; `15.0`: ``"🫨"`` = '\u{1FAE8}'; `3.0`: ``"ℹ"`` = '\u{2139}'; `3.2`: ``"♻"`` = '\u{267B}'; `4.0`: ``"⚡"`` = '\u{26A1}'; `4.1`: ``"⚙"`` = '\u{2699}'; `5.1`: ``"🀄"`` = '\u{1F004}'; `5.2`: ``"⛵"`` = '\u{26F5}'; `6.0`: ``"👺"`` = '\u{1F47A}'; `6.1`: ``"😑"`` = '\u{1F611}'; `7.0`: ``"🕵"`` = '\u{1F575}'; `8.0`: ``"🤘"`` = '\u{1F918}'; `9.0`: ``"🤣"`` = '\u{1F923}'; `flag`: ``"🇺🇸"`` = '\u{1F1FA}\u{1F1F8}'; `horseRacing`: ``"🏇🏿"`` = '\u{1F3C7}\u{1F3FF}'; `personZwj`: ``"👨‍👩‍👧‍👦"`` = '\u{1F468}\u{200D}\u{1F469}\u{200D}\u{1F467}\u{200D}\u{1F466}'; `rainbowFlag`: ``"🏳🌈"`` = '\u{1F3F3}\u{1F308}'; `skinToneModifier`: `string`[]  }\> | `unicodeSupportTestMap` |
+| Name      | Type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | Default value           |
+| :-------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------- |
+| `testMap` | `Readonly`<{ `1.1`: `"❤"` = '\u{2764}'; `10.0`: `"🤩"` = '\u{1F929}'; `11.0`: `"🥰"` = '\u{1F970}'; `12.0`: `"🥱"` = '\u{1F971}'; `13.0`: `"🥸"` = '\u{1F978}'; `14.0`: `"🫠"` = '\u{1FAE0}'; `15.0`: `"🫨"` = '\u{1FAE8}'; `3.0`: `"ℹ"` = '\u{2139}'; `3.2`: `"♻"` = '\u{267B}'; `4.0`: `"⚡"` = '\u{26A1}'; `4.1`: `"⚙"` = '\u{2699}'; `5.1`: `"🀄"` = '\u{1F004}'; `5.2`: `"⛵"` = '\u{26F5}'; `6.0`: `"👺"` = '\u{1F47A}'; `6.1`: `"😑"` = '\u{1F611}'; `7.0`: `"🕵"` = '\u{1F575}'; `8.0`: `"🤘"` = '\u{1F918}'; `9.0`: `"🤣"` = '\u{1F923}'; `flag`: `"🇺🇸"` = '\u{1F1FA}\u{1F1F8}'; `horseRacing`: `"🏇🏿"` = '\u{1F3C7}\u{1F3FF}'; `personZwj`: `"👨‍👩‍👧‍👦"` = '\u{1F468}\u{200D}\u{1F469}\u{200D}\u{1F467}\u{200D}\u{1F466}'; `rainbowFlag`: `"🏳🌈"` = '\u{1F3F3}\u{1F308}'; `skinToneModifier`: `string`[] }\> | `unicodeSupportTestMap` |
 
 #### Returns
 
@@ -1599,7 +1599,7 @@ ___
 
 [lib/emojiSupportMap.ts:105](https://github.com/daniil4udo/utils/blob/f0fc279/lib/emojiSupportMap.ts#L105)
 
-___
+---
 
 ### getCtor
 
@@ -1617,14 +1617,14 @@ the `module` as a CommonJS module and returns it as is.
 
 #### Type parameters
 
-| Name | Description |
-| :------ | :------ |
+| Name     | Description                                                                                           |
+| :------- | :---------------------------------------------------------------------------------------------------- |
 | `Module` | The type of the module's default export (for ES modules) or the module itself (for CommonJS modules). |
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name     | Type                              | Description                                                                                                                     |
+| :------- | :-------------------------------- | :------------------------------------------------------------------------------------------------------------------------------ |
 | `module` | `Partial`<`EsModule`<`Module`\>\> | The module to check. It could either be an ES module with `__esModule` or `Symbol.toStringTag` properties or a CommonJS module. |
 
 #### Returns
@@ -1644,11 +1644,11 @@ This function is part of the [@democrance/utils](https://github.com/daniil4udo/u
 import { getCtor } from '@democrance/utils';
 
 // CommonJS module
-const myCjsModule = { foo: "bar" };
+const myCjsModule = { foo: 'bar' };
 console.log(getCtor(myCjsModule)); // { foo: "bar" }
 
 // ES module
-const myEsModule = { __esModule: true, default: { foo: "bar" } };
+const myEsModule = { __esModule: true, default: { foo: 'bar' } };
 console.log(getCtor(myEsModule)); // { foo: "bar" }
 ```
 
@@ -1656,7 +1656,7 @@ console.log(getCtor(myEsModule)); // { foo: "bar" }
 
 [lib/getCtor.ts:70](https://github.com/daniil4udo/utils/blob/f0fc279/lib/getCtor.ts#L70)
 
-___
+---
 
 ### getLocalStorageItem
 
@@ -1671,8 +1671,8 @@ If no value exists for the `key`, or if an error occurs during the operation, nu
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name  | Type     | Description                              |
+| :---- | :------- | :--------------------------------------- |
 | `key` | `string` | The key for which to retrieve the value. |
 
 #### Returns
@@ -1685,7 +1685,7 @@ The retrieved value, if it exists and is successfully retrieved and deserialized
 
 [lib/storageWrapper.ts:64](https://github.com/daniil4udo/utils/blob/f0fc279/lib/storageWrapper.ts#L64)
 
-___
+---
 
 ### getNameFromPath
 
@@ -1698,18 +1698,18 @@ This function can return the file name with or without the extension, based on t
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `path` | `string` | `''` | The file path from which to extract the name. Defaults to an empty string. |
-| `options` | `Object` | `{}` | An optional object containing additional parameters. |
-| `options.extension` | `undefined` \| `boolean` | `undefined` | A boolean indicating whether the file name should include the extension. Defaults to `true`. |
+| Name                | Type                     | Default value | Description                                                                                  |
+| :------------------ | :----------------------- | :------------ | :------------------------------------------------------------------------------------------- |
+| `path`              | `string`                 | `''`          | The file path from which to extract the name. Defaults to an empty string.                   |
+| `options`           | `Object`                 | `{}`          | An optional object containing additional parameters.                                         |
+| `options.extension` | `undefined` \| `boolean` | `undefined`   | A boolean indicating whether the file name should include the extension. Defaults to `true`. |
 
 #### Returns
 
 `undefined` \| `string`
 
 The file name with or without the extension, based on the `extension` option.
-     If the path does not contain a file name, an empty string is returned.
+If the path does not contain a file name, an empty string is returned.
 
 **`Remarks`**
 
@@ -1732,7 +1732,7 @@ console.log(getNameFromPath('/path/to/file.txt', { extension: false })); // Outp
 
 [lib/getNameFromPath.ts:56](https://github.com/daniil4udo/utils/blob/f0fc279/lib/getNameFromPath.ts#L56)
 
-___
+---
 
 ### getSessionStorageItem
 
@@ -1747,8 +1747,8 @@ If no value exists for the `key`, or if an error occurs during the operation, nu
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name  | Type     | Description                              |
+| :---- | :------- | :--------------------------------------- |
 | `key` | `string` | The key for which to retrieve the value. |
 
 #### Returns
@@ -1761,7 +1761,7 @@ The retrieved value, if it exists and is successfully retrieved and deserialized
 
 [lib/storageWrapper.ts:64](https://github.com/daniil4udo/utils/blob/f0fc279/lib/storageWrapper.ts#L64)
 
-___
+---
 
 ### getUnicodeSupportMap
 
@@ -1775,7 +1775,7 @@ ___
 
 [lib/emojiSupportMap.ts:172](https://github.com/daniil4udo/utils/blob/f0fc279/lib/emojiSupportMap.ts#L172)
 
-___
+---
 
 ### has
 
@@ -1786,17 +1786,17 @@ This function narrows down the type of the input object to `T & Record<PropertyK
 
 #### Type parameters
 
-| Name | Type |
-| :------ | :------ |
-| `T` | `T` |
-| `K` | extends `PropertyKey` |
+| Name | Type                  |
+| :--- | :-------------------- |
+| `T`  | `T`                   |
+| `K`  | extends `PropertyKey` |
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `object` | [`Nullable`](modules.md#nullable)<`T`\> | The object to be checked. It can be `null` or `undefined`. |
-| `key` | `K` | The key (property) to check for on the object. Can be a `string`, `number`, or `symbol`. |
+| Name     | Type                                    | Description                                                                              |
+| :------- | :-------------------------------------- | :--------------------------------------------------------------------------------------- |
+| `object` | [`Nullable`](modules.md#nullable)<`T`\> | The object to be checked. It can be `null` or `undefined`.                               |
+| `key`    | `K`                                     | The key (property) to check for on the object. Can be a `string`, `number`, or `symbol`. |
 
 #### Returns
 
@@ -1815,7 +1815,7 @@ import { has } from '@democrance/utils';
 
 const obj = { a: 1 };
 if (has(obj, 'a')) {
-  console.log(obj.a);  // TypeScript knows that `obj.a` exists and is a number
+    console.log(obj.a); // TypeScript knows that `obj.a` exists and is a number
 }
 ```
 
@@ -1823,7 +1823,7 @@ if (has(obj, 'a')) {
 
 [lib/has.ts:25](https://github.com/daniil4udo/utils/blob/f0fc279/lib/has.ts#L25)
 
-___
+---
 
 ### hasValue
 
@@ -1838,14 +1838,14 @@ has been assigned a non-empty value.
 #### Type parameters
 
 | Name |
-| :------ |
-| `T` |
+| :--- |
+| `T`  |
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `input` | `T` | The value to check. |
+| Name    | Type | Description         |
+| :------ | :--- | :------------------ |
+| `input` | `T`  | The value to check. |
 
 #### Returns
 
@@ -1862,17 +1862,17 @@ This function is part of the [@democrance/utils](https://github.com/daniil4udo/u
 ```ts
 import { hasValue } from '@democrance/utils';
 
-console.log(hasValue(null));       // Outputs: false
-console.log(hasValue(undefined));  // Outputs: false
-console.log(hasValue(''));         // Outputs: false
-console.log(hasValue('Hello'));    // Outputs: true
+console.log(hasValue(null)); // Outputs: false
+console.log(hasValue(undefined)); // Outputs: false
+console.log(hasValue('')); // Outputs: false
+console.log(hasValue('Hello')); // Outputs: true
 ```
 
 #### Defined in
 
 [lib/hasValue.ts:25](https://github.com/daniil4udo/utils/blob/f0fc279/lib/hasValue.ts#L25)
 
-___
+---
 
 ### highlightMatch
 
@@ -1889,11 +1889,11 @@ If no tag is specified, the function uses 'strong' as the default tag.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `str` | `string` | The string in which to highlight matches. |
-| `indices` | `MatchRange` | An array of match ranges. Each match range is a two-element array containing the start and end indices of the match. Defaults to an empty array. |
-| `options` | `Options` | An options object. It currently supports one option: 'tag', which specifies the HTML tag to use for wrapping matches. Defaults to an object with 'tag' set to 'strong'. |
+| Name      | Type         | Description                                                                                                                                                             |
+| :-------- | :----------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `str`     | `string`     | The string in which to highlight matches.                                                                                                                               |
+| `indices` | `MatchRange` | An array of match ranges. Each match range is a two-element array containing the start and end indices of the match. Defaults to an empty array.                        |
+| `options` | `Options`    | An options object. It currently supports one option: 'tag', which specifies the HTML tag to use for wrapping matches. Defaults to an object with 'tag' set to 'strong'. |
 
 #### Returns
 
@@ -1911,23 +1911,23 @@ This function is part of the [@democrance/utils](https://github.com/daniil4udo/u
 import { highlightMatch } from '@democrance/utils';
 
 const str1 = 'Hello, world!';
-const matches1 = [[7, 11]]; // Matches the word 'world'
+const matches1 = [ [ 7, 11 ] ]; // Matches the word 'world'
 console.log(highlightMatch(str1, matches1)); // Output: 'Hello, <strong>world</strong>!'
 
 const str2 = 'Hello, world!';
-const matches2 = [[0, 4], [7, 11]]; // Matches the words 'Hello' and 'world'
+const matches2 = [ [ 0, 4 ], [ 7, 11 ] ]; // Matches the words 'Hello' and 'world'
 console.log(highlightMatch(str2, matches2, { tag: 'span' })); // Output: '<span>Hello</span>, <span>world</span>!'
 
 const str3 = 'Hello, world!';
-const matches3 = [[-5, 5]]; // Matches nothing'
+const matches3 = [ [ -5, 5 ] ]; // Matches nothing'
 console.log(highlightMatch(str3, matches3)); // Output: 'Hello, world!'
 
 const str4 = 'Hello, world!';
-const matches4 = [[0, 20]]; // Matches the entire string
-console.log(highlightMatch(str4, matches4));  // Output: '<strong>Hello, world!</strong>'
+const matches4 = [ [ 0, 20 ] ]; // Matches the entire string
+console.log(highlightMatch(str4, matches4)); // Output: '<strong>Hello, world!</strong>'
 
 const str5 = 'Hello, world!';
-const matches5 = [[0, 4]];
+const matches5 = [ [ 0, 4 ] ];
 const options5 = { tag: 'em' };
 console.log(highlightMatch(str5, matches5, options5)); // Output: '<em>Hello</em>, world!'
 ```
@@ -1936,7 +1936,7 @@ console.log(highlightMatch(str5, matches5, options5)); // Output: '<em>Hello</em
 
 [lib/highlightMatch.ts:137](https://github.com/daniil4udo/utils/blob/f0fc279/lib/highlightMatch.ts#L137)
 
-___
+---
 
 ### htmlTruncate
 
@@ -1953,11 +1953,11 @@ to the 'text-clipper' function.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `htmlString` | `string` | The HTML string to truncate. |
-| `maxLength` | `number` | The maximum length of the output string. |
-| `options` | `undefined` \| `ClipOptions` | Additional options to pass to the 'text-clipper' function. |
+| Name         | Type                         | Description                                                |
+| :----------- | :--------------------------- | :--------------------------------------------------------- |
+| `htmlString` | `string`                     | The HTML string to truncate.                               |
+| `maxLength`  | `number`                     | The maximum length of the output string.                   |
+| `options`    | `undefined` \| `ClipOptions` | Additional options to pass to the 'text-clipper' function. |
 
 #### Returns
 
@@ -1987,7 +1987,7 @@ console.log(htmlTruncate(html, 20)); // Output: '<p>This is an <strong>exa</stro
 
 [lib/htmlTruncate.ts:41](https://github.com/daniil4udo/utils/blob/f0fc279/lib/htmlTruncate.ts#L41)
 
-___
+---
 
 ### imageExists
 
@@ -1997,16 +1997,16 @@ Checks if an image exists at the given URL.
 
 #### Type parameters
 
-| Name | Type |
-| :------ | :------ |
-| `T` | extends `string` |
+| Name | Type             |
+| :--- | :--------------- |
+| `T`  | extends `string` |
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `url` | [`Nullable`](modules.md#nullable)<`T`\> | The URL of the image to check. |
-| `options` | `ImageExistsOptions` | An optional ImageExistsOptions object. |
+| Name      | Type                                    | Description                            |
+| :-------- | :-------------------------------------- | :------------------------------------- |
+| `url`     | [`Nullable`](modules.md#nullable)<`T`\> | The URL of the image to check.         |
+| `options` | `ImageExistsOptions`                    | An optional ImageExistsOptions object. |
 
 #### Returns
 
@@ -2032,7 +2032,8 @@ const options: ImageExistsOptions = { throwError: true };
 try {
     const url = await imageExists('https://example.com/image.png', options);
     console.log(url); // Outputs: 'https://example.com/image.png' or false
-} catch (error) {
+}
+catch (error) {
     console.log(error.message); // Outputs: '[imageExists]: Image https://example.com/image.png does not exist'
 }
 ```
@@ -2041,7 +2042,7 @@ try {
 
 [lib/dom/imageExists.ts:39](https://github.com/daniil4udo/utils/blob/f0fc279/lib/dom/imageExists.ts#L39)
 
-___
+---
 
 ### isAbsoluteURL
 
@@ -2058,9 +2059,9 @@ The function uses a regular expression to check if the URL matches either of the
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `url` | `string` | `''` | The URL to check. Defaults to an empty string. |
+| Name  | Type     | Default value | Description                                    |
+| :---- | :------- | :------------ | :--------------------------------------------- |
+| `url` | `string` | `''`          | The URL to check. Defaults to an empty string. |
 
 #### Returns
 
@@ -2087,7 +2088,7 @@ console.log(isAbsoluteURL('mailto:test@example.com')); // Output: false
 
 [lib/isAbsoluteURL.ts:28](https://github.com/daniil4udo/utils/blob/f0fc279/lib/isAbsoluteURL.ts#L28)
 
-___
+---
 
 ### isColor
 
@@ -2101,8 +2102,8 @@ a color style and then checks if the color was recognized.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name  | Type     | Description                                                                                                                                                                                                                                                               |
+| :---- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `str` | `string` | The string to test. This should be a string that you want to test whether it represents a CSS color. It could be a named color (like 'red'), a hex color (like '#ff0000'), an rgb color (like 'rgb(255, 0, 0)'), or any other string that could represent a color in CSS. |
 
 #### Returns
@@ -2110,7 +2111,7 @@ a color style and then checks if the color was recognized.
 `boolean`
 
 `true` if `str` is a valid color string
-     as recognized by the browser's CSS engine. Otherwise, returns `false`.
+as recognized by the browser's CSS engine. Otherwise, returns `false`.
 
 **`Remarks`**
 
@@ -2131,7 +2132,7 @@ console.log(isColor('invalid color')); // returns false
 
 [lib/dom/isColor.ts:30](https://github.com/daniil4udo/utils/blob/f0fc279/lib/dom/isColor.ts#L30)
 
-___
+---
 
 ### isCountryIso
 
@@ -2141,9 +2142,9 @@ Checks if a string is a valid country ISO code.
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `iso?` | `string` | `''` | The input string to check. |
+| Name   | Type     | Default value | Description                |
+| :----- | :------- | :------------ | :------------------------- |
+| `iso?` | `string` | `''`          | The input string to check. |
 
 #### Returns
 
@@ -2163,7 +2164,7 @@ isCountryIso('123'); // Outputs:  false
 
 [lib/isoToEmojiToISO.ts:17](https://github.com/daniil4udo/utils/blob/f0fc279/lib/isoToEmojiToISO.ts#L17)
 
-___
+---
 
 ### isDefined
 
@@ -2178,14 +2179,14 @@ assigned a value.
 #### Type parameters
 
 | Name |
-| :------ |
-| `T` |
+| :--- |
+| `T`  |
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `input` | `T` | The value to check. |
+| Name    | Type | Description         |
+| :------ | :--- | :------------------ |
+| `input` | `T`  | The value to check. |
 
 #### Returns
 
@@ -2202,16 +2203,16 @@ This function is part of the [@democrance/utils](https://github.com/daniil4udo/u
 ```ts
 import { isDefined } from '@democrance/utils';
 
-console.log(isDefined(null));       // Outputs: false
-console.log(isDefined(undefined));  // Outputs: false
-console.log(isDefined(''));         // Outputs: true
+console.log(isDefined(null)); // Outputs: false
+console.log(isDefined(undefined)); // Outputs: false
+console.log(isDefined('')); // Outputs: true
 ```
 
 #### Defined in
 
 [lib/isDefined.ts:26](https://github.com/daniil4udo/utils/blob/f0fc279/lib/isDefined.ts#L26)
 
-___
+---
 
 ### isEmojiUnicodeSupported
 
@@ -2221,11 +2222,11 @@ Checks if a given emoji Unicode is supported according to a provided Unicode sup
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `unicodeSupportMap` | [`UnicodeResultSupportMap`](modules.md#unicoderesultsupportmap) | `undefined` | The map showing the support for various Unicode features. |
-| `emojiUnicode` | `string` | `undefined` | The emoji Unicode string to check. |
-| `unicodeVersion?` | ``"personZwj"`` \| ``"horseRacing"`` \| ``"flag"`` \| ``"rainbowFlag"`` \| ``"skinToneModifier"`` \| ``"15.0"`` \| ``"14.0"`` \| ``"13.0"`` \| ``"12.0"`` \| ``"11.0"`` \| ``"10.0"`` \| ``"9.0"`` \| ``"8.0"`` \| ``"7.0"`` \| ``"6.1"`` \| ``"6.0"`` \| ``"5.2"`` \| ``"5.1"`` \| ``"4.1"`` \| ``"4.0"`` \| ``"3.2"`` \| ``"3.0"`` \| ``"1.1"`` \| ``"meta"`` | `'flag'` | The Unicode version to check for. |
+| Name                | Type                                                                                                                                                                                                                                                                                                            | Default value | Description                                               |
+| :------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------ | :-------------------------------------------------------- |
+| `unicodeSupportMap` | [`UnicodeResultSupportMap`](modules.md#unicoderesultsupportmap)                                                                                                                                                                                                                                                 | `undefined`   | The map showing the support for various Unicode features. |
+| `emojiUnicode`      | `string`                                                                                                                                                                                                                                                                                                        | `undefined`   | The emoji Unicode string to check.                        |
+| `unicodeVersion?`   | `"personZwj"` \| `"horseRacing"` \| `"flag"` \| `"rainbowFlag"` \| `"skinToneModifier"` \| `"15.0"` \| `"14.0"` \| `"13.0"` \| `"12.0"` \| `"11.0"` \| `"10.0"` \| `"9.0"` \| `"8.0"` \| `"7.0"` \| `"6.1"` \| `"6.0"` \| `"5.2"` \| `"5.1"` \| `"4.1"` \| `"4.0"` \| `"3.2"` \| `"3.0"` \| `"1.1"` \| `"meta"` | `'flag'`      | The Unicode version to check for.                         |
 
 #### Returns
 
@@ -2237,7 +2238,7 @@ True if the emoji Unicode is supported, false otherwise.
 
 [lib/emojiSupport.ts:129](https://github.com/daniil4udo/utils/blob/f0fc279/lib/emojiSupport.ts#L129)
 
-___
+---
 
 ### isEmojiUnicodeSupportedByBrowser
 
@@ -2245,10 +2246,10 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `emojiUnicode` | `string` |
-| `unicodeVersion` | ``"personZwj"`` \| ``"horseRacing"`` \| ``"flag"`` \| ``"rainbowFlag"`` \| ``"skinToneModifier"`` \| ``"15.0"`` \| ``"14.0"`` \| ``"13.0"`` \| ``"12.0"`` \| ``"11.0"`` \| ``"10.0"`` \| ``"9.0"`` \| ``"8.0"`` \| ``"7.0"`` \| ``"6.1"`` \| ``"6.0"`` \| ``"5.2"`` \| ``"5.1"`` \| ``"4.1"`` \| ``"4.0"`` \| ``"3.2"`` \| ``"3.0"`` \| ``"1.1"`` \| ``"meta"`` |
+| Name             | Type                                                                                                                                                                                                                                                                                                            |
+| :--------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `emojiUnicode`   | `string`                                                                                                                                                                                                                                                                                                        |
+| `unicodeVersion` | `"personZwj"` \| `"horseRacing"` \| `"flag"` \| `"rainbowFlag"` \| `"skinToneModifier"` \| `"15.0"` \| `"14.0"` \| `"13.0"` \| `"12.0"` \| `"11.0"` \| `"10.0"` \| `"9.0"` \| `"8.0"` \| `"7.0"` \| `"6.1"` \| `"6.0"` \| `"5.2"` \| `"5.1"` \| `"4.1"` \| `"4.0"` \| `"3.2"` \| `"3.0"` \| `"1.1"` \| `"meta"` |
 
 #### Returns
 
@@ -2258,7 +2259,7 @@ ___
 
 [lib/emojiSupport.ts:214](https://github.com/daniil4udo/utils/blob/f0fc279/lib/emojiSupport.ts#L214)
 
-___
+---
 
 ### isEmptyArray
 
@@ -2271,15 +2272,15 @@ If the `deep` option is true (the default), then nested arrays are checked deepl
 #### Type parameters
 
 | Name |
-| :------ |
-| `T` |
+| :--- |
+| `T`  |
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `array` | `T`[] | The array to check. |
-| `options` | `Options`<`T`\> | An options object. |
+| Name      | Type            | Description         |
+| :-------- | :-------------- | :------------------ |
+| `array`   | `T`[]           | The array to check. |
+| `options` | `Options`<`T`\> | An options object.  |
 
 #### Returns
 
@@ -2296,17 +2297,17 @@ This function is part of the [@democrance/utils](https://github.com/daniil4udo/u
 ```ts
 import { isEmptyArray } from '@democrance/utils';
 
-console.log(isEmptyArray([1, 2, 3])); // Returns false
+console.log(isEmptyArray([ 1, 2, 3 ])); // Returns false
 console.log(isEmptyArray([])); // Returns true
-console.log(isEmptyArray([[], [[], []]])); // Returns true
-console.log(isEmptyArray([[], [[], [1]]])); // Returns false
+console.log(isEmptyArray([ [], [ [], [] ] ])); // Returns true
+console.log(isEmptyArray([ [], [ [], [ 1 ] ] ])); // Returns false
 ```
 
 #### Defined in
 
 [lib/isEmptyArray.ts:52](https://github.com/daniil4udo/utils/blob/f0fc279/lib/isEmptyArray.ts#L52)
 
-___
+---
 
 ### isEmptyCollection
 
@@ -2314,8 +2315,8 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name         | Type      |
+| :----------- | :-------- |
 | `collection` | `unknown` |
 
 #### Returns
@@ -2326,7 +2327,7 @@ ___
 
 [lib/isEmptyCollection.ts:10](https://github.com/daniil4udo/utils/blob/f0fc279/lib/isEmptyCollection.ts#L10)
 
-___
+---
 
 ### isFlagEmoji
 
@@ -2337,8 +2338,8 @@ On Windows, flags render as two-letter country codes, see http://emojipedia.org/
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name           | Type     | Description                |
+| :------------- | :------- | :------------------------- |
 | `emojiUnicode` | `string` | The emoji string to check. |
 
 #### Returns
@@ -2351,7 +2352,7 @@ True if the string is a flag emoji, false otherwise.
 
 [lib/emojiSupport.ts:12](https://github.com/daniil4udo/utils/blob/f0fc279/lib/emojiSupport.ts#L12)
 
-___
+---
 
 ### isHTML
 
@@ -2361,8 +2362,8 @@ Checks if a given string is a valid HTML.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name  | Type     | Description                     |
+| :---- | :------- | :------------------------------ |
 | `str` | `string` | The string to validate as HTML. |
 
 #### Returns
@@ -2393,7 +2394,7 @@ isHTML('Hello, World!'); // Outputs: false (plain text is not considered valid H
 
 [lib/dom/isHTML.ts:21](https://github.com/daniil4udo/utils/blob/f0fc279/lib/dom/isHTML.ts#L21)
 
-___
+---
 
 ### isHorseRacingSkinToneComboEmoji
 
@@ -2403,8 +2404,8 @@ Checks if a given string is a Unicode horse racing skin tone combo emoji.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name           | Type     | Description                |
+| :------------- | :------- | :------------------------- |
 | `emojiUnicode` | `string` | The emoji string to check. |
 
 #### Returns
@@ -2417,7 +2418,7 @@ True if the string is a horse racing skin tone combo emoji, false otherwise.
 
 [lib/emojiSupport.ts:88](https://github.com/daniil4udo/utils/blob/f0fc279/lib/emojiSupport.ts#L88)
 
-___
+---
 
 ### isIterable
 
@@ -2433,13 +2434,13 @@ do not. In order to be iterable, an object must implement the `@@iterator` metho
 #### Type parameters
 
 | Name |
-| :------ |
-| `T` |
+| :--- |
+| `T`  |
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name    | Type                    | Description                         |
+| :------ | :---------------------- | :---------------------------------- |
 | `input` | `T` \| `Iterable`<`T`\> | The input to check for iterability. |
 
 #### Returns
@@ -2461,7 +2462,7 @@ isIterable
 ```ts
 import { isIterable } from '@democrance/utils';
 
-isIterable([1, 2, 3]); // Outputs: true
+isIterable([ 1, 2, 3 ]); // Outputs: true
 isIterable(123); // Outputs: false
 ```
 
@@ -2469,7 +2470,7 @@ isIterable(123); // Outputs: false
 
 [lib/isIterable.ts:25](https://github.com/daniil4udo/utils/blob/f0fc279/lib/isIterable.ts#L25)
 
-___
+---
 
 ### isKeyCapEmoji
 
@@ -2482,8 +2483,8 @@ Same issue on Windows also fixed in Chrome 57, http://i.imgur.com/rQF7woO.png
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name           | Type     | Description                |
+| :------------- | :------- | :------------------------- |
 | `emojiUnicode` | `string` | The emoji string to check. |
 
 #### Returns
@@ -2496,7 +2497,7 @@ True if the string is a keycap emoji, false otherwise.
 
 [lib/emojiSupport.ts:58](https://github.com/daniil4udo/utils/blob/f0fc279/lib/emojiSupport.ts#L58)
 
-___
+---
 
 ### isNil
 
@@ -2510,8 +2511,8 @@ This is useful when you want to check if a variable has been assigned a value or
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name    | Type      | Description         |
+| :------ | :-------- | :------------------ |
 | `input` | `unknown` | The value to check. |
 
 #### Returns
@@ -2529,16 +2530,16 @@ This function is part of the [@democrance/utils](https://github.com/daniil4udo/u
 ```ts
 import { isNil } from '@democrance/utils';
 
-console.log(isNil(null));       // Outputs: true
-console.log(isNil(undefined));  // Outputs: true
-console.log(isNil(''));         // Outputs: false
+console.log(isNil(null)); // Outputs: true
+console.log(isNil(undefined)); // Outputs: true
+console.log(isNil('')); // Outputs: false
 ```
 
 #### Defined in
 
 [lib/isNil.ts:24](https://github.com/daniil4udo/utils/blob/f0fc279/lib/isNil.ts#L24)
 
-___
+---
 
 ### isNumber
 
@@ -2551,8 +2552,8 @@ that can be coerced to a finite number.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name    | Type      | Description              |
+| :------ | :-------- | :----------------------- |
 | `input` | `unknown` | The value to be checked. |
 
 #### Returns
@@ -2564,46 +2565,46 @@ A type predicate indicating whether the input is a number.
 **`Example`**
 
 ```ts
-isNumber(5e3);               // true
-isNumber(0xff);              // true
-isNumber(-1.1);              // true
-isNumber(0);                 // true
-isNumber(1);                 // true
-isNumber(1.1);               // true
-isNumber(10);                // true
-isNumber(10.10);             // true
-isNumber(100);               // true
-isNumber('-1.1');            // true
-isNumber('0');               // true
-isNumber('012');             // true
-isNumber('0xff');            // true
-isNumber('1');               // true
-isNumber('1.1');             // true
-isNumber('10');              // true
-isNumber('10.10');           // true
-isNumber('100');             // true
-isNumber('5e3');             // true
-isNumber(parseInt('012'));   // true
-isNumber(parseFloat('012')); // true
+isNumber(5e3); // true
+isNumber(0xFF); // true
+isNumber(-1.1); // true
+isNumber(0); // true
+isNumber(1); // true
+isNumber(1.1); // true
+isNumber(10); // true
+isNumber(10.10); // true
+isNumber(100); // true
+isNumber('-1.1'); // true
+isNumber('0'); // true
+isNumber('012'); // true
+isNumber('0xff'); // true
+isNumber('1'); // true
+isNumber('1.1'); // true
+isNumber('10'); // true
+isNumber('10.10'); // true
+isNumber('100'); // true
+isNumber('5e3'); // true
+isNumber(Number.parseInt('012')); // true
+isNumber(Number.parseFloat('012')); // true
 
-isNumber(Infinity);          // false
-isNumber(NaN);               // false
-isNumber(null);              // false
-isNumber(undefined);         // false
-isNumber('');                // false
-isNumber('   ');             // false
-isNumber('foo');             // false
-isNumber([1]);               // false
-isNumber([]);                // false
-isNumber(function () {});    // false
-isNumber({});                // false
+isNumber(Infinity); // false
+isNumber(Number.NaN); // false
+isNumber(null); // false
+isNumber(undefined); // false
+isNumber(''); // false
+isNumber('   '); // false
+isNumber('foo'); // false
+isNumber([ 1 ]); // false
+isNumber([]); // false
+isNumber(() => {}); // false
+isNumber({}); // false
 ```
 
 #### Defined in
 
 [lib/isNumber.ts:46](https://github.com/daniil4udo/utils/blob/f0fc279/lib/isNumber.ts#L46)
 
-___
+---
 
 ### isParsablePropertyKey
 
@@ -2613,8 +2614,8 @@ Checks if the given input can be parsed as a property key.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name    | Type      | Description              |
+| :------ | :-------- | :----------------------- |
 | `input` | `unknown` | The value to be checked. |
 
 #### Returns
@@ -2631,7 +2632,7 @@ A parsable property key is a value that can be easily converted to a valid JavaS
 
 [lib/isPropertyKey.ts:32](https://github.com/daniil4udo/utils/blob/f0fc279/lib/isPropertyKey.ts#L32)
 
-___
+---
 
 ### isPersonZwjEmoji
 
@@ -2641,8 +2642,8 @@ Checks if a given string is a Unicode person Zero Width Joiner (ZWJ) emoji.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name           | Type     | Description                |
+| :------------- | :------- | :------------------------- |
 | `emojiUnicode` | `string` | The emoji string to check. |
 
 #### Returns
@@ -2655,7 +2656,7 @@ True if the string is a person ZWJ emoji, false otherwise.
 
 [lib/emojiSupport.ts:102](https://github.com/daniil4udo/utils/blob/f0fc279/lib/emojiSupport.ts#L102)
 
-___
+---
 
 ### isPlainObject
 
@@ -2663,14 +2664,14 @@ ___
 
 #### Type parameters
 
-| Name | Type |
-| :------ | :------ |
-| `T` | extends `Record`<`PropertyKey`, `any`\> |
+| Name | Type                                    |
+| :--- | :-------------------------------------- |
+| `T`  | extends `Record`<`PropertyKey`, `any`\> |
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name    | Type      |
+| :------ | :-------- |
 | `input` | `unknown` |
 
 #### Returns
@@ -2681,7 +2682,7 @@ input is T
 
 [lib/isPlainObject.ts:3](https://github.com/daniil4udo/utils/blob/f0fc279/lib/isPlainObject.ts#L3)
 
-___
+---
 
 ### isPrimitive
 
@@ -2695,8 +2696,8 @@ is not an object and has no methods. There are 7 primitive data types:
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name    | Type      | Description                                     |
+| :------ | :-------- | :---------------------------------------------- |
 | `input` | `unknown` | The input to check for being a primitive value. |
 
 #### Returns
@@ -2718,15 +2719,15 @@ isPrimitive
 ```ts
 import { isPrimitive } from '@democrance/utils';
 
-isPrimitive('Hello') // Outputs: true
-isPrimitive({}) // Outputs: false
+isPrimitive('Hello'); // Outputs: true
+isPrimitive({}); // Outputs: false
 ```
 
 #### Defined in
 
 [lib/isPrimitive.ts:28](https://github.com/daniil4udo/utils/blob/f0fc279/lib/isPrimitive.ts#L28)
 
-___
+---
 
 ### isPrimitiveLike
 
@@ -2739,8 +2740,8 @@ as primitive-like as they hold primitive values and can be immutable if their st
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name    | Type      | Description                                          |
+| :------ | :-------- | :--------------------------------------------------- |
 | `input` | `unknown` | The input to check for being a primitive-like value. |
 
 #### Returns
@@ -2755,17 +2756,17 @@ Returns `true` if the input is a primitive-like value, otherwise `false`.
 import { isPrimitiveLike } from '@democrance/utils';
 
 // returns true
-isPrimitiveLike(new Date())
+isPrimitiveLike(new Date());
 
 // returns false
-isPrimitiveLike({})
+isPrimitiveLike({});
 ```
 
 #### Defined in
 
 [lib/isPrimitive.ts:53](https://github.com/daniil4udo/utils/blob/f0fc279/lib/isPrimitive.ts#L53)
 
-___
+---
 
 ### isProperNaN
 
@@ -2776,14 +2777,14 @@ Determines if a given input can not be treated as a number.
 #### Type parameters
 
 | Name |
-| :------ |
-| `T` |
+| :--- |
+| `T`  |
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `input` | `T` | The value to check. |
+| Name    | Type | Description         |
+| :------ | :--- | :------------------ |
+| `input` | `T`  | The value to check. |
 
 #### Returns
 
@@ -2799,7 +2800,7 @@ This function utilizes the isNumber function to verify if the input can not be t
 
 [lib/isProperNaN.ts:12](https://github.com/daniil4udo/utils/blob/f0fc279/lib/isProperNaN.ts#L12)
 
-___
+---
 
 ### isPropertyKey
 
@@ -2809,8 +2810,8 @@ Checks if the given input is a valid JavaScript property key.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name    | Type      | Description              |
+| :------ | :-------- | :----------------------- |
 | `input` | `unknown` | The value to be checked. |
 
 #### Returns
@@ -2827,7 +2828,7 @@ A property key in JavaScript can be a `string`, `symbol`, or `number`. This func
 
 [lib/isPropertyKey.ts:16](https://github.com/daniil4udo/utils/blob/f0fc279/lib/isPropertyKey.ts#L16)
 
-___
+---
 
 ### isRainbowFlagEmoji
 
@@ -2838,8 +2839,8 @@ Tested on mac OS 10.12.6 and Windows 10 FCU, it renders as two separate characte
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name           | Type     | Description                |
+| :------------- | :------- | :------------------------- |
 | `emojiUnicode` | `string` | The emoji string to check. |
 
 #### Returns
@@ -2852,7 +2853,7 @@ True if the string is a rainbow flag emoji, false otherwise.
 
 [lib/emojiSupport.ts:30](https://github.com/daniil4udo/utils/blob/f0fc279/lib/emojiSupport.ts#L30)
 
-___
+---
 
 ### isSkinToneComboEmoji
 
@@ -2862,8 +2863,8 @@ Checks if a given string is a Unicode skin tone combo emoji.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name           | Type     | Description                |
+| :------------- | :------- | :------------------------- |
 | `emojiUnicode` | `string` | The emoji string to check. |
 
 #### Returns
@@ -2876,7 +2877,7 @@ True if the string is a skin tone combo emoji, false otherwise.
 
 [lib/emojiSupport.ts:68](https://github.com/daniil4udo/utils/blob/f0fc279/lib/emojiSupport.ts#L68)
 
-___
+---
 
 ### isSubstringInString
 
@@ -2889,12 +2890,12 @@ making the check case-insensitive.
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `str` | `string` | `''` | The string in which to check for the substring. Defaults to an empty string. |
-| `subString` | `string` | `''` | The substring to check for. Defaults to an empty string. |
-| `«destructured»` | `Object` | `{}` | - |
-| › `caseSensitive` | `undefined` \| `boolean` | `undefined` | - |
+| Name              | Type                     | Default value | Description                                                                  |
+| :---------------- | :----------------------- | :------------ | :--------------------------------------------------------------------------- |
+| `str`             | `string`                 | `''`          | The string in which to check for the substring. Defaults to an empty string. |
+| `subString`       | `string`                 | `''`          | The substring to check for. Defaults to an empty string.                     |
+| `«destructured»`  | `Object`                 | `{}`          | -                                                                            |
+| › `caseSensitive` | `undefined` \| `boolean` | `undefined`   | -                                                                            |
 
 #### Returns
 
@@ -2923,7 +2924,7 @@ console.log(isSubstringInString('Hello world', 'goodbye')); // Outputs: false
 
 [lib/isSubstringInString.ts:25](https://github.com/daniil4udo/utils/blob/f0fc279/lib/isSubstringInString.ts#L25)
 
-___
+---
 
 ### isTuple
 
@@ -2938,15 +2939,15 @@ the type of `input` to `[T, V]` in the scope where this function returns true.
 
 #### Type parameters
 
-| Name | Description |
-| :------ | :------ |
-| `T` | The type of the first element in the tuple. |
-| `V` | The type of the second element in the tuple. |
+| Name | Description                                  |
+| :--- | :------------------------------------------- |
+| `T`  | The type of the first element in the tuple.  |
+| `V`  | The type of the second element in the tuple. |
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name    | Type      | Description              |
+| :------ | :-------- | :----------------------- |
 | `input` | `unknown` | The value to be checked. |
 
 #### Returns
@@ -2958,10 +2959,10 @@ A type predicate indicating whether `input` is a tuple of two numbers.
 **`Example`**
 
 ```ts
-const tuple: unknown = [1, 2];
+const tuple: unknown = [ 1, 2 ];
 if (isTuple<number, number>(tuple)) {
-  console.log(tuple[0]);  // Output: 1
-  console.log(tuple[1]);  // Output: 2
+    console.log(tuple[0]); // Output: 1
+    console.log(tuple[1]); // Output: 2
 }
 ```
 
@@ -2969,7 +2970,7 @@ if (isTuple<number, number>(tuple)) {
 
 [lib/isTuple.ts:23](https://github.com/daniil4udo/utils/blob/f0fc279/lib/isTuple.ts#L23)
 
-___
+---
 
 ### isoToEmoji
 
@@ -2979,9 +2980,9 @@ Converts a country ISO code to a flag emoji.
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `iso?` | `string` | `''` | The country ISO code to convert. |
+| Name   | Type     | Default value | Description                      |
+| :----- | :------- | :------------ | :------------------------------- |
+| `iso?` | `string` | `''`          | The country ISO code to convert. |
 
 #### Returns
 
@@ -3001,7 +3002,7 @@ isoToEmoji('123'); // Outputs:  null
 
 [lib/isoToEmojiToISO.ts:39](https://github.com/daniil4udo/utils/blob/f0fc279/lib/isoToEmojiToISO.ts#L39)
 
-___
+---
 
 ### keyBy
 
@@ -3014,15 +3015,15 @@ If `keyOrFunction` is undefined or not provided, the array element itself is use
 
 #### Type parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `T` | extends `PropertyKey` \| `Record`<`PropertyKey`, `any`\> | the type of elements in the input array. |
+| Name | Type                                                     | Description                              |
+| :--- | :------------------------------------------------------- | :--------------------------------------- |
+| `T`  | extends `PropertyKey` \| `Record`<`PropertyKey`, `any`\> | the type of elements in the input array. |
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `array` | `T`[] | The array to iterate over. |
+| Name             | Type      | Description                                                                 |
+| :--------------- | :-------- | :-------------------------------------------------------------------------- |
+| `array`          | `T`[]     | The array to iterate over.                                                  |
 | `keyOrFunction?` | `Keyable` | The key generation criterion. It can be a function, a string, or undefined. |
 
 #### Returns
@@ -3044,16 +3045,16 @@ keyBy
 ```ts
 import { keyBy } from '@democrance/utils';
 
-keyBy(['a', 'b', 'c']) // Outputs: {a: 'a', b: 'b', c: 'c'}
-keyBy([{id: 1}, {id: 2}], 'id') // Outputs: {1: {id: 1}, 2: {id: 2}}
-keyBy([{id: 1}, {id: 2}], obj => 'prefix' + obj.id) // Outputs: {prefix1: {id: 1}, prefix2: {id: 2}}
+keyBy([ 'a', 'b', 'c' ]); // Outputs: {a: 'a', b: 'b', c: 'c'}
+keyBy([{ id: 1 }, { id: 2 }], 'id'); // Outputs: {1: {id: 1}, 2: {id: 2}}
+keyBy([{ id: 1 }, { id: 2 }], obj => `prefix${obj.id}`); // Outputs: {prefix1: {id: 1}, prefix2: {id: 2}}
 ```
 
 #### Defined in
 
 [lib/keyBy.ts:39](https://github.com/daniil4udo/utils/blob/f0fc279/lib/keyBy.ts#L39)
 
-___
+---
 
 ### length
 
@@ -3061,10 +3062,10 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `collection` | `any` |
-| `«destructured»` | `Object` |
+| Name              | Type                     |
+| :---------------- | :----------------------- |
+| `collection`      | `any`                    |
+| `«destructured»`  | `Object`                 |
 | › `includeString` | `undefined` \| `boolean` |
 
 #### Returns
@@ -3075,7 +3076,7 @@ ___
 
 [lib/length.ts:5](https://github.com/daniil4udo/utils/blob/f0fc279/lib/length.ts#L5)
 
-___
+---
 
 ### memoize
 
@@ -3083,16 +3084,16 @@ ___
 
 #### Type parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name | Type            |
+| :--- | :-------------- |
 | `Fn` | extends `AnyFn` |
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `fn` | `Fn` \| `Memoized`<`Fn`\> |
-| `options?` | `Options`<`Fn`\> |
+| Name       | Type                      |
+| :--------- | :------------------------ |
+| `fn`       | `Fn` \| `Memoized`<`Fn`\> |
+| `options?` | `Options`<`Fn`\>          |
 
 #### Returns
 
@@ -3102,7 +3103,7 @@ ___
 
 node_modules/.pnpm/micro-memoize@4.1.2/node_modules/micro-memoize/index.d.ts:129
 
-___
+---
 
 ### memoizeDeep
 
@@ -3110,16 +3111,16 @@ ___
 
 #### Type parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name | Type            |
+| :--- | :-------------- |
 | `Fn` | extends `AnyFn` |
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `fn` | `Fn` \| `Memoized`<`Fn`\> |
-| `options?` | `Options`<`Fn`\> |
+| Name       | Type                      |
+| :--------- | :------------------------ |
+| `fn`       | `Fn` \| `Memoized`<`Fn`\> |
+| `options?` | `Options`<`Fn`\>          |
 
 #### Returns
 
@@ -3129,7 +3130,7 @@ ___
 
 [lib/memoize.ts:40](https://github.com/daniil4udo/utils/blob/f0fc279/lib/memoize.ts#L40)
 
-___
+---
 
 ### memoizeLast
 
@@ -3137,16 +3138,16 @@ ___
 
 #### Type parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name | Type            |
+| :--- | :-------------- |
 | `Fn` | extends `AnyFn` |
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `fn` | `Fn` \| `Memoized`<`Fn`\> |
-| `options?` | `Options`<`Fn`\> |
+| Name       | Type                      |
+| :--------- | :------------------------ |
+| `fn`       | `Fn` \| `Memoized`<`Fn`\> |
+| `options?` | `Options`<`Fn`\>          |
 
 #### Returns
 
@@ -3156,7 +3157,7 @@ ___
 
 [lib/memoize.ts:89](https://github.com/daniil4udo/utils/blob/f0fc279/lib/memoize.ts#L89)
 
-___
+---
 
 ### movePropLevelUp
 
@@ -3167,17 +3168,17 @@ The function uses deep cloning to avoid mutation of the nested property.
 
 #### Type parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `T` | extends `Record`<`PropertyKey`, `any`\> | The type of the object |
-| `K` | extends `string` \| `number` \| `symbol` | - |
+| Name | Type                                     | Description            |
+| :--- | :--------------------------------------- | :--------------------- |
+| `T`  | extends `Record`<`PropertyKey`, `any`\>  | The type of the object |
+| `K`  | extends `string` \| `number` \| `symbol` | -                      |
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `parentObject` | `T` | The object containing the property to be moved. |
-| `propertyName` | `K` | The name of the property to be moved a level up. |
+| Name           | Type | Description                                      |
+| :------------- | :--- | :----------------------------------------------- |
+| `parentObject` | `T`  | The object containing the property to be moved.  |
+| `propertyName` | `K`  | The name of the property to be moved a level up. |
 
 #### Returns
 
@@ -3216,7 +3217,7 @@ const result = movePropLevelUp(obj, 'b'); // Outputs: { a: 1, c: 2, d: 3, e: 4 }
 
 [lib/movePropLevelUp.ts:40](https://github.com/daniil4udo/utils/blob/f0fc279/lib/movePropLevelUp.ts#L40)
 
-___
+---
 
 ### parseLocaleNumber
 
@@ -3230,17 +3231,17 @@ with a dot to create a string that can be parsed by JavaScript's parseFloat func
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `value` | `string` \| `number` | The string to be parsed. This should contain a number formatted according to the rules of the specified locale. For example, if the locale is 'de-DE', then the number should be formatted with '.' as the thousands separator and ',' as the decimal separator. |
-| `locale` | `string` | The IETF language tag of the locale that the number is formatted in. This is used to determine the thousands and decimal separators that are used in the number string. |
+| Name     | Type                 | Description                                                                                                                                                                                                                                                      |
+| :------- | :------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `value`  | `string` \| `number` | The string to be parsed. This should contain a number formatted according to the rules of the specified locale. For example, if the locale is 'de-DE', then the number should be formatted with '.' as the thousands separator and ',' as the decimal separator. |
+| `locale` | `string`             | The IETF language tag of the locale that the number is formatted in. This is used to determine the thousands and decimal separators that are used in the number string.                                                                                          |
 
 #### Returns
 
 `number`
 
 The parsed number. If the number string is not a valid number in the specified locale,
-     the function will return NaN.
+the function will return NaN.
 
 **`Remarks`**
 
@@ -3266,7 +3267,7 @@ parseLocaleNumber('1.000.000,1', 'de-DE');
 
 [lib/price.ts:63](https://github.com/daniil4udo/utils/blob/f0fc279/lib/price.ts#L63)
 
-___
+---
 
 ### parseURLTemplate
 
@@ -3274,8 +3275,8 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name       | Type     |
+| :--------- | :------- |
 | `template` | `string` |
 
 #### Returns
@@ -3286,7 +3287,7 @@ ___
 
 node_modules/.pnpm/url-template@3.1.0/node_modules/url-template/lib/url-template.d.ts:7
 
-___
+---
 
 ### price
 
@@ -3296,11 +3297,11 @@ Formats a price value with currency sign and formatting options.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `value?` | `number` | The price value to format. Can be a string or number. Defaults to 0. |
-| `locale` | `ILocate` | The localization options for number and currency formatting. |
-| `fractions` | `number` | The number of decimal places to display. |
+| Name        | Type      | Description                                                          |
+| :---------- | :-------- | :------------------------------------------------------------------- |
+| `value?`    | `number`  | The price value to format. Can be a string or number. Defaults to 0. |
+| `locale`    | `ILocate` | The localization options for number and currency formatting.         |
+| `fractions` | `number`  | The number of decimal places to display.                             |
 
 #### Returns
 
@@ -3329,7 +3330,7 @@ price(1234.5678, { currencySign: '€', priceFormat: '{currency} {amount}' }, 3)
 
 [lib/price.ts:187](https://github.com/daniil4udo/utils/blob/f0fc279/lib/price.ts#L187)
 
-___
+---
 
 ### queryElement
 
@@ -3339,10 +3340,10 @@ Queries for elements in the DOM based on a selector string.
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `selector` | `string` | `undefined` | The CSS selector string to match elements against. For simple selectors like IDs, classes, or tags, the function redirects to more performant methods (`getElementById`, `getElementsByClassName`, or `getElementsByTagName`). |
-| `context` | `Document` \| `Element` | `document` | The DOM context within which to search. Defaults to `document`. |
+| Name       | Type                    | Default value | Description                                                                                                                                                                                                                    |
+| :--------- | :---------------------- | :------------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `selector` | `string`                | `undefined`   | The CSS selector string to match elements against. For simple selectors like IDs, classes, or tags, the function redirects to more performant methods (`getElementById`, `getElementsByClassName`, or `getElementsByTagName`). |
+| `context`  | `Document` \| `Element` | `document`    | The DOM context within which to search. Defaults to `document`.                                                                                                                                                                |
 
 #### Returns
 
@@ -3370,7 +3371,7 @@ queryElement('div > .my-class');
 
 [lib/dom/queryElement.ts:29](https://github.com/daniil4udo/utils/blob/f0fc279/lib/dom/queryElement.ts#L29)
 
-___
+---
 
 ### removeLocalStorageItem
 
@@ -3382,8 +3383,8 @@ If an error occurs during the operation, an error message is logged to the conso
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name  | Type     | Description                            |
+| :---- | :------- | :------------------------------------- |
 | `key` | `string` | The key for which to remove the value. |
 
 #### Returns
@@ -3394,7 +3395,7 @@ If an error occurs during the operation, an error message is logged to the conso
 
 [lib/storageWrapper.ts:89](https://github.com/daniil4udo/utils/blob/f0fc279/lib/storageWrapper.ts#L89)
 
-___
+---
 
 ### removeSessionStorageItem
 
@@ -3406,8 +3407,8 @@ If an error occurs during the operation, an error message is logged to the conso
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name  | Type     | Description                            |
+| :---- | :------- | :------------------------------------- |
 | `key` | `string` | The key for which to remove the value. |
 
 #### Returns
@@ -3418,7 +3419,7 @@ If an error occurs during the operation, an error message is logged to the conso
 
 [lib/storageWrapper.ts:89](https://github.com/daniil4udo/utils/blob/f0fc279/lib/storageWrapper.ts#L89)
 
-___
+---
 
 ### safeJSONParse
 
@@ -3431,15 +3432,15 @@ the parsed value is returned. If an error occurs during parsing, the original in
 
 #### Type parameters
 
-| Name | Description |
-| :------ | :------ |
-| `T` | The expected type of the parsed JSON. |
+| Name | Description                           |
+| :--- | :------------------------------------ |
+| `T`  | The expected type of the parsed JSON. |
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `input` | `string` | The JSON string to be parsed. |
+| Name       | Type                                                      | Description                                                |
+| :--------- | :-------------------------------------------------------- | :--------------------------------------------------------- |
+| `input`    | `string`                                                  | The JSON string to be parsed.                              |
 | `reviver?` | (`this`: `any`, `key`: `string`, `value`: `any`) => `any` | An optional reviver function for transforming the results. |
 
 #### Returns
@@ -3470,7 +3471,7 @@ console.log(result); // Outputs: '{ "name": "John, "age": 30 }'
 
 [lib/safeJSON.ts:29](https://github.com/daniil4udo/utils/blob/f0fc279/lib/safeJSON.ts#L29)
 
-___
+---
 
 ### sameValueZeroEqual
 
@@ -3481,16 +3482,16 @@ Whether the values passed are strictly equal or both NaN.
 #### Type parameters
 
 | Name |
-| :------ |
-| `A` |
-| `B` |
+| :--- |
+| `A`  |
+| `B`  |
 
 #### Parameters
 
 | Name | Type |
-| :------ | :------ |
-| `a` | `A` |
-| `b` | `B` |
+| :--- | :--- |
+| `a`  | `A`  |
+| `b`  | `B`  |
 
 #### Returns
 
@@ -3500,7 +3501,7 @@ Whether the values passed are strictly equal or both NaN.
 
 node_modules/.pnpm/fast-equals@5.0.1/node_modules/fast-equals/index.d.ts:8
 
-___
+---
 
 ### saveAs
 
@@ -3510,11 +3511,11 @@ FileSaver.js implements the saveAs() FileSaver interface in browsers that do not
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `data` | `string` \| `Blob` | The actual file data blob or URL. |
-| `filename?` | `string` | The optional name of the file to be downloaded. If omitted, the name used in the file data will be used. If none is provided "download" will be used. |
-| `options?` | `FileSaverOptions` | Optional FileSaver.js config |
+| Name        | Type               | Description                                                                                                                                           |
+| :---------- | :----------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `data`      | `string` \| `Blob` | The actual file data blob or URL.                                                                                                                     |
+| `filename?` | `string`           | The optional name of the file to be downloaded. If omitted, the name used in the file data will be used. If none is provided "download" will be used. |
+| `options?`  | `FileSaverOptions` | Optional FileSaver.js config                                                                                                                          |
 
 #### Returns
 
@@ -3530,11 +3531,11 @@ FileSaver.js implements the saveAs() FileSaver interface in browsers that do not
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `data` | `string` \| `Blob` | The actual file data blob or URL. |
-| `filename?` | `string` | The optional name of the file to be downloaded. If omitted, the name used in the file data will be used. If none is provided "download" will be used. |
-| `disableAutoBOM?` | `boolean` | Optional & defaults to `true`. Set to `false` if you want FileSaver.js to automatically provide Unicode text encoding hints |
+| Name              | Type               | Description                                                                                                                                           |
+| :---------------- | :----------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `data`            | `string` \| `Blob` | The actual file data blob or URL.                                                                                                                     |
+| `filename?`       | `string`           | The optional name of the file to be downloaded. If omitted, the name used in the file data will be used. If none is provided "download" will be used. |
+| `disableAutoBOM?` | `boolean`          | Optional & defaults to `true`. Set to `false` if you want FileSaver.js to automatically provide Unicode text encoding hints                           |
 
 #### Returns
 
@@ -3548,7 +3549,7 @@ use `{ autoBom: false }` as the third argument
 
 node_modules/.pnpm/@types+file-saver@2.0.5/node_modules/@types/file-saver/index.d.ts:30
 
-___
+---
 
 ### scrollTo
 
@@ -3569,10 +3570,10 @@ The scrolling is performed using the browser's native `scrollTo` method with 'sm
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `element` | [`Nullable`](modules.md#nullable)<`HTMLElement`\> | `undefined` | The element to scroll to. Can be an HTMLElement, null, or undefined. |
-| `offset?` | `number` | `0` | The offset value to adjust the scroll position. Defaults to 0. |
+| Name      | Type                                              | Default value | Description                                                          |
+| :-------- | :------------------------------------------------ | :------------ | :------------------------------------------------------------------- |
+| `element` | [`Nullable`](modules.md#nullable)<`HTMLElement`\> | `undefined`   | The element to scroll to. Can be an HTMLElement, null, or undefined. |
+| `offset?` | `number`                                          | `0`           | The offset value to adjust the scroll position. Defaults to 0.       |
 
 #### Returns
 
@@ -3607,7 +3608,7 @@ scrollTo();
 
 [lib/dom/scrollTo.ts:42](https://github.com/daniil4udo/utils/blob/f0fc279/lib/dom/scrollTo.ts#L42)
 
-___
+---
 
 ### setLocalStorageItem
 
@@ -3622,9 +3623,9 @@ If an error occurs during the operation, an error message is logged to the conso
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `key` | `string` | The key under which to store the value. |
+| Name    | Type      | Description                                                             |
+| :------ | :-------- | :---------------------------------------------------------------------- |
+| `key`   | `string`  | The key under which to store the value.                                 |
 | `value` | `unknown` | The value to store. This can be any value that is serializable to JSON. |
 
 #### Returns
@@ -3635,7 +3636,7 @@ If an error occurs during the operation, an error message is logged to the conso
 
 [lib/storageWrapper.ts:39](https://github.com/daniil4udo/utils/blob/f0fc279/lib/storageWrapper.ts#L39)
 
-___
+---
 
 ### setSessionStorageItem
 
@@ -3650,9 +3651,9 @@ If an error occurs during the operation, an error message is logged to the conso
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `key` | `string` | The key under which to store the value. |
+| Name    | Type      | Description                                                             |
+| :------ | :-------- | :---------------------------------------------------------------------- |
+| `key`   | `string`  | The key under which to store the value.                                 |
 | `value` | `unknown` | The value to store. This can be any value that is serializable to JSON. |
 
 #### Returns
@@ -3663,7 +3664,7 @@ If an error occurs during the operation, an error message is logged to the conso
 
 [lib/storageWrapper.ts:39](https://github.com/daniil4udo/utils/blob/f0fc279/lib/storageWrapper.ts#L39)
 
-___
+---
 
 ### shallowEqual
 
@@ -3674,16 +3675,16 @@ Whether the items passed are shallowly-equal in value.
 #### Type parameters
 
 | Name |
-| :------ |
-| `A` |
-| `B` |
+| :--- |
+| `A`  |
+| `B`  |
 
 #### Parameters
 
 | Name | Type |
-| :------ | :------ |
-| `a` | `A` |
-| `b` | `B` |
+| :--- | :--- |
+| `a`  | `A`  |
+| `b`  | `B`  |
 
 #### Returns
 
@@ -3693,7 +3694,7 @@ Whether the items passed are shallowly-equal in value.
 
 node_modules/.pnpm/fast-equals@5.0.1/node_modules/fast-equals/index.d.ts:30
 
-___
+---
 
 ### shuffle
 
@@ -3704,14 +3705,14 @@ Rearranges the elements of the array randomly.
 
 #### Type parameters
 
-| Name | Description |
-| :------ | :------ |
-| `T` | The type of the elements in the array. |
+| Name | Description                            |
+| :--- | :------------------------------------- |
+| `T`  | The type of the elements in the array. |
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name    | Type           | Description           |
+| :------ | :------------- | :-------------------- |
 | `array` | readonly `T`[] | The array to shuffle. |
 
 #### Returns
@@ -3733,15 +3734,15 @@ shuffle
 ```ts
 import { shuffle } from '@democrance/utils';
 
-shuffle([1, 2, 3, 4, 5]); // Possible output: [3, 5, 1, 2, 4]
-shuffle(['a', 'b', 'c']); // Possible output: ['b', 'a', 'c']
+shuffle([ 1, 2, 3, 4, 5 ]); // Possible output: [3, 5, 1, 2, 4]
+shuffle([ 'a', 'b', 'c' ]); // Possible output: ['b', 'a', 'c']
 ```
 
 #### Defined in
 
 [lib/shuffle.ts:23](https://github.com/daniil4udo/utils/blob/f0fc279/lib/shuffle.ts#L23)
 
-___
+---
 
 ### slugify
 
@@ -3752,8 +3753,8 @@ and converting to lowercase.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name   | Type     | Description                                   |
+| :----- | :------- | :-------------------------------------------- |
 | `str?` | `string` | The input string to be converted into a slug. |
 
 #### Returns
@@ -3784,7 +3785,7 @@ slugify('Déjà Vu'); // Returns 'deja-vu'
 
 [lib/slugify.ts:44](https://github.com/daniil4udo/utils/blob/f0fc279/lib/slugify.ts#L44)
 
-___
+---
 
 ### sortObjects
 
@@ -3794,17 +3795,17 @@ Sorts an array of objects based on a specific key using string comparison in a s
 
 #### Type parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `T` | extends `SortableItems` | A subtype of `SortableItems` where every property value can be compared as a string. |
+| Name | Type                    | Description                                                                          |
+| :--- | :---------------------- | :----------------------------------------------------------------------------------- |
+| `T`  | extends `SortableItems` | A subtype of `SortableItems` where every property value can be compared as a string. |
 
 #### Parameters
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| `array` | `T`[] | `undefined` |
-| `key` | `string` | `undefined` |
-| `locale` | `string` | `'en-US'` |
+| Name     | Type     | Default value |
+| :------- | :------- | :------------ |
+| `array`  | `T`[]    | `undefined`   |
+| `key`    | `string` | `undefined`   |
+| `locale` | `string` | `'en-US'`     |
 
 #### Returns
 
@@ -3829,7 +3830,7 @@ sortObjects(array, 'name'); // Outputs: [{ name: 'Amy' }, { name: 'Mark' }, { na
 
 [lib/sortObjects.ts:33](https://github.com/daniil4udo/utils/blob/f0fc279/lib/sortObjects.ts#L33)
 
-___
+---
 
 ### splitByIndex
 
@@ -3839,15 +3840,15 @@ Splits an array at a specific index into two separate arrays.
 
 #### Type parameters
 
-| Name | Description |
-| :------ | :------ |
-| `T` | The type of the elements. |
+| Name | Description               |
+| :--- | :------------------------ |
+| `T`  | The type of the elements. |
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `array` | `T`[] | `undefined` | The array to split. |
+| Name          | Type     | Default value  | Description                            |
+| :------------ | :------- | :------------- | :------------------------------------- |
+| `array`       | `T`[]    | `undefined`    | The array to split.                    |
 | `splitIndex?` | `number` | `array.length` | The index at which to split the array. |
 
 #### Returns
@@ -3869,14 +3870,14 @@ splitByIndex
 ```ts
 import { splitByIndex } from '@democrance/utils';
 
-splitByIndex([1, 2, 3, 4, 5], 2); // Outputs: [[1, 2], [3, 4, 5]]
+splitByIndex([ 1, 2, 3, 4, 5 ], 2); // Outputs: [[1, 2], [3, 4, 5]]
 ```
 
 #### Defined in
 
 [lib/splitByIndex.ts:24](https://github.com/daniil4udo/utils/blob/f0fc279/lib/splitByIndex.ts#L24)
 
-___
+---
 
 ### strToRegexp
 
@@ -3886,8 +3887,8 @@ Converts a string into a RegExp instance, escaping any special characters.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name  | Type     | Description                          |
+| :---- | :------- | :----------------------------------- |
 | `str` | `string` | The string to convert into a RegExp. |
 
 #### Returns
@@ -3912,7 +3913,7 @@ strToRegexp('[abc]'); // Outputs: /\[abc\]/
 
 [lib/stringToRegexp.ts:36](https://github.com/daniil4udo/utils/blob/f0fc279/lib/stringToRegexp.ts#L36)
 
-___
+---
 
 ### strictCircularDeepEqual
 
@@ -3924,16 +3925,16 @@ based on strict comparison.
 #### Type parameters
 
 | Name |
-| :------ |
-| `A` |
-| `B` |
+| :--- |
+| `A`  |
+| `B`  |
 
 #### Parameters
 
 | Name | Type |
-| :------ | :------ |
-| `a` | `A` |
-| `b` | `B` |
+| :--- | :--- |
+| `a`  | `A`  |
+| `b`  | `B`  |
 
 #### Returns
 
@@ -3943,7 +3944,7 @@ based on strict comparison.
 
 node_modules/.pnpm/fast-equals@5.0.1/node_modules/fast-equals/index.d.ts:26
 
-___
+---
 
 ### strictCircularShallowEqual
 
@@ -3955,16 +3956,16 @@ based on strict comparison.
 #### Type parameters
 
 | Name |
-| :------ |
-| `A` |
-| `B` |
+| :--- |
+| `A`  |
+| `B`  |
 
 #### Parameters
 
 | Name | Type |
-| :------ | :------ |
-| `a` | `A` |
-| `b` | `B` |
+| :--- | :--- |
+| `a`  | `A`  |
+| `b`  | `B`  |
 
 #### Returns
 
@@ -3974,7 +3975,7 @@ based on strict comparison.
 
 node_modules/.pnpm/fast-equals@5.0.1/node_modules/fast-equals/index.d.ts:43
 
-___
+---
 
 ### strictDeepEqual
 
@@ -3985,16 +3986,16 @@ Whether the items passed are deeply-equal in value based on strict comparison.
 #### Type parameters
 
 | Name |
-| :------ |
-| `A` |
-| `B` |
+| :--- |
+| `A`  |
+| `B`  |
 
 #### Parameters
 
 | Name | Type |
-| :------ | :------ |
-| `a` | `A` |
-| `b` | `B` |
+| :--- | :--- |
+| `a`  | `A`  |
+| `b`  | `B`  |
 
 #### Returns
 
@@ -4004,7 +4005,7 @@ Whether the items passed are deeply-equal in value based on strict comparison.
 
 node_modules/.pnpm/fast-equals@5.0.1/node_modules/fast-equals/index.d.ts:17
 
-___
+---
 
 ### strictShallowEqual
 
@@ -4015,16 +4016,16 @@ Whether the items passed are shallowly-equal in value based on strict comparison
 #### Type parameters
 
 | Name |
-| :------ |
-| `A` |
-| `B` |
+| :--- |
+| `A`  |
+| `B`  |
 
 #### Parameters
 
 | Name | Type |
-| :------ | :------ |
-| `a` | `A` |
-| `b` | `B` |
+| :--- | :--- |
+| `a`  | `A`  |
+| `b`  | `B`  |
 
 #### Returns
 
@@ -4034,7 +4035,7 @@ Whether the items passed are shallowly-equal in value based on strict comparison
 
 node_modules/.pnpm/fast-equals@5.0.1/node_modules/fast-equals/index.d.ts:34
 
-___
+---
 
 ### stringToArrayBuffer
 
@@ -4050,8 +4051,8 @@ the string.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name  | Type     | Description                 |
+| :---- | :------- | :-------------------------- |
 | `str` | `string` | The string to be converted. |
 
 #### Returns
@@ -4078,7 +4079,7 @@ console.log(buffer.byteLength); // Outputs: 2
 
 [lib/arrayBuffer.ts:55](https://github.com/daniil4udo/utils/blob/f0fc279/lib/arrayBuffer.ts#L55)
 
-___
+---
 
 ### toArray
 
@@ -4089,16 +4090,16 @@ the array as-is, a shallow copy, or a deep clone depending on the options.
 
 #### Type parameters
 
-| Name | Description |
-| :------ | :------ |
-| `T` | The type of the elements. |
+| Name | Description               |
+| :--- | :------------------------ |
+| `T`  | The type of the elements. |
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `input` | `T` \| `T`[] | The value to be converted into an array. |
-| `options?` | `Options` | Options for handling arrays. |
+| Name       | Type         | Description                              |
+| :--------- | :----------- | :--------------------------------------- |
+| `input`    | `T` \| `T`[] | The value to be converted into an array. |
+| `options?` | `Options`    | Options for handling arrays.             |
 
 #### Returns
 
@@ -4120,15 +4121,15 @@ toArray
 import { toArray } from '@democrance/utils';
 
 toArray(5); //  Outputs: [5]
-toArray([1, 2, 3], { shallow: true }); //  Outputs: [1, 2, 3]
-toArray([1, [2, 3]], { deep: true }); //  Outputs: [1, [2, 3]]
+toArray([ 1, 2, 3 ], { shallow: true }); //  Outputs: [1, 2, 3]
+toArray([ 1, [ 2, 3 ] ], { deep: true }); //  Outputs: [1, [2, 3]]
 ```
 
 #### Defined in
 
 [lib/toArray.ts:41](https://github.com/daniil4udo/utils/blob/f0fc279/lib/toArray.ts#L41)
 
-___
+---
 
 ### toLower
 
@@ -4141,9 +4142,9 @@ with all characters converted to lowercase.
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `str` | `string` | `''` | The input string to convert. Default is an empty string. |
+| Name  | Type     | Default value | Description                                              |
+| :---- | :------- | :------------ | :------------------------------------------------------- |
+| `str` | `string` | `''`          | The input string to convert. Default is an empty string. |
 
 #### Returns
 
@@ -4171,7 +4172,7 @@ console.log(toLower('')); // Outputs: ''
 
 [lib/changeCase.ts:78](https://github.com/daniil4udo/utils/blob/f0fc279/lib/changeCase.ts#L78)
 
-___
+---
 
 ### toType
 
@@ -4181,8 +4182,8 @@ Takes any JavaScript value as input and returns its type as a string.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name    | Type      | Description                                |
+| :------ | :-------- | :----------------------------------------- |
 | `input` | `unknown` | The input value for which to get the type. |
 
 #### Returns
@@ -4213,7 +4214,7 @@ toType([]); // Outputs: 'array'
 
 [lib/toType.ts:25](https://github.com/daniil4udo/utils/blob/f0fc279/lib/toType.ts#L25)
 
-___
+---
 
 ### toUpper
 
@@ -4226,9 +4227,9 @@ with all characters converted to uppercase.
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `str` | `string` | `''` | The input string to convert. Default is an empty string. |
+| Name  | Type     | Default value | Description                                              |
+| :---- | :------- | :------------ | :------------------------------------------------------- |
+| `str` | `string` | `''`          | The input string to convert. Default is an empty string. |
 
 #### Returns
 
@@ -4256,7 +4257,7 @@ console.log(toUpper('')); // Outputs: ''
 
 [lib/changeCase.ts:51](https://github.com/daniil4udo/utils/blob/f0fc279/lib/changeCase.ts#L51)
 
-___
+---
 
 ### toggleKeyboardFocus
 
@@ -4272,10 +4273,10 @@ Note: This function requires 'requestAnimationFrame' to apply the tabIndex, whic
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `scope?` | `HTMLElement` | `document.body` | The scope within which to toggle the keyboard focus state. Default is the document body. It is expected to be an HTML element. |
-| `tabIndex?` | `number` | `-1` | The tabIndex value to assign to each focusable element. Default is -1 which makes the element focusable, but not reachable via sequential keyboard navigation. But it can be focused by calling its focus method programmatically. |
+| Name        | Type          | Default value   | Description                                                                                                                                                                                                                        |
+| :---------- | :------------ | :-------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `scope?`    | `HTMLElement` | `document.body` | The scope within which to toggle the keyboard focus state. Default is the document body. It is expected to be an HTML element.                                                                                                     |
+| `tabIndex?` | `number`      | `-1`            | The tabIndex value to assign to each focusable element. Default is -1 which makes the element focusable, but not reachable via sequential keyboard navigation. But it can be focused by calling its focus method programmatically. |
 
 #### Returns
 
@@ -4311,7 +4312,7 @@ toggleKeyboardFocus(container, 0);
 
 [lib/dom/toggleKeyboardFocus.ts:57](https://github.com/daniil4udo/utils/blob/f0fc279/lib/dom/toggleKeyboardFocus.ts#L57)
 
-___
+---
 
 ### trimFileExtension
 
@@ -4324,16 +4325,16 @@ It works by removing all characters after and including the last '.' in the path
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `path` | `string` | `''` | The file path from which to remove the extension. |
+| Name   | Type     | Default value | Description                                       |
+| :----- | :------- | :------------ | :------------------------------------------------ |
+| `path` | `string` | `''`          | The file path from which to remove the extension. |
 
 #### Returns
 
 `string`
 
 The file path without the extension. If the input path does not contain an
-     extension, the same path is returned.
+extension, the same path is returned.
 
 **`Remarks`**
 
@@ -4355,7 +4356,7 @@ console.log(trimFileExtension('/path/to/file.txt')); // Outputs: '/path/to/file'
 
 [lib/getNameFromPath.ts:23](https://github.com/daniil4udo/utils/blob/f0fc279/lib/getNameFromPath.ts#L23)
 
-___
+---
 
 ### urlJoin
 
@@ -4363,9 +4364,9 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `p1` | `PathArg` |
+| Name       | Type      |
+| :--------- | :-------- |
+| `p1`       | `PathArg` |
 | `options?` | `Options` |
 
 #### Returns
@@ -4380,10 +4381,10 @@ node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-j
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `p1` | `PathArg` |
-| `p2` | `PathArg` |
+| Name       | Type      |
+| :--------- | :-------- |
+| `p1`       | `PathArg` |
+| `p2`       | `PathArg` |
 | `options?` | `Options` |
 
 #### Returns
@@ -4398,11 +4399,11 @@ node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-j
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `p1` | `PathArg` |
-| `p2` | `PathArg` |
-| `p3` | `PathArg` |
+| Name       | Type      |
+| :--------- | :-------- |
+| `p1`       | `PathArg` |
+| `p2`       | `PathArg` |
+| `p3`       | `PathArg` |
 | `options?` | `Options` |
 
 #### Returns
@@ -4417,12 +4418,12 @@ node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-j
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `p1` | `PathArg` |
-| `p2` | `PathArg` |
-| `p3` | `PathArg` |
-| `p4` | `PathArg` |
+| Name       | Type      |
+| :--------- | :-------- |
+| `p1`       | `PathArg` |
+| `p2`       | `PathArg` |
+| `p3`       | `PathArg` |
+| `p4`       | `PathArg` |
 | `options?` | `Options` |
 
 #### Returns
@@ -4437,13 +4438,13 @@ node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-j
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `p1` | `PathArg` |
-| `p2` | `PathArg` |
-| `p3` | `PathArg` |
-| `p4` | `PathArg` |
-| `p5` | `PathArg` |
+| Name       | Type      |
+| :--------- | :-------- |
+| `p1`       | `PathArg` |
+| `p2`       | `PathArg` |
+| `p3`       | `PathArg` |
+| `p4`       | `PathArg` |
+| `p5`       | `PathArg` |
 | `options?` | `Options` |
 
 #### Returns
@@ -4458,14 +4459,14 @@ node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-j
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `p1` | `PathArg` |
-| `p2` | `PathArg` |
-| `p3` | `PathArg` |
-| `p4` | `PathArg` |
-| `p5` | `PathArg` |
-| `p6` | `PathArg` |
+| Name       | Type      |
+| :--------- | :-------- |
+| `p1`       | `PathArg` |
+| `p2`       | `PathArg` |
+| `p3`       | `PathArg` |
+| `p4`       | `PathArg` |
+| `p5`       | `PathArg` |
+| `p6`       | `PathArg` |
 | `options?` | `Options` |
 
 #### Returns
@@ -4480,15 +4481,15 @@ node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-j
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `p1` | `PathArg` |
-| `p2` | `PathArg` |
-| `p3` | `PathArg` |
-| `p4` | `PathArg` |
-| `p5` | `PathArg` |
-| `p6` | `PathArg` |
-| `p7` | `PathArg` |
+| Name       | Type      |
+| :--------- | :-------- |
+| `p1`       | `PathArg` |
+| `p2`       | `PathArg` |
+| `p3`       | `PathArg` |
+| `p4`       | `PathArg` |
+| `p5`       | `PathArg` |
+| `p6`       | `PathArg` |
+| `p7`       | `PathArg` |
 | `options?` | `Options` |
 
 #### Returns
@@ -4503,16 +4504,16 @@ node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-j
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `p1` | `PathArg` |
-| `p2` | `PathArg` |
-| `p3` | `PathArg` |
-| `p4` | `PathArg` |
-| `p5` | `PathArg` |
-| `p6` | `PathArg` |
-| `p7` | `PathArg` |
-| `p8` | `PathArg` |
+| Name       | Type      |
+| :--------- | :-------- |
+| `p1`       | `PathArg` |
+| `p2`       | `PathArg` |
+| `p3`       | `PathArg` |
+| `p4`       | `PathArg` |
+| `p5`       | `PathArg` |
+| `p6`       | `PathArg` |
+| `p7`       | `PathArg` |
+| `p8`       | `PathArg` |
 | `options?` | `Options` |
 
 #### Returns
@@ -4527,17 +4528,17 @@ node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-j
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `p1` | `PathArg` |
-| `p2` | `PathArg` |
-| `p3` | `PathArg` |
-| `p4` | `PathArg` |
-| `p5` | `PathArg` |
-| `p6` | `PathArg` |
-| `p7` | `PathArg` |
-| `p8` | `PathArg` |
-| `p9` | `PathArg` |
+| Name       | Type      |
+| :--------- | :-------- |
+| `p1`       | `PathArg` |
+| `p2`       | `PathArg` |
+| `p3`       | `PathArg` |
+| `p4`       | `PathArg` |
+| `p5`       | `PathArg` |
+| `p6`       | `PathArg` |
+| `p7`       | `PathArg` |
+| `p8`       | `PathArg` |
+| `p9`       | `PathArg` |
 | `options?` | `Options` |
 
 #### Returns
@@ -4552,18 +4553,18 @@ node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-j
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `p1` | `PathArg` |
-| `p2` | `PathArg` |
-| `p3` | `PathArg` |
-| `p4` | `PathArg` |
-| `p5` | `PathArg` |
-| `p6` | `PathArg` |
-| `p7` | `PathArg` |
-| `p8` | `PathArg` |
-| `p9` | `PathArg` |
-| `p10` | `PathArg` |
+| Name       | Type      |
+| :--------- | :-------- |
+| `p1`       | `PathArg` |
+| `p2`       | `PathArg` |
+| `p3`       | `PathArg` |
+| `p4`       | `PathArg` |
+| `p5`       | `PathArg` |
+| `p6`       | `PathArg` |
+| `p7`       | `PathArg` |
+| `p8`       | `PathArg` |
+| `p9`       | `PathArg` |
+| `p10`      | `PathArg` |
 | `options?` | `Options` |
 
 #### Returns
@@ -4578,19 +4579,19 @@ node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-j
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `p1` | `PathArg` |
-| `p2` | `PathArg` |
-| `p3` | `PathArg` |
-| `p4` | `PathArg` |
-| `p5` | `PathArg` |
-| `p6` | `PathArg` |
-| `p7` | `PathArg` |
-| `p8` | `PathArg` |
-| `p9` | `PathArg` |
-| `p10` | `PathArg` |
-| `p11` | `PathArg` |
+| Name      | Type                       |
+| :-------- | :------------------------- |
+| `p1`      | `PathArg`                  |
+| `p2`      | `PathArg`                  |
+| `p3`      | `PathArg`                  |
+| `p4`      | `PathArg`                  |
+| `p5`      | `PathArg`                  |
+| `p6`      | `PathArg`                  |
+| `p7`      | `PathArg`                  |
+| `p8`      | `PathArg`                  |
+| `p9`      | `PathArg`                  |
+| `p10`     | `PathArg`                  |
+| `p11`     | `PathArg`                  |
 | `...args` | (`PathArg` \| `Options`)[] |
 
 #### Returns
@@ -4601,7 +4602,7 @@ node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-j
 
 node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-join/index.d.ts:96
 
-___
+---
 
 ### urlTemplate
 
@@ -4609,9 +4610,9 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `url` | `string` |
+| Name      | Type                                                                                                 |
+| :-------- | :--------------------------------------------------------------------------------------------------- |
+| `url`     | `string`                                                                                             |
 | `context` | `Record`<`string`, `PrimitiveValue` \| `PrimitiveValue`[] \| `Record`<`string`, `PrimitiveValue`\>\> |
 
 #### Returns
@@ -4622,7 +4623,7 @@ ___
 
 [lib/urlTemplate.ts:5](https://github.com/daniil4udo/utils/blob/f0fc279/lib/urlTemplate.ts#L5)
 
-___
+---
 
 ### zipcelx
 
@@ -4630,8 +4631,8 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name     | Type            |
+| :------- | :-------------- |
 | `config` | `ZipCelXConfig` |
 
 #### Returns

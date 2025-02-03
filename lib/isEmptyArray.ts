@@ -1,6 +1,6 @@
 import type { Nullable } from 'types'
 
-import { hasValue } from './hasValue'
+import { hasValue } from './hasValue';
 
 /**
  * Represents options for the isEmptyArray function.
@@ -49,30 +49,30 @@ interface Options<T> {
  * ```
  * @public
  */
-export function isEmptyArray<T>(array: T[], options: Options<T> = {}): array is never[] {
+export function isEmptyArray<T>(array?: T, options: Options<T> = {}): boolean {
     if (Array.isArray(array)) {
-        let { length } = array
+        let { length } = array;
         if (length === 0)
-            return true
+            return true;
 
         const {
             deep = true,
             comparator = hasValue,
-        } = options
+        } = options;
 
-        let isEmpty = true
+        let isEmpty = true;
         while (length--) {
             if (deep === true && Array.isArray(array[length]))
-                isEmpty = isEmptyArray(array[length] as T[], options)
+                isEmpty = isEmptyArray(array[length], options);
             else
-                isEmpty = !comparator(array[length])
+                isEmpty = !comparator(array[length]);
 
             if (!isEmpty)
-                break
+                break;
         }
 
-        return isEmpty
+        return isEmpty;
     }
 
-    return true
+    return true;
 }

@@ -1,7 +1,7 @@
 import type { Nullable } from 'types'
 
-import { toUpper } from './changeCase'
-import { isFlagEmoji } from './emojiSupport'
+import { toUpper } from './changeCase';
+import { isFlagEmoji } from './emojiSupport';
 
 /**
  * Checks if a string is a valid country ISO code.
@@ -15,7 +15,7 @@ import { isFlagEmoji } from './emojiSupport'
  * isCountryIso('123'); // Outputs:  false
  */
 export function isCountryIso(iso: string = ''): boolean {
-    return /^[a-z]{2}([-_][a-z]{2})?$/i.test(iso)
+    return /^[a-z]{2}(?:[-_][a-z]{2})?$/i.test(iso);
 }
 
 // The expression 'A'.codePointAt(0) - 127462
@@ -23,7 +23,7 @@ export function isCountryIso(iso: string = ''): boolean {
 // the Unicode code point of 'A'(which is 65)
 // and the first regional indicator symbol, which is '🇦'
 // and has a Unicode code point of 127462.
-const OFFSET = 127397 // 'A'.codePointAt(0) - 127462
+const OFFSET = 127397; // 'A'.codePointAt(0) - 127462
 
 /**
  * Converts a country ISO code to a flag emoji.
@@ -39,9 +39,9 @@ const OFFSET = 127397 // 'A'.codePointAt(0) - 127462
 export function isoToEmoji(iso: string = ''): Nullable<string> {
     // ISO has to be upper case
     if (!isCountryIso(iso))
-        return null
+        return null;
 
-    return toUpper(iso).replace(/./g, char => String.fromCodePoint(char.charCodeAt(0) + OFFSET))
+    return toUpper(iso).replace(/./g, char => String.fromCodePoint(char.charCodeAt(0) + OFFSET));
 }
 
 /**
@@ -57,7 +57,7 @@ export function isoToEmoji(iso: string = ''): Nullable<string> {
  */
 export function emojiToIso(emoji: string = ''): Nullable<string> {
     if (!isFlagEmoji(emoji))
-        return null
+        return null;
 
-    return emoji.replace(/../g, cp => String.fromCharCode((cp.codePointAt(0) ?? 0) - OFFSET))
+    return emoji.replace(/../g, cp => String.fromCharCode((cp.codePointAt(0) ?? 0) - OFFSET));
 }

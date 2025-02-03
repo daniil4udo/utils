@@ -1,14 +1,14 @@
 import type { Nullable } from 'types'
 
-import { hasValue } from './hasValue'
-import { isPropertyKey } from './isPropertyKey'
-import { toType } from './toType'
+import { hasValue } from './hasValue';
+import { isPropertyKey } from './isPropertyKey';
+import { toType } from './toType';
 
-type KeyableFn = (...args: any) => PropertyKey
-type Keyable = Nullable<PropertyKey> | KeyableFn
+type KeyableFn = (...args: any) => PropertyKey;
+type Keyable = Nullable<PropertyKey> | KeyableFn;
 type InferredKey<T> = Keyable extends PropertyKey
     ? keyof T
-    : PropertyKey
+    : PropertyKey;
 
 /**
  * Creates an object composed of keys generated from the results of running each element of `array` through `keyOrFunction`.
@@ -21,7 +21,6 @@ type InferredKey<T> = Keyable extends PropertyKey
  *
  * @template T the type of elements in the input array.
  *
- * @function keyBy
  * @param {T[]} array - The array to iterate over.
  * @param {Keyable} [keyOrFunction] - The key generation criterion. It can be a function, a string, or undefined.
  * @returns {Record<InferredKey<T>, T>} Returns the composed aggregate object.
@@ -41,23 +40,23 @@ export function keyBy<T extends PropertyKey | Record<PropertyKey, any>>(
     keyOrFunction?: Keyable,
 ): Record<InferredKey<T>, T> {
     if (hasValue(keyOrFunction) && typeof keyOrFunction !== 'function' && !isPropertyKey(keyOrFunction))
-        throw new TypeError(`[keyBy] - "${toType(keyOrFunction)}" cannot be used to index your Array`)
+        throw new TypeError(`[keyBy] - "${toType(keyOrFunction)}" cannot be used to index your Array`);
 
-    const keyedCollection = {} as Record<InferredKey<T>, T>
+    const keyedCollection = {} as Record<InferredKey<T>, T>;
 
     for (let i = 0, l = array.length; i < l; i++) {
-        const el = array[i] as T
+        const el = array[i] as T;
 
         if (typeof keyOrFunction === 'function')
-            keyedCollection[keyOrFunction(el, i)] = el
+            keyedCollection[keyOrFunction(el, i)] = el;
 
         else if (isPropertyKey(keyOrFunction) && !isPropertyKey(el))
-            keyedCollection[el[keyOrFunction]] = el
+            keyedCollection[el[keyOrFunction]] = el;
 
         // If simply array if indexable values -> create object
         else if (isPropertyKey(el))
-            keyedCollection[el] = el
+            keyedCollection[el] = el;
     }
 
-    return keyedCollection
+    return keyedCollection;
 }

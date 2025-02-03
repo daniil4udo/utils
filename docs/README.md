@@ -9,17 +9,17 @@
 
 `@democrance/utils` is a set of popular utility functions.
 
-List of all function you can find  [HERE](./docs/modules.md)
+List of all function you can find [HERE](./docs/modules.md)
 
 ## Table of Contents
 
 - [@democrance/utils](#democranceutils)
-  - [Table of Contents](#table-of-contents)
-  - [Install](#install)
-  - [Usage](#usage)
+    - [Table of Contents](#table-of-contents)
+    - [Install](#install)
+    - [Usage](#usage)
 - [Auto imports](#auto-imports)
-  - [Contributing](#contributing)
-  - [License](#license)
+    - [Contributing](#contributing)
+    - [License](#license)
 
 ## Install
 
@@ -36,10 +36,10 @@ To use the utility functions provided by @democrance/utils, import them into you
 Example:
 
 ```ts
-import { utilityFunction1, utilityFunction2 } from '@democrance/utils'
+import { utilityFunction1, utilityFunction2 } from '@democrance/utils';
 
 // Use the imported utility functions
-const result = utilityFunction1(argument)
+const result = utilityFunction1(argument);
 // ...
 ```
 
@@ -50,7 +50,7 @@ If you are using the `unplugin-auto-import plugin`, you can include the `dist/au
 This will enable automatic importing of the utility functions.
 
 ```ts
-import dmcUtilsPreset from '@democrance/utils/preset'
+import dmcUtilsPreset from '@democrance/utils/preset';
 
 // for Vite
 export default defineConfig({
@@ -63,7 +63,7 @@ export default defineConfig({
         })
         // rest plugins ...
     ]
-})
+});
 ```
 
 ## Contributing

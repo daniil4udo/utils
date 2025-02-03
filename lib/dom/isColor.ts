@@ -29,10 +29,10 @@
  */
 export function isColor(str: string): boolean {
     if (!str)
-        return false
+        return false;
 
-    const s = new Option().style
-    s.color = str
+    const s = new Option().style;
+    s.color = str;
 
-    return s.color !== ''
+    return s.color !== '';
 }

@@ -1,9 +1,9 @@
-import clipper from 'text-clipper'
+import clipper from 'text-clipper';
 
-type ClipOptions = Parameters<typeof clipper>
-type HtmlString = ClipOptions[0]
-type MaxLength = ClipOptions[1]
-type HtmlTruncateOptions = ClipOptions[2]
+type ClipOptions = Parameters<typeof clipper>;
+type HtmlString = ClipOptions[0];
+type MaxLength = ClipOptions[1];
+type HtmlTruncateOptions = ClipOptions[2];
 
 /**
  * A function that truncates an HTML string to a specified length.
@@ -43,5 +43,5 @@ export function htmlTruncate(
     maxLength: MaxLength,
     options: HtmlTruncateOptions = {},
 ) {
-    return clipper(htmlString, maxLength, Object.assign({ html: true }, options))
+    return clipper(htmlString, maxLength, Object.assign({ html: true }, options));
 }

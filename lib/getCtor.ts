@@ -18,7 +18,7 @@ interface EsModule<Module> {
     [Symbol.toStringTag]: string
 }
 
-type MaybeEsModule<Module> = Partial<EsModule<Module>>
+type MaybeEsModule<Module> = Partial<EsModule<Module>>;
 
 /**
  * @template Module - The type of the module.
@@ -28,7 +28,7 @@ type MaybeEsModule<Module> = Partial<EsModule<Module>>
 function isEsModule<Module>(module: MaybeEsModule<Module>): module is EsModule<Module> {
     return module != null
         && typeof module === 'object'
-        && ('__esModule' in module || module[Symbol.toStringTag] === 'Module')
+        && ('__esModule' in module || module[Symbol.toStringTag] === 'Module');
 }
 
 /**
@@ -69,7 +69,7 @@ function isEsModule<Module>(module: MaybeEsModule<Module>): module is EsModule<M
  */
 export function getCtor<Module>(module: MaybeEsModule<Module>): Module | Partial<EsModule<Module>> {
     if (isEsModule(module))
-        return module.default
+        return module.default;
 
-    return module
+    return module;
 }

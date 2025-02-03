@@ -5,9 +5,6 @@
  * @module file-saver
  * @see {@link https://github.com/eligrey/FileSaver.js}
  *
- * @function
- * @name saveAs
- *
  * @example
  * ```ts
  * import { saveAs } from '@democrance/utils';
@@ -18,6 +15,6 @@
  * ```
  * @public
  */
-import fileSaver from 'file-saver'
+import fileSaver from 'file-saver';
 
-export const { saveAs } = fileSaver
+export const { saveAs } = fileSaver;

@@ -1,4 +1,4 @@
-/**
+/*
     'a[href]',
     'area[href]',
     'button',
@@ -16,7 +16,7 @@
     '[tabindex]:not([tabindex^="-"])',
     ':not([disabled])';
  */
-export const POSSIBLE_FOCUSABLE_TAGS = `a[href], area[href], button, details, input, textarea, select, [tabindex]:not([tabindex^="-"])` as const
+export const POSSIBLE_FOCUSABLE_TAGS = `a[href], area[href], button, details, input, textarea, select, [tabindex]:not([tabindex^="-"])` as const;
 
 /**
  * Toggles the keyboard focus state for all focusable elements in the specified scope.
@@ -30,7 +30,6 @@ export const POSSIBLE_FOCUSABLE_TAGS = `a[href], area[href], button, details, in
  * @remarks
  * This function is a part of the {@link https://github.com/daniil4udo/utils | @democrance/utils} library.
  *
- * @function toggleKeyboardFocus
  * @param {HTMLElement} [scope] - The scope within which to toggle the keyboard focus state.
  *      Default is the document body. It is expected to be an HTML element.
  * @param {number} [tabIndex] - The tabIndex value to assign to each focusable element.
@@ -59,20 +58,20 @@ export function toggleKeyboardFocus(
     tabIndex: number = -1,
 ): void {
     if (!window || !scope)
-        return
+        return;
 
-    const elArr: HTMLElement[] = Array.from(scope.querySelectorAll(POSSIBLE_FOCUSABLE_TAGS))
-    let i = elArr.length
+    const elArr: HTMLElement[] = Array.from(scope.querySelectorAll(POSSIBLE_FOCUSABLE_TAGS));
+    let i = elArr.length;
 
     while (i--) {
-        const el = elArr[i]
+        const el = elArr[i];
 
         if (el == null)
-            continue
+            continue;
 
         requestAnimationFrame(() => {
             if (!el.hasAttribute('disabled'))
-                el.tabIndex = tabIndex
-        })
+                el.tabIndex = tabIndex;
+        });
     }
 }

@@ -1,4 +1,4 @@
-type NODE_ENV = 'development' | 'production' | 'test'
+type NODE_ENV = 'development' | 'production' | 'test';
 
 /**
  * Detects the current mode of the environment.
@@ -22,9 +22,9 @@ export function detectMode() {
     try {
         return (typeof import.meta.env.MODE !== 'undefined'
             ? import.meta.env.MODE
-            : process.env.NODE_ENV ?? null) as NODE_ENV | null
+            : process.env.NODE_ENV ?? null) as NODE_ENV | null;
     }
     catch {
-        return (process.env.NODE_ENV ?? null) as NODE_ENV | null
+        return (process.env.NODE_ENV ?? null) as NODE_ENV | null;
     }
 }

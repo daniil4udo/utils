@@ -7,8 +7,8 @@
             "DOM",
             "DOM.Iterable"
         ],
-        "moduleResolution": "Node",
         "baseUrl": ".",
+        "moduleResolution": "Node",
         "types": [
             "node",
             "fast-glob",
@@ -25,14 +25,14 @@
             "text-clipper",
             "zipcelx"
         ],
-        "declaration": true,
-        "outDir": "dist",
-        "importHelpers": true,
-        "isolatedModules": true,
-        "allowSyntheticDefaultImports": true,
         "strictBindCallApply": true,
         "noUncheckedIndexedAccess": true,
         "noUnusedLocals": true,
+        "declaration": true,
+        "importHelpers": true,
+        "outDir": "dist",
+        "allowSyntheticDefaultImports": true,
+        "isolatedModules": true,
         "pretty": true
     },
     "include": [

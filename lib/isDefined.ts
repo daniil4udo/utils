@@ -1,4 +1,4 @@
-import { isNil } from './isNil'
+import { isNil } from './isNil';
 
 /**
  * Checks if a value is defined, i.e., not null or undefined.
@@ -24,5 +24,5 @@ import { isNil } from './isNil'
  * @public
  */
 export function isDefined<T>(input: T): input is NonNullable<T> {
-    return !isNil(input)
+    return !isNil(input);
 }

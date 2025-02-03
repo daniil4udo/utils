@@ -15,4 +15,4 @@ export default {
     // jsxSingleQuote: true,
     // proseWrap: 'never',
     // quoteProps: 'as-needed',
-}
+};

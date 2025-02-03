@@ -1,6 +1,6 @@
 import type { PrimitiveLikeType, PrimitiveType } from 'types'
 
-import { toType } from './toType'
+import { toType } from './toType';
 
 /**
  * Checks if a given input is a primitive value.
@@ -12,7 +12,6 @@ import { toType } from './toType'
  * @remarks
  * This function is a part of the {@link https://github.com/daniil4udo/utils | @democrance/utils} library.
  *
- * @function isPrimitive
  * @param {any} input - The input to check for being a primitive value.
  * @returns {boolean} Returns `true` if the input is a primitive value, otherwise `false`.
  *
@@ -26,7 +25,7 @@ import { toType } from './toType'
  * @public
  */
 export function isPrimitive(input: unknown): input is PrimitiveType {
-    return input !== Object(input)
+    return input !== Object(input);
 }
 
 /**
@@ -51,6 +50,6 @@ export function isPrimitive(input: unknown): input is PrimitiveType {
  * @public
  */
 export function isPrimitiveLike(input: unknown): input is PrimitiveType | PrimitiveLikeType {
-    const type = toType(input)
-    return isPrimitive(input) || type === 'date' || type === 'regexp'
+    const type = toType(input);
+    return isPrimitive(input) || type === 'date' || type === 'regexp';
 }

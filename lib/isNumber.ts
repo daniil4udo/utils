@@ -45,10 +45,10 @@
  */
 export function isNumber(input: unknown): input is number {
     if (typeof input === 'number')
-        return input - input === 0
+        return input - input === 0;
 
     if (typeof input === 'string' && input.trim() !== '')
-        return Number.isFinite(+input)
+        return Number.isFinite(+input);
 
-    return false
+    return false;
 }

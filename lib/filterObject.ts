@@ -14,7 +14,7 @@ export type PredicateFunction<T extends Record<PropertyKey, any>> = (
     value: T[keyof T],
     index: number,
     object: T
-) => boolean
+) => boolean;
 
 /**
  * This utility function iterates over the properties of the given object and includes them in the
@@ -61,18 +61,18 @@ export function filterObject<T extends Record<PropertyKey, any>>(
     predicate: PredicateFunction<T>,
 ): T {
     if (typeof predicate !== 'function')
-        return object
+        return object;
 
-    const result = {} as T
-    const keys = Object.keys(object) as (keyof T)[]
+    const result = {} as T;
+    const keys = Object.keys(object) as (keyof T)[];
 
     for (let i = 0, l = keys.length; i < l; i++) {
-        const key = keys[i] as keyof T
-        const value = object[key]
+        const key = keys[i] as keyof T;
+        const value = object[key];
 
         if (predicate(key, value, i, object))
-            result[key] = value
+            result[key] = value;
     }
 
-    return result
+    return result;
 }

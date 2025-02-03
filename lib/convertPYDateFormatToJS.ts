@@ -29,7 +29,7 @@ export const PYTHON_TO_JAVASCRIPT_DATE_MAP = new Map([
     [ '%Z', 'z' ], // Time zone name: ((empty), UTC, EST, CST) (empty string if the object is naive).
     [ '%z', 'ZZ' ], // UTC offset in the form +HHMM or -HHMM: ((empty), +0000, -0400, +1030) Empty string if the the object is naive.
     [ '%%', '%' ], // A literal '%' character: (%)
-])
+]);
 
 /**
  * Converts a Python-style date format string to a JavaScript-style date format string.
@@ -56,13 +56,13 @@ export const PYTHON_TO_JAVASCRIPT_DATE_MAP = new Map([
  */
 export function convertPYDateFormatToJS(unformatted: string) {
     if (typeof unformatted !== 'string')
-        throw new TypeError(`[convertPYDateFormatToJS] - input should be type 'string'. Got ${toType(unformatted)}`)
+        throw new TypeError(`[convertPYDateFormatToJS] - input should be type 'string'. Got ${toType(unformatted)}`);
 
-    let formatted = unformatted
+    let formatted = unformatted;
     PYTHON_TO_JAVASCRIPT_DATE_MAP.forEach((value, key) => {
         if (key)
-            formatted = formatted.split(key).join(value)
-    })
+            formatted = formatted.split(key).join(value);
+    });
 
-    return formatted
+    return formatted;
 }

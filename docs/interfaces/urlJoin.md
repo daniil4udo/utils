@@ -10,9 +10,9 @@
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `p1` | `PathArg` |
+| Name       | Type      |
+| :--------- | :-------- |
+| `p1`       | `PathArg` |
 | `options?` | `Options` |
 
 #### Returns
@@ -29,10 +29,10 @@ node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-j
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `p1` | `PathArg` |
-| `p2` | `PathArg` |
+| Name       | Type      |
+| :--------- | :-------- |
+| `p1`       | `PathArg` |
+| `p2`       | `PathArg` |
 | `options?` | `Options` |
 
 #### Returns
@@ -49,11 +49,11 @@ node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-j
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `p1` | `PathArg` |
-| `p2` | `PathArg` |
-| `p3` | `PathArg` |
+| Name       | Type      |
+| :--------- | :-------- |
+| `p1`       | `PathArg` |
+| `p2`       | `PathArg` |
+| `p3`       | `PathArg` |
 | `options?` | `Options` |
 
 #### Returns
@@ -70,12 +70,12 @@ node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-j
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `p1` | `PathArg` |
-| `p2` | `PathArg` |
-| `p3` | `PathArg` |
-| `p4` | `PathArg` |
+| Name       | Type      |
+| :--------- | :-------- |
+| `p1`       | `PathArg` |
+| `p2`       | `PathArg` |
+| `p3`       | `PathArg` |
+| `p4`       | `PathArg` |
 | `options?` | `Options` |
 
 #### Returns
@@ -92,13 +92,13 @@ node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-j
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `p1` | `PathArg` |
-| `p2` | `PathArg` |
-| `p3` | `PathArg` |
-| `p4` | `PathArg` |
-| `p5` | `PathArg` |
+| Name       | Type      |
+| :--------- | :-------- |
+| `p1`       | `PathArg` |
+| `p2`       | `PathArg` |
+| `p3`       | `PathArg` |
+| `p4`       | `PathArg` |
+| `p5`       | `PathArg` |
 | `options?` | `Options` |
 
 #### Returns
@@ -115,14 +115,14 @@ node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-j
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `p1` | `PathArg` |
-| `p2` | `PathArg` |
-| `p3` | `PathArg` |
-| `p4` | `PathArg` |
-| `p5` | `PathArg` |
-| `p6` | `PathArg` |
+| Name       | Type      |
+| :--------- | :-------- |
+| `p1`       | `PathArg` |
+| `p2`       | `PathArg` |
+| `p3`       | `PathArg` |
+| `p4`       | `PathArg` |
+| `p5`       | `PathArg` |
+| `p6`       | `PathArg` |
 | `options?` | `Options` |
 
 #### Returns
@@ -139,15 +139,15 @@ node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-j
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `p1` | `PathArg` |
-| `p2` | `PathArg` |
-| `p3` | `PathArg` |
-| `p4` | `PathArg` |
-| `p5` | `PathArg` |
-| `p6` | `PathArg` |
-| `p7` | `PathArg` |
+| Name       | Type      |
+| :--------- | :-------- |
+| `p1`       | `PathArg` |
+| `p2`       | `PathArg` |
+| `p3`       | `PathArg` |
+| `p4`       | `PathArg` |
+| `p5`       | `PathArg` |
+| `p6`       | `PathArg` |
+| `p7`       | `PathArg` |
 | `options?` | `Options` |
 
 #### Returns
@@ -164,16 +164,16 @@ node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-j
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `p1` | `PathArg` |
-| `p2` | `PathArg` |
-| `p3` | `PathArg` |
-| `p4` | `PathArg` |
-| `p5` | `PathArg` |
-| `p6` | `PathArg` |
-| `p7` | `PathArg` |
-| `p8` | `PathArg` |
+| Name       | Type      |
+| :--------- | :-------- |
+| `p1`       | `PathArg` |
+| `p2`       | `PathArg` |
+| `p3`       | `PathArg` |
+| `p4`       | `PathArg` |
+| `p5`       | `PathArg` |
+| `p6`       | `PathArg` |
+| `p7`       | `PathArg` |
+| `p8`       | `PathArg` |
 | `options?` | `Options` |
 
 #### Returns
@@ -190,17 +190,17 @@ node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-j
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `p1` | `PathArg` |
-| `p2` | `PathArg` |
-| `p3` | `PathArg` |
-| `p4` | `PathArg` |
-| `p5` | `PathArg` |
-| `p6` | `PathArg` |
-| `p7` | `PathArg` |
-| `p8` | `PathArg` |
-| `p9` | `PathArg` |
+| Name       | Type      |
+| :--------- | :-------- |
+| `p1`       | `PathArg` |
+| `p2`       | `PathArg` |
+| `p3`       | `PathArg` |
+| `p4`       | `PathArg` |
+| `p5`       | `PathArg` |
+| `p6`       | `PathArg` |
+| `p7`       | `PathArg` |
+| `p8`       | `PathArg` |
+| `p9`       | `PathArg` |
 | `options?` | `Options` |
 
 #### Returns
@@ -217,18 +217,18 @@ node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-j
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `p1` | `PathArg` |
-| `p2` | `PathArg` |
-| `p3` | `PathArg` |
-| `p4` | `PathArg` |
-| `p5` | `PathArg` |
-| `p6` | `PathArg` |
-| `p7` | `PathArg` |
-| `p8` | `PathArg` |
-| `p9` | `PathArg` |
-| `p10` | `PathArg` |
+| Name       | Type      |
+| :--------- | :-------- |
+| `p1`       | `PathArg` |
+| `p2`       | `PathArg` |
+| `p3`       | `PathArg` |
+| `p4`       | `PathArg` |
+| `p5`       | `PathArg` |
+| `p6`       | `PathArg` |
+| `p7`       | `PathArg` |
+| `p8`       | `PathArg` |
+| `p9`       | `PathArg` |
+| `p10`      | `PathArg` |
 | `options?` | `Options` |
 
 #### Returns
@@ -245,19 +245,19 @@ node_modules/.pnpm/@types+proper-url-join@2.1.2/node_modules/@types/proper-url-j
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `p1` | `PathArg` |
-| `p2` | `PathArg` |
-| `p3` | `PathArg` |
-| `p4` | `PathArg` |
-| `p5` | `PathArg` |
-| `p6` | `PathArg` |
-| `p7` | `PathArg` |
-| `p8` | `PathArg` |
-| `p9` | `PathArg` |
-| `p10` | `PathArg` |
-| `p11` | `PathArg` |
+| Name      | Type                       |
+| :-------- | :------------------------- |
+| `p1`      | `PathArg`                  |
+| `p2`      | `PathArg`                  |
+| `p3`      | `PathArg`                  |
+| `p4`      | `PathArg`                  |
+| `p5`      | `PathArg`                  |
+| `p6`      | `PathArg`                  |
+| `p7`      | `PathArg`                  |
+| `p8`      | `PathArg`                  |
+| `p9`      | `PathArg`                  |
+| `p10`     | `PathArg`                  |
+| `p11`     | `PathArg`                  |
 | `...args` | (`PathArg` \| `Options`)[] |
 
 #### Returns

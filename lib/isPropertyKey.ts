@@ -1,6 +1,6 @@
 import type { ParsablePropertyKey } from 'types'
 
-import { isNumber } from './isNumber'
+import { isNumber } from './isNumber';
 
 /**
  * Checks if the given input is a valid JavaScript property key.
@@ -14,8 +14,8 @@ import { isNumber } from './isNumber'
  * @public
  */
 export function isPropertyKey(input: unknown): input is PropertyKey {
-    const type = typeof input
-    return type === 'string' || type === 'symbol' || isNumber(input)
+    const type = typeof input;
+    return type === 'string' || type === 'symbol' || isNumber(input);
 }
 
 /**
@@ -30,5 +30,5 @@ export function isPropertyKey(input: unknown): input is PropertyKey {
  * @public
  */
 export function isParsablePropertyKey(input: unknown): input is ParsablePropertyKey {
-    return typeof input === 'string' || isNumber(input)
+    return typeof input === 'string' || isNumber(input);
 }

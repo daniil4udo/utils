@@ -1,12 +1,12 @@
-import { parseTemplate } from 'url-template'
+import { parseTemplate } from 'url-template';
 
-export type UrlTemplateContext = Parameters<ReturnType<typeof parseTemplate>['expand']>[0]
+export type UrlTemplateContext = Parameters<ReturnType<typeof parseTemplate>['expand']>[0];
 
 export function urlTemplate(
     url: string,
     context: UrlTemplateContext,
 ): string {
-    return parseTemplate(url).expand(context)
+    return parseTemplate(url).expand(context);
 }
 
 /**
@@ -15,8 +15,6 @@ export function urlTemplate(
  * @module parseURLTemplate
  * @see {@link https://github.com/bramstein/url-template}
  *
- * @function
- * @name parseTemplate
  * @param {string} template - The URL template string to parse.
  * @returns {object} Returns an object with an `expand` method that can be used
  *      to replace expressions in the template with actual values.
@@ -31,4 +29,4 @@ export function urlTemplate(
  * ```
  * @public
  */
-export { parseTemplate as parseURLTemplate }
+export { parseTemplate as parseURLTemplate };

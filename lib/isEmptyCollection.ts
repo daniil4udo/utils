@@ -5,8 +5,8 @@
  *
  * @param {Array | object} collection
  */
-import { length } from './length'
+import { length } from './length';
 
 export function isEmptyCollection(collection: unknown): boolean {
-    return length(collection) === 0
+    return length(collection) === 0;
 }

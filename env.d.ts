@@ -1,21 +1,21 @@
-export type ArrayElement<A> = A extends readonly (infer T)[] ? T : never
-type DeepWriteable<T> = { readonly [P in keyof T]: DeepWriteable<T[P]> }
-type Cast<X, Y> = X extends Y ? X : Y
+export type ArrayElement<A> = A extends readonly (infer T)[] ? T : never;
+type DeepWriteable<T> = { readonly [P in keyof T]: DeepWriteable<T[P]> };
+type Cast<X, Y> = X extends Y ? X : Y;
 type FromEntries<T> = T extends [infer Key, any][]
     ? { [K in Cast<Key, string>]: Extract<ArrayElement<T>, [K, any]>[1] }
-    : { [key in string]: any }
+    : { [key in string]: any };
 
-export type FromEntriesWithReadOnly<T> = FromEntries<DeepWriteable<T>>
+export type FromEntriesWithReadOnly<T> = FromEntries<DeepWriteable<T>>;
 
 // Keys
 
-type IsAny<T> = 0 extends 1 & T ? true : T
+type IsAny<T> = 0 extends 1 & T ? true : T;
 type KnownKeys<T> = {
     [K in keyof T as string extends K ? never : number extends K ? never : symbol extends K ? never : K]: T[K];
-}
+};
 type IsEmptyObject<T extends Record<PropertyKey, unknown>> = [keyof T] extends [never]
     ? true
-    : false
+    : false;
 
 type ObjectKeys<T> = IsAny<T> extends true
     ? string[]
@@ -27,7 +27,7 @@ type ObjectKeys<T> = IsAny<T> extends true
             ? []
             : T extends Array<any> | string
                 ? string[]
-                : never
+                : never;
 
 declare global {
     interface ObjectConstructor {
@@ -47,4 +47,4 @@ declare global {
     }
 }
 
-export { }
+export { };

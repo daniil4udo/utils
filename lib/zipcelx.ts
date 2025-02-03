@@ -5,9 +5,6 @@
  * @module zipcelx
  * @see {@link https://github.com/egeriis/zipcelx}
  *
- * @function
- * @name zipcelx
- *
  * @example
  * ```ts
  * import { zipcelx } from '@democrance/utils';
@@ -35,4 +32,4 @@
  * ```
  * @public
  */
-export { default as zipcelx } from 'zipcelx'
+export { default as zipcelx } from 'zipcelx';

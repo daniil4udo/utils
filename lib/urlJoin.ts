@@ -5,8 +5,6 @@
  * @module urlJoin
  * @see {@link https://github.com/moxystudio/js-proper-url-join}
  *
- * @function
- * @name urlJoin
  *
  * @example
  * ```ts
@@ -26,4 +24,4 @@
  * ```
  * @public
  */
-export { default as urlJoin } from 'proper-url-join'
+export { default as urlJoin } from 'proper-url-join';

@@ -24,7 +24,7 @@
  * @public
  */
 export function arrayBufferToString(buffer: ArrayBuffer): string {
-    return String.fromCharCode.apply(null, Array.from(new Uint16Array(buffer)))
+    return String.fromCharCode.apply(null, Array.from(new Uint16Array(buffer)));
 }
 
 /**
@@ -53,11 +53,11 @@ export function arrayBufferToString(buffer: ArrayBuffer): string {
  * @public
  */
 export function stringToArrayBuffer(str: string): ArrayBuffer {
-    const buffer = new ArrayBuffer(str.length * 2) // 2 bytes for each char
-    const bufferView = new Uint16Array(buffer)
+    const buffer = new ArrayBuffer(str.length * 2); // 2 bytes for each char
+    const bufferView = new Uint16Array(buffer);
 
     for (let i = 0, strLen = str.length; i < strLen; i++)
-        bufferView[i] = str.charCodeAt(i)
+        bufferView[i] = str.charCodeAt(i);
 
-    return buffer
+    return buffer;
 }
