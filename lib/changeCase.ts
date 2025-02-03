@@ -1,3 +1,17 @@
+export {
+    camelCase,
+    capitalCase,
+    constantCase,
+    dotCase,
+    kebabCase,
+    noCase,
+    pascalCase,
+    pascalSnakeCase,
+    pathCase,
+    sentenceCase,
+    snakeCase,
+    trainCase,
+} from 'change-case';
 /**
  * Capitalizes the first letter of a string.
  *
@@ -21,10 +35,10 @@
  * ```
  * @public
  */
-export function capitalize(str = '') {
+export function capitalize<T extends string>(str: T) {
     if (typeof str !== 'string')
-        throw new TypeError(`[capitalize] - input should be type 'string'. Got ${typeof str}`)
-    return str.charAt(0).toUpperCase() + str.slice(1)
+        throw new TypeError(`[capitalize] - input should be type 'string'. Got ${typeof str}`);
+    return str.charAt(0).toUpperCase() + str.slice(1) as Capitalize<T>;
 }
 
 /**
@@ -48,10 +62,10 @@ export function capitalize(str = '') {
  * ```
  * @public
  */
-export function toUpper(str = '') {
+export function toUpper<T extends string>(str: T) {
     if (typeof str !== 'string')
-        throw new TypeError(`[toUpper] - input should be type 'string'. Got ${typeof str}`)
-    return str.toUpperCase()
+        throw new TypeError(`[toUpper] - input should be type 'string'. Got ${typeof str}`);
+    return str.toUpperCase() as Uppercase<T>;
 }
 
 /**
@@ -75,8 +89,8 @@ export function toUpper(str = '') {
  * ```
  * @public
  */
-export function toLower(str = '') {
+export function toLower<T extends string>(str: T) {
     if (typeof str !== 'string')
-        throw new TypeError(`[toLower] - input should be type 'string'. Got ${typeof str}`)
-    return str.toLowerCase()
+        throw new TypeError(`[toLower] - input should be type 'string'. Got ${typeof str}`);
+    return str.toLowerCase() as Lowercase<T>;
 }
