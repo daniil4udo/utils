@@ -18,7 +18,6 @@ CONCURRENTLY_FLAGS=" \
         "bun scripts/generateIndex.ts" \
         "eslint lib/preset/autoImportUtilsPreset.ts lib/index.ts --fix" \
         "vitest run" \
-        "pnpm:typedoc" \
         "rm -rf dist" \
         "tsup"
 # fi
